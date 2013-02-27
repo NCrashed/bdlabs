@@ -1,264 +1,256 @@
 ------------------
-	   15	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw	15	647	647
+	   18	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw	18	648	648
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi	5	30388	22222
-	   15	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   15	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-	   10	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi	6	30393	22222
+	   18	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	   18	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+	   12	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
 ------------------
-	   35	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-	   15	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb	60	295993	295993
+	   42	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
+	   18	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb	72	296778	296778
 ------------------
-	   15	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw	15	8078	7431
-	   15	_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw
+	   18	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw	18	8081	7433
+	   18	_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw
 ------------------
-	    5	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
-_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk	5	2593	2593
+	    6	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
+_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk	6	2597	2597
 ------------------
-	   70	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
-_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv	70	88237	71211
-	   70	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
+	   84	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
+_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv	84	88306	71260
+	   84	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
 ------------------
-	   70	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
-_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv	70	17026	14433
-	    5	_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk
+	   84	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
+_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv	84	17046	14449
+	    6	_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk
 ------------------
-	   30	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
-_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga	30	0	0
+	   36	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
+_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga	36	3	3
 ------------------
-	   15	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
-_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv	15	0	0
+	   18	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
+_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv	18	0	0
 ------------------
-	    5	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
-_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender	5	34362	25657
-	    5	_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk
+	    6	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
+_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender	6	34413	25685
+	    6	_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk
 ------------------
-	   10	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
-_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv	10	16181	5947
-	   10	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+	   12	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
+_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv	12	16189	5949
+	   12	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 ------------------
-	    5	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
-_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv	5	2634	2634
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+	    6	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
+_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv	6	2635	2635
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 ------------------
-	    5	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
-_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv	5	2338	2338
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+	    6	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
+_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv	6	2338	2338
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 ------------------
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
-_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk	5	873	873
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk	6	875	875
 ------------------
-	    5	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
-_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv	5	2634	2634
-	    5	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    6	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
+_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv	6	2634	2634
+	    6	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
 ------------------
-	   10	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
-_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv	20	10234	9361
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk
+	   12	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
+_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv	24	10240	9365
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya	5	0	0
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya	6	0	0
 ------------------
-	   10	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender	10	18948	13698
-	   10	_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk
+	   12	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender	12	18958	13704
+	   12	_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk
 ------------------
-	   10	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv	10	88	88
+	   12	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv	12	89	89
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
-_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender	5	37443	3081
-	    5	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
+_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender	6	37495	3082
+	    6	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender	10	24806	5858
-	   10	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender	12	24816	5858
+	   12	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
 ------------------
-	   10	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv	10	21559	5378
-	   10	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
+	   12	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv	12	21569	5380
+	   12	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
 ------------------
-	   70	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv	70	125307	37070
-	   70	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
+	   84	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv	84	125379	37073
+	   84	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
 ------------------
-	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv	5	6275	3641
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
+	    6	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv	6	6277	3642
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv	5	4779	2441
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv	6	4779	2441
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv	5	5299	2665
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv	6	5299	2665
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya	5	128424	60917
-	    5	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	   10	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
-	    5	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    5	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
-	    5	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya	6	128498	60966
+	    6	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	   12	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
+	    6	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    6	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
 ------------------
-_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv	0	367744	98211
-	    5	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
-	   20	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	   35	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-	   30	_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga
-	   15	_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv	0	367972	98256
+	    6	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
+	   24	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	   42	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+	   36	_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga
+	   18	_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv
 ------------------
-_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv	0	235095	37650
-	    5	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv	0	235228	37687
+	    6	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
 ------------------
-	   35	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb	35	232079	81976
-	   35	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   70	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
-	   30	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+	   42	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb	42	232207	81985
+	   42	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	   84	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
+	   36	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb	5	54538	9866
-	    5	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	    5	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb	6	54552	9868
+	    6	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    6	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
 ------------------
-	   20	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec	30	11	11
+	   24	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2124FZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2125FZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec	36	12	12
 ------------------
-	   30	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv	35	64169	33781
-	    5	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+	   36	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv	42	64228	33835
+	    6	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb	10	37	37
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    6	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb	12	37	37
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb	5	110	110
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb	6	110	110
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb	10	78	78
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    6	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb	12	78	78
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb	10	0	0
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    6	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb	12	0	0
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb	10	2	2
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    6	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb	12	2	2
 ------------------
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	5	30619	2569
-	    5	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	6	30631	2570
+	    6	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
 ------------------
-	    5	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv	5	20968	14693
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
-	    5	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
-	    5	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
+	    6	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv	6	20975	14698
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
+	    6	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
 ------------------
-	    5	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv	5	28050	7082
-	    5	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
-	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+	    6	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv	6	28061	7086
+	    6	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
+	    6	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
 ------------------
-	    5	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb	5	0	0
+	    6	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb	6	0	0
 ------------------
-	    5	_Dmain
-_D4main11ButtonUsage6__ctorMFZC4main11ButtonUsage	5	731112353	731112353
+	    6	_Dmain
+_D4main11ButtonUsage6__ctorMFZC4main11ButtonUsage	6	731610284	731610284
 ------------------
-	    5	_Dmain
-======== Timer Is 2666390000 Ticks/Sec, Times are 	5	554987	554987
+	    1	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
+_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk	1	23	23
 ------------------
-= Timer Is 2666390000 Ticks/Sec, Times are in Micr	0	0	0
+	    2	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk	2	4	4
 ------------------
-	    3	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
-_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk	3	4872	4872
-------------------
-	    6	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk	6	3120	3120
-------------------
-_Dmain	0	82621014275	82171562248
-	    3	_D4main11ButtonUsage6__ctorMFZC4main11ButtonUsage
-	    5	= Timer Is 2666390000 Ticks/Sec, Times are in Micr
+_Dmain	0	5294037	4796106
+	    1	_D4main11ButtonUsage6__ctorMFZC4main11ButtonUsage
 
-======== Timer Is 2666390000 Ticks/Sec, Times are in Microsecs ========
+======== Timer Is 2603896 Ticks/Sec, Times are in Microsecs ========
 
   Num          Tree        Func        Per
   Calls        Time        Time        Call
 
-      1    30986095    30817533    30817533     _Dmain
-      5      274195      274195       54839     main.ButtonUsage main.ButtonUsage.__ctor()
-      5         208         208          41     ======== Timer Is 2666390000 Ticks/Sec, Times are 
-     60         111         111           1     pure nothrow @property @safe bool std.array.empty!(char).empty(const(char[]))
-      1         137          36          36     void std.format.FormatSpec!(char).FormatSpec.__unittestL775_2124()
-     35          87          30           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(char[]).Appender).writeUpToNextSpec(std.array.Appender!(char[]).Appender)
-     70          33          26           0     void std.array.Appender!(char[]).Appender.put!(const(char)[]).put(const(char)[])
-      5          48          22           4     const(immutable(char)[] function()) std.format.FormatSpec!(char).FormatSpec.getCurFmtStr
-      1          88          14          14     void std.format.FormatSpec!(char).FormatSpec.__unittestL1085_2125()
-     70          46          13           0     void std.range.put!(std.array.Appender!(char[]).Appender, const(char)[]).put(ref std.array.Appender!(char[]).Appender, const(char)[])
-     35          24          12           0     void std.format.FormatSpec!(char).FormatSpec.fillUp()
-      5          12           9           1     std.array.Appender!(char[]).Appender std.array.Appender!(char[]).Appender.__ctor(char[])
-      5          11           8           1     int std.conv.parse!(int, const(char)[]).parse(ref const(char)[])
-      5           7           5           1     void std.format.formatUnsigned!(std.array.Appender!(immutable(char)[]).Appender, char).formatUnsigned(std.array.Appender!(immutable(char)[]).Appender, ulong, ref std.format.FormatSpec!(char).FormatSpec, uint, bool)
-     70           6           5           0     void std.array.Appender!(char[]).Appender.ensureAddable(uint)
-     10           7           5           0     std.array.Appender!(immutable(char)[]).Appender std.array.Appender!(immutable(char)[]).Appender.__ctor(immutable(char)[])
-      5          20           3           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(immutable(char)[]).Appender).writeUpToNextSpec(std.array.Appender!(immutable(char)[]).Appender)
-     20           3           3           0     void std.array.Appender!(immutable(char)[]).Appender.ensureAddable(uint)
-     15           3           2           0     pure @property @safe dchar std.array.front!(const(char)[]).front(const(char)[])
-      5          10           2           0     void std.format.formatIntegral!(std.array.Appender!(immutable(char)[]).Appender, long, char).formatIntegral(std.array.Appender!(immutable(char)[]).Appender, const(long), ref std.format.FormatSpec!(char).FormatSpec, ulong)
-     10           6           2           0     void std.array.Appender!(immutable(char)[]).Appender.put!(char).put(char)
-     10           9           2           0     std.array.Appender!(immutable(char)[]).Appender std.array.appender!(immutable(char)[], immutable(char)).appender(immutable(char)[])
-     10           8           2           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char).put(ref std.array.Appender!(immutable(char)[]).Appender, char)
-      3           1           1           0     pure nothrow @property uint object.capacity!(char).capacity(char[])
-      5           2           1           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char[]).put(ref std.array.Appender!(immutable(char)[]).Appender, char[])
-      6           1           1           0     pure nothrow @property uint object.capacity!(immutable(char)).capacity(immutable(char)[])
-      5          14           1           0     std.array.Appender!(char[]).Appender std.array.appender!(char[], char).appender(char[])
-      5           1           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)[]).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char)[])
-      5           0           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)[]).put(const(char)[])
-      5           0           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(char[]).put(char[])
-      5           0           0           0     uint std.array.Appender!(char[]).Appender.newCapacity(uint)
-      5          11           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, const(int), char).formatValue(std.array.Appender!(immutable(char)[]).Appender, const(int), ref std.format.FormatSpec!(char).FormatSpec)
-      5           1           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char))
-      5           0           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)).put(const(char))
-      5           0           0           0     uint std.array.Appender!(immutable(char)[]).Appender.newCapacity(uint)
-     15           0           0           0     pure @trusted dchar std.utf.decode!(const(char)[]).decode(ref const(char)[], ref uint)
-      5           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flHash
-     10           0           0           0     pure nothrow @trusted void std.array.popFront!(const(char)[]).popFront(ref const(char)[])
-     10           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flPlus
-     10           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flDash
-     30           0           0           0     std.format.FormatSpec!(char).FormatSpec std.format.FormatSpec!(char).FormatSpec.__ctor(const(char[]))
-     10           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flSpace
-     30           0           0           0     std.array.Appender!(char[]).Appender.datainout(@property inout(char)[] function())
-      5           0           0           0     pure @safe bool std.exception.enforceEx!(std.format.FormatException).enforceEx!(bool).enforceEx(bool, lazy immutable(char)[], immutable(char)[], uint)
-     10           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flZero
-      5           0           0           0     std.array.Appender!(immutable(char)[]).Appender.datainout(@property immutable(char)[] function())
-      1           0           0           0     = Timer Is 2666390000 Ticks/Sec, Times are in Micr
-     15           0           0           0     void std.array.Appender!(char[]).Appender.clear()
+      6   280967551   280967551    46827925     main.ButtonUsage main.ButtonUsage.__ctor()
+      1     2033121     1841896     1841896     _Dmain
+     72      113974      113974        1582     pure nothrow @property @safe bool std.array.empty!(char).empty(const(char[]))
+      1      141315       37734       37734     void std.format.FormatSpec!(char).FormatSpec.__unittestL775_2124()
+     42       89176       31485         749     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(char[]).Appender).writeUpToNextSpec(std.array.Appender!(char[]).Appender)
+     84       33913       27366         325     void std.array.Appender!(char[]).Appender.put!(const(char)[]).put(const(char)[])
+      6       49348       23413        3902     const(immutable(char)[] function()) std.format.FormatSpec!(char).FormatSpec.getCurFmtStr
+      1       90336       14473       14473     void std.format.FormatSpec!(char).FormatSpec.__unittestL1085_2125()
+     84       48150       14237         169     void std.range.put!(std.array.Appender!(char[]).Appender, const(char)[]).put(ref std.array.Appender!(char[]).Appender, const(char)[])
+     42       24666       12993         309     void std.format.FormatSpec!(char).FormatSpec.fillUp()
+      6       13215        9864        1644     std.array.Appender!(char[]).Appender std.array.Appender!(char[]).Appender.__ctor(char[])
+      6       11672        8534        1422     int std.conv.parse!(int, const(char)[]).parse(ref const(char)[])
+      6        8055        5644         940     void std.format.formatUnsigned!(std.array.Appender!(immutable(char)[]).Appender, char).formatUnsigned(std.array.Appender!(immutable(char)[]).Appender, ulong, ref std.format.FormatSpec!(char).FormatSpec, uint, bool)
+     84        6546        5548          66     void std.array.Appender!(char[]).Appender.ensureAddable(uint)
+     12        7280        5262         438     std.array.Appender!(immutable(char)[]).Appender std.array.Appender!(immutable(char)[]).Appender.__ctor(immutable(char)[])
+      6       20950        3789         631     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(immutable(char)[]).Appender).writeUpToNextSpec(std.array.Appender!(immutable(char)[]).Appender)
+     24        3932        3596         149     void std.array.Appender!(immutable(char)[]).Appender.ensureAddable(uint)
+     18        3103        2854         158     pure @property @safe dchar std.array.front!(const(char)[]).front(const(char)[])
+      6       10776        2721         453     void std.format.formatIntegral!(std.array.Appender!(immutable(char)[]).Appender, long, char).formatIntegral(std.array.Appender!(immutable(char)[]).Appender, const(long), ref std.format.FormatSpec!(char).FormatSpec, ulong)
+     12        6217        2284         190     void std.array.Appender!(immutable(char)[]).Appender.put!(char).put(char)
+     12        9530        2249         187     std.array.Appender!(immutable(char)[]).Appender std.array.appender!(immutable(char)[], immutable(char)).appender(immutable(char)[])
+     12        8283        2066         172     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char).put(ref std.array.Appender!(immutable(char)[]).Appender, char)
+      6        2410        1398         233     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char[]).put(ref std.array.Appender!(immutable(char)[]).Appender, char[])
+      6       14399        1183         197     std.array.Appender!(char[]).Appender std.array.appender!(char[], char).appender(char[])
+      6        2035        1023         170     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)[]).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char)[])
+      6        1011        1011         168     void std.array.Appender!(immutable(char)[]).Appender.put!(char[]).put(char[])
+      6        1011        1011         168     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)[]).put(const(char)[])
+      6         997         997         166     uint std.array.Appender!(char[]).Appender.newCapacity(uint)
+      6       11763         986         164     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, const(int), char).formatValue(std.array.Appender!(immutable(char)[]).Appender, const(int), ref std.format.FormatSpec!(char).FormatSpec)
+      6        1835         937         156     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char))
+      6         897         897         149     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)).put(const(char))
+      6         336         336          56     uint std.array.Appender!(immutable(char)[]).Appender.newCapacity(uint)
+     18         248         248          13     pure @trusted dchar std.utf.decode!(const(char)[]).decode(ref const(char)[], ref uint)
+      6          42          42           7     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flHash
+     12          34          34           2     pure nothrow @trusted void std.array.popFront!(const(char)[]).popFront(ref const(char)[])
+     12          29          29           2     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flPlus
+     12          14          14           1     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flDash
+      1           8           8           8     pure nothrow @property uint object.capacity!(char).capacity(char[])
+     36           4           4           0     std.format.FormatSpec!(char).FormatSpec std.format.FormatSpec!(char).FormatSpec.__ctor(const(char[]))
+      2           1           1           0     pure nothrow @property uint object.capacity!(immutable(char)).capacity(immutable(char)[])
+     36           1           1           0     std.array.Appender!(char[]).Appender.datainout(@property inout(char)[] function())
+     12           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flSpace
+      6           0           0           0     pure @safe bool std.exception.enforceEx!(std.format.FormatException).enforceEx!(bool).enforceEx(bool, lazy immutable(char)[], immutable(char)[], uint)
+     18           0           0           0     void std.array.Appender!(char[]).Appender.clear()
+      6           0           0           0     std.array.Appender!(immutable(char)[]).Appender.datainout(@property immutable(char)[] function())
+     12           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flZero
