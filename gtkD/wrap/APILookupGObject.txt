@@ -1,0 +1,737 @@
+#
+# This file is part of gtkD.
+# 
+# gtkD is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License
+# as published by the Free Software Foundation; either version 3
+# of the License, or (at your option) any later version, with
+# some exceptions, please read the COPYING file.
+# 
+# gtkD is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Lesser General Public License for more details.
+# 
+# You should have received a copy of the GNU Lesser General Public License
+# along with gtkD; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA
+#
+
+
+#
+###
+#####
+# Definitions for wrapping GObject
+#####
+###
+#
+
+
+addTypedefs: start
+
+public import gtkc.glibtypes;
+
+alias void GTypeCValue;
+
+addTypedefs: end
+
+addAliases: start
+addAliases: end
+
+addEnums: start
+addEnums: end
+
+addStructs: start
+
+/**
+ * An opaque structure used as the base of all type instances.
+ */
+struct GTypeInstance
+{
+  /*< private >*/
+  GTypeClass* gClass;
+}
+
+/**
+ * An opaque structure used as the base of all classes.
+ */
+struct GTypeClass
+{
+  /*< private >*/
+  GType gType;
+}
+
+/**
+ * An opaque structure used as the base of all interface types.
+ */
+public struct GTypeInterface
+{ 
+	GType gType;         /* iface type */ 
+	GType gInstanceType;
+}
+
+/**
+ * The class structure for the GObject type.
+ * Example4.Implementing singletons using a constructor
+ * static MySingleton *the_singleton = NULL;
+ * static GObject*
+ * my_singleton_constructor (GType type,
+ */
+public struct GObjectClass
+{
+	GTypeClass gTypeClass;
+	/*< private >*/
+	GSList* constructProperties;
+	/* seldomly overidden */
+	extern(C) GObject*  function(GType type,uint nConstructProperties,GObjectConstructParam *constructProperties) constructor;
+	/* overridable methods */
+	extern(C) void  function(GObject *object,uint propertyId,GValue *value,GParamSpec *pspec) setProperty;
+	extern(C) void  function(GObject *object,uint propertyId,GValue *value,GParamSpec *pspec) getProperty;
+	extern(C) void  function(GObject *object) dispose;
+	extern(C) void  function(GObject *object) finalize;
+	/* seldomly overidden */
+	extern(C) void  function(GObject *object,uint nPspecs,GParamSpec **pspecs) dispatchPropertiesChanged;
+	/* signals */
+	extern(C) void  function(GObject *object,GParamSpec *pspec) notify;
+	/* called when done constructing */
+	extern(C) void  function(GObject *object) constructed;
+	/* padding */
+	gpointer dummy[7];
+}
+
+/**
+ * Main Gtk struct.
+ * All the fields in the GObject structure are private
+ * to the GObject implementation and should never be accessed directly.
+ */
+public struct GObject
+{
+  GTypeInstance  gTypeInstance;
+  
+  /*< private >*/
+  uint refCount;
+  GData* qdata;
+}
+
+struct GValue
+{
+	version(Windows)
+	{
+		GType		g_type;
+		union Data
+		{
+			gint     v_int;
+			guint    v_uint;
+			glong    v_long;
+			gulong   v_ulong;
+			gint64   v_int64;
+			guint64  v_uint64;
+			gfloat   v_float;
+			gdouble  v_double;
+			gpointer v_pointer;
+		};
+	}
+	else
+	{
+		align(4)
+		{
+			GType		g_type;
+			union Data
+			{
+				gint     v_int;
+				guint    v_uint;
+				glong    v_long;
+				gulong   v_ulong;
+				gint64   v_int64;
+				guint64  v_uint64;
+				gfloat   v_float;
+				gdouble  v_double;
+				gpointer v_pointer;
+			};
+		}
+	}
+	Data data1;
+	Data data2;
+}
+addStructs: end
+
+addTypes: start
+addTypes: end
+
+addFuncts: start
+addFuncts: end
+
+addUnions: start
+addUnions: end
+
+addConstants: start
+addConstants: end
+
+
+
+# must start with wrap
+wrap: gobject
+
+###########################################################
+### GObject ###############################################
+###########################################################
+
+file: gobject-Type-Information.html
+nostruct: GTypeClass
+nostruct: GTypeInstance
+class: Type
+prefix: g_type_
+nostruct: GTypeInterface
+import: glib.Str
+import: gobject.ObjectG
+import: gobject.TypePlugin
+structWrap: GTypePlugin* TypePlugin
+
+nocode: GType
+
+out: g_type_query query
+array: g_type_children Return n_children
+array: g_type_interfaces Return n_interfaces
+array: g_type_interface_prerequisites Return n_prerequisites
+
+code: start
+	public static T* getInstanceClass(T)(ObjectG obj)
+	{
+		return cast(T*) (cast(GTypeInstance*)obj.getObjectGStruct()).gClass;
+	}
+
+	/**
+	 * Get the unique name that is assigned to the Objects type.
+	 * Returns: Static type name or NULL.
+	 */
+	public static string name(ObjectG obj)
+	{
+		GType type = (cast(GTypeInstance*)obj.getObjectGStruct()).gClass.gType;
+
+		return name(type);
+	}
+code: end
+outFile: Type
+
+file: GTypePlugin.html
+struct: GTypePlugin
+class: TypePlugin
+prefix: g_type_plugin_
+#import: gobject.TypeInfo
+#structWrap: GTypeInfo* TypeInfo
+#import: gobject.TypeValueTable
+#structWrap: GTypeValueTable* TypeValueTable
+#import: gobject.InterfaceInfo
+#structWrap: GInterfaceInfo* InterfaceInfo
+outFile: TypePlugin
+
+file: GTypeModule.html
+struct: GTypeModule
+class: TypeModule
+prefix: g_type_module_
+import: glib.Str
+#import: gobject.TypeInfo
+#structWrap: GTypeInfo* TypeInfo
+#import: gobject.InterfaceInfo
+#structWrap: GInterfaceInfo* InterfaceInfo
+import: gobject.Enums
+structWrap: GEnumValue* Enums
+import: gobject.Flags
+structWrap: GFlagsValue* Flags
+outFile: TypeModule
+
+file: gobject-The-Base-Object-Type.html
+struct: GObject
+class: ObjectG
+nostruct: GObject
+nostruct: GObjectClass
+prefix: g_object_
+prefix: g_
+noprefix: g_weak_ref_
+import: gobject.ObjectG
+structWrap: GObject* ObjectG
+import: gobject.ParamSpec
+structWrap: GParamSpec* ParamSpec
+import: gobject.Value
+structWrap: GValue* Value
+import: gobject.Closure
+structWrap: GClosure* Closure
+import: std.gc
+import: glib.Str
+import: gtkc.paths
+import: gtkc.Loader
+
+array: g_object_class_list_properties Return n_properties
+array: g_object_interface_list_properties Return n_properties_p
+array: g_object_newv parameters n_parameters
+array: g_object_class_install_properties pspecs n_pspecs
+inout: g_clear_object object_ptr
+
+code: start
+	protected bool isGcRoot;
+
+	/**
+	* Sets our main struct and passes store it on the gobject.
+	* Add a gabage collector root to the gtk+ struct so it doesn't get collect
+	*/
+	public this (GObject* gObject)
+	{
+		this.gObject = gObject;
+		if ( gObject !is  null )
+		{
+			setDataFull("GObject", cast(void*)this, cast(GDestroyNotify)&destroyNotify);
+			addToggleRef(cast(GToggleNotify)&toggleNotify, cast(void*)this);
+
+			//If the refCount is largeer then 1 toggleNotify isn't called
+			if (gObject.refCount > 1 && !isGcRoot)
+			{
+				version(druntime) GC.addRoot(cast(void*)this);
+				else std.gc.addRoot(cast(void*)this);
+
+				isGcRoot = true;
+			}
+
+			//Remove the floating reference if there is one.
+			if (isFloating(gObject))
+			{
+				refSink(gObject);
+				unref(gObject);
+			}
+
+			//When constructed via GtkBuilder set the structs.
+			if ( getStruct() is null)
+			{
+				setStruct(gObject);
+			}
+		}
+	}
+	
+	extern(C)
+	{
+		static void destroyNotify(ObjectG obj)
+		{
+			if ( obj.isGcRoot )
+			{
+				version(druntime) GC.removeRoot(cast(void*)obj);
+				else std.gc.removeRoot(cast(void*)obj);
+
+				obj.isGcRoot = false;
+			}
+
+			obj.gObject = null;
+		}
+
+		static void toggleNotify(ObjectG obj, GObject* object, int isLastRef)
+		{
+			if ( isLastRef && obj.isGcRoot )
+			{
+				version(druntime) GC.removeRoot(cast(void*)obj);
+				else std.gc.removeRoot(cast(void*)obj);
+
+				obj.isGcRoot = false;
+			}
+			else if ( !obj.isGcRoot )
+			{
+				version(druntime) GC.addRoot(cast(void*)obj);
+				else std.gc.addRoot(cast(void*)obj);
+
+				obj.isGcRoot = true;
+			}
+		}
+	}
+
+	~this()
+	{
+		if ( Linker.isLoaded(LIBRARY.GOBJECT) && gObject !is null )
+		{
+			unref();
+		}
+	}
+
+	/**
+	 * Gets a D Object from the objects table of associations.
+	 * Params:
+	 *  obj = GObject containing the associations.
+	 * Returns: the D Object if found, or a newly constructed object if no such Object exists.
+	 */
+	public static T getDObject(T, U)(U obj)
+	{
+		static if ( is(T : ObjectG) )
+		{
+			auto p = g_object_get_data(cast(GObject*)obj, Str.toStringz("GObject"));
+
+			if ( p !is null )
+			{
+				return cast(T)p;
+			}
+			else
+			{
+				return new T(obj);
+			}
+		}
+		else
+		{
+			return new T(obj);
+		}
+	}
+
+	protected void setStruct(GObject* obj)
+	{
+		gObject = cast(GObject*)obj;
+	}
+
+	/** */
+	public void setProperty(string propertyName, int value)
+	{
+		setProperty(propertyName, new Value(value));
+	}
+	
+	/** */
+	public void setProperty(string propertyName, string value)
+	{
+		setProperty(propertyName, new Value(value));
+	}
+	
+	/** */
+	public void setProperty(string propertyName, long value)
+	{
+		//We use g_object_set instead of g_object_set_property, because Value doesn't like longs and ulongs for some reason.
+		g_object_set( gObject, Str.toStringz(propertyName), value, null);
+	}
+
+	/** */
+	public void setProperty(string propertyName, ulong value)
+	{
+		g_object_set( gObject, Str.toStringz(propertyName), value, null);
+	}
+
+	public void unref()
+	{
+		unref(gObject);
+	}
+
+	public ObjectG doref()
+	{
+		doref(gObject);
+
+		return this;
+	}
+code: end
+outFile: ObjectG
+
+struct: GWeakRef
+class: WeakRef
+strictPrefix: Y
+prefix: g_weak_ref_
+nosignal: notify
+
+code: start
+	/** */
+	this(void* object)
+	{
+		g_weak_ref_init(gWeakRef, object);
+	}
+code: end
+outFile: WeakRef
+
+file: gobject-Enumeration-and-Flag-Types.html
+struct: GEnumValue
+class: Enums
+prefix: g_enum_
+noprefix: g_flags_
+import: glib.Str
+structWrap: GEnumValue* Enums
+#import: gobject.TypeInfo
+#structWrap: GTypeInfo* TypeInfo
+out: g_enum_complete_type_info info
+outFile: Enums
+
+struct: GFlagsValue
+strictPrefix: Y
+class: Flags
+prefix: g_flags_
+import: glib.Str
+structWrap: GFlagsValue* Flags
+#import: gobject.TypeInfo
+#structWrap: GTypeInfo* TypeInfo
+outFile: Flags
+
+file: gobject-Boxed-Types.html
+class: Boxed
+prefix: g_
+import: glib.Str
+outFile: Boxed
+
+file: gobject-Generic-values.html
+struct: GValue
+class: Value
+nostruct: GValue
+prefix: g_value_
+import: glib.Str
+structWrap: GValue* Value
+import: gobject.ParamSpec
+structWrap: GParamSpec* ParamSpec
+import: gdk.Pixbuf
+import: glib.Variant
+structWrap: GVariant* Variant
+import: glib.VariantType
+structWrap: GVariantType* VariantType
+
+nocode: g_value_init
+nocode: g_value_reset
+
+code: start
+	/** */
+	public this()
+	{
+		this(new GValue);
+	}
+
+	/** */	
+	this(Pixbuf pixbuf)
+	{
+		GValue* v = new GValue;
+		//v.g_type = DUIType.PIXBUF;
+		v.g_type = Pixbuf.getType();
+		v.data1.v_pointer = cast(void*)(pixbuf.getPixbufStruct());
+		this(v);
+	}
+
+	/** */
+	this(string value)
+	{
+		this();
+		init(GType.STRING);
+		setString(value);
+	}
+
+	/** */
+	this(int value)
+	{
+		this();
+		init(GType.INT);
+		setInt(value);
+	}
+
+	/** */
+	this(float value)
+	{
+		this();
+		init(GType.FLOAT);
+		setFloat(value);
+	}
+
+	/** */
+	this(double value)
+	{
+		this();
+		init(GType.DOUBLE);
+		setDouble(value);
+	}
+	
+	/**
+	 * Initializes value with the default value of type.
+	 * Params:
+	 *  value = A zero-filled (uninitialized) GValue structure.
+	 *  g_type = Type the GValue should hold values of.
+	 * Returns:
+	 *  the GValue structure that has been passed in
+	 */
+	public Value init(GType gType)
+	{
+		// GValue* g_value_init (GValue *value,  GType g_type);
+		g_value_init(gValue, gType);
+		return this;
+	}
+	
+	/**
+	 * Clears the current value in value and resets it to the default value
+	 * (as if the value had just been initialized).
+	 * Params:
+	 *  value = An initialized GValue structure.
+	 * Returns:
+	 *  the GValue structure that has been passed in
+	 */
+	public Value reset()
+	{
+		// GValue* g_value_reset (GValue *value);
+		g_value_reset(gValue);
+		return this;
+	}
+	
+
+
+code: end
+
+openFile: Value
+
+file: gobject-Standard-Parameter-and-Value-Types.html
+#class: Value
+#import: gobject.Value
+#prefix: g_
+closeFile: Value
+
+#file: gobject-Varargs-Value-Collection.html
+#class: 
+#prefix: 
+#outFile: 
+
+file: gobject-GParamSpec.html
+struct: GParamSpec
+class: ParamSpec
+prefix: g_param_spec_
+noprefix: g_param_spec_pool_
+import: glib.Str
+structWrap: GParamSpec* ParamSpec
+import: gobject.Value
+structWrap: GValue* Value
+#import: gobject.ParamSpecTypeInfo
+#structWrap: GParamSpecTypeInfo* ParamSpecTypeInfo
+#import: gobject.ParamSpecPool
+#structWrap: GParamSpecPool* ParamSpecPool
+import: glib.ListG
+structWrap: GList* ListG
+outFile: ParamSpec
+
+struct: GParamSpecPool
+class: ParamSpecPool
+prefix: g_param_spec_pool_
+strictPrefix: Y
+import: glib.Str
+import: gobject.ParamSpec
+structWrap: GParamSpec* ParamSpec
+import: glib.ListG
+structWrap: GList* ListG
+
+array: g_param_spec_pool_list Return n_pspecs_p
+outFile: ParamSpecPool
+
+file: gobject-Signals.html
+class: Signals
+prefix: g_signal_
+import: glib.Str
+import: gobject.Closure
+structWrap: GClosure* Closure
+#import: gobject.SignalQuery
+#structWrap: GSignalQuery* SignalQuery
+import: gobject.Value
+structWrap: GValue* Value
+import: glib.Quark
+structWrap: GQuark* Quark
+#import: gobject.SignalInvocationHint
+#structWrap: GSignalInvocationHint* SignalInvocationHint
+
+array: g_signal_newv param_types n_params
+array: g_signal_list_ids Return n_ids
+out: g_signal_parse_name signal_id_p
+
+code: start
+	/** */
+	public static gulong connectData(void* instanc, string detailedSignal, GCallback cHandler, Object data, GClosureNotify destroyData, GConnectFlags connectFlags)
+	{
+		// gulong g_signal_connect_data (gpointer instance,  const gchar *detailed_signal,  GCallback c_handler,  gpointer data,  GClosureNotify destroy_data,  GConnectFlags connect_flags);
+		return g_signal_connect_data(instanc, Str.toStringz(detailedSignal), cHandler, cast(void*)data, destroyData, connectFlags);
+	}
+
+
+code: end
+
+outFile: Signals
+
+file: gobject-Closures.html
+
+struct: GClosure
+class: Closure
+prefix: g_closure_
+noprefix: g_cclosure_
+import: gobject.ObjectG
+structWrap: GObject* ObjectG
+structWrap: GClosure* Closure
+import: gobject.Value
+structWrap: GValue* Value
+import: glib.Source
+structWrap: GSource* Source
+outFile: Closure
+
+struct: GCClosure
+class: CClosure
+prefix: g_cclosure_
+strictPrefix: Yes
+import: gobject.Closure
+structWrap: GClosure* Closure
+import: gobject.ObjectG
+structWrap: GObject* ObjectG
+import: gobject.Value
+structWrap: GValue* Value
+
+array: g_cclosure_marshal_generic param_values n_param_values
+array: g_cclosure_marshal_VOID__VOID param_values n_param_values
+array: g_cclosure_marshal_VOID__BOOLEAN param_values n_param_values
+array: g_cclosure_marshal_VOID__CHAR param_values n_param_values
+array: g_cclosure_marshal_VOID__UCHAR param_values n_param_values
+array: g_cclosure_marshal_VOID__INT param_values n_param_values
+array: g_cclosure_marshal_VOID__UINT param_values n_param_values
+array: g_cclosure_marshal_VOID__LONG param_values n_param_values
+array: g_cclosure_marshal_VOID__ULONG param_values n_param_values
+array: g_cclosure_marshal_VOID__ENUM param_values n_param_values
+array: g_cclosure_marshal_VOID__FLAGS param_values n_param_values
+array: g_cclosure_marshal_VOID__FLOAT param_values n_param_values
+array: g_cclosure_marshal_VOID__DOUBLE param_values n_param_values
+array: g_cclosure_marshal_VOID__STRING param_values n_param_values
+array: g_cclosure_marshal_VOID__PARAM param_values n_param_values
+array: g_cclosure_marshal_VOID__BOXED param_values n_param_values
+array: g_cclosure_marshal_VOID__POINTER param_values n_param_values
+array: g_cclosure_marshal_VOID__OBJECT param_values n_param_values
+array: g_cclosure_marshal_VOID__VARIANT param_values n_param_values
+array: g_cclosure_marshal_STRING__OBJECT_POINTER param_values n_param_values
+array: g_cclosure_marshal_VOID__UINT_POINTER param_values n_param_values
+array: g_cclosure_marshal_BOOLEAN__FLAGS param_values n_param_values
+array: g_cclosure_marshal_BOOLEAN__BOXED_BOXED param_values n_param_values
+array: g_cclosure_marshal_generic_va param_types n_params
+array: g_cclosure_marshal_VOID__VOIDv param_types n_params
+array: g_cclosure_marshal_VOID__BOOLEANv param_types n_params
+array: g_cclosure_marshal_VOID__CHARv param_types n_params
+array: g_cclosure_marshal_VOID__UCHARv param_types n_params
+array: g_cclosure_marshal_VOID__INTv param_types n_params
+array: g_cclosure_marshal_VOID__UINTv param_types n_params
+array: g_cclosure_marshal_VOID__LONGv param_types n_params
+array: g_cclosure_marshal_VOID__ULONGv param_types n_params
+array: g_cclosure_marshal_VOID__ENUMv param_types n_params
+array: g_cclosure_marshal_VOID__FLAGSv param_types n_params
+array: g_cclosure_marshal_VOID__FLOATv param_types n_params
+array: g_cclosure_marshal_VOID__DOUBLEv param_types n_params
+array: g_cclosure_marshal_VOID__STRINGv param_types n_params
+array: g_cclosure_marshal_VOID__PARAMv param_types n_params
+array: g_cclosure_marshal_VOID__BOXEDv param_types n_params
+array: g_cclosure_marshal_VOID__POINTERv param_types n_params
+array: g_cclosure_marshal_VOID__OBJECTv param_types n_params
+array: g_cclosure_marshal_VOID__VARIANTv param_types n_params
+array: g_cclosure_marshal_STRING__OBJECT_POINTERv param_types n_params
+array: g_cclosure_marshal_VOID__UINT_POINTERv param_types n_params
+array: g_cclosure_marshal_BOOLEAN__FLAGSv () param_types n_params
+array: g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv param_types n_params
+outFile: CClosure
+
+file: gobject-Value-arrays.html
+struct: GValueArray
+class: ValueArray
+prefix: g_value_array_
+import: gobject.Value
+structWrap: GValue* Value
+structWrap: GValueArray* ValueArray
+outFile: ValueArray
+
+file: GBinding.html
+struct: GBinding
+class: Binding
+prefix: g_binding_
+import: glib.Str
+import: gobject.ObjectG
+import: gobject.Closure
+import: gobject.Value
+structWrap: GObject* ObjectG
+structWrap: gpointer ObjectG
+structWrap: GBinding* Binding
+structWrap: GClosure* Closure
+structWrap: GValue* Value
+outFile: Binding
