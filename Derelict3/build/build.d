@@ -73,6 +73,7 @@ enum packASSIMP = "ASSIMP";
 enum packFG = "FG";
 enum packFI = "FI";
 enum packGLU = "GLU";
+enum packPQ = "PQ";
 
 // Source paths
 enum srcDerelict = "../import/derelict/";
@@ -89,6 +90,7 @@ enum srcASSIMP = srcDerelict ~ "assimp/";
 enum srcFG = srcDerelict ~ "freeglut/";
 enum srcFI = srcDerelict ~ "freeimage/";
 enum srcGLU = srcDerelict ~ "glu/";
+enum srcPQ = srcDerelict ~ "pq/";
 
 // Map package names to source paths.
 string[string] pathMap;
@@ -110,7 +112,8 @@ static this()
         packASSIMP : srcASSIMP,
         packFG : srcFG,
         packFI : srcFI,
-	packGLU: srcGLU
+	    packGLU: srcGLU,
+        packPQ : srcPQ
     ];
 }
 
