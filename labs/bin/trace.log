@@ -1,940 +1,932 @@
 ------------------
-	   18	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
-	   14	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
-_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb	32	4	4
+	    9	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
+	    7	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
+_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb	16	0	0
 ------------------
-	   62	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw	62	28	28
+	   31	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw	31	14	14
 ------------------
-	   18	_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw
-_D3std3utf15__T6decodeTAyaZ6decodeFNaNeKAyaKkZw	18	4	4
+	    9	_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw
+_D3std3utf15__T6decodeTAyaZ6decodeFNaNeKAyaKkZw	9	2	2
 ------------------
-	    4	_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv
-_D3std3utf20__T10strideBackTAyaZ10strideBackFNaNfKAyakZk	4	1	1
+	    2	_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv
+_D3std3utf20__T10strideBackTAyaZ10strideBackFNaNfKAyakZk	2	0	0
 ------------------
-	    4	_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya
-_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya	4	21	6
-	    4	_D3std4conv19__T6toImplTAyaTPyaZ6toImplFNaPyaZAya
+	    2	_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya
+_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya	2	8	2
+	    2	_D3std4conv19__T6toImplTAyaTPyaZ6toImplFNaPyaZAya
 ------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi	2	33	9
-	    6	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	    6	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-	    4	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi	1	16	1
+	    3	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    3	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+	    2	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
 ------------------
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk	14	20	8
-	   28	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   28	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-	   14	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk	7	12	4
+	   14	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	   14	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+	    7	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
 ------------------
-	   14	_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi
-_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi	14	4	3
-	   14	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
+	    7	_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi
+_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi	7	1	1
+	    7	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
 ------------------
-	    4	_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya
-_D3std4conv19__T6toImplTAyaTPyaZ6toImplFNaPyaZAya	4	15	15
+	    2	_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya
+_D3std4conv19__T6toImplTAyaTPyaZ6toImplFNaPyaZAya	2	6	6
 ------------------
-	    2	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
-_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv	2	1	1
-	    2	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
+	    1	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
+_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv	1	1	0
+	    1	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
 ------------------
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi	14	7	3
-	   14	_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi	7	3	2
+	    7	_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi
 ------------------
-	  122	_D4dpq23all12_staticCtor3FZv
-	  243	_D7ormtest12_staticCtor1FZv
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-	   32	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	   36	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-	    6	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-	    2	_D4dpq210connection14BaseConnection7connectMFNeZv
-	    2	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
-	    2	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
-	    4	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
-	   18	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
-	   28	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
-	   14	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
-_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb	523	59	59
+	  142	_D4dpq23all12_staticCtor1FZv
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+	   16	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+	   18	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
+	    3	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+	    1	_D4dpq210connection14BaseConnection7connectMFNeZv
+	    1	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
+	    1	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
+	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
+	    9	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
+	   14	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
+	    7	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
+_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb	221	30	30
 ------------------
-	    6	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-	   28	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
-	   14	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
-_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw	62	38	10
-	   62	_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw
+	    3	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
+	   14	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
+	    7	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
+_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw	31	21	7
+	   31	_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw
 ------------------
-	   18	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
-_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw	18	7	3
-	   18	_D3std3utf15__T6decodeTAyaZ6decodeFNaNeKAyaKkZw
+	    9	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
+_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw	9	4	2
+	    9	_D3std3utf15__T6decodeTAyaZ6decodeFNaNeKAyaKkZw
 ------------------
-	    4	_Dmain
-_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv	4	1	0
-	    4	_D3std3utf20__T10strideBackTAyaZ10strideBackFNaNfKAyakZk
+	    2	_Dmain
+_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv	2	0	0
+	    2	_D3std3utf20__T10strideBackTAyaZ10strideBackFNaNfKAyakZk
 ------------------
-	    2	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
-_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk	2	1	1
+	    1	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
+_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk	1	1	1
 ------------------
-	   28	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
-_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv	28	24	14
-	   28	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
+	   14	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
+_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv	14	7	4
+	   14	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
 ------------------
-	   28	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
-_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv	28	10	9
-	    2	_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk
-------------------
-	   12	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
-_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga	12	1	1
+	   14	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
+_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv	14	3	2
+	    1	_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk
 ------------------
 	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
-_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv	6	1	1
+_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga	6	0	0
 ------------------
-	    2	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
-_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender	2	10	5
-	    2	_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk
+	    3	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
+_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv	3	0	0
 ------------------
-	   14	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
-_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv	14	11	4
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+	    1	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
+_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender	1	4	2
+	    1	_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk
 ------------------
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv	14	25	7
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
+	    7	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
+_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv	7	4	1
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 ------------------
-	   16	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv
-_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv	30	25	10
-	   30	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
+_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv	7	10	1
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
 ------------------
-	    2	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
-_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv	2	1	1
-	    2	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+	    8	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv
+_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv	15	13	6
+	   15	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 ------------------
-	   12	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
-_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk	12	5	5
+	    1	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
+_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv	1	1	0
+	    1	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 ------------------
-	   22	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
-_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv	22	54	19
-	   36	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   14	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv
-	   14	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
-------------------
-	    6	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv
-_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv	6	4	2
 	    6	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk	6	2	2
 ------------------
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
-	   30	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
-	    2	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
-	    6	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv
-_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv	52	24	19
-	   12	_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    8	_Dmain
-	    2	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
-_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya	12	2	2
-------------------
-	   14	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender	14	33	20
-	   14	_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk
-------------------
-	    4	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-	   14	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
-_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv	32	7	7
-------------------
-	   16	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
-_D3std5array17__T8popFrontTAyaZ8popFrontFNaNbNeKAyaZv	16	2	2
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
-_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender	2	10	0
-	    2	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    8	_Dmain
-	    2	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
-_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender	14	38	5
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-------------------
-	    6	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
-	    2	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
-	    6	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
-	    2	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
-_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv	16	3856	3
-	   16	_D3std5stdio4File17LockingTextWriter10__T3putTaZ3putMFaZv
-------------------
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    2	_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv
-_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv	4	1	0
-	    4	_D3std5stdio4File17LockingTextWriter11__T3putTAaZ3putMFAaZv
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
-_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv	2	1	0
-	    2	_D3std5stdio4File17LockingTextWriter12__T3putTAxaZ3putMFAxaZv
-------------------
-	   12	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
-	    2	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
-	   12	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
-	    2	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
-_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv	28	433	5
-	   28	_D3std5stdio4File17LockingTextWriter12__T3putTAyaZ3putMFAyaZv
-------------------
-	    4	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	   10	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv	14	13	2
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
-------------------
-	   28	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv	28	51	27
-	   28	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
-------------------
-	   16	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv	16	13	6
-	   16	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv	2	1	0
-	    2	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
-------------------
-	   22	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv	22	59	5
-	   22	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-------------------
-	    6	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv	6	5	1
-	    6	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv
-------------------
-	    6	_Dmain
-_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv	6	1081	1
-	    6	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
-------------------
-	    2	_Dmain
-_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv	2	708	1
-	    2	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
-------------------
-	    2	_Dmain
-_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv	2	288	2
-	    2	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
-------------------
-	    6	_Dmain
-_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv	6	2366	13
-	    6	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
-------------------
-	   16	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
-_D3std5stdio4File17LockingTextWriter10__T3putTaZ3putMFaZv	16	3853	3853
-------------------
-	    4	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
-_D3std5stdio4File17LockingTextWriter11__T3putTAaZ3putMFAaZv	4	1	1
-------------------
-	    2	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv
-_D3std5stdio4File17LockingTextWriter12__T3putTAxaZ3putMFAxaZv	2	1	1
-------------------
-	   28	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
-_D3std5stdio4File17LockingTextWriter12__T3putTAyaZ3putMFAyaZv	28	428	428
-------------------
-	    6	_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv
-_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv	6	1080	11
-	    6	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	   12	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
-	    6	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
-------------------
-	    2	_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv
-_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv	2	707	6
-	    2	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	    2	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
-	    2	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
-	    2	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
-------------------
-	    2	_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv
-_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv	2	286	4
-	    2	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	    2	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
-	    2	_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv
-	    2	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
-------------------
-	    6	_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv
-_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv	6	2353	27
-	    6	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	   12	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
-	    6	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya	2	49	18
-	    2	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	    4	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
-	    2	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    2	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
-	    2	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
-------------------
-_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv	0	123	36
-	    2	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
-	    8	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-	   12	_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga
-	    6	_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv
-------------------
-_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv	0	165	44
-	    2	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-------------------
-	    4	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
-_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb	4	7	4
-	    4	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	    2	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-------------------
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb	14	74	16
-	   14	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   28	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
-	   12	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
-	   24	_Dmain
-	    6	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
-_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb	32	187	13
-	   32	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   22	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
-	   22	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-------------------
-	    8	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    2	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
-	    8	_Dmain
-	    2	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec	24	4	4
-------------------
-	   12	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
-	   22	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv	36	119	43
-	    2	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMFNaNbNdNfbZv
-	   14	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
-	   14	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk
-	   14	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
-	   14	_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	   30	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    6	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb	40	3	3
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb	4	0	0
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	   16	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb	20	2	2
-------------------
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMFNaNbNdNfbZv	14	2	2
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	   30	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb	34	4	4
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	   16	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb	20	4	4
-------------------
-	    2	_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	2	47	22
-	    2	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
-	    2	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
-	    2	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
-	    2	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
-------------------
-	    2	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
-_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	2	47	0
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-------------------
-	    2	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
-_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk	2	87	33
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	    4	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
-	    2	_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-------------------
-	    4	_Dmain
-_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	4	17	1
-	    4	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-------------------
-	    8	_Dmain
-_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	8	24	1
-	    8	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-------------------
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	2	14	1
-	    2	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-------------------
-	    8	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-	    8	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv	16	45	18
-	   30	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
-	   30	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
-	   16	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
-	   16	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
-	   16	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
-	   10	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
-------------------
-	    6	_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	6	9	3
-	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
-	    6	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv
-------------------
-	    6	_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	6	10	1
-	    6	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-------------------
-	    2	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    4	_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    2	_Dmain
-_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv	8	34	9
-	    8	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
-	    8	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-------------------
-	    8	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv	8	23	1
-	    8	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
-	    8	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
-------------------
-	    2	_Dmain
-	    4	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
-_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	6	12	2
-	    6	_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-------------------
-	    2	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
-_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk	2	18	3
-	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	    4	_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-------------------
-	    2	_Dmain
-_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya	2	23	2
-	    2	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-	    2	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
-	    2	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
-	    2	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
-------------------
-	   20	_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi
-_D3std8bitmanip18__T10swapEndianTiZ10swapEndianFNaNbNfiZi	20	1	1
-------------------
-	   24	_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk
-_D3std8bitmanip18__T10swapEndianTkZ10swapEndianFNaNbNfkZk	24	1	1
-------------------
-	    2	_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd
-	    2	_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm
-_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm	4	0	0
-------------------
-	    2	_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd
-_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd	2	2	2
-	    2	_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm
-------------------
-	    2	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
-_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd	2	3	1
-	    2	_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd
-------------------
-	   18	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
-	    2	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
-_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi	20	11	3
-	   20	_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi
-------------------
-	   24	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
-_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk	24	12	7
-	   24	_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk
-------------------
-	    2	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
-_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm	2	2	0
-	    2	_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm
-------------------
-	    2	_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd
-_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd	2	2	0
-	    2	_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd
-------------------
-	   20	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
-_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi	20	8	7
-	   20	_D3std8bitmanip18__T10swapEndianTiZ10swapEndianFNaNbNfiZi
-------------------
-	   24	_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk
-_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk	24	5	4
-	   24	_D3std8bitmanip18__T10swapEndianTkZ10swapEndianFNaNbNfkZk
-------------------
-	    2	_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm
-_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm	2	2	2
-	    2	_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm
-------------------
-	    2	_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv
-_D3std8datetime27__T5validVAyaa5_686f757273Z5validFNaNbNfiZb	2	0	0
-------------------
-	    2	_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv
-_D3std8datetime31__T5validVAyaa7_6d696e75746573Z5validFNaNbNfiZb	2	0	0
-------------------
-	    2	_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv
-_D3std8datetime31__T5validVAyaa7_7365636f6e6473Z5validFNaNbNfiZb	2	1	1
-------------------
-	    2	_Dmain
-_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv	2	1	1
-	    2	_D3std8datetime27__T5validVAyaa5_686f757273Z5validFNaNbNfiZb
-------------------
-	    2	_Dmain
-_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv	2	2	2
-	    2	_D3std8datetime31__T5validVAyaa7_6d696e75746573Z5validFNaNbNfiZb
-------------------
-	    2	_Dmain
-_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv	2	2	1
-	    2	_D3std8datetime31__T5validVAyaa7_7365636f6e6473Z5validFNaNbNfiZb
-------------------
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya	2	24	10
+	   11	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
+_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv	11	27	9
 	   18	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   18	_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw
-	   18	_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb
-	   16	_D3std5array17__T8popFrontTAyaZ8popFrontFNaNbNeKAyaZv
+	    7	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv
+	    7	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
 ------------------
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb	14	10	3
-	   14	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	   14	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-	   14	_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb
+	    3	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv
+_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv	3	2	0
+	    3	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
+------------------
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
+	   15	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
+	    1	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
+	    3	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv
+_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv	26	13	11
+	    6	_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    4	_Dmain
+	    1	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
+_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya	6	1	1
+------------------
+	    7	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender	7	16	6
+	    7	_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk
+------------------
+	    2	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
+	    7	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
+_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv	16	0	0
+------------------
+	    8	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
+_D3std5array17__T8popFrontTAyaZ8popFrontFNaNbNeKAyaZv	8	1	1
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
+_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender	1	6	2
+	    1	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    4	_Dmain
+	    1	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
+_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender	7	16	0
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+------------------
+	    3	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
+	    1	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
+	    3	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
+	    1	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
+_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv	8	1457	3
+	    8	_D3std5stdio4File17LockingTextWriter10__T3putTaZ3putMFaZv
+------------------
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    1	_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv
+_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv	2	2	0
+	    2	_D3std5stdio4File17LockingTextWriter11__T3putTAaZ3putMFAaZv
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
+_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv	1	1	0
+	    1	_D3std5stdio4File17LockingTextWriter12__T3putTAxaZ3putMFAxaZv
 ------------------
 	    6	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
-	    2	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
-	    2	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
-	    2	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
+	    1	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
 	    6	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
-	   18	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
-	   12	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
-	    2	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
-	    2	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
-_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb	52	2	2
+	    1	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
+_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv	14	199	1
+	   14	_D3std5stdio4File17LockingTextWriter12__T3putTAyaZ3putMFAyaZv
 ------------------
-	   14	_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi
-	    8	_Dmain
-	    2	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
-_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb	24	4	4
+	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    5	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv	7	7	3
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
 ------------------
-	    8	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    8	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb	18	2	2
+	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv	14	21	14
+	   14	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
 ------------------
-	    2	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	   14	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk	16	4	4
+	    8	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv	8	4	0
+	    8	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
 ------------------
-	    2	_D4dpq210connection14BaseConnection7connectMFNeZv
-_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ42__T9enforceExTPS8derelict2pq5types6PGconnZ9enforceExFNaNfPS8derelict2pq5types6PGconnAyakZPS8derelict2pq5types6PGconn	2	2	2
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv	1	2	1
+	    1	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
 ------------------
-	    4	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
-_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ45__T9enforceExTPyS8derelict2pq5types8PGresultZ9enforceExFNaNfPyS8derelict2pq5types8PGresultAyakZPyS8derelict2pq5types8PGresult	4	1	1
+	   11	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv	11	27	0
+	   11	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
 ------------------
-	    2	_Dmain
-_D4core4time52__T7convertVAyaa7_6d696e75746573VAyaa6_686e73656373Z7convertFNaNbNflZl	2	1	1
+	    3	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv	3	2	0
+	    3	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv
 ------------------
-	    6	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
-_D4core6vararg13__T6va_argTiZ6va_argFNaNbKPvZi	6	0	0
+	    3	_Dmain
+_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv	3	425	2
+	    3	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
 ------------------
-	    2	_D4dpq210connection14BaseConnection6__dtorMFNeZv
-_D4dpq210connection14BaseConnection10disconnectMFNeZv	2	419	419
+	    1	_Dmain
+_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv	1	246	0
+	    1	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
 ------------------
-	    2	_D4dpq210connection14BaseConnection7connectMFNeZv
-_D4dpq210connection14BaseConnection11nonBlockingMFNdNeZb	2	3	3
+	    1	_Dmain
+_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv	1	159	0
+	    1	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
 ------------------
-	    2	_D7ormtest12_staticDtor2FZv
-_D4dpq210connection14BaseConnection6__dtorMFNeZv	2	419	0
-	    2	_D4dpq210connection14BaseConnection10disconnectMFNeZv
+	    3	_Dmain
+_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv	3	909	2
+	    3	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
 ------------------
-	    2	_Dmain
-_D4dpq210connection14BaseConnection7connectMFNeZv	2	302621	302616
+	    8	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
+_D3std5stdio4File17LockingTextWriter10__T3putTaZ3putMFaZv	8	1454	1454
+------------------
+	    2	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
+_D3std5stdio4File17LockingTextWriter11__T3putTAaZ3putMFAaZv	2	2	2
+------------------
+	    1	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv
+_D3std5stdio4File17LockingTextWriter12__T3putTAxaZ3putMFAxaZv	1	1	1
+------------------
+	   14	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
+_D3std5stdio4File17LockingTextWriter12__T3putTAyaZ3putMFAyaZv	14	198	198
+------------------
+	    3	_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv
+_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv	3	423	5
+	    3	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    6	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
+	    3	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
+------------------
+	    1	_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv
+_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv	1	246	23
+	    1	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    1	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
+	    1	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
+	    1	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
+------------------
+	    1	_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv
+_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv	1	159	2
+	    1	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    1	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
+	    1	_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv
+	    1	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
+------------------
+	    3	_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv
+_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv	3	907	7
+	    3	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    6	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
+	    3	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya	1	29	15
+	    1	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	    2	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
+	    1	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    1	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
+	    1	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
+------------------
+_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv	0	56	17
+	    1	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
+	    4	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+	    6	_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga
+	    3	_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv
+------------------
+_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv	0	90	25
+	    1	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+------------------
+	    2	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
+_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb	2	4	2
 	    2	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	    2	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ42__T9enforceExTPS8derelict2pq5types6PGconnZ9enforceExFNaNfPS8derelict2pq5types6PGconnAyakZPS8derelict2pq5types6PGconn
-	    2	_D4dpq210connection14BaseConnection11nonBlockingMFNdNeZb
+	    1	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
 ------------------
-_D4dpq23all12_staticCtor3FZv	0	137238	137225
-	  122	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb	7	33	9
+	    7	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	   14	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
 ------------------
-_D4dpq23all12_staticDtor4FZv	0	660	660
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
+	   12	_Dmain
+	    3	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
+_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb	16	93	5
+	   16	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	   11	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
+	   11	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
 ------------------
-	    2	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
-_D4dpq25query10Connection11prepareArgsMFNeKxS4dpq25query11queryParamsZPS4dpq25query10Connection12preparedArgs	2	19	19
-------------------
-	    2	_Dmain
-_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer	2	3604	3560
-	    2	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	    2	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-------------------
-	    2	_Dmain
-_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer	2	3329	3300
-	    2	_D4dpq25query10Connection11prepareArgsMFNeKxS4dpq25query11queryParamsZPS4dpq25query10Connection12preparedArgs
-	    2	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	    2	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-------------------
-	    2	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
-	    2	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
-_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer	4	54	23
-	    4	_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-	    4	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
-------------------
-	   14	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
-_D4dpq26answer3Row4sizeMxFNdNexkZk	14	11	3
-	   14	_D4dpq26answer6Answer9assertColMxFNexkZv
-------------------
-	   16	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
-_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row	16	24	4
-	   16	_D4dpq26answer6Answer9assertRowMxFNexkZv
-------------------
-	    2	_Dmain
-_D4dpq26answer3Row6isNULLMxFNdNexkZb	2	1	1
-------------------
-	   14	_Dmain
-_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value	14	124	58
-	   14	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
-	   14	_D4dpq26answer3Row4sizeMxFNdNexkZk
-	   14	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
-	   14	_D4dpq26answer5Value6__ctorMyFNePyhkE8derelict2pq5types11valueFormatZyS4dpq26answer5Value
-------------------
-	    2	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
-	    4	_D4dpq26answer5Array6isNULLMyFNeYb
-_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk	6	7	6
-	   12	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	    6	_D4core6vararg13__T6va_argTiZ6va_argFNaNbKPvZi
-------------------
-	    6	_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array
-_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array	6	73	51
-	   18	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	   18	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
-	   24	_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk
-------------------
+	    4	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    1	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
 	    4	_Dmain
-_D4dpq26answer5Array6isNULLMyFNeYb	4	6	1
-	    4	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
+	    1	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec	12	2	2
+------------------
+	    6	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
+	   11	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv	18	61	25
+	    1	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMFNaNbNdNfbZv
+	    7	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
+	    7	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk
+	    7	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
+	    7	_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	   15	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    3	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb	20	4	4
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb	2	0	0
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    8	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb	10	0	0
+------------------
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMFNaNbNdNfbZv	7	0	0
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	   15	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb	17	0	0
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+	    8	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb	10	3	3
+------------------
+	    1	_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	1	20	11
+	    1	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
+	    1	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
+	    1	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
+	    1	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
+------------------
+	    1	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
+_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	1	21	1
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+------------------
+	    1	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
+_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk	1	40	15
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	    2	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
+	    1	_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
 ------------------
 	    2	_Dmain
-_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value	2	5	3
-	    2	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
-	    2	_D4dpq26answer5Value6__ctorMyFNeyAhZyS4dpq26answer5Value
-------------------
-	    4	_Dmain
-_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya	4	42	21
-	    4	_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya
-------------------
-	    2	_Dmain
-_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime	2	21	14
-	    2	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
-------------------
-	   14	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
-_D4dpq26answer5Value6__ctorMyFNePyhkE8derelict2pq5types11valueFormatZyS4dpq26answer5Value	14	2	2
-------------------
-	    2	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
-_D4dpq26answer5Value6__ctorMyFNeyAhZyS4dpq26answer5Value	2	0	0
-------------------
-	    6	_Dmain
-_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array	6	81	8
-	    6	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
-------------------
-	    2	_Dmain
-_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd	2	4	1
-	    2	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	    2	_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd
-------------------
-	    2	_Dmain
-_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi	2	3	2
-	    2	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	    2	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
-------------------
-	    2	_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime
-_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm	2	7	5
-	    2	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	    2	_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm
-------------------
-	    4	_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-	   16	_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType
-	   32	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
-	   60	_D4dpq26answer6Answer8rowCountMxFNdNeZk
-	   84	_D4dpq26answer6Answer11columnCountMxFNdNeZk
-	   28	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
-	    4	_D4dpq26answer6Answer6__dtorMFNeZv
-_D4dpq26answer6Answer11__invariantMxFNeZv	228	28	28
-------------------
-	   42	_D4dpq26answer6Answer9assertColMxFNexkZv
-_D4dpq26answer6Answer11columnCountMxFNdNeZk	42	19	13
-	   84	_D4dpq26answer6Answer11__invariantMxFNeZv
-------------------
-	   14	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
-_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv	14	27	7
-	   14	_D4dpq26answer6Answer9assertRowMxFNexkZv
-	   14	_D4dpq26answer6Answer9assertColMxFNexkZv
-------------------
-	   14	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
-_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat	14	26	11
-	   28	_D4dpq26answer6Answer11__invariantMxFNeZv
-	   14	_D4dpq26answer6Answer9assertColMxFNexkZv
-------------------
-	    4	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv	4	29	24
-	    4	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ45__T9enforceExTPyS8derelict2pq5types8PGresultZ9enforceExFNaNfPyS8derelict2pq5types8PGresultAyakZPyS8derelict2pq5types8PGresult
-	    8	_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType
-------------------
-	    4	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer	4	2	1
-	    4	_D4dpq26answer6Answer11__invariantMxFNeZv
-------------------
-	    4	_D7ormtest12_staticDtor2FZv
-_D4dpq26answer6Answer6__dtorMFNeZv	4	12	12
-	    4	_D4dpq26answer6Answer11__invariantMxFNeZv
-------------------
-	    8	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
-_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType	8	4	4
-	   16	_D4dpq26answer6Answer11__invariantMxFNeZv
-------------------
-	   16	_Dmain
-_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row	16	41	10
-	   32	_D4dpq26answer6Answer11__invariantMxFNeZv
-	   16	_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row
-------------------
-	   30	_D4dpq26answer6Answer9assertRowMxFNexkZv
-_D4dpq26answer6Answer8rowCountMxFNdNeZk	30	23	15
-	   60	_D4dpq26answer6Answer11__invariantMxFNeZv
-------------------
-	   14	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
-	   14	_D4dpq26answer3Row4sizeMxFNdNexkZk
-	   14	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
-_D4dpq26answer6Answer9assertColMxFNexkZv	42	25	6
-	   42	_D4dpq26answer6Answer11columnCountMxFNdNeZk
-------------------
-	   16	_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row
-	   14	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
-_D4dpq26answer6Answer9assertRowMxFNexkZv	30	32	9
-	   30	_D4dpq26answer6Answer8rowCountMxFNdNeZk
-------------------
-	    2	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
-_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk	2	5	5
-------------------
-	   14	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk	14	13	13
-------------------
-_D7ormtest12_staticCtor1FZv	0	12703	12671
-	  243	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-------------------
-_D7ormtest12_staticDtor2FZv	0	4067	3636
-	    2	_D4dpq210connection14BaseConnection6__dtorMFNeZv
-	    4	_D4dpq26answer6Answer6__dtorMFNeZv
-------------------
-_Dmain	0	318840	4289
-	    2	_D4dpq210connection14BaseConnection7connectMFNeZv
-	    2	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
-	   16	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
-	   14	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
-	    4	_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya
-	    6	_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv
-	    2	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
-	    2	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
-	    2	_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv
-	    2	_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime
-	    2	_D4core4time52__T7convertVAyaa7_6d696e75746573VAyaa6_686e73656373Z7convertFNaNbNflZl
-	    2	_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv
-	    2	_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv
-	    2	_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv
-	    8	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
-	    8	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	   24	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	    4	_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    8	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
-	    8	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
-	    4	_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv
+_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	2	7	0
 	    2	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+------------------
+	    4	_Dmain
+_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	4	9	0
+	    4	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+------------------
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
+_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	1	6	1
+	    1	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+------------------
+	    4	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+	    4	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv	8	21	7
+	   15	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
+	   15	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
+	    8	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
+	    8	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
+	    8	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
+	    5	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
+------------------
+	    3	_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	3	4	2
+	    3	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flDashMxFNaNbNdNfZb
+	    3	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv
+------------------
+	    3	_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	3	4	0
+	    3	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+------------------
+	    1	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    2	_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    1	_Dmain
+_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv	4	18	4
+	    4	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
+	    4	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+------------------
+	    4	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv	4	9	1
+	    4	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
+	    4	_D3std6format62__T14formatUnsignedTS3std5array17__T8AppenderTAyaZ8AppenderTaZ14formatUnsignedFS3std5array17__T8AppenderTAyaZ8AppendermKS3std6format18__T10FormatSpecTaZ10FormatSpeckbZv
+------------------
+	    1	_Dmain
+	    2	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
+_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv	3	6	2
+	    3	_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+------------------
+	    1	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
+_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk	1	12	2
+	    1	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	    3	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
 	    2	_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    8	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	    2	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
-	    2	_D4dpq26answer3Row6isNULLMxFNdNexkZb
-	    6	_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv
-	    6	_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array
-	    2	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
-	    2	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
-	    2	_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv
-	    4	_D4dpq26answer5Array6isNULLMyFNeYb
+------------------
+	    1	_Dmain
+_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya	1	14	0
+	    1	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    1	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
+	    1	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
+	    1	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
+------------------
+	   10	_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi
+_D3std8bitmanip18__T10swapEndianTiZ10swapEndianFNaNbNfiZi	10	1	1
+------------------
+	   12	_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk
+_D3std8bitmanip18__T10swapEndianTkZ10swapEndianFNaNbNfkZk	12	1	1
+------------------
+	    1	_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd
+	    1	_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm
+_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm	2	0	0
+------------------
+	    1	_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd
+_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd	1	1	1
+	    1	_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm
+------------------
+	    1	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
+_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd	1	2	1
+	    1	_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd
+------------------
+	    9	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
+	    1	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
+_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi	10	8	3
+	   10	_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi
+------------------
+	   12	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
+_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk	12	6	3
+	   12	_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk
+------------------
+	    1	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
+_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm	1	1	1
+	    1	_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm
+------------------
+	    1	_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd
+_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd	1	1	0
+	    1	_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd
+------------------
+	   10	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
+_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi	10	5	4
+	   10	_D3std8bitmanip18__T10swapEndianTiZ10swapEndianFNaNbNfiZi
+------------------
+	   12	_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk
+_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk	12	3	2
+	   12	_D3std8bitmanip18__T10swapEndianTkZ10swapEndianFNaNbNfkZk
+------------------
+	    1	_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm
+_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm	1	0	0
+	    1	_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm
+------------------
+	    1	_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv
+_D3std8datetime27__T5validVAyaa5_686f757273Z5validFNaNbNfiZb	1	0	0
+------------------
+	    1	_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv
+_D3std8datetime31__T5validVAyaa7_6d696e75746573Z5validFNaNbNfiZb	1	0	0
+------------------
+	    1	_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv
+_D3std8datetime31__T5validVAyaa7_7365636f6e6473Z5validFNaNbNfiZb	1	0	0
+------------------
+	    1	_Dmain
+_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv	1	0	0
+	    1	_D3std8datetime27__T5validVAyaa5_686f757273Z5validFNaNbNfiZb
+------------------
+	    1	_Dmain
+_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv	1	0	0
+	    1	_D3std8datetime31__T5validVAyaa7_6d696e75746573Z5validFNaNbNfiZb
+------------------
+	    1	_Dmain
+_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv	1	1	1
+	    1	_D3std8datetime31__T5validVAyaa7_7365636f6e6473Z5validFNaNbNfiZb
+------------------
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya	1	8	2
+	    9	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    9	_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw
+	    9	_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb
+	    8	_D3std5array17__T8popFrontTAyaZ8popFrontFNaNbNeKAyaZv
+------------------
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb	7	5	4
+	    7	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    7	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+	    7	_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb
+------------------
+	    3	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
+	    1	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
+	    1	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
+	    1	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
+	    3	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
+	    9	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
+	    6	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
+	    1	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
+	    1	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
+_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb	26	2	2
+------------------
+	    7	_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi
+	    4	_Dmain
+	    1	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
+_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb	12	0	0
+------------------
+	    4	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    4	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb	9	1	1
+------------------
+	    1	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    7	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk	8	0	0
+------------------
+	    1	_D4dpq210connection14BaseConnection7connectMFNeZv
+_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ42__T9enforceExTPS8derelict2pq5types6PGconnZ9enforceExFNaNfPS8derelict2pq5types6PGconnAyakZPS8derelict2pq5types6PGconn	1	0	0
+------------------
+	    2	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
+_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ45__T9enforceExTPyS8derelict2pq5types8PGresultZ9enforceExFNaNfPyS8derelict2pq5types8PGresultAyakZPyS8derelict2pq5types8PGresult	2	0	0
+------------------
+	    1	_Dmain
+_D4core4time52__T7convertVAyaa7_6d696e75746573VAyaa6_686e73656373Z7convertFNaNbNflZl	1	0	0
+------------------
+	    3	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
+_D4core6vararg13__T6va_argTiZ6va_argFNaNbKPvZi	3	0	0
+------------------
+	    1	_D4dpq210connection14BaseConnection6__dtorMFNeZv
+_D4dpq210connection14BaseConnection10disconnectMFNeZv	1	197	197
+------------------
+	    1	_D4dpq210connection14BaseConnection7connectMFNeZv
+_D4dpq210connection14BaseConnection11nonBlockingMFNdNeZb	1	1	1
+------------------
+	    1	_D4dpq23all12_staticDtor2FZv
+_D4dpq210connection14BaseConnection6__dtorMFNeZv	1	197	0
+	    1	_D4dpq210connection14BaseConnection10disconnectMFNeZv
+------------------
+	    1	_Dmain
+_D4dpq210connection14BaseConnection7connectMFNeZv	1	132324	132323
+	    1	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    1	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ42__T9enforceExTPS8derelict2pq5types6PGconnZ9enforceExFNaNfPS8derelict2pq5types6PGconnAyakZPS8derelict2pq5types6PGconn
+	    1	_D4dpq210connection14BaseConnection11nonBlockingMFNdNeZb
+------------------
+_D4dpq23all12_staticCtor1FZv	0	11695	11682
+	  142	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+------------------
+_D4dpq23all12_staticDtor2FZv	0	2051	1850
+	    1	_D4dpq210connection14BaseConnection6__dtorMFNeZv
+	    2	_D4dpq26answer6Answer6__dtorMFNeZv
+------------------
+	    1	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
+_D4dpq25query10Connection11prepareArgsMFNeKxS4dpq25query11queryParamsZPS4dpq25query10Connection12preparedArgs	1	4	4
+------------------
+	    1	_Dmain
+_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer	1	1568	1538
+	    1	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    1	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
+------------------
+	    1	_Dmain
+_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer	1	1294	1286
+	    1	_D4dpq25query10Connection11prepareArgsMFNeKxS4dpq25query11queryParamsZPS4dpq25query10Connection12preparedArgs
+	    1	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
+	    1	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
+------------------
+	    1	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
+	    1	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
+_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer	2	33	11
+	    2	_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
+	    2	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
+------------------
+	    7	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
+_D4dpq26answer3Row4sizeMxFNdNexkZk	7	8	2
+	    7	_D4dpq26answer6Answer9assertColMxFNexkZv
+------------------
+	    8	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
+_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row	8	8	1
+	    8	_D4dpq26answer6Answer9assertRowMxFNexkZv
+------------------
+	    1	_Dmain
+_D4dpq26answer3Row6isNULLMxFNdNexkZb	1	0	0
+------------------
+	    7	_Dmain
+_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value	7	68	30
+	    7	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
+	    7	_D4dpq26answer3Row4sizeMxFNdNexkZk
+	    7	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
+	    7	_D4dpq26answer5Value6__ctorMyFNePyhkE8derelict2pq5types11valueFormatZyS4dpq26answer5Value
+------------------
+	    1	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
+	    2	_D4dpq26answer5Array6isNULLMyFNeYb
+_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk	3	4	4
+	    6	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    3	_D4core6vararg13__T6va_argTiZ6va_argFNaNbKPvZi
+------------------
+	    3	_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array
+_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array	3	35	20
+	    9	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    9	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
+	   12	_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk
+------------------
+	    2	_Dmain
+_D4dpq26answer5Array6isNULLMyFNeYb	2	3	2
+	    2	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
+------------------
+	    1	_Dmain
+_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value	1	3	0
+	    1	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
+	    1	_D4dpq26answer5Value6__ctorMyFNeyAhZyS4dpq26answer5Value
+------------------
+	    2	_Dmain
+_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya	2	22	14
+	    2	_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya
+------------------
+	    1	_Dmain
+_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime	1	8	6
+	    1	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
+------------------
+	    7	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
+_D4dpq26answer5Value6__ctorMyFNePyhkE8derelict2pq5types11valueFormatZyS4dpq26answer5Value	7	1	1
+------------------
+	    1	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
+_D4dpq26answer5Value6__ctorMyFNeyAhZyS4dpq26answer5Value	1	0	0
+------------------
+	    3	_Dmain
+_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array	3	38	3
+	    3	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
+------------------
+	    1	_Dmain
+_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd	1	3	1
+	    1	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    1	_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd
+------------------
+	    1	_Dmain
+_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi	1	0	0
+	    1	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    1	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
+------------------
+	    1	_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime
+_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm	1	2	1
+	    1	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	    1	_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm
+------------------
+	    2	_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
+	    8	_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType
+	   16	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
+	   30	_D4dpq26answer6Answer8rowCountMxFNdNeZk
+	   42	_D4dpq26answer6Answer11columnCountMxFNdNeZk
+	   14	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
+	    2	_D4dpq26answer6Answer6__dtorMFNeZv
+_D4dpq26answer6Answer11__invariantMxFNeZv	114	15	15
+------------------
+	   21	_D4dpq26answer6Answer9assertColMxFNexkZv
+_D4dpq26answer6Answer11columnCountMxFNdNeZk	21	17	10
+	   42	_D4dpq26answer6Answer11__invariantMxFNeZv
+------------------
+	    7	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
+_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv	7	16	2
+	    7	_D4dpq26answer6Answer9assertRowMxFNexkZv
+	    7	_D4dpq26answer6Answer9assertColMxFNexkZv
+------------------
+	    7	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
+_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat	7	13	4
+	   14	_D4dpq26answer6Answer11__invariantMxFNeZv
+	    7	_D4dpq26answer6Answer9assertColMxFNexkZv
+------------------
+	    2	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
+_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv	2	20	17
+	    2	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ45__T9enforceExTPyS8derelict2pq5types8PGresultZ9enforceExFNaNfPyS8derelict2pq5types8PGresultAyakZPyS8derelict2pq5types8PGresult
+	    4	_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType
+------------------
+	    2	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
+_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer	2	2	1
+	    2	_D4dpq26answer6Answer11__invariantMxFNeZv
+------------------
+	    2	_D4dpq23all12_staticDtor2FZv
+_D4dpq26answer6Answer6__dtorMFNeZv	2	4	4
+	    2	_D4dpq26answer6Answer11__invariantMxFNeZv
+------------------
+	    4	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
+_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType	4	3	3
+	    8	_D4dpq26answer6Answer11__invariantMxFNeZv
+------------------
+	    8	_Dmain
+_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row	8	12	3
+	   16	_D4dpq26answer6Answer11__invariantMxFNeZv
+	    8	_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row
+------------------
+	   15	_D4dpq26answer6Answer9assertRowMxFNexkZv
+_D4dpq26answer6Answer8rowCountMxFNdNeZk	15	11	7
+	   30	_D4dpq26answer6Answer11__invariantMxFNeZv
+------------------
+	    7	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
+	    7	_D4dpq26answer3Row4sizeMxFNdNexkZk
+	    7	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
+_D4dpq26answer6Answer9assertColMxFNexkZv	21	21	4
+	   21	_D4dpq26answer6Answer11columnCountMxFNdNeZk
+------------------
+	    8	_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row
+	    7	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
+_D4dpq26answer6Answer9assertRowMxFNexkZv	15	13	2
+	   15	_D4dpq26answer6Answer8rowCountMxFNdNeZk
+------------------
+	    1	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
+_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk	1	2	2
+------------------
+	    7	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk	7	10	10
+------------------
+_Dmain	0	139229	2042
+	    1	_D4dpq210connection14BaseConnection7connectMFNeZv
+	    1	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
+	    8	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
+	    7	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
+	    2	_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya
+	    3	_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv
+	    1	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
+	    1	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
+	    1	_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv
+	    1	_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime
+	    1	_D4core4time52__T7convertVAyaa7_6d696e75746573VAyaa6_686e73656373Z7convertFNaNbNflZl
+	    1	_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv
+	    1	_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv
+	    1	_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv
+	    4	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
+	    4	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	   12	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
+	    2	_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    4	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
+	    4	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
+	    2	_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv
+	    1	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
+	    1	_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    4	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
+	    1	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
+	    1	_D4dpq26answer3Row6isNULLMxFNdNexkZb
+	    3	_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv
+	    3	_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array
+	    1	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
+	    1	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
+	    1	_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv
+	    2	_D4dpq26answer5Array6isNULLMyFNeYb
 
 ======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
 
   Num          Tree        Func        Per
   Calls        Time        Time        Call
 
-      2      116218      116217       58108     @trusted void dpq2.connection.BaseConnection.connect()
-      1       52705       52700       52700     void dpq2.all._staticCtor3()
-      1        4878        4866        4866     void ormtest._staticCtor1()
-      1      122447        1647        1647     _Dmain
-     16        1479        1479          92     void std.stdio.File.LockingTextWriter.put!(char).put(char)
-      1        1561        1396        1396     void ormtest._staticDtor2()
-      2        1384        1367         683     @trusted dpq2.answer.Answer dpq2.query.Connection.exec(immutable(char)[])
-      2        1278        1267         633     @trusted dpq2.answer.Answer dpq2.query.Connection.exec(ref const(dpq2.query.queryParams))
-      1         253         253         253     void dpq2.all._staticDtor4()
-     28         164         164           5     void std.stdio.File.LockingTextWriter.put!(immutable(char)[]).put(immutable(char)[])
-      2         160         160          80     @trusted void dpq2.connection.BaseConnection.disconnect()
-    523          22          22           0     pure nothrow @property @safe bool std.array.empty!(char).empty(const(char[]))
-     14          47          22           1     const(@trusted immutable(dpq2.answer.Value)* function(uint)) dpq2.answer.Row.opIndex
-      6          28          19           3     immutable(@trusted immutable(dpq2.answer.Array) function(immutable(dpq2.answer.Value*))) dpq2.answer.Array.__ctor
-      1          63          16          16     void std.format.FormatSpec!(char).FormatSpec.__unittestL1085_2401()
-     36          45          16           0     void std.format.FormatSpec!(char).FormatSpec.fillUp()
-      1          47          13          13     void std.format.FormatSpec!(char).FormatSpec.__unittestL775_2400()
-      2          33          12           6     uint std.format.formattedWrite!(std.stdio.File.LockingTextWriter, char, double).formattedWrite(std.stdio.File.LockingTextWriter, const(char[]), double)
-     62          10          10           0     pure @trusted dchar std.utf.decode!(const(char)[]).decode(ref const(char)[], ref uint)
-    228          10          10           0     const(@trusted void function()) dpq2.answer.Answer.__invariant
-     28          19          10           0     void std.range.put!(std.array.Appender!(char[]).Appender, const(char)[]).put(ref std.array.Appender!(char[]).Appender, const(char)[])
-      6         903          10           1     void std.stdio.File.write!(immutable(char)[], immutable(char)[], char).write(immutable(char)[], immutable(char)[], char)
-      4          11           9           2     @trusted void dpq2.answer.Answer.checkAnswerForErrors()
-      4          20           8           2     @trusted dpq2.answer.Answer dpq2.query.Connection.getAnswer(derelict.pq.types.PGresult*)
-      2          18           8           4     void std.format.formatValue!(std.stdio.File.LockingTextWriter, double, char).formatValue(std.stdio.File.LockingTextWriter, double, ref std.format.FormatSpec!(char).FormatSpec)
-      4          16           8           2     immutable(pure @property @trusted immutable(char)[] function()) dpq2.answer.Value.as!(immutable(char)[]).as
-     14          12           7           0     std.array.Appender!(immutable(char)[]).Appender std.array.Appender!(immutable(char)[]).Appender.__ctor(immutable(char)[])
-      2           7           7           3     @trusted dpq2.query.Connection.preparedArgs* dpq2.query.Connection.prepareArgs(ref const(dpq2.query.queryParams))
-     52           9           7           0     void std.array.Appender!(immutable(char)[]).Appender.ensureAddable(uint)
-     22          20           7           0     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)[]).put(const(char)[])
-      2          18           6           3     const(immutable(char)[] function()) std.format.FormatSpec!(char).FormatSpec.getCurFmtStr
-     16          17           6           0     void std.format.formatUnsigned!(std.array.Appender!(immutable(char)[]).Appender, char).formatUnsigned(std.array.Appender!(immutable(char)[]).Appender, ulong, ref std.format.FormatSpec!(char).FormatSpec, uint, bool)
-     14          28           6           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(char[]).Appender).writeUpToNextSpec(std.array.Appender!(char[]).Appender)
-     30           8           5           0     const(@property @trusted uint function()) dpq2.answer.Answer.rowCount
-      4           5           5           1     pure immutable(char)[] std.conv.toImpl!(immutable(char)[], immutable(char)*).toImpl(immutable(char)*)
-      2           8           5           2     immutable(pure @property @trusted std.datetime.SysTime function()) dpq2.answer.Value.as!(std.datetime.SysTime).as
-     28           9           5           0     void std.array.Appender!(char[]).Appender.put!(const(char)[]).put(const(char)[])
-     32          71           4           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(immutable(char)[]).Appender).writeUpToNextSpec(std.array.Appender!(immutable(char)[]).Appender)
-     14           4           4           0     pure nothrow @property uint object.capacity!(immutable(char)).capacity(immutable(char)[])
-     42           7           4           0     const(@property @trusted uint function()) dpq2.answer.Answer.columnCount
-      6         908           4           0     void std.stdio.writeln!(immutable(char)[], immutable(char)[]).writeln(immutable(char)[], immutable(char)[])
-      4           4           4           1     @trusted void dpq2.answer.Answer.__dtor()
-      6         414           4           0     void std.stdio.File.write!(immutable(char)[], bool, char).write(immutable(char)[], bool, char)
-     14           9           4           0     const(@trusted derelict.pq.types.valueFormat function(const(uint))) dpq2.answer.Answer.columnFormat
-     30           9           3           0     void std.array.Appender!(immutable(char)[]).Appender.put!(char[]).put(char[])
-     62          14           3           0     pure @property @safe dchar std.array.front!(const(char)[]).front(const(char)[])
-     16          15           3           0     const(@trusted dpq2.answer.Row function(const(uint))) dpq2.answer.Answer.opIndex
-      2           9           3           1     pure @safe immutable(char)[] std.algorithm.find!("a == b", immutable(char)[], char).find(immutable(char)[], char)
-      2          12           3           1     int std.conv.parse!(int, const(char)[]).parse(ref const(char)[])
-     30          12           3           0     const(@trusted void function(const(uint))) dpq2.answer.Answer.assertRow
-      8          13           3           0     void std.format.formatIntegral!(std.array.Appender!(immutable(char)[]).Appender, long, char).formatIntegral(std.array.Appender!(immutable(char)[]).Appender, const(long), ref std.format.FormatSpec!(char).FormatSpec, ulong)
-     28           3           3           0     void std.array.Appender!(char[]).Appender.ensureAddable(uint)
-      6          31           3           0     immutable(@property @trusted immutable(dpq2.answer.Array*) function()) dpq2.answer.Value.asArray
-     14           7           3           0     uint std.conv.parse!(uint, const(char)[]).parse(ref const(char)[])
-     20           3           2           0     pure nothrow @safe int std.bitmanip.bigEndianToNativeImpl!(int, 4u).bigEndianToNativeImpl(ubyte[4])
-     14           9           2           0     void std.array.Appender!(immutable(char)[]).Appender.put!(dchar).put(dchar)
-     32           2           2           0     pure nothrow @trusted void std.array.popFront!(const(char)[]).popFront(ref const(char)[])
-     24           4           2           0     pure nothrow @safe uint std.bitmanip.bigEndianToNative!(uint, 4u).bigEndianToNative(ubyte[4])
-     14          10           2           0     const(@trusted void function(const(dpq2.answer.Coords))) dpq2.answer.Answer.assertCoords
-      6           2           2           0     immutable(@trusted uint function(void*, TypeInfo[])) dpq2.answer.Array.coords2Serial
-     16           4           2           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char[]).put(ref std.array.Appender!(immutable(char)[]).Appender, char[])
-      2         271           2           1     void std.stdio.File.write!(immutable(char)[], double, char).write(immutable(char)[], double, char)
-     42           9           2           0     const(@trusted void function(const(uint))) dpq2.answer.Answer.assertCol
-      4           8           2           0     pure immutable(char)[] std.conv.to!(immutable(char)[]).to!(immutable(char)*).to(immutable(char)*)
-     14          14           1           0     std.array.Appender!(immutable(char)[]).Appender std.array.appender!(immutable(char)[], immutable(char)).appender(immutable(char)[])
-     28         166           1           0     void std.range.put!(std.stdio.File.LockingTextWriter, immutable(char)[]).put(ref std.stdio.File.LockingTextWriter, immutable(char)[])
-      2           1           1           0     pure nothrow @property uint object.capacity!(char).capacity(char[])
-      2           2           1           0     immutable(pure @property @trusted ulong function()) dpq2.answer.Value.as!(ulong).as
-     12           1           1           0     uint std.array.Appender!(immutable(char)[]).Appender.newCapacity(uint)
-     22          22           1           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)[]).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char)[])
-      2           3           1           0     std.array.Appender!(char[]).Appender std.array.Appender!(char[]).Appender.__ctor(char[])
-      4           2           1           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.stdio.File.LockingTextWriter).writeUpToNextSpec(std.stdio.File.LockingTextWriter)
-     24           1           1           0     pure @safe bool std.exception.enforce!(bool).enforce(bool, lazy object.Throwable)
-     16           9           1           0     @trusted dpq2.answer.Row dpq2.answer.Row.__ctor(const(dpq2.answer.Answer), const(uint))
-     32           1           1           0     pure nothrow @safe bool std.functional.binaryFun!("a == b").binaryFun!(dchar, char).binaryFun(dchar, char)
-     16           1           1           0     pure @safe uint std.exception.enforceEx!(std.format.FormatException).enforceEx!(uint).enforceEx(uint, lazy immutable(char)[], immutable(char)[], uint)
-      8           1           1           0     @property @trusted derelict.pq.types.ExecStatusType dpq2.answer.Answer.status()
-     24           1           1           0     std.format.FormatSpec!(char).FormatSpec std.format.FormatSpec!(char).FormatSpec.__ctor(const(char[]))
-      2         109           1           0     void std.stdio.File.write!(immutable(char)[], int, char).write(immutable(char)[], int, char)
-     24           1           1           0     pure nothrow @safe uint std.bitmanip.bigEndianToNativeImpl!(uint, 4u).bigEndianToNativeImpl(ubyte[4])
-     34           1           1           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flZero
-     20           1           1           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flSpace
-     14           4           1           0     void std.array.Appender!(immutable(char)[]).Appender.put!(char).put(char)
-     18           1           1           0     pure @trusted dchar std.utf.decode!(immutable(char)[]).decode(ref immutable(char)[], ref uint)
-     14           4           1           0     const(@property @trusted uint function(const(uint))) dpq2.answer.Row.size
-     18           2           1           0     pure @property @safe dchar std.array.front!(immutable(char)[]).front(immutable(char)[])
-      2           1           1           0     immutable(@trusted immutable(dpq2.answer.Value)* function(, ...)) dpq2.answer.Array.getValue
-     14           3           1           0     pure @safe bool std.algorithm.startsWith!("a == b", const(char)[], char).startsWith(const(char)[], char)
-     20           4           1           0     pure nothrow @safe int std.bitmanip.bigEndianToNative!(int, 4u).bigEndianToNative(ubyte[4])
-      2           1           1           0     @property @trusted bool dpq2.connection.BaseConnection.nonBlocking()
-      2           6           1           0     uint std.format.formattedWrite!(std.array.Appender!(immutable(char)[]).Appender, char, immutable(char)[], immutable(char)[]).formattedWrite(std.array.Appender!(immutable(char)[]).Appender, const(char[]), immutable(char)[], immutable(char)[])
-     40           1           1           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flDash
-     16        1480           1           0     void std.range.put!(std.stdio.File.LockingTextWriter, char).put(ref std.stdio.File.LockingTextWriter, char)
-     14           2           1           0     pure @safe int std.conv.to!(int).to!(const(uint)).to(const(uint))
-     14           1           1           0     pure @safe int std.conv.toImpl!(int, const(uint)).toImpl(const(uint))
-      6           3           1           0     void std.format.formatRange!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], char).formatRange(ref std.array.Appender!(immutable(char)[]).Appender, ref immutable(char)[], ref std.format.FormatSpec!(char).FormatSpec)
-     16           0           0           0     pure nothrow @trusted void std.array.popFront!(immutable(char)[]).popFront(ref immutable(char)[])
-      2           0           0           0     pure @safe derelict.pq.types.PGconn* std.exception.enforceEx!(core.exception.OutOfMemoryError).enforceEx!(derelict.pq.types.PGconn*).enforceEx(derelict.pq.types.PGconn*, immutable(char)[], uint)
-     14           4           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char).put(ref std.array.Appender!(immutable(char)[]).Appender, char)
-     12           0           0           0     std.array.Appender!(immutable(char)[]).Appender.datainout(@property immutable(char)[] function())
-      6           1           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(immutable(char)[]).put(immutable(char)[])
-      2           0           0           0     pure void std.datetime.enforceValid!("minutes").enforceValid(int, immutable(char)[], uint)
-     14           0           0           0     pure nothrow @property @safe void std.format.FormatSpec!(char).FormatSpec.flZero(bool)
-      2         110           0           0     void std.stdio.writeln!(immutable(char)[], int).writeln(immutable(char)[], int)
-     20           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flPlus
-     14           0           0           0     immutable(@trusted immutable(dpq2.answer.Value) function(immutable(ubyte)*, uint, derelict.pq.types.valueFormat)) dpq2.answer.Value.__ctor
-      2           1           0           0     immutable(pure @property @trusted int function()) dpq2.answer.Value.as!(int).as
-      2           0           0           0     pure nothrow @safe double std.bitmanip.floatEndianImpl!(8u, true).floatEndianImpl(ubyte[8])
-      6           4           0           0     void std.format.formatGeneric!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], char).formatGeneric(std.array.Appender!(immutable(char)[]).Appender, const(void)*, ref std.format.FormatSpec!(char).FormatSpec)
-      2           8           0           0     immutable(char)[] std.string.format!(char, immutable(char)[], immutable(char)[]).format(const(char[]), immutable(char)[], immutable(char)[])
-     18           0           0           0     pure @safe bool std.exception.enforceEx!(std.format.FormatException).enforceEx!(bool).enforceEx(bool, lazy immutable(char)[], immutable(char)[], uint)
-      2           0           0           0     pure nothrow @safe ulong std.bitmanip.bigEndianToNativeImpl!(ulong, 8u).bigEndianToNativeImpl(ubyte[8])
-     52           0           0           0     pure @safe bool std.exception.enforce!(bool).enforce(bool, lazy const(char)[], immutable(char)[], uint)
-      6           0           0           0     void std.array.Appender!(char[]).Appender.clear()
-     12           0           0           0     std.array.Appender!(char[]).Appender.datainout(@property inout(char)[] function())
-      2           1           0           0     immutable(pure @property @trusted double function()) dpq2.answer.Value.as!(double).as
-      4           0           0           0     nothrow @trusted dpq2.answer.Answer dpq2.answer.Answer.__ctor(derelict.pq.types.PGresult*)
-      2           0           0           0     const(@property @trusted bool function(const(uint))) dpq2.answer.Row.isNULL
-      4           2           0           0     immutable(@trusted bool function(, ...)) dpq2.answer.Array.isNULL
-      2           0           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)).put(const(char))
-      2           0           0           0     uint std.array.Appender!(char[]).Appender.newCapacity(uint)
-      6         415           0           0     void std.stdio.writeln!(immutable(char)[], bool).writeln(immutable(char)[], bool)
-      2           1           0           0     pure nothrow @safe double std.bitmanip.bigEndianToNative!(double, 8u).bigEndianToNative(ubyte[8])
-      2           5           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, const(int), char).formatValue(std.array.Appender!(immutable(char)[]).Appender, const(int), ref std.format.FormatSpec!(char).FormatSpec)
-      4           0           0           0     pure @safe uint std.utf.strideBack!(immutable(char)[]).strideBack(ref immutable(char)[], uint)
-      2           0           0           0     void std.conv.toTextRange!(int, std.stdio.File.LockingTextWriter).toTextRange(int, std.stdio.File.LockingTextWriter)
-      8           9           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, const(ubyte), char).formatValue(std.array.Appender!(immutable(char)[]).Appender, const(ubyte), ref std.format.FormatSpec!(char).FormatSpec)
-      4           6           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, int, char).formatValue(std.array.Appender!(immutable(char)[]).Appender, int, ref std.format.FormatSpec!(char).FormatSpec)
-      2         271           0           0     void std.stdio.writeln!(immutable(char)[], double).writeln(immutable(char)[], double)
-     20           0           0           0     pure nothrow @safe int std.bitmanip.swapEndian!(int).swapEndian(int)
-      6           1           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[]).put(ref std.array.Appender!(immutable(char)[]).Appender, immutable(char)[])
-      4           0           0           0     void std.stdio.File.LockingTextWriter.put!(char[]).put(char[])
-      2           0           0           0     void std.stdio.File.LockingTextWriter.put!(const(char)[]).put(const(char)[])
-      8           8           0           0     void std.format.formatIntegral!(std.array.Appender!(immutable(char)[]).Appender, ulong, char).formatIntegral(std.array.Appender!(immutable(char)[]).Appender, const(ulong), ref std.format.FormatSpec!(char).FormatSpec, ulong)
-      6           3           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], char).formatValue(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], ref std.format.FormatSpec!(char).FormatSpec)
-      2           0           0           0     pure nothrow @safe bool std.datetime.valid!("seconds").valid(int)
-     24           0           0           0     pure nothrow @safe uint std.bitmanip.swapEndian!(uint).swapEndian(uint)
-      2           0           0           0     pure void std.datetime.enforceValid!("seconds").enforceValid(int, immutable(char)[], uint)
-      2           0           0           0     pure void std.datetime.enforceValid!("hours").enforceValid(int, immutable(char)[], uint)
-      4           0           0           0     pure @safe immutable(derelict.pq.types.PGresult)* std.exception.enforceEx!(core.exception.OutOfMemoryError).enforceEx!(immutable(derelict.pq.types.PGresult)*).enforceEx(immutable(derelict.pq.types.PGresult)*, immutable(char)[], uint)
-      2           0           0           0     pure nothrow @safe long core.time.convert!("minutes", "hnsecs").convert(long)
-      6           0           0           0     pure nothrow int core.vararg.va_arg!(int).va_arg(ref void*)
-      2           3           0           0     std.array.Appender!(char[]).Appender std.array.appender!(char[], char).appender(char[])
-      4           0           0           0     pure @trusted void std.array.popBack!(immutable(char)[]).popBack(ref immutable(char)[])
-      2           0           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char))
-      2           0           0           0     pure nothrow @safe double std.bitmanip.bigEndianToNativeImpl!(double, 8u).bigEndianToNativeImpl(ubyte[8])
-      4           0           0           0     void std.range.put!(std.stdio.File.LockingTextWriter, char[]).put(ref std.stdio.File.LockingTextWriter, char[])
-      4           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flHash
-      2           0           0           0     pure nothrow @safe ulong std.bitmanip.bigEndianToNative!(ulong, 8u).bigEndianToNative(ubyte[8])
-      2           0           0           0     void std.range.put!(std.stdio.File.LockingTextWriter, const(char)[]).put(ref std.stdio.File.LockingTextWriter, const(char)[])
-      4           0           0           0     pure nothrow @safe ulong std.bitmanip.swapEndian!(ulong).swapEndian(ulong)
-      2         160           0           0     @trusted void dpq2.connection.BaseConnection.__dtor()
-      2          18           0           0     void std.format.formatGeneric!(std.stdio.File.LockingTextWriter, double, char).formatGeneric(std.stdio.File.LockingTextWriter, const(void)*, ref std.format.FormatSpec!(char).FormatSpec)
-      2           0           0           0     immutable(@trusted immutable(dpq2.answer.Value) function(immutable(ubyte[]))) dpq2.answer.Value.__ctor
-      2           0           0           0     pure nothrow @safe bool std.datetime.valid!("hours").valid(int)
-      2           0           0           0     pure nothrow @safe bool std.datetime.valid!("minutes").valid(int)
+      1       50817       50817       50817     @trusted void dpq2.connection.BaseConnection.connect()
+      1        4491        4486        4486     void dpq2.all._staticCtor1()
+      1       53469         784         784     _Dmain
+      1         787         710         710     void dpq2.all._staticDtor2()
+      1         602         590         590     @trusted dpq2.answer.Answer dpq2.query.Connection.exec(immutable(char)[])
+      8         558         558          69     void std.stdio.File.LockingTextWriter.put!(char).put(char)
+      1         496         493         493     @trusted dpq2.answer.Answer dpq2.query.Connection.exec(ref const(dpq2.query.queryParams))
+     14          76          76           5     void std.stdio.File.LockingTextWriter.put!(immutable(char)[]).put(immutable(char)[])
+      1          75          75          75     @trusted void dpq2.connection.BaseConnection.disconnect()
+      7          26          11           1     const(@trusted immutable(dpq2.answer.Value)* function(uint)) dpq2.answer.Row.opIndex
+    221          11          11           0     pure nothrow @property @safe bool std.array.empty!(char).empty(const(char[]))
+      1          34           9           9     void std.format.FormatSpec!(char).FormatSpec.__unittestL1085_2401()
+     18          23           9           0     void std.format.FormatSpec!(char).FormatSpec.fillUp()
+      1          94           8           8     void std.stdio.File.write!(immutable(char)[], double, char).write(immutable(char)[], double, char)
+      3          13           7           2     immutable(@trusted immutable(dpq2.answer.Array) function(immutable(dpq2.answer.Value*))) dpq2.answer.Array.__ctor
+      1          21           6           6     void std.format.FormatSpec!(char).FormatSpec.__unittestL775_2400()
+      2           7           6           3     @trusted void dpq2.answer.Answer.checkAnswerForErrors()
+      1          15           5           5     uint std.format.formattedWrite!(std.stdio.File.LockingTextWriter, char, double).formattedWrite(std.stdio.File.LockingTextWriter, const(char[]), double)
+      1          11           5           5     const(immutable(char)[] function()) std.format.FormatSpec!(char).FormatSpec.getCurFmtStr
+    114           5           5           0     const(@trusted void function()) dpq2.answer.Answer.__invariant
+      2           8           5           2     immutable(pure @property @trusted immutable(char)[] function()) dpq2.answer.Value.as!(immutable(char)[]).as
+     14           8           5           0     void std.range.put!(std.array.Appender!(char[]).Appender, const(char)[]).put(ref std.array.Appender!(char[]).Appender, const(char)[])
+     31           5           5           0     pure @trusted dchar std.utf.decode!(const(char)[]).decode(ref const(char)[], ref uint)
+      1           7           4           4     void std.format.formatValue!(std.stdio.File.LockingTextWriter, double, char).formatValue(std.stdio.File.LockingTextWriter, double, ref std.format.FormatSpec!(char).FormatSpec)
+      2          12           4           2     @trusted dpq2.answer.Answer dpq2.query.Connection.getAnswer(derelict.pq.types.PGresult*)
+     26           4           4           0     void std.array.Appender!(immutable(char)[]).Appender.ensureAddable(uint)
+     21           6           3           0     const(@property @trusted uint function()) dpq2.answer.Answer.columnCount
+      7           3           3           0     pure nothrow @property uint object.capacity!(immutable(char)).capacity(immutable(char)[])
+     11          10           3           0     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)[]).put(const(char)[])
+      7          12           3           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(char[]).Appender).writeUpToNextSpec(std.array.Appender!(char[]).Appender)
+     31           8           2           0     pure @property @safe dchar std.array.front!(const(char)[]).front(const(char)[])
+      8           8           2           0     void std.format.formatUnsigned!(std.array.Appender!(immutable(char)[]).Appender, char).formatUnsigned(std.array.Appender!(immutable(char)[]).Appender, ulong, ref std.format.FormatSpec!(char).FormatSpec, uint, bool)
+      3         348           2           0     void std.stdio.File.write!(immutable(char)[], immutable(char)[], char).write(immutable(char)[], immutable(char)[], char)
+     15           4           2           0     const(@property @trusted uint function()) dpq2.answer.Answer.rowCount
+      2           2           2           1     pure immutable(char)[] std.conv.toImpl!(immutable(char)[], immutable(char)*).toImpl(immutable(char)*)
+     15           4           2           0     void std.array.Appender!(immutable(char)[]).Appender.put!(char[]).put(char[])
+      1           3           2           2     immutable(pure @property @trusted std.datetime.SysTime function()) dpq2.answer.Value.as!(std.datetime.SysTime).as
+      7           6           2           0     std.array.Appender!(immutable(char)[]).Appender std.array.Appender!(immutable(char)[]).Appender.__ctor(immutable(char)[])
+      3         162           1           0     void std.stdio.File.write!(immutable(char)[], bool, char).write(immutable(char)[], bool, char)
+     16          35           1           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.array.Appender!(immutable(char)[]).Appender).writeUpToNextSpec(std.array.Appender!(immutable(char)[]).Appender)
+      4           6           1           0     void std.format.formatIntegral!(std.array.Appender!(immutable(char)[]).Appender, long, char).formatIntegral(std.array.Appender!(immutable(char)[]).Appender, const(long), ref std.format.FormatSpec!(char).FormatSpec, ulong)
+      7           4           1           0     const(@trusted derelict.pq.types.valueFormat function(const(uint))) dpq2.answer.Answer.columnFormat
+     10           1           1           0     pure nothrow @safe int std.bitmanip.bigEndianToNativeImpl!(int, 4u).bigEndianToNativeImpl(ubyte[4])
+     21           8           1           0     const(@trusted void function(const(uint))) dpq2.answer.Answer.assertCol
+      7           4           1           0     uint std.conv.parse!(uint, const(char)[]).parse(ref const(char)[])
+      2           1           1           0     @trusted void dpq2.answer.Answer.__dtor()
+     14           2           1           0     void std.array.Appender!(char[]).Appender.put!(const(char)[]).put(const(char)[])
+      7           1           1           0     pure @safe bool std.algorithm.startsWith!("a == b", const(char)[], char).startsWith(const(char)[], char)
+     20           1           1           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flDash
+      3           1           1           0     immutable(@trusted uint function(void*, TypeInfo[])) dpq2.answer.Array.coords2Serial
+      1           1           1           1     @trusted dpq2.query.Connection.preparedArgs* dpq2.query.Connection.prepareArgs(ref const(dpq2.query.queryParams))
+      3          14           1           0     immutable(@property @trusted immutable(dpq2.answer.Array*) function()) dpq2.answer.Value.asArray
+     10           1           1           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flSpace
+     12           2           1           0     pure nothrow @safe uint std.bitmanip.bigEndianToNative!(uint, 4u).bigEndianToNative(ubyte[4])
+      8         559           1           0     void std.range.put!(std.stdio.File.LockingTextWriter, char).put(ref std.stdio.File.LockingTextWriter, char)
+      7           2           1           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char).put(ref std.array.Appender!(immutable(char)[]).Appender, char)
+      8           4           1           0     const(@trusted dpq2.answer.Row function(const(uint))) dpq2.answer.Answer.opIndex
+      4           1           1           0     @property @trusted derelict.pq.types.ExecStatusType dpq2.answer.Answer.status()
+     10           3           1           0     pure nothrow @safe int std.bitmanip.bigEndianToNative!(int, 4u).bigEndianToNative(ubyte[4])
+      7           1           0           0     pure @safe int std.conv.to!(int).to!(const(uint)).to(const(uint))
+      2           1           0           0     immutable(@trusted bool function(, ...)) dpq2.answer.Array.isNULL
+     26           0           0           0     pure @safe bool std.exception.enforce!(bool).enforce(bool, lazy const(char)[], immutable(char)[], uint)
+      3           1           0           0     void std.format.formatRange!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], char).formatRange(ref std.array.Appender!(immutable(char)[]).Appender, ref immutable(char)[], ref std.format.FormatSpec!(char).FormatSpec)
+      3           2           0           0     void std.format.formatGeneric!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], char).formatGeneric(std.array.Appender!(immutable(char)[]).Appender, const(void)*, ref std.format.FormatSpec!(char).FormatSpec)
+      1           3           0           0     pure @safe immutable(char)[] std.algorithm.find!("a == b", immutable(char)[], char).find(immutable(char)[], char)
+     12           1           0           0     pure nothrow @safe uint std.bitmanip.bigEndianToNativeImpl!(uint, 4u).bigEndianToNativeImpl(ubyte[4])
+      2           1           0           0     bool std.format.FormatSpec!(char).FormatSpec.writeUpToNextSpec!(std.stdio.File.LockingTextWriter).writeUpToNextSpec(std.stdio.File.LockingTextWriter)
+     14           1           0           0     void std.array.Appender!(char[]).Appender.ensureAddable(uint)
+      1           4           0           0     uint std.format.formattedWrite!(std.array.Appender!(immutable(char)[]).Appender, char, immutable(char)[], immutable(char)[]).formattedWrite(std.array.Appender!(immutable(char)[]).Appender, const(char[]), immutable(char)[], immutable(char)[])
+      6           0           0           0     uint std.array.Appender!(immutable(char)[]).Appender.newCapacity(uint)
+      2           3           0           0     pure immutable(char)[] std.conv.to!(immutable(char)[]).to!(immutable(char)*).to(immutable(char)*)
+      9           1           0           0     pure @property @safe dchar std.array.front!(immutable(char)[]).front(immutable(char)[])
+      9           0           0           0     pure @trusted dchar std.utf.decode!(immutable(char)[]).decode(ref immutable(char)[], ref uint)
+      1           0           0           0     pure nothrow @property uint object.capacity!(char).capacity(char[])
+      1           1           0           0     std.array.Appender!(char[]).Appender std.array.Appender!(char[]).Appender.__ctor(char[])
+      1           2           0           0     std.array.Appender!(char[]).Appender std.array.appender!(char[], char).appender(char[])
+     15           4           0           0     const(@trusted void function(const(uint))) dpq2.answer.Answer.assertRow
+      7           6           0           0     const(@trusted void function(const(dpq2.answer.Coords))) dpq2.answer.Answer.assertCoords
+      3         349           0           0     void std.stdio.writeln!(immutable(char)[], immutable(char)[]).writeln(immutable(char)[], immutable(char)[])
+      2           0           0           0     void std.stdio.File.LockingTextWriter.put!(char[]).put(char[])
+      7           3           0           0     const(@property @trusted uint function(const(uint))) dpq2.answer.Row.size
+     12           0           0           0     std.format.FormatSpec!(char).FormatSpec std.format.FormatSpec!(char).FormatSpec.__ctor(const(char[]))
+      3         163           0           0     void std.stdio.writeln!(immutable(char)[], bool).writeln(immutable(char)[], bool)
+      1          61           0           0     void std.stdio.File.write!(immutable(char)[], int, char).write(immutable(char)[], int, char)
+      1           0           0           0     pure nothrow @safe ulong std.bitmanip.bigEndianToNative!(ulong, 8u).bigEndianToNative(ubyte[8])
+      2           0           0           0     nothrow @trusted dpq2.answer.Answer dpq2.answer.Answer.__ctor(derelict.pq.types.PGresult*)
+      1           0           0           0     pure void std.datetime.enforceValid!("seconds").enforceValid(int, immutable(char)[], uint)
+      8           3           0           0     @trusted dpq2.answer.Row dpq2.answer.Row.__ctor(const(dpq2.answer.Answer), const(uint))
+      7           0           0           0     immutable(@trusted immutable(dpq2.answer.Value) function(immutable(ubyte)*, uint, derelict.pq.types.valueFormat)) dpq2.answer.Value.__ctor
+      1           0           0           0     @property @trusted bool dpq2.connection.BaseConnection.nonBlocking()
+      1           6           0           0     int std.conv.parse!(int, const(char)[]).parse(ref const(char)[])
+      9           0           0           0     pure @safe bool std.exception.enforceEx!(std.format.FormatException).enforceEx!(bool).enforceEx(bool, lazy immutable(char)[], immutable(char)[], uint)
+     12           0           0           0     pure nothrow @safe uint std.bitmanip.swapEndian!(uint).swapEndian(uint)
+      1           0           0           0     immutable(pure @property @trusted ulong function()) dpq2.answer.Value.as!(ulong).as
+      4           3           0           0     void std.format.formatIntegral!(std.array.Appender!(immutable(char)[]).Appender, ulong, char).formatIntegral(std.array.Appender!(immutable(char)[]).Appender, const(ulong), ref std.format.FormatSpec!(char).FormatSpec, ulong)
+     10           0           0           0     pure nothrow @safe int std.bitmanip.swapEndian!(int).swapEndian(int)
+      7           3           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(dchar).put(dchar)
+      1           0           0           0     void std.stdio.File.LockingTextWriter.put!(const(char)[]).put(const(char)[])
+      1           0           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char))
+     14          76           0           0     void std.range.put!(std.stdio.File.LockingTextWriter, immutable(char)[]).put(ref std.stdio.File.LockingTextWriter, immutable(char)[])
+      7           0           0           0     pure @safe int std.conv.toImpl!(int, const(uint)).toImpl(const(uint))
+      1           1           0           0     immutable(pure @property @trusted double function()) dpq2.answer.Value.as!(double).as
+      1           0           0           0     pure nothrow @safe double std.bitmanip.bigEndianToNative!(double, 8u).bigEndianToNative(ubyte[8])
+      1           2           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, const(int), char).formatValue(std.array.Appender!(immutable(char)[]).Appender, const(int), ref std.format.FormatSpec!(char).FormatSpec)
+      1           0           0           0     pure nothrow @safe double std.bitmanip.floatEndianImpl!(8u, true).floatEndianImpl(ubyte[8])
+      1           0           0           0     uint std.array.Appender!(char[]).Appender.newCapacity(uint)
+      6           0           0           0     std.array.Appender!(immutable(char)[]).Appender.datainout(@property immutable(char)[] function())
+      7           1           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(char).put(char)
+      1           8           0           0     void std.format.formatGeneric!(std.stdio.File.LockingTextWriter, double, char).formatGeneric(std.stdio.File.LockingTextWriter, const(void)*, ref std.format.FormatSpec!(char).FormatSpec)
+      8           0           0           0     pure nothrow @trusted void std.array.popFront!(immutable(char)[]).popFront(ref immutable(char)[])
+      1           0           0           0     immutable(@trusted immutable(dpq2.answer.Value) function(immutable(ubyte[]))) dpq2.answer.Value.__ctor
+     16           0           0           0     pure nothrow @safe bool std.functional.binaryFun!("a == b").binaryFun!(dchar, char).binaryFun(dchar, char)
+      1           0           0           0     immutable(pure @property @trusted int function()) dpq2.answer.Value.as!(int).as
+      1           0           0           0     const(@property @trusted bool function(const(uint))) dpq2.answer.Row.isNULL
+      1           1           0           0     immutable(@trusted immutable(dpq2.answer.Value)* function(, ...)) dpq2.answer.Array.getValue
+      1          75           0           0     @trusted void dpq2.connection.BaseConnection.__dtor()
+      1           0           0           0     void std.conv.toTextRange!(int, std.stdio.File.LockingTextWriter).toTextRange(int, std.stdio.File.LockingTextWriter)
+      1          94           0           0     void std.stdio.writeln!(immutable(char)[], double).writeln(immutable(char)[], double)
+      1           0           0           0     pure nothrow @safe long core.time.convert!("minutes", "hnsecs").convert(long)
+      8           1           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, char[]).put(ref std.array.Appender!(immutable(char)[]).Appender, char[])
+      3           0           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[]).put(ref std.array.Appender!(immutable(char)[]).Appender, immutable(char)[])
+      2           0           0           0     void std.range.put!(std.stdio.File.LockingTextWriter, char[]).put(ref std.stdio.File.LockingTextWriter, char[])
+      1          61           0           0     void std.stdio.writeln!(immutable(char)[], int).writeln(immutable(char)[], int)
+     17           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flZero
+     11          10           0           0     void std.range.put!(std.array.Appender!(immutable(char)[]).Appender, const(char)[]).put(ref std.array.Appender!(immutable(char)[]).Appender, const(char)[])
+      1           0           0           0     void std.range.put!(std.stdio.File.LockingTextWriter, const(char)[]).put(ref std.stdio.File.LockingTextWriter, const(char)[])
+      2           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flHash
+      6           0           0           0     std.array.Appender!(char[]).Appender.datainout(@property inout(char)[] function())
+     16           0           0           0     pure nothrow @trusted void std.array.popFront!(const(char)[]).popFront(ref const(char)[])
+      2           0           0           0     pure @trusted void std.array.popBack!(immutable(char)[]).popBack(ref immutable(char)[])
+      3           0           0           0     void std.array.Appender!(char[]).Appender.clear()
+      7           6           0           0     std.array.Appender!(immutable(char)[]).Appender std.array.appender!(immutable(char)[], immutable(char)).appender(immutable(char)[])
+      1           0           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(const(char)).put(const(char))
+      3           0           0           0     void std.array.Appender!(immutable(char)[]).Appender.put!(immutable(char)[]).put(immutable(char)[])
+     10           0           0           0     const(pure nothrow @property @safe bool function()) std.format.FormatSpec!(char).FormatSpec.flPlus
+      7           0           0           0     pure nothrow @property @safe void std.format.FormatSpec!(char).FormatSpec.flZero(bool)
+      2           0           0           0     pure @safe uint std.utf.strideBack!(immutable(char)[]).strideBack(ref immutable(char)[], uint)
+      2           2           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, int, char).formatValue(std.array.Appender!(immutable(char)[]).Appender, int, ref std.format.FormatSpec!(char).FormatSpec)
+     12           0           0           0     pure @safe bool std.exception.enforce!(bool).enforce(bool, lazy object.Throwable)
+      1           0           0           0     pure @safe derelict.pq.types.PGconn* std.exception.enforceEx!(core.exception.OutOfMemoryError).enforceEx!(derelict.pq.types.PGconn*).enforceEx(derelict.pq.types.PGconn*, immutable(char)[], uint)
+      1           0           0           0     pure nothrow @safe bool std.datetime.valid!("seconds").valid(int)
+      8           0           0           0     pure @safe uint std.exception.enforceEx!(std.format.FormatException).enforceEx!(uint).enforceEx(uint, lazy immutable(char)[], immutable(char)[], uint)
+      2           0           0           0     pure @safe immutable(derelict.pq.types.PGresult)* std.exception.enforceEx!(core.exception.OutOfMemoryError).enforceEx!(immutable(derelict.pq.types.PGresult)*).enforceEx(immutable(derelict.pq.types.PGresult)*, immutable(char)[], uint)
+      1           0           0           0     pure void std.datetime.enforceValid!("minutes").enforceValid(int, immutable(char)[], uint)
+      1           0           0           0     pure nothrow @safe bool std.datetime.valid!("minutes").valid(int)
+      3           0           0           0     pure nothrow int core.vararg.va_arg!(int).va_arg(ref void*)
+      2           0           0           0     pure nothrow @safe ulong std.bitmanip.swapEndian!(ulong).swapEndian(ulong)
+      1           0           0           0     pure void std.datetime.enforceValid!("hours").enforceValid(int, immutable(char)[], uint)
+      3           1           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], char).formatValue(std.array.Appender!(immutable(char)[]).Appender, immutable(char)[], ref std.format.FormatSpec!(char).FormatSpec)
+      1           5           0           0     immutable(char)[] std.string.format!(char, immutable(char)[], immutable(char)[]).format(const(char[]), immutable(char)[], immutable(char)[])
+      1           0           0           0     pure nothrow @safe bool std.datetime.valid!("hours").valid(int)
+      1           0           0           0     pure nothrow @safe double std.bitmanip.bigEndianToNativeImpl!(double, 8u).bigEndianToNativeImpl(ubyte[8])
+      1           0           0           0     pure nothrow @safe ulong std.bitmanip.bigEndianToNativeImpl!(ulong, 8u).bigEndianToNativeImpl(ubyte[8])
+      4           3           0           0     void std.format.formatValue!(std.array.Appender!(immutable(char)[]).Appender, const(ubyte), char).formatValue(std.array.Appender!(immutable(char)[]).Appender, const(ubyte), ref std.format.FormatSpec!(char).FormatSpec)

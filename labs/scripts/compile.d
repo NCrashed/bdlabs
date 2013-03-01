@@ -31,7 +31,7 @@ int main(string[] args)
         addLibraryFiles("GtkD", "build", ["GtkD"], ["src"], 
                 (string libPath)
                 {
-                        writeln("Building Derelict3 lib...");
+                        writeln("Building GtkD lib...");
                         assert(false, "Please, build manually or write script!");
                 });
 

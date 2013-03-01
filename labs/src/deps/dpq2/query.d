@@ -60,13 +60,13 @@ final class Connection: BaseConnection
         (
             PQexecParams (
                 conn,
-                toStringz( p.sqlCommand ),
-                p.args.length,
+                cast(const char*)toStringz( p.sqlCommand ),
+                cast(int)p.args.length,
                 a.types.ptr,
                 a.values.ptr,
-                a.lengths.ptr,
-                a.formats.ptr,
-                p.resultFormat
+                cast(int*)a.lengths.ptr,
+                cast(int*)a.formats.ptr,
+                cast(int)p.resultFormat
             )
         );
         
@@ -99,13 +99,13 @@ final class Connection: BaseConnection
         auto a = prepareArgs( p );
         size_t r = PQsendQueryParams (
                         conn,
-                        toStringz( p.sqlCommand ),
-                        p.args.length,
+                        cast(const char*)toStringz( p.sqlCommand ),
+                        cast(int)p.args.length,
                         a.types.ptr,
                         a.values.ptr,
-                        a.lengths.ptr,
-                        a.formats.ptr,
-                        p.resultFormat                        
+                        cast(int*)a.lengths.ptr,
+                        cast(int*)a.formats.ptr,
+                        cast(int)p.resultFormat                      
                     );
         if( !r ) throw new exception();
         
