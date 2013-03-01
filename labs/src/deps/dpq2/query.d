@@ -1,10 +1,10 @@
 module dpq2.query;
 @trusted:
 
-import dpq2.libpq;
+import derelict.pq.pq;
 import dpq2.answer;
 public import dpq2.connection;
-public import dpq2.libpq: valueFormat;
+public import derelict.pq.pq: valueFormat;
 
 /// Query parameters
 struct queryParams

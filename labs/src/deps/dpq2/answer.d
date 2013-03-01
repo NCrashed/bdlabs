@@ -1,12 +1,8 @@
 module dpq2.answer;
 
-// for rdmd
-pragma(lib, "pq");
-pragma(lib, "com_err");
-
 @trusted:
 
-import dpq2.libpq;
+import derelict.pq.pq;
 public import dpq2.query;
 public import dpq2.fields;
 
@@ -99,7 +95,7 @@ class Answer // most members should be a const
     @property size_t columnCount() const { return PQnfields(res); }
 
     /// Returns column format
-    dpq2.libpq.valueFormat columnFormat( const size_t colNum ) const
+    valueFormat columnFormat( const size_t colNum ) const
     {
         assertCol( colNum );
         return PQfformat(res, colNum);
@@ -226,7 +222,7 @@ struct Row
 immutable struct Value // TODO: should be a const struct with const members without copy ability or class
 {
     private ubyte[] value;
-    debug private dpq2.libpq.valueFormat format;
+    debug private valueFormat format;
     
     version(Debug){} else
     this( immutable (ubyte)* value, size_t valueSize ) immutable
@@ -235,7 +231,7 @@ immutable struct Value // TODO: should be a const struct with const members with
     }
     
     debug
-    this( immutable (ubyte)* value, size_t valueSize, dpq2.libpq.valueFormat f ) immutable
+    this( immutable (ubyte)* value, size_t valueSize, valueFormat f ) immutable
     {
         this.value = value[0..valueSize];
         format = f;

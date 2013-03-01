@@ -3,7 +3,7 @@
 module dpq2.connection;
 @trusted:
 
-import dpq2.libpq;
+import derelict.pq.pq;
 import dpq2.answer;
 
 import std.conv: to;
@@ -107,7 +107,7 @@ class BaseConnection
     
     private static string PQerrorMessage(PGconn* conn)
     {
-        return to!(string)( dpq2.libpq.PQerrorMessage(conn) );
+        return to!(string)( PQerrorMessage(conn) );
     }
     
     @disable

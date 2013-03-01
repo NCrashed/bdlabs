@@ -33,7 +33,7 @@ extern(C)
 	alias char pqbool;
 	public import std.c.stdio : FILE;
 
-	enum ValueFormat
+	enum valueFormat
 	{
 		TEXT,
 		BINARY

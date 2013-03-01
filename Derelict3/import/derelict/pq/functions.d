@@ -59,7 +59,7 @@ extern(C)
 	alias nothrow char* function(PGconn* conn) da_PQerrorMessage;
 	alias nothrow size_t function(PGconn* conn) da_PQsocket;
 	alias nothrow int function(PGconn* conn) da_PQbackendPID;
-	alias nothrow int function(PGconn* conn) da_PQclientEncoidng;
+	alias nothrow int function(PGconn* conn) da_PQclientEncoding;
 	alias nothrow int function(PGconn* conn, char* encoding) da_PQsetClientEncoding;
 	alias nothrow void* function(PGconn* conn) da_PQgetssl;
 	alias nothrow void function(int do_init) da_PQinitSSL;
@@ -74,11 +74,12 @@ extern(C)
 	alias nothrow PGresult* function(PGconn* conn, char* stmtName, char* query, int nParams, Oid* paramTypes) da_PQprepare;
 	alias nothrow PGresult* function(PGconn* conn, char* stmtName, int nParams, char** paramValues, int* paramFormats, int resultFormat) da_PQexecPrepared;
 	alias nothrow size_t function(PGconn* conn, const char* query) da_PQsendQuery;
-	alias nothrow size_t function(PGconn* conn, const char* command, size_t nParams, Oid* paramTypes, const ubyte** paramValues, size_t* paramLengths, size_t paramFormats, size_t resultFormat) da_PQsendQueryParams;
+	alias nothrow size_t function(PGconn* conn, const char* command, size_t nParams, Oid* paramTypes, const ubyte** paramValues, size_t* paramLengths, size_t* paramFormats, size_t resultFormat) da_PQsendQueryParams;
 	alias nothrow int function(PGconn* conn, char* stmtName, char* query, int nParams, Oid* paramTypes) da_PQsendPrepare;
 	alias nothrow int function(PGconn* conn, char* stmtName, int nParams, char** paramValues, int* paramLengths, int* paramFormats, int resultFormat) da_PQsendQueryPrepared;
 	alias nothrow PGresult* function(PGconn* conn) da_PQgetResult;
 	alias nothrow int function(PGconn* conn) da_PQisBusy;
+	alias nothrow int function(PGconn* conn) da_PQconsumeInput;
 	alias nothrow immutable (PGnotify)* function(PGconn* conn) da_PQnotifies;
 	alias nothrow int function(PGconn* conn, char* buffer, int nbytes) da_PQputCopyData;
 	alias nothrow int function(PGconn* conn, char* errormsg) da_PQputCopyEnd;
@@ -104,7 +105,7 @@ extern(C)
 	alias nothrow size_t function(immutable PGresult* res, immutable char* field_name) da_PQfnumber;
 	alias nothrow Oid function(PGresult* res, int field_num) da_PQftable;
 	alias nothrow int function(PGresult* res, int field_num) da_PQftablecol;
-	alias nothrow ValueFormat function(immutable PGresult* res, size_t field_num) da_PQfformat;
+	alias nothrow valueFormat function(immutable PGresult* res, size_t field_num) da_PQfformat;
 	alias nothrow Oid function(immutable PGresult* res, size_t field_num) da_PQftype;
 	alias nothrow int function(PGresult* res, int field_num) da_PQfsize;
 	alias nothrow int function(PGresult* res, int field_num) da_PQfmod;
@@ -113,8 +114,8 @@ extern(C)
 	alias nothrow Oid function(PGresult* res) da_PQoidValue;
 	alias nothrow char* function(PGresult* res) da_PQcmdTuples;
 	alias nothrow immutable(ubyte)* function(immutable PGresult* res, size_t tup_num, size_t field_num) da_PQgetvalue;
-	alias nothrow size_t function(immutable PGresult* res, size_t tup_num, size_t field_num) da_PGgetlength;
-	alias nothrow int function(immutable PGresult* res, size_t tup_num, size_t field_num) da_PGgetisnull;
+	alias nothrow size_t function(immutable PGresult* res, size_t tup_num, size_t field_num) da_PQgetlength;
+	alias nothrow int function(immutable PGresult* res, size_t tup_num, size_t field_num) da_PQgetisnull;
 	alias nothrow int function(PGresult* res) da_PQnparams;
 	alias nothrow Oid function(PGresult* res, int param_num) da_PQparamtype;
 	alias nothrow PGresult* function(PGconn* conn, char* stmt) da_PQdescribePrepared;
@@ -183,7 +184,7 @@ __gshared
 	da_PQerrorMessage PQerrorMessage;
 	da_PQsocket PQsocket;
 	da_PQbackendPID PQbackendPID;
-	da_PQclientEncoidng PQclientEncoidng;
+	da_PQclientEncoding PQclientEncoding;
 	da_PQsetClientEncoding PQsetClientEncoding;
 	da_PQgetssl PQgetssl;
 	da_PQinitSSL PQinitSSL;
@@ -203,6 +204,7 @@ __gshared
 	da_PQsendQueryPrepared PQsendQueryPrepared;
 	da_PQgetResult PQgetResult;
 	da_PQisBusy PQisBusy;
+	da_PQconsumeInput PQconsumeInput;
 	da_PQnotifies PQnotifies;
 	da_PQputCopyData PQputCopyData;
 	da_PQputCopyEnd PQputCopyEnd;
@@ -237,8 +239,8 @@ __gshared
 	da_PQoidValue PQoidValue;
 	da_PQcmdTuples PQcmdTuples;
 	da_PQgetvalue PQgetvalue;
-	da_PGgetlength PGgetlength;
-	da_PGgetisnull PGgetisnull;
+	da_PQgetlength PQgetlength;
+	da_PQgetisnull PQgetisnull;
 	da_PQnparams PQnparams;
 	da_PQparamtype PQparamtype;
 	da_PQdescribePrepared PQdescribePrepared;
