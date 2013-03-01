@@ -12,7 +12,6 @@ public
 static this()
 {
 	DerelictPQ.load();
-	DerelictPQ.disableAutoUnload();
 }
 
 static ~this()
