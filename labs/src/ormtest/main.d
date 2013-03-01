@@ -43,16 +43,3 @@ void main()
     writeln( "7: ", r[0][4].asArray.isNULL(0) );
     writeln( "8: ", r[0][4].asArray.isNULL(2) );
 }
-
-static this()
-{
-	DerelictPQ.load();
-	DerelictPQ.disableAutoUnload();
-}
-
-static ~this()
-{
-	import core.memory;
-	GC.collect();
-	DerelictPQ.unload();
-}
