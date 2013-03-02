@@ -1,4 +1,4 @@
-module ormtest;
+module main;
 
 import orm.database;
 import dpq2.all;
@@ -13,6 +13,8 @@ void main()
     conn.connString = "host=localhost port=5432 dbname=postgres user=postgres password=150561";
     conn.connect();
 
+    getchar();
+    /*
     // Text query result
     auto s = conn.exec(
         "SELECT now() as current_time, 'abc'::text as field_name, "
@@ -41,5 +43,5 @@ void main()
     writeln( "5: ", r[0].isNULL(3) );
     writeln( "6: ", r[0][4].asArray.getValue(1).as!PGinteger );
     writeln( "7: ", r[0][4].asArray.isNULL(0) );
-    writeln( "8: ", r[0][4].asArray.isNULL(2) );
+    writeln( "8: ", r[0][4].asArray.isNULL(2) );*/
 }

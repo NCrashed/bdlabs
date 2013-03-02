@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{324B2950-6E0A-4E33-93CC-4576E82280AF}</ProjectGuid>
+    <PreferOneStepBuild>True</PreferOneStepBuild>
+    <UseDefaultCompiler>True</UseDefaultCompiler>
+    <IncrementalLinking>True</IncrementalLinking>
+    <Compiler>DMD2</Compiler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <OutputPath>bin\Debug</OutputPath>
+    <Externalconsole>True</Externalconsole>
+    <Target>Executable</Target>
+    <OutputName>OrmTest</OutputName>
+    <UnittestMode>False</UnittestMode>
+    <ObjectsDirectory>obj\Debug</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Build" command="rdmd compile.d ormtest debug" workingdir="..\..\scripts" />
+        <Command type="Execute" command="ormtest.exe" workingdir="..\..\bin\" externalConsole="True" pauseExternalConsole="True" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <Externalconsole>True</Externalconsole>
+    <Target>Executable</Target>
+    <OutputName>OrmTest</OutputName>
+    <UnittestMode>False</UnittestMode>
+    <ObjectsDirectory>obj\Release</ObjectsDirectory>
+    <DebugLevel>0</DebugLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Build" command="rdmd compile.d ormtest release" workingdir="..\..\scripts" />
+        <Command type="Execute" command="ormtest.exe" workingdir="..\..\bin" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="dpq2\" />
+    <Folder Include="orm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\src\deps\dpq2\all.d">
+      <Link>dpq2\all.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\dpq2\answer.d">
+      <Link>dpq2\answer.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\dpq2\connection.d">
+      <Link>dpq2\connection.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\dpq2\fields.d">
+      <Link>dpq2\fields.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\dpq2\query.d">
+      <Link>dpq2\query.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\orm\database.d">
+      <Link>orm\database.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\ormtest\main.d">
+      <Link>main.d</Link>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -2,82 +2,88 @@
 FUNCTIONS
 	_D4dpq23all12_staticCtor1FZv
 	_D3std5array12__T5emptyTaZ5emptyFNaNbNdNfxAaZb
-	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
-	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
-	_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw
-	_D3std4conv16__T5parseTkTAxaZ5parseFKAxaZk
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
-	_Dmain
-	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
 	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAxaZ3putMFAxaZv
-	_D3std9algorithm41__T10startsWithVAyaa6_61203d3d2062TAxaTaZ10startsWithFNaNfAxaaZb
-	_D3std10functional33__T9binaryFunVAyaa6_61203d3d2062Z18__T9binaryFunTwTaZ9binaryFunFNaNbNfwaZb
-	_D3std9algorithm34__T4findVAyaa6_61203d3d2062TAyaTaZ4findFNaNfAyaaZAya
-	_D3std5array14__T5frontTAyaZ5frontFNaNdNfAyaZw
-	_D3std3utf15__T6decodeTAyaZ6decodeFNaNeKAyaKkZw
-	_D3std5array17__T8popFrontTAyaZ8popFrontFNaNbNeKAyaZv
-	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTkZ9enforceExFNaNfkLAyaAyakZk
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMFNaNbNdNfbZv
-	_D3std4conv9__T2toTiZ10__T2toTxkZ2toFNaNfxkZi
-	_D3std4conv16__T6toImplTiTxkZ6toImplFNaNfxkZi
-	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLC6object9ThrowableZb
-	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
-	_D3std4conv11__T2toTAyaZ11__T2toTPyaZ2toFNaPyaZAya
-	_D4dpq26answer5Value11__T2asTAyaZ2asMyFNaNdNeZAya
-	_D3std4conv19__T6toImplTAyaTPyaZ6toImplFNaPyaZAya
-	_D3std3utf20__T10strideBackTAyaZ10strideBackFNaNfKAyakZk
-	_D3std5array16__T7popBackTAyaZ7popBackFNaNeKAyaZv
-	_D3std4conv55__T11toTextRangeTiTS3std5stdio4File17LockingTextWriterZ11toTextRangeFiS3std5stdio4File17LockingTextWriterZv
-	_D3std5stdio4File18__T5writeTAyaTiTaZ5writeMFAyaiaZv
-	_D3std5stdio18__T7writelnTAyaTiZ7writelnFAyaiZv
-	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
-	_D4dpq26answer5Array6__ctorMyFNeyPS4dpq26answer5ValueZyS4dpq26answer5Array
-	_D3std8bitmanip28__T17bigEndianToNativeTkVk4Z17bigEndianToNativeFNaNbNfG4hZk
-	_D3std8bitmanip32__T21bigEndianToNativeImplTkVk4Z21bigEndianToNativeImplFNaNbNfG4hZk
-	_D3std8bitmanip18__T10swapEndianTkZ10swapEndianFNaNbNfkZk
-	_D3std8bitmanip28__T17bigEndianToNativeTiVk4Z17bigEndianToNativeFNaNbNfG4hZi
-	_D3std8bitmanip32__T21bigEndianToNativeImplTiVk4Z21bigEndianToNativeImplFNaNbNfG4hZi
-	_D3std8bitmanip18__T10swapEndianTiZ10swapEndianFNaNbNfiZi
-	_D4dpq26answer5Array13coords2SerialMyFNePvAC8TypeInfoZk
-	_D4core6vararg13__T6va_argTiZ6va_argFNaNbKPvZi
-	_D3std5stdio4File18__T5writeTAyaTbTaZ5writeMFAyabaZv
-	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAyaZ3putFKS3std5stdio4File17LockingTextWriterAyaZv
-	_D3std5stdio4File17LockingTextWriter12__T3putTAyaZ3putMFAyaZv
-	_D3std5stdio4File20__T5writeTAyaTAyaTaZ5writeMFAyaAyaaZv
-	_D3std5stdio18__T7writelnTAyaTbZ7writelnFAyabZv
-	_D3std5range46__T3putTS3std5stdio4File17LockingTextWriterTaZ3putFKS3std5stdio4File17LockingTextWriteraZv
-	_D3std5stdio4File17LockingTextWriter10__T3putTaZ3putMFaZv
-	_D4dpq26answer5Value9__T2asTiZ2asMyFNaNdNeZi
-	_D4dpq26answer5Value9__T2asTdZ2asMyFNaNdNeZd
-	_D3std8bitmanip28__T17bigEndianToNativeTdVk8Z17bigEndianToNativeFNaNbNfG8hZd
-	_D3std8bitmanip32__T21bigEndianToNativeImplTdVk8Z21bigEndianToNativeImplFNaNbNfG8hZd
-	_D3std8bitmanip27__T15floatEndianImplVk8Vb1Z15floatEndianImplFNaNbNfG8hZd
-	_D3std8bitmanip18__T10swapEndianTmZ10swapEndianFNaNbNfmZm
-	_D3std8bitmanip32__T21bigEndianToNativeImplTmVk8Z21bigEndianToNativeImplFNaNbNfG8hZm
-	_D3std8bitmanip28__T17bigEndianToNativeTmVk8Z17bigEndianToNativeFNaNbNfG8hZm
-	_D4dpq26answer5Value9__T2asTmZ2asMyFNaNdNeZm
-	_D4dpq26answer5Value30__T2asTS3std8datetime7SysTimeZ2asMyFNaNdNeZS3std8datetime7SysTime
-	_D3std5stdio4File18__T5writeTAyaTdTaZ5writeMFAyadaZv
-	_D3std5stdio18__T7writelnTAyaTdZ7writelnFAyadZv
-	_D3std6format60__T14formattedWriteTS3std5stdio4File17LockingTextWriterTaTdZ14formattedWriteFS3std5stdio4File17LockingTextWriterxAadZk
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec59__T17writeUpToNextSpecTS3std5stdio4File17LockingTextWriterZ17writeUpToNextSpecMFS3std5stdio4File17LockingTextWriterZb
-	_D3std5range48__T3putTS3std5stdio4File17LockingTextWriterTAxaZ3putFKS3std5stdio4File17LockingTextWriterAxaZv
-	_D3std5stdio4File17LockingTextWriter12__T3putTAxaZ3putMFAxaZv
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
+	_D3std6format18__T10FormatSpecTaZ10FormatSpec63__T17writeUpToNextSpecTS3std5array17__T8AppenderTAyaZ8AppenderZ17writeUpToNextSpecMFS3std5array17__T8AppenderTAyaZ8AppenderZb
 	_D3std6format18__T10FormatSpecTaZ10FormatSpec62__T17writeUpToNextSpecTS3std5array16__T8AppenderTAaZ8AppenderZ17writeUpToNextSpecMFS3std5array16__T8AppenderTAaZ8AppenderZb
 	_D3std5range51__T3putTS3std5array16__T8AppenderTAaZ8AppenderTAxaZ3putFKS3std5array16__T8AppenderTAaZ8AppenderAxaZv
 	_D3std5array16__T8AppenderTAaZ8Appender12__T3putTAxaZ3putMFAxaZv
 	_D3std5array16__T8AppenderTAaZ8Appender13ensureAddableMFkZv
-	_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
+	_D3std6format18__T10FormatSpecTaZ10FormatSpec19__unittestL775_2400FZv
+	= Timer Is 2603886 Ticks/Sec, Times are in
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	
+	_D3std4conv16__T5parseTiTAxaZ5parseFKAxaZi
+	_D3std5array14__T5frontTAxaZ5frontFNaNdNfAxaZw
+	_D3std3utf15__T6decodeTAxaZ6decodeFNaNeKAxaKkZw
+	_D3std5array17__T8popFrontTAxaZ8popFrontFNaNbNeKAxaZv
+	_D3std6format18__T10FormatSpecTaZ10FormatSpec6fillUpMFZv
+	
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	= Timer Is 2603886 Ticks/Sec, Times are in
+	= Timer Is 2603886 Ticks/Sec, Times are in Mi
+	
+	_D4dpq210connection14BaseConnection7connectMFNeZv
+	_Dmain
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs =
+	= Timer Is 2603886 Ticks/Sec, Times are in Micr
 	_D3std5array20__T8appenderTAyaTyaZ8appenderFAyaZS3std5array17__T8AppenderTAyaZ8Appender
 	_D3std5array17__T8AppenderTAyaZ8Appender6__ctorMFAyaZS3std5array17__T8AppenderTAyaZ8Appender
 	_D6object16__T8capacityTyaZ8capacityFNaNbNdAyaZk
-	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
-	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
+	
+	_D3std6format18__T10FormatSpecTaZ10FormatSpec6__ctorMFxAaZS3std6format18__T10FormatSpecTaZ10FormatSpec
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsec
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ====
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Micros
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Micros
+	= Timer Is 2603886 Ticks/Sec, Time
+	= Timer Is 2603886 Ticks/Sec, Times are in M
+	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ42__T9enforceExTPS8derelict2pq5types6PGconnZ9enforceExFNaNfPS8derelict2pq5types6PGconnAyakZPS8derelict2pq5types6PGconn
+	_D3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBase18checkTimeoutThreadFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZv
+	_D3std11concurrency133__T6_spawnTPFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZvTOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZ6_spawnFbPFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZvOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZS3std11concurrency3Tid4execMFZv
+	_D3std5stdio16__T7writelnTAyaZ7writelnFAyaZv
+	_D3std9exception14__T7enforceTbZ7enforceFNaNfbLAxaAyakZb
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ==
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ===
+	_D4dpq210connection14BaseConnection11nonBlockingMFNdNeZb
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs =====
+	_D3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBase6__ctorMFZC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBase
+	_D3std11concurrency132__T5spawnTPFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZvTOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZ5spawnFPFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZvOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZS3std11concurrency3Tid
+	_D3std11concurrency133__T6_spawnTPFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZvTOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZ6_spawnFbPFOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZvOC3orm8database32__T8DataBaseVAyaa6_746573746264Z8DataBaseZS3std11concurrency3Tid
+	
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are 
+	= Timer Is 2603886 Ticks/Sec, Times are in Mic
+	======== Timer Is 2603886 Ticks/Sec, Times are in Micros
+	======== Timer Is 2603886 Ticks/Sec, Times are in 
+	= Timer Is 2603886 Ticks/Sec, Times are in Micros
+	= Timer Is 2603886 Ticks/Sec, Times are in Microse
+	= Timer Is 2603886 Ticks/Sec, Times are in Micr
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ===
+	======== Timer Is 2603886 Ticks/Sec, Times
+	======== Timer Is 2603886 Ticks/Sec, Times ar
+	======== Timer Is 2603886 Ticks/Sec, Times are in
+	
+	
+	
+	
+	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
+	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
+	_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk
+	_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk
+	======== Timer Is 2603886 Ticks/Sec, Times are
+	======== Timer Is 2603886 Ticks/Sec, Times are in
+	_D3std5array16__T8AppenderTAaZ8Appender4dataMNgFNdZANga
+	_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv
 	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTaZ3putMFaZv
+	_D3std5range50__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderaZv
 	_D3std5array17__T8AppenderTAyaZ8Appender13ensureAddableMFkZv
 	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTAaZ3putMFAaZv
 	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAaZv
@@ -86,71 +92,138 @@ FUNCTIONS
 	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flZeroMxFNaNbNdNfZb
 	_D3std6format18__T10FormatSpecTaZ10FormatSpec7flSpaceMxFNaNbNdNfZb
 	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flPlusMxFNaNbNdNfZb
-	_D3std5array17__T8AppenderTAyaZ8Appender10__T3putTwZ3putMFwZv
-	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
+	_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs =
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
 	_D3std5array17__T8AppenderTAyaZ8Appender11__T3putTxaZ3putMFxaZv
+	_D3std5range51__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderxaZv
+	_D3std6format18__T10FormatSpecTaZ10FormatSpec12getCurFmtStrMxFZAya
 	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
 	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTlTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxlKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
 	_D3std9exception44__T9enforceExTC3std6format15FormatExceptionZ16__T9enforceExTbZ9enforceExFNaNfbLAyaAyakZb
-	_D3std6format64__T14formatIntegralTS3std5array17__T8AppenderTAyaZ8AppenderTmTaZ14formatIntegralFS3std5array17__T8AppenderTAyaZ8AppenderxmKS3std6format18__T10FormatSpecTaZ10FormatSpecmZv
-	_D3std6format62__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTxhTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderxhKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	_D3std6format61__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTiTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderiKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
 	_D3std6format18__T10FormatSpecTaZ10FormatSpec6flHashMxFNaNbNdNfZb
-	_D3std6format57__T11formatValueTS3std5stdio4File17LockingTextWriterTdTaZ11formatValueFS3std5stdio4File17LockingTextWriterdKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	_D3std6format59__T13formatGenericTS3std5stdio4File17LockingTextWriterTdTaZ13formatGenericFS3std5stdio4File17LockingTextWriterPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	_D3std5range47__T3putTS3std5stdio4File17LockingTextWriterTAaZ3putFKS3std5stdio4File17LockingTextWriterAaZv
-	_D3std5stdio4File17LockingTextWriter11__T3putTAaZ3putMFAaZv
-	_D3std5array17__T8AppenderTAyaZ8Appender4dataMNgFNdZAya
-	_D3std6string21__T6formatTaTAyaTAyaZ6formatFxAaAyaAyaZAya
-	_D3std6format70__T14formattedWriteTS3std5array17__T8AppenderTAyaZ8AppenderTaTAyaTAyaZ14formattedWriteFS3std5array17__T8AppenderTAyaZ8AppenderxAaAyaAyaZk
-	_D3std6format65__T13formatGenericTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ13formatGenericFS3std5array17__T8AppenderTAyaZ8AppenderPxvKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	_D3std6format63__T11formatValueTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatValueFS3std5array17__T8AppenderTAyaZ8AppenderAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	_D3std6format63__T11formatRangeTS3std5array17__T8AppenderTAyaZ8AppenderTAyaTaZ11formatRangeFKS3std5array17__T8AppenderTAyaZ8AppenderKAyaKS3std6format18__T10FormatSpecTaZ10FormatSpecZv
-	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAyaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAyaZv
-	_D3std5array17__T8AppenderTAyaZ8Appender12__T3putTAyaZ3putMFAyaZv
-	_D3std5array18__T8appenderTAaTaZ8appenderFAaZS3std5array16__T8AppenderTAaZ8Appender
-	_D3std5array16__T8AppenderTAaZ8Appender6__ctorMFAaZS3std5array16__T8AppenderTAaZ8Appender
-	_D6object15__T8capacityTaZ8capacityFNaNbNdAaZk
-	_D3std5array16__T8AppenderTAaZ8Appender11newCapacityFkZk
-	_D3std5array16__T8AppenderTAaZ8Appender5clearMFZv
-	_D3std5array17__T8AppenderTAyaZ8Appender11newCapacityFkZk
-	_D3std5stdio20__T7writelnTAyaTAyaZ7writelnFAyaAyaZv
-	_D3std8datetime35__T12enforceValidVAyaa5_686f757273Z12enforceValidFNaiAyakZv
-	_D3std8datetime27__T5validVAyaa5_686f757273Z5validFNaNbNfiZb
-	_D3std8datetime31__T5validVAyaa7_6d696e75746573Z5validFNaNbNfiZb
-	_D3std8datetime39__T12enforceValidVAyaa7_6d696e75746573Z12enforceValidFNaiAyakZv
-	_D3std8datetime31__T5validVAyaa7_7365636f6e6473Z5validFNaNbNfiZb
-	_D3std8datetime39__T12enforceValidVAyaa7_7365636f6e6473Z12enforceValidFNaiAyakZv
-	_D4dpq210connection14BaseConnection7connectMFNeZv
-	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ42__T9enforceExTPS8derelict2pq5types6PGconnZ9enforceExFNaNfPS8derelict2pq5types6PGconnAyakZPS8derelict2pq5types6PGconn
-	_D4dpq210connection14BaseConnection11nonBlockingMFNdNeZb
-	_D3std9exception49__T9enforceExTC4core9exception16OutOfMemoryErrorZ45__T9enforceExTPyS8derelict2pq5types8PGresultZ9enforceExFNaNfPyS8derelict2pq5types8PGresultAyakZPyS8derelict2pq5types8PGresult
-	_D4dpq26answer6Answer20checkAnswerForErrorsMFNeZv
-	_D4dpq26answer6Answer6statusMFNdNeZE8derelict2pq5types14ExecStatusType
-	_D4dpq26answer6Answer11__invariantMxFNeZv
-	_D4dpq26answer6Answer11columnCountMxFNdNeZk
-	_D4dpq26answer6Answer8rowCountMxFNdNeZk
-	_D4dpq26answer6Answer7opIndexMxFNexkZS4dpq26answer3Row
-	_D4dpq26answer6Answer12columnFormatMxFNexkZE8derelict2pq5types11valueFormat
-	_D4dpq25query10Connection9getAnswerMFNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-	_D4dpq26answer6Answer6__ctorMFNbNePS8derelict2pq5types8PGresultZC4dpq26answer6Answer
-	_D4core4time52__T7convertVAyaa7_6d696e75746573VAyaa6_686e73656373Z7convertFNaNbNflZl
+	_D3std6format18__T10FormatSpecTaZ10FormatSpec20__unittestL1085_2401FZv
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs =====
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	======== Timer Is 2603886 Ticks/Sec, Times are in Mic
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs 
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ====
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ======
+	
+	
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	
+	
+	
+	
+	
+	_D3std5range52__T3putTS3std5array17__T8AppenderTAyaZ8AppenderTAxaZ3putFKS3std5array17__T8AppenderTAyaZ8AppenderAxaZv
+	
+	
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are 
+	======== Timer Is 2603886 Ticks/Sec, Times are in M
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microse
+	======== Timer Is 2603886 Ticks/Sec, Times are in Mi
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are in Micros
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs =
+	üZ-
+	
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs =====
+	üZ-
+	
+	
+	
+	d/,
+	
+	X6,
+	
+	d/,
+	d/,
+	
+	
+	
+	
+	d/,
+	d/,
+	
+	_D3std7variant17__T8VariantNVk20Z8VariantN55__T8opAssignTS3std7variant17__T8VariantNVk20Z8VariantNZ8opAssignMFNeS3std7variant17__T8VariantNVk20Z8VariantNZS3std7variant17__T8VariantNVk20Z8VariantN
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ====
+	d/,
+	
+	X6,
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microse
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microse
+	
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ====
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs 
+	
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ====
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	X6,
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs =======
+	X6,
+	X6,
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	X6,
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs =======
+	X6,
 	_D4dpq210connection14BaseConnection10disconnectMFNeZv
 	_D4dpq210connection14BaseConnection6__dtorMFNeZv
 	_D4dpq23all12_staticDtor2FZv
-	_D4dpq26answer6Answer6__dtorMFNeZv
-	_D4dpq25query10Connection4execMFNeAyaZC4dpq26answer6Answer
-	_D4dpq25query10Connection11prepareArgsMFNeKxS4dpq25query11queryParamsZPS4dpq25query10Connection12preparedArgs
-	_D4dpq25query10Connection4execMFNeKxS4dpq25query11queryParamsZC4dpq26answer6Answer
-	_D4dpq26answer3Row6__ctorMFNexC4dpq26answer6AnswerxkZS4dpq26answer3Row
-	_D4dpq26answer6Answer9assertRowMxFNexkZv
-	_D4dpq26answer3Row4sizeMxFNdNexkZk
-	_D4dpq26answer3Row7opIndexMxFNekZPyS4dpq26answer5Value
-	_D4dpq26answer6Answer12assertCoordsMxFNexS4dpq26answer6CoordsZv
-	_D4dpq26answer6Answer9assertColMxFNexkZv
-	_D4dpq26answer5Value6__ctorMyFNePyhkE8derelict2pq5types11valueFormatZyS4dpq26answer5Value
-	_D4dpq26answer3Row6isNULLMxFNdNexkZb
-	_D4dpq26answer5Array8getValueMyFNeYPyS4dpq26answer5Value
-	_D4dpq26answer5Value6__ctorMyFNeyAhZyS4dpq26answer5Value
-	_D4dpq26answer5Array6isNULLMyFNeYb
-	_D4dpq26answer5Value7asArrayMyFNdNeZyPS4dpq26answer5Array
+	d/,
+	X6,
+	======== Timer Is 2603886 Ticks/Sec, Times are
+	= Timer Is 2603886 Ticks/Sec, Times are in Mic
+	
+	
+	= Timer Is 2603886 Ticks/Sec, Times are 
+	= Timer Is 2603886 Ticks/Sec, Times are
+	= Timer Is 2603886 Ticks/Sec, Times 
+	= Timer Is 2603886 Ticks/Sec, Times are in 
+	= Timer Is 2603886 Ticks/Sec, Times are i
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ===
+	======== Timer Is 2603886 Ticks/Se
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	======== Timer Is 2603886 Ticks/Sec,
+	======== Timer Is 2603886 Ticks/Sec, Times are in Micr
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	
+	
+	======== Timer Is 2603886 Ticks/Sec, Time
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	
+	======== Timer Is 2603886 Ticks/Sec, Times 
+	======== Timer Is 2603886 Ticks/Sec, Times are in Micro
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ===
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	
+	X6,
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsec
+	======== Timer Is 2603886 Ticks/Se
+	======== Timer Is 2603886 Ticks/Sec, Times are in Micros
+	======== Timer Is 2603886 Ticks/Sec, Times are in
+	======== Timer Is 2603886 Ticks/Sec, Times a
+	
+	======== Timer Is 2603886 Ticks/Sec, Ti
+	======== Timer Is 2603886 Ticks/Sec, Tim
+	= Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	======== Timer Is 2603886 Ticks/Sec, Times are in Micr
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microse
+	X6,
+	
+	X6,
+	======== Timer Is 2603886 Ticks/Sec, Times are in Microsecs ========
+	X6,
+	X6,
+	X6,
+	X6,
