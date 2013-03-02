@@ -1,2 +1,3 @@
-call rdmd build.d
+call dmd build.d
+build.exe
 pause

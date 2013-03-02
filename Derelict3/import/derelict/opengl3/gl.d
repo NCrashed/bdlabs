@@ -152,6 +152,8 @@ class DerelictGLLoader : DerelictGL3Loader
     {
         override void loadSymbols()
         {
+            super.loadSymbols();
+
             bindFunc(cast(void**)&glIsList, "glIsList");
             bindFunc(cast(void**)&glDeleteLists, "glDeleteLists");
             bindFunc(cast(void**)&glGenLists, "glGenLists");
@@ -431,7 +433,7 @@ class DerelictGLLoader : DerelictGL3Loader
 
     private
     {
-       this() {}
+        this() {}
     }
 }
 
@@ -444,6 +446,5 @@ shared static this()
 
 shared static ~this()
 {
-    if(SharedLibLoader.isAutoUnloadEnabled())
-        DerelictGL.unload();
+    DerelictGL.unload();
 }
