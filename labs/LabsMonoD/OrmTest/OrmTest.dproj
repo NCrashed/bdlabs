@@ -22,7 +22,7 @@
     <DebugLevel>0</DebugLevel>
     <CustomCommands>
       <CustomCommands>
-        <Command type="Build" command="rdmd compile.d ormtest debug" workingdir="..\..\scripts" />
+        <Command type="Build" command="rdmd compile.d ormtest debug" workingdir="..\..\scripts" pauseExternalConsole="True" />
         <Command type="Execute" command="ormtest.exe" workingdir="..\..\bin\" externalConsole="True" pauseExternalConsole="True" />
       </CustomCommands>
     </CustomCommands>
@@ -45,6 +45,7 @@
   <ItemGroup>
     <Folder Include="dpq2\" />
     <Folder Include="orm\" />
+    <Folder Include="util\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\src\deps\dpq2\all.d">
@@ -67,6 +68,15 @@
     </Compile>
     <Compile Include="..\..\src\ormtest\main.d">
       <Link>main.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\orm\table.d">
+      <Link>orm\table.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\util\common.d">
+      <Link>util\common.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\deps\orm\orm.d">
+      <Link>orm\orm.d</Link>
     </Compile>
   </ItemGroup>
 </Project>

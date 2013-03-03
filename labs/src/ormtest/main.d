@@ -1,20 +1,58 @@
 module main;
 
-import orm.database;
+import orm.orm;
 import dpq2.all;
 
 import std.stdio;
+import core.thread;
+import core.time;
+import std.uuid;
+
+struct Test1
+{
+	int a;
+	short b;
+	string c;
+	float d;
+	UUID e;
+
+	mixin PrimaryKey!"e";
+}
 
 void main()
 {
-	auto db = new DataBase!"testbd"();
+	auto db = new DataBase!"testbd"("host=localhost port=5432 dbname=postgres user=postgres password=150561");
 
+	//Thread.sleep(dur!"seconds"(12));
+
+	writeln(db.hasTable("debugTable"));
+	auto tf = new TableFormat!Test1();
+
+	/*writeln(tf.createSQL());
+	writeln(tf.insertSQL(Test1(15, 3, "bla", 42.23)));*/
+
+	auto data = new Test1[2];
+	data[0] = Test1(15, 3, "bla", 42.23, randomUUID());
+	data[1] = Test1(8, 23, "boo", 23.23, randomUUID());
+
+	db.insert(data);
+	db.update(Test1(42), ["a"], (TableFormat!Test1 tf){return "c = 'boo'";});
+
+	auto one = db.selectOne((TableFormat!Test1 tf){return "";});
+	writeln(one);
+
+	auto many = db.select(0, (TableFormat!Test1 tf){return "c = 'bla'";}, true);
+	writeln(many);
+
+	//db.remove(0, (TableFormat!Test1 tf){return "c = 'bla'";});
+
+
+	/*
     Connection conn = new Connection;
     conn.connString = "host=localhost port=5432 dbname=postgres user=postgres password=150561";
     conn.connect();
 
-    getchar();
-    /*
+    
     // Text query result
     auto s = conn.exec(
         "SELECT now() as current_time, 'abc'::text as field_name, "
@@ -44,4 +82,6 @@ void main()
     writeln( "6: ", r[0][4].asArray.getValue(1).as!PGinteger );
     writeln( "7: ", r[0][4].asArray.isNULL(0) );
     writeln( "8: ", r[0][4].asArray.isNULL(2) );*/
+
+	getchar();
 }

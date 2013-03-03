@@ -75,6 +75,12 @@ class BaseConnection
         readyForQuery = true;
     }
 
+	/// Is connected
+	bool connected() @property
+	{
+		return readyForQuery;
+	}
+
 	/// Disconnect from DB
     void disconnect()
     {
