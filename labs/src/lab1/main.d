@@ -6,6 +6,9 @@ import gtk.VBox;
 import gtk.Main;
 private import stdlib = core.stdc.stdlib : exit;
 
+import orm.orm;
+import data;
+
 class ButtonUsage : MainWindow
 {
 	Label StatusLbl;
@@ -44,9 +47,13 @@ class ButtonUsage : MainWindow
 	}
 }
 
+DataBase!"testbd" db;
+
 void main(string[] args)
 {
 	Main.init(args);
 	new ButtonUsage();
+	db = new DataBase!"testbd"("host=localhost port=5432 dbname=postgres user=postgres password=150561");
+	generateBase(db, 100, 20, 100);
 	Main.run();
 }

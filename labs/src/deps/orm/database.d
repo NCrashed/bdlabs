@@ -138,7 +138,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 			conn.exec(tf.deleteSQL(count, whereGenerator));
 	}
 
-	bool hasTable(string name)
+	bool hasTable()(string name)
 	{
 		checkConnection();
 
@@ -155,6 +155,11 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		}
 
 		return false;
+	}
+
+	bool hasTable(Aggregate)()
+	{
+		return hasTable(Aggregate.stringof);
 	}
 
 	bool compareTableFormat(T)(TableFormat!T tf)
@@ -179,13 +184,21 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		return true;
 	}
 
-	void dropTable(T)(TableFormat!T tf)
+	private void dropTable(T)(TableFormat!T tf)
 	{
 		checkConnection();
 		if(!hasTable(tf.name)) return;
 
 		synchronized(this)
-			conn.exec(`DROP TABLE "`~tf.name~`" CASCASE`);
+			conn.exec(`DROP TABLE "`~tf.name~`"`);
+	}
+
+	void dropTable(Aggregate)()
+	{
+		checkConnection();
+		auto tf = prepareTable!Aggregate();
+
+		dropTable(tf);
 	}
 
 	protected

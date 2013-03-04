@@ -81,6 +81,9 @@
     <Compile Include="..\..\src\deps\util\common.d">
       <Link>util\common.d</Link>
     </Compile>
+    <Compile Include="..\..\src\lab1\data.d">
+      <Link>data.d</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dpq2\" />

@@ -43,7 +43,8 @@ int main(string[] args)
                 });
 
         addSource("../src/lab1");
-
+        addSource("../src/deps");
+        
         //addCustomFlags("-D -Dd../docs ../docs/candydoc/candy.ddoc ../docs/candydoc/modules.ddoc -version=CL_VERSION_1_1");
 
         addCompTarget("ormtest", "../bin", "ormtest", BUILD.APP);
