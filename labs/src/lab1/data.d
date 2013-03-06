@@ -8,8 +8,8 @@ import std.conv;
 struct Library
 {
 	UUID id;
-	UUID studentId;
-	UUID bookId;
+	UUID studentid;
+	UUID bookid;
 	short bookOut;
 
 	mixin PrimaryKey!"id";
@@ -28,7 +28,7 @@ struct Book
 {
 	UUID id;
 	string title;
-	UUID subjectId;
+	UUID subjectid;
 	int number;
 
 	mixin PrimaryKey!"id";
@@ -66,8 +66,8 @@ private void generateLibrary(ref Library lb, Student[] sta, Book[] booka)
 {
 	lb.id = randomUUID();
 	lb.bookOut = cast(short)uniform(0,2);
-	lb.studentId = selectRandElement(sta).id;
-	lb.bookId = selectRandElement(booka).id;
+	lb.studentid = selectRandElement(sta).id;
+	lb.bookid = selectRandElement(booka).id;
 }
 
 private void generateStudent(ref Student st)
@@ -86,7 +86,7 @@ private void generateSubject(ref Subject subj)
 private void generateBook(ref Book book, Subject[] subja)
 {
 	book.id = randomUUID();
-	book.subjectId = subja[uniform(0, subja.length)].id;
+	book.subjectid = subja[uniform(0, subja.length)].id;
 
 	string s = selectRandElement(bookTitlesBegin) ~ " " ~ selectRandElement(bookTitlesMedium);
 	if(uniform(0.0, 1.0) <= 0.2)
@@ -141,4 +141,14 @@ public void generateBase(string name, string tu, long tl)(DataBase!(name, tu, tl
 		db.insert(st);
 	foreach(ref lb; liba)
 		db.insert(lb);
+}
+
+public Book[] getAllBooks(string name, string tu, long tl)(DataBase!(name, tu, tl) db)
+{
+	return db.select!Book(0, (TableFormat!Book tf){ return "";});
+}
+
+public Subject getSubject(string name, string tu, long tl)(DataBase!(name, tu, tl) db, UUID id)
+{
+	return db.selectOne!Subject((TableFormat!Subject tf){return "id = '"~to!string(id)~"'";});
 }

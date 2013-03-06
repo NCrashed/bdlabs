@@ -176,7 +176,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		{
 			foreach(size_t i, type; tf.fieldTypes)
 			{
-				//writeln(s[i][0].as!PGtext, " ", s[i][1].as!PGtext);
+				writeln(s[i][0].as!PGtext, " ", s[i][1].as!PGtext);
 				if(type2SQL!type != s[i][1].as!PGtext)
 					return false;
 			}

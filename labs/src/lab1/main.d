@@ -6,10 +6,16 @@ import gtk.Menu;
 import gtk.MenuItem;
 import gtk.Label;
 import gtk.Button;
-import gtk.VBox;
-import gtk.Fixed;
 import gtk.Main;
 import gtk.Box;
+
+import gtk.TreeView;
+import gtk.TreeViewColumn;
+import gtk.CellRendererText;
+import gtk.ListStore;
+import glib.RandG;
+import CustomList;
+import gtk.ScrolledWindow;
 
 private import stdlib = core.stdc.stdlib : exit;
 
@@ -18,47 +24,45 @@ import data;
 
 class ButtonUsage : MainWindow
 {
-	Label StatusLbl;
 	this()
 	{
 		super("Lab1");
 		setDefaultSize(512, 512);
 		
 		MenuBar menuBar = new MenuBar();
-		Menu fileMenu = menuBar.append("File");;
+		Menu fileMenu = menuBar.append("File");
+		MenuItem generateItem = new MenuItem(&onGenerate, "Регенерация базы");
+		MenuItem aboutItem = new MenuItem(&onAbout, "О программе");
 		MenuItem exitItem = new MenuItem((item) {stdlib.exit(0);}, "Выход");
+
+		fileMenu.append(generateItem);
+		fileMenu.append(aboutItem);
 		fileMenu.append(exitItem);
-		 
 
 		Box box = new Box(GtkOrientation.VERTICAL, 5);
 		box.packStart(menuBar, 0, 0, 0);
 		//box.add(menuBar);
 
 		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
+		ScrolledWindow scrollwin = new ScrolledWindow();
+		viewBox.packStart(scrollwin, 1, 1, 0);
+		//viewBox.add(scrollwin);
 
-		
-		StatusLbl = new Label("Click a Button");
-		viewBox.add(StatusLbl);
-		viewBox.add(new Button("Button 1", &onBtn1));
-		viewBox.add(new Button("Exit", &onBtn2));
-		viewBox.add(new Button("About", &onBtn3));
+		TreeView view = createViewAndModel();
+		scrollwin.add(view);
 
 		Notebook tabs = new Notebook();
 		tabs.appendPage(viewBox, "Просмотр книг");
-		box.add(tabs);
+		box.packStart(tabs, 1, 1, 0);
 
 		add(box);
 		showAll();	
 	}
-	void onBtn1(Button button)
+	void onGenerate(MenuItem item)
 	{
-		StatusLbl.setText("You Clicked Button 1");
+		generateBase(db, 100, 20, 100);
 	}
-	void onBtn2(Button button)
-	{
-		stdlib.exit(0);
-	}
-	void onBtn3(Button button)
+	void onAbout(MenuItem item)
 	{
 		with (new AboutDialog())
 		{
@@ -72,6 +76,52 @@ class ButtonUsage : MainWindow
 			showAll();
 		}
 	}
+
+	TreeView createViewAndModel()
+	{
+		TreeViewColumn   col;
+		CellRendererText renderer;
+		CustomList       customlist;
+		TreeView         view;
+
+		customlist = new CustomList();
+		fillModel(customlist);
+		
+		view = new TreeView(customlist);
+		
+		col = new TreeViewColumn();
+		renderer  = new CellRendererText();
+		col.packStart(renderer, true);
+		col.addAttribute(renderer, "text", CustomListColumn.Name);
+		col.setTitle("Название");
+		view.appendColumn(col);
+
+		col = new TreeViewColumn();
+		renderer  = new CellRendererText();
+		col.packStart(renderer, true);
+		col.addAttribute(renderer, "text", CustomListColumn.Subject);
+		col.setTitle("Тема");
+		view.appendColumn(col);
+
+		return view;
+	}
+
+	void fillModel(CustomList customlist)
+	{
+		try
+		{
+			Book[] books = getAllBooks(db);
+
+			foreach (book; books)
+			{
+				customlist.appendRecord(book.title, getSubject(db, book.subjectid).subject);
+			}
+		} catch(Exception e)
+		{
+			import std.stdio;
+			writeln(e.msg);
+		}
+	}	
 }
 
 DataBase!"testbd" db;
@@ -79,9 +129,10 @@ DataBase!"testbd" db;
 void main(string[] args)
 {
 	Main.init(args);
-	new ButtonUsage();
 	db = new DataBase!"testbd"("host=localhost port=5432 dbname=postgres user=postgres password=150561");
-	//generateBase(db, 100, 20, 100);
+
+	new ButtonUsage();
+	
 	Main.run();
 }
 
