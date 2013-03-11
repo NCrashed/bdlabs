@@ -150,6 +150,20 @@ public Book[] getAllBooks(Lab13DB db)
 	return db.select!Book(0, whereAllGen!Book());
 }
 
+public Book[] getBooksBySubj(Lab13DB db, string subjString)
+{
+	UUID subjID;
+	try
+	{
+		subjID = db.selectOne!Subject(whereFieldGen!Subject("subject", subjString)).id;
+	} catch(SelectException e)
+	{
+		return new Book[0];
+	}
+
+	return db.select!Book(0, whereFieldGen!Book("subjectid", subjID));
+}
+
 public Subject[] getAllSubjects(Lab13DB db)
 {
 	return db.select!Subject(0, whereAllGen!Subject());

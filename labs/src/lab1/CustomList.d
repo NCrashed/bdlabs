@@ -424,4 +424,21 @@ class CustomList(Aggregate) : TreeModel
 
 		rowInserted(path, iter);
 	}
+
+	void clear()
+	{
+		auto oldNum = numRows;
+		numRows = 0;
+		rows = new Aggregate*[0];
+
+		/* inform the tree view and other interested objects
+		 *  (e.g. tree row references) that we have inserted
+		 *  a new row, and where it was inserted */
+
+		foreach_reverse(i; 0 .. oldNum)
+		{
+			auto path = new TreePath(i);
+			rowDeleted(path);
+		}
+	}
 }

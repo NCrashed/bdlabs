@@ -23,7 +23,7 @@ import std.conv;
 
 class Lab13Window : MainWindow
 {
-	BookList bookList;
+	BookList bookList, bookBySubjList;
 
 	this()
 	{
@@ -63,7 +63,7 @@ class Lab13Window : MainWindow
 	{
 		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
 		ScrolledWindow scrollwin = new ScrolledWindow();
-		viewBox.packStart(scrollwin, 1, 1, 0);
+		viewBox.packStart(scrollwin, true, true, 0);
 		
 		bookList = new BookList;
 		fillBookList(bookList);
@@ -76,15 +76,25 @@ class Lab13Window : MainWindow
 	{
 		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
 		auto outBookCombo = new ComboBoxText(false);
-		viewBox.packStart(outBookCombo, 0, 0, 0);
+		viewBox.packStart(outBookCombo, false, false, 0);
 
 		auto subjs = getAllSubjects(db);
-		//writeln(subjs);
 		foreach(i, subj; subjs)
 		{
 			outBookCombo.append(to!string(i), subj.subject);
 		}
 
+		Box horBox = new Box(GtkOrientation.HORIZONTAL, 5);
+		viewBox.packStart(horBox, true, true, 0);
+
+		auto scrollwin = new ScrolledWindow();
+		horBox.packStart(scrollwin, true, true, 10);
+
+		bookBySubjList = new BookList;
+		auto treeView = bookBySubjList.createTreeView();
+		scrollwin.add(treeView);
+		
+		outBookCombo.addOnChanged((combo){fillBookBySubjList(bookBySubjList, combo.getActiveText());});
 		return viewBox;
 	}
 
@@ -124,6 +134,7 @@ class Lab13Window : MainWindow
 
 	void fillBookList(BookList list)
 	{
+		list.clear();
 		try
 		{
 			Book[] books = getAllBooks(db);
@@ -135,6 +146,23 @@ class Lab13Window : MainWindow
 			writeln(e.msg);
 		}
 	}	
+
+	void fillBookBySubjList(BookList list, string subj)
+	{
+		if(subj is null) return;
+
+		list.clear();
+		try
+		{
+			Book[] books = getBooksBySubj(db, subj);
+			
+			list.fillData(books, db);
+		} catch(Exception e)
+		{
+			import std.stdio;
+			writeln(e.msg);
+		}
+	}
 }
 
 Lab13DB db;
