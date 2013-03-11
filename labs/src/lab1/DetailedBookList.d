@@ -1,4 +1,4 @@
-module booklist;
+module detailedbooklist;
 
 import gtk.TreeView;
 import gtk.TreeViewColumn;
@@ -7,28 +7,31 @@ import customlist;
 import data;
 import std.conv;
 import std.stdio;
+import std.datetime;
 
-struct BookModel
+struct DetailedBookModel
 {
 	uint pos;
 	string id;
 	string name;
 	string subject;
 	string pageCount;
+	string bookOut;
+	string date;
 }
 
-alias CustomList!BookModel BookListBase;
+alias CustomList!DetailedBookModel DetailedBookListBase;
 
-class BookList : BookListBase
+class DetailedBookList : DetailedBookListBase
 {
-	alias BookListBase.Column Column;
-
+	alias DetailedBookListBase.Column Column;
+	
 	TreeView createTreeView()
 	{
 		TreeViewColumn   col;
 		CellRendererText renderer;
 		TreeView         view;
-
+		
 		view = new TreeView(this);
 		
 		col = new TreeViewColumn();
@@ -44,7 +47,7 @@ class BookList : BookListBase
 		col.addAttribute(renderer, "text", Column.subject);
 		col.setTitle("Тематика");
 		view.appendColumn(col);
-
+		
 		col = new TreeViewColumn();
 		renderer  = new CellRendererText();
 		col.packStart(renderer, true);
@@ -52,10 +55,24 @@ class BookList : BookListBase
 		col.setTitle("Кол-во страниц");
 		view.appendColumn(col);
 
+		col = new TreeViewColumn();
+		renderer  = new CellRendererText();
+		col.packStart(renderer, true);
+		col.addAttribute(renderer, "text", Column.bookOut);
+		col.setTitle("Выдана");
+		view.appendColumn(col);
+
+		col = new TreeViewColumn();
+		renderer  = new CellRendererText();
+		col.packStart(renderer, true);
+		col.addAttribute(renderer, "text", Column.date);
+		col.setTitle("Дата выдачи");
+		view.appendColumn(col);
+
 		return view;
 	}
-
-	void fillData(Book[] books, Lab13DB db)
+	
+	/*void fillData(Book[] books, Lab13DB db)
 	{
 		BookModel md;
 		foreach (book; books)
@@ -66,5 +83,5 @@ class BookList : BookListBase
 			md.pageCount = to!string(book.number);
 			appendRecord(md);
 		}
-	}
+	}*/
 }

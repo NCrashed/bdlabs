@@ -4,6 +4,8 @@ import orm.orm;
 import std.uuid;
 import std.random;
 import std.conv;
+import std.array;
+import std.datetime;
 
 alias DataBase!"testbd" Lab13DB;
 
@@ -12,7 +14,8 @@ struct Library
 	UUID id;
 	UUID studentid;
 	UUID bookid;
-	short bookOut;
+	short bookout;
+	string date;
 
 	mixin PrimaryKey!"id";
 }
@@ -21,7 +24,7 @@ struct Student
 {
 	UUID id;
 	string surname;
-	string group;
+	string groupname;
 
 	mixin PrimaryKey!"id";
 }
@@ -55,7 +58,7 @@ private
 	                             "коров", "гусей", "нейросинхрофазотронов", "блудниц", "проферанса", "штопоров"];
 	string[] studentGrops = ["СМ", "РК", "БМТ", "ИУ", "РЛ"];
 	string[] studentNames = ["Антон", "Василий", "Вадим", "Юрий", "Никита", "Андрей", "Иван", "Александр", "Борис", "Захар", "Святослав", "Руслан", "Сергей", "Леонид", "Кирилл", "Власий"];
-	string[] studentSurnames = ["Глебович", "Богданович", "Никифорович", "Григорьевич", "Емельянович", "Данилович", "Борисович", "Юрьевич", "Ярославич", "Ксенофонтович", "Бориславович", "Викторович"];
+	string[] studentSurnames = ["Глебович", "Богданович", "Никифорович", "Григорьевич", "Емельянович", "Данилович", "Борисович", "Юрьевич", "Ярославич", "Ксенофонтович", "Бориславович", "Викторович", "Антонович"];
 }
 
 
@@ -67,15 +70,16 @@ private T selectRandElement(T)(T[] arr)
 private void generateLibrary(ref Library lb, Student[] sta, Book[] booka)
 {
 	lb.id = randomUUID();
-	lb.bookOut = cast(short)uniform(0,2);
+	lb.bookout = cast(short)uniform(0,2);
 	lb.studentid = selectRandElement(sta).id;
 	lb.bookid = selectRandElement(booka).id;
+	lb.date = Date(uniform(2005,2014), uniform(1,13), uniform(1,28)).toSimpleString();
 }
 
 private void generateStudent(ref Student st)
 {
 	st.id = randomUUID();
-	st.group = selectRandElement(studentGrops)~to!string(uniform(1,11))~"-"~to!string(uniform(1,11));
+	st.groupname = selectRandElement(studentGrops)~to!string(uniform(1,11))~"-"~to!string(uniform(1,11));
 	st.surname = selectRandElement(studentNames) ~ " " ~ selectRandElement(studentSurnames);
 }
 
@@ -104,7 +108,7 @@ private void generateTestData(size_t libraryCount, size_t studentCount, size_t b
 	liba = new Library[libraryCount];
 	sta = new Student[studentCount];
 	booka = new Book[bookCount];
-	size_t subjCount = uniform!"[]"(1, bookCount);
+	size_t subjCount = uniform!"[]"(5, 10);
 	subja = new Subject[subjCount];
 
 	foreach(ref subj; subja)
@@ -172,4 +176,28 @@ public Subject[] getAllSubjects(Lab13DB db)
 public Subject getSubject(Lab13DB db, UUID id)
 {
 	return db.selectOne!Subject(whereFieldGen!Subject("id", id));
+}
+
+public Library getLibraryOutByBookID(Lab13DB db, UUID bookID)
+{
+	return db.selectOne!Library(whereFieldsGen!Library(["bookid", "bookout"], bookID, 1));
+}
+
+public Book[] getOutBooks(Lab13DB db)
+{
+	Library[] libs;
+	try
+	{
+		libs = db.select!Library(0, whereFieldGen!Library("bookout", 1));
+	} catch(SelectException e)
+	{
+		return new Book[0];
+	}
+
+	auto bookApp = appender!(Book[])();
+	foreach(ref lib; libs)
+	{
+		bookApp.put(db.selectOne!Book(whereFieldGen!Book("id", lib.bookid)));
+	}
+	return bookApp.data;
 }

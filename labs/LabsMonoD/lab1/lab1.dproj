@@ -92,6 +92,9 @@
     <Compile Include="..\..\src\lab1\BookList.d">
       <Link>BookList.d</Link>
     </Compile>
+    <Compile Include="..\..\src\lab1\DetailedBookList.d">
+      <Link>DetailedBookList.d</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dpq2\" />

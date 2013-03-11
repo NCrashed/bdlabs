@@ -178,7 +178,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 			s = conn.exec("select column_name, data_type from information_schema.columns where table_name = '"~tf.name~"'");
 		}
 		
-		if(s.rowCount() > 0 && s.rowCount() <= tf.fieldTypes.length)
+		if(s.rowCount() > 0 && s.rowCount() < tf.fieldTypes.length)
 		{
 			foreach(size_t i, type; tf.fieldTypes)
 			{
