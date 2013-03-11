@@ -86,10 +86,17 @@
     <Compile Include="..\..\src\lab1\data.d">
       <Link>data.d</Link>
     </Compile>
+    <Compile Include="..\..\src\lab1\CustomList.d">
+      <Link>CustomList.d</Link>
+    </Compile>
+    <Compile Include="..\..\src\lab1\BookList.d">
+      <Link>BookList.d</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dpq2\" />
     <Folder Include="orm\" />
     <Folder Include="util\" />
+    <Folder Include="lab1\" />
   </ItemGroup>
 </Project>

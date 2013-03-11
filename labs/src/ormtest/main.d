@@ -36,12 +36,12 @@ void main()
 	data[1] = Test1(8, 23, "boo", 23.23, randomUUID());
 
 	db.insert(data);
-	db.update(Test1(42), ["a"], (TableFormat!Test1 tf){return "c = 'boo'";});
+	db.update(Test1(42), ["a"], whereFieldGen!Test1("c", "boo"));
 
-	auto one = db.selectOne((TableFormat!Test1 tf){return "";});
+	auto one = db.selectOne!Test1(whereAllGen!Test1());
 	writeln(one);
 
-	auto many = db.select(0, (TableFormat!Test1 tf){return "c = 'bla'";}, true);
+	auto many = db.select!Test1(0, whereFieldGen!Test1("c", "bla"), true);
 	writeln(many);
 
 	//db.remove(0, (TableFormat!Test1 tf){return "c = 'bla'";});

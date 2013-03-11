@@ -17,6 +17,12 @@ class SelectException : Exception
 	}
 }
 
+template Table(T)
+{
+	static assert(isAggregateType!T);
+	alias string delegate(TableFormat!T) WhereGenerator;
+}
+
 class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLength = 5)
 {
 	alias DataBase!(name, timeoutDurUnits, timeoutLength) thisType;
@@ -92,7 +98,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 			conn.exec(tf.updateSQL(val, fields, whereGenerator));
 	}
 
-	Aggregate selectOne(Aggregate)(string delegate(TableFormat!Aggregate tf) whereGenerator)
+	Aggregate selectOne(Aggregate)(Table!(Aggregate).WhereGenerator whereGenerator)
 	{
 		checkConnection();
 		auto tf = prepareTable!Aggregate();
@@ -108,7 +114,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		throw new SelectException();
 	}
 
-	Aggregate[] select(Aggregate)(size_t count, string delegate(TableFormat!Aggregate tf) whereGenerator, bool distinct = false)
+	Aggregate[] select(Aggregate)(size_t count, Table!(Aggregate).WhereGenerator whereGenerator, bool distinct = false)
 	{
 		checkConnection();
 		auto tf = prepareTable!Aggregate();
@@ -129,7 +135,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		throw new SelectException();
 	}
 
-	void remove(Aggregate)(size_t count, string delegate(TableFormat!Aggregate tf) whereGenerator)
+	void remove(Aggregate)(size_t count, Table!(Aggregate).WhereGenerator whereGenerator)
 	{
 		checkConnection();
 		auto tf = prepareTable!Aggregate();
@@ -176,7 +182,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		{
 			foreach(size_t i, type; tf.fieldTypes)
 			{
-				writeln(s[i][0].as!PGtext, " ", s[i][1].as!PGtext);
+				//writeln(s[i][0].as!PGtext, " ", s[i][1].as!PGtext);
 				if(type2SQL!type != s[i][1].as!PGtext)
 					return false;
 			}

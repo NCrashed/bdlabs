@@ -5,6 +5,8 @@ import std.uuid;
 import std.random;
 import std.conv;
 
+alias DataBase!"testbd" Lab13DB;
+
 struct Library
 {
 	UUID id;
@@ -115,7 +117,7 @@ private void generateTestData(size_t libraryCount, size_t studentCount, size_t b
 		generateLibrary(lb, sta, booka);
 }
 
-public void generateBase(string name, string tu, long tl)(DataBase!(name, tu, tl) db, size_t libraryCount, size_t studentCount, size_t bookCount)
+public void generateBase(Lab13DB db, size_t libraryCount, size_t studentCount, size_t bookCount)
 {
 	if(db.hasTable!Library)
 		db.dropTable!Library;
@@ -143,12 +145,17 @@ public void generateBase(string name, string tu, long tl)(DataBase!(name, tu, tl
 		db.insert(lb);
 }
 
-public Book[] getAllBooks(string name, string tu, long tl)(DataBase!(name, tu, tl) db)
+public Book[] getAllBooks(Lab13DB db)
 {
-	return db.select!Book(0, (TableFormat!Book tf){ return "";});
+	return db.select!Book(0, whereAllGen!Book());
 }
 
-public Subject getSubject(string name, string tu, long tl)(DataBase!(name, tu, tl) db, UUID id)
+public Subject[] getAllSubjects(Lab13DB db)
 {
-	return db.selectOne!Subject((TableFormat!Subject tf){return "id = '"~to!string(id)~"'";});
+	return db.select!Subject(0, whereAllGen!Subject());
+}
+
+public Subject getSubject(Lab13DB db, UUID id)
+{
+	return db.selectOne!Subject(whereFieldGen!Subject("id", id));
 }

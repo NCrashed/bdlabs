@@ -1,45 +1,123 @@
-module CustomList;
+module customlist;
 
 import glib.RandG;
 import gobject.Value;
 import gtk.TreeIter;
 import gtk.TreePath;
 import gtk.TreeModel;
+import util.common;
+import std.traits;
 
 struct CustomRecord
 {
-  /* data - you can extend this */
-  string name;
-  string subject;
+	/* admin stuff used by the custom list model */
+	uint pos;   /* pos within the array */
 
-  /* admin stuff used by the custom list model */
-  uint pos;   /* pos within the array */
+	/* data - you can extend this */
+	string Name;
+	string Subject;
 }
 
-enum CustomListColumn
+/*enum CustomListColumn
 {
 	Record = 0,
 	Name,
 	Subject,
 	NColumns,
+}*/
+
+private template generateEnum(Aggregate, string enumName)
+{
+	alias FieldNameTuple!(Aggregate) fieldNames;
+
+	static string generateBody(string[] fields)
+	{
+		if(fields.length == 0)
+			return "";
+		else if(fields[0] == "pos")
+			return generateBody(fields[1..$]);
+		else 
+			return "\t"~fields[0]~",\n"~generateBody(fields[1..$]);
+	}
+
+	enum generateEnum = "enum "~enumName~"\n{\n\tRecord = 0,\n" ~ generateBody(fieldNames) ~ "}\n";
 }
 
-class CustomList : TreeModel
+class CustomList(Aggregate) : TreeModel
 {
+	static assert(isAggregateType!Aggregate, "CustomList: "~Aggregate.stringof~" must be a aggregate type!");
+	static assert(hasMember!(Aggregate, "pos"), "CustomList: "~Aggregate.stringof~" must have 'uint pos' member!");
+	static assert(is(getMemberType!(Aggregate, "pos") == uint), "CustomList: "~Aggregate.stringof~" 'pos' member should be uint type!");
+	static assert(fieldNames[0] == "pos", "CustomList: please, put 'pos' member first!");
+
+	alias FieldNameTuple!(Aggregate) fieldNames;
+	alias TypeTupleFrom!(Aggregate, fieldNames) fieldTypes;
+
+	mixin(generateEnum!(Aggregate, "Column"));
+
+	// fields
+	enum nColumns = fieldNames.length;
 	uint numRows;
-	int nColumns;
+
 	int stamp;
-	GType[3] columnTypes;
-	CustomRecord*[] rows;
+	GType[nColumns] columnTypes;
+	Aggregate*[] rows;
 
 	public this()
 	{
-		nColumns = columnTypes.length;
 		columnTypes[0] = GType.POINTER;
-		columnTypes[1] = GType.STRING;
-		columnTypes[2] = GType.STRING;
+		foreach(i, type; fieldTypes[1..$])
+		{
+			columnTypes[i+1] = mapType2GType!type();
+		}
 
 		stamp = RandG.randomInt();
+	}
+
+	private static GType mapType2GType(T)()
+	{
+		static if(is(T == string))
+			return GType.STRING;
+		else static if(is(T == bool))
+			return GType.BOOLEAN;
+		else static if(is(T == int))
+			return GType.INT;
+		else static if(is(T == uint))
+			return GType.UINT;
+		else static if(is(T == long))
+			return GType.ULONG;
+		else static if(is(T == ulong))
+			return GType.ULONG;
+		else static if(is(T == float))
+			return GType.FLOAT;
+		else static if(is(T == double))
+			return GType.DOUBLE;
+		else static if(is(T == void*))
+			return GType.POINTER;
+		else static assert(false, "mapType2GType doesn't support type "~T.stringof);
+	}
+
+	private static string mapField2ValueSetter(T)()
+	{
+		static if(is(T == string))
+			return "String";
+		else static if(is(T == bool))
+			return "Boolean";
+		else static if(is(T == int))
+			return "Int";
+		else static if(is(T == uint))
+			return "Uint";
+		else static if(is(T == long))
+			return "Long";
+		else static if(is(T == ulong))
+			return "Ulong";
+		else static if(is(T == float))
+			return "Float";
+		else static if(is(T == double))
+			return "Double";
+		else static if(is(T == void*))
+			return "Pointer";
+		else static assert(false, "mapField2ValueSetter doesn't support type "~T.stringof);
 	}
 
 	/*
@@ -86,9 +164,9 @@ class CustomList : TreeModel
 	 */
 	override int getIter(TreeIter iter, TreePath path)
 	{
-		CustomRecord* record;
-		int[]         indices;
-		int           n, depth;
+		Aggregate* 		record;
+		int[]         	indices;
+		int           	n, depth;
 
 		indices = path.getIndices();
 		depth   = path.getDepth();
@@ -124,27 +202,43 @@ class CustomList : TreeModel
 	override TreePath getPath(TreeIter iter)
 	{
 		TreePath path;
-		CustomRecord* record;
+		Aggregate* record;
 	  
 		if ( iter is null || iter.userData is null || iter.stamp != stamp )
 			return null;
 
-		record = cast(CustomRecord*) iter.userData;
+		record = cast(Aggregate*) iter.userData;
 
 		path = new TreePath(record.pos);
 
 		return path;
 	}
 
+	private template genGetValueSwitch()
+	{
+		static string genSwitchBody()
+		{
+			string ret = "";
+			foreach(i, type; fieldTypes)
+			{
+				if(fieldNames[i] == "pos")
+					ret ~= "\tcase Column.Record:\n\t\tvalue.setPointer(record);\n\t\tbreak;\n";
+				else 
+					ret ~= "\tcase Column."~fieldNames[i]~":\n\t\tvalue.set"~mapField2ValueSetter!(type)()~"(record."~fieldNames[i]~");\n\t\tbreak;\n";
+			}
+			return ret;
+		}
+		
+		enum genGetValueSwitch = "switch(column)\n{\n"~genSwitchBody()~"\tdefault:\n\t\tbreak;\n}\n";	
+	}
 
 	/*
 	 * Returns a row's exported data columns
 	 * (_get_value is what gtk_tree_model_get uses)
 	 */
-
 	override Value getValue(TreeIter iter, int column, Value value = null)
 	{
-		CustomRecord  *record;
+		Aggregate  *record;
 
 		if ( value is null )
 			value = new Value();
@@ -154,28 +248,13 @@ class CustomList : TreeModel
 
 		value.init(columnTypes[column]);
 
-		record = cast(CustomRecord*) iter.userData;
+		record = cast(Aggregate*) iter.userData;
 
 		if ( record is null || record.pos >= numRows )
 			return null;
-
-		switch(column)
-		{
-			case CustomListColumn.Record:
-				value.setPointer(record);
-				break;
-
-			case CustomListColumn.Name:
-				value.setString(record.name);
-				break;
-
-			case CustomListColumn.Subject:
-				value.setString(record.subject);
-				break;
-
-			default:
-				break;
-		}
+		
+		//pragma(msg, genGetValueSwitch!());
+		mixin(genGetValueSwitch!());
 
 		return value;
 	}
@@ -187,12 +266,12 @@ class CustomList : TreeModel
 	 */
 	override int iterNext(TreeIter iter)
 	{
-		CustomRecord* record, nextrecord;
+		Aggregate* record, nextrecord;
 	  
 		if ( iter is null || iter.userData is null || iter.stamp != stamp )
 			return false;
 
-		record = cast(CustomRecord*) iter.userData;
+		record = cast(Aggregate*) iter.userData;
 
 		/* Is this the last record in the list? */
 		if ( (record.pos + 1) >= numRows)
@@ -277,7 +356,7 @@ class CustomList : TreeModel
 	 */
 	override int iterNthChild(TreeIter iter, TreeIter parent, int n)
 	{
-		CustomRecord  *record;
+		Aggregate  *record;
 
 		/* a list has only top-level rows */
 		if( parent is null )
@@ -316,23 +395,20 @@ class CustomList : TreeModel
 	 * internally, so the tree view and other
 	 * interested objects know about the new row.
 	 */
-	void appendRecord(string name, string subject)
+	void appendRecord(Aggregate record)
 	{
-		TreeIter      iter;
-		TreePath      path;
-		CustomRecord* newrecord;
-		uint          pos;
-
-		if ( name is null )
-			return;
+		TreeIter      	iter;
+		TreePath      	path;
+		Aggregate* 		newrecord;
+		uint          	pos;
 
 		pos = numRows;
 		numRows++;
+		
+		newrecord = new Aggregate;
 
-		newrecord = new CustomRecord;
-
-		newrecord.name = name;
-		newrecord.subject = subject;
+		foreach(i, type; fieldTypes[1..$])
+			mixin("newrecord."~fieldNames[i+1]~" = record."~fieldNames[i+1]~";");
 
 		rows ~= newrecord;
 		newrecord.pos = pos;

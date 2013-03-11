@@ -8,13 +8,10 @@ import gtk.Label;
 import gtk.Button;
 import gtk.Main;
 import gtk.Box;
-
+import gtk.ComboBoxText;
 import gtk.TreeView;
-import gtk.TreeViewColumn;
-import gtk.CellRendererText;
-import gtk.ListStore;
-import glib.RandG;
-import CustomList;
+
+import BookList;
 import gtk.ScrolledWindow;
 
 private import stdlib = core.stdc.stdlib : exit;
@@ -22,46 +19,94 @@ private import stdlib = core.stdc.stdlib : exit;
 import orm.orm;
 import data;
 
-class ButtonUsage : MainWindow
+import std.conv;
+
+class Lab13Window : MainWindow
 {
+	BookList bookList;
+
 	this()
 	{
-		super("Lab1");
+		super("Lab1-3");
 		setDefaultSize(512, 512);
-		
-		MenuBar menuBar = new MenuBar();
-		Menu fileMenu = menuBar.append("File");
-		MenuItem generateItem = new MenuItem(&onGenerate, "Регенерация базы");
-		MenuItem aboutItem = new MenuItem(&onAbout, "О программе");
-		MenuItem exitItem = new MenuItem((item) {stdlib.exit(0);}, "Выход");
-
-		fileMenu.append(generateItem);
-		fileMenu.append(aboutItem);
-		fileMenu.append(exitItem);
 
 		Box box = new Box(GtkOrientation.VERTICAL, 5);
-		box.packStart(menuBar, 0, 0, 0);
+		box.packStart(initMenu(), 0, 0, 0);
 		//box.add(menuBar);
 
-		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
-		ScrolledWindow scrollwin = new ScrolledWindow();
-		viewBox.packStart(scrollwin, 1, 1, 0);
-		//viewBox.add(scrollwin);
-
-		TreeView view = createViewAndModel();
-		scrollwin.add(view);
-
 		Notebook tabs = new Notebook();
-		tabs.appendPage(viewBox, "Просмотр книг");
+		tabs.appendPage(initBookViewTab(), 		"Просмотр книг");
+		tabs.appendPage(initOutViewTab(), 		"Выдача книг");
+		tabs.appendPage(initInViewTab(), 		"Прием книг");
+		tabs.appendPage(initHistoryViewTab(), 	"История выдачи");
 		box.packStart(tabs, 1, 1, 0);
 
 		add(box);
 		showAll();	
 	}
+
+	MenuBar initMenu()
+	{
+		MenuBar menuBar = new MenuBar();
+		Menu fileMenu = menuBar.append("Файл");
+		MenuItem generateItem = new MenuItem(&onGenerate, "Регенерация базы");
+		MenuItem aboutItem = new MenuItem(&onAbout, "О программе");
+		MenuItem exitItem = new MenuItem((item) {stdlib.exit(0);}, "Выход");
+		
+		fileMenu.append(generateItem);
+		fileMenu.append(aboutItem);
+		fileMenu.append(exitItem);
+		return menuBar;
+	}
+
+	Box initBookViewTab()
+	{
+		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
+		ScrolledWindow scrollwin = new ScrolledWindow();
+		viewBox.packStart(scrollwin, 1, 1, 0);
+		
+		bookList = new BookList;
+		fillBookList(bookList);
+		TreeView view = bookList.createTreeView();
+		scrollwin.add(view);
+		return viewBox;
+	}
+
+	Box initOutViewTab()
+	{
+		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
+		auto outBookCombo = new ComboBoxText(false);
+		viewBox.packStart(outBookCombo, 0, 0, 0);
+
+		auto subjs = getAllSubjects(db);
+		//writeln(subjs);
+		foreach(i, subj; subjs)
+		{
+			outBookCombo.append(to!string(i), subj.subject);
+		}
+
+		return viewBox;
+	}
+
+	Box initInViewTab()
+	{
+		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
+
+		return viewBox;
+	}
+
+	Box initHistoryViewTab()
+	{
+		Box viewBox = new Box(GtkOrientation.VERTICAL, 5);
+
+		return viewBox;
+	}
+
 	void onGenerate(MenuItem item)
 	{
 		generateBase(db, 100, 20, 100);
 	}
+
 	void onAbout(MenuItem item)
 	{
 		with (new AboutDialog())
@@ -77,45 +122,13 @@ class ButtonUsage : MainWindow
 		}
 	}
 
-	TreeView createViewAndModel()
-	{
-		TreeViewColumn   col;
-		CellRendererText renderer;
-		CustomList       customlist;
-		TreeView         view;
-
-		customlist = new CustomList();
-		fillModel(customlist);
-		
-		view = new TreeView(customlist);
-		
-		col = new TreeViewColumn();
-		renderer  = new CellRendererText();
-		col.packStart(renderer, true);
-		col.addAttribute(renderer, "text", CustomListColumn.Name);
-		col.setTitle("Название");
-		view.appendColumn(col);
-
-		col = new TreeViewColumn();
-		renderer  = new CellRendererText();
-		col.packStart(renderer, true);
-		col.addAttribute(renderer, "text", CustomListColumn.Subject);
-		col.setTitle("Тема");
-		view.appendColumn(col);
-
-		return view;
-	}
-
-	void fillModel(CustomList customlist)
+	void fillBookList(BookList list)
 	{
 		try
 		{
 			Book[] books = getAllBooks(db);
 
-			foreach (book; books)
-			{
-				customlist.appendRecord(book.title, getSubject(db, book.subjectid).subject);
-			}
+			list.fillData(books, db);
 		} catch(Exception e)
 		{
 			import std.stdio;
@@ -124,14 +137,14 @@ class ButtonUsage : MainWindow
 	}	
 }
 
-DataBase!"testbd" db;
+Lab13DB db;
 
 void main(string[] args)
 {
 	Main.init(args);
 	db = new DataBase!"testbd"("host=localhost port=5432 dbname=postgres user=postgres password=150561");
 
-	new ButtonUsage();
+	new Lab13Window();
 	
 	Main.run();
 }

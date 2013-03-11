@@ -107,7 +107,7 @@ class TableFormat(Aggregate)
 		return s.data[0..$-1] ~ where;
 	}
 
-	string selectSQL(size_t count, string delegate(TableFormat!Aggregate) whereGenerator, bool distinct = false)
+	string selectSQL(size_t count, Table!(Aggregate).WhereGenerator whereGenerator, bool distinct = false)
 	{
 		auto s = appender!string();
 		s.put(`SELECT `);
