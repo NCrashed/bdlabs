@@ -9,6 +9,7 @@
     <PreferOneStepBuild>True</PreferOneStepBuild>
     <UseDefaultCompiler>True</UseDefaultCompiler>
     <IncrementalLinking>True</IncrementalLinking>
+    <Compiler>DMD2</Compiler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -21,8 +22,8 @@
     <DebugLevel>0</DebugLevel>
     <CustomCommands>
       <CustomCommands>
-        <Command type="Build" command="rdmd compile.d lab1 debug" workingdir="..\..\scripts" />
-        <Command type="Execute" command="lab1.exe" workingdir="..\..\bin" externalConsole="True" pauseExternalConsole="True" />
+        <Command type="Build" command="rdmd compile.d lab1 debug" workingdir="../../scripts" />
+        <Command type="Execute" command="./lab1" workingdir="../../bin" externalConsole="True" pauseExternalConsole="True" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
@@ -36,7 +37,8 @@
     <DebugLevel>0</DebugLevel>
     <CustomCommands>
       <CustomCommands>
-        <Command type="Build" command="rdmd compile.d lab1 release" workingdir="..\..\scripts" />
+        <Command type="Build" command="rdmd compile.d lab1 release" workingdir="../../scripts" />
+        <Command type="Execute" command="./lab1" workingdir="../../bin" externalConsole="True" pauseExternalConsole="True" />
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
