@@ -40,9 +40,10 @@ class Lab13Window : MainWindow
 	DetailedBookList detailedList;
 	Entry outSurnameEntry, outGroupEntry, inSurnameEntry, inGroupEntry;
 	Label bookAvailableLabel;
-	Button takeButton;
-	UUID currBookForOut;
+	Button takeButton, returnButton;
+	UUID currBookForOut, currInLibID;
 	Calendar calendar, returnCalendar;
+	TreeView inListView;
 
 	this()
 	{
@@ -166,12 +167,15 @@ class Lab13Window : MainWindow
 		Box level3()
 		{
 			Box box = new Box(GtkOrientation.VERTICAL, 10);
+
 			auto loadButton = new Button("_Загрузить");
 			loadButton.addOnClicked(&onInLoadClicked);
 			box.add(loadButton);
-			auto returnButton = new Button("Ве_рнуть");
+			returnButton = new Button("Ве_рнуть");
 			returnButton.addOnClicked(&onInReturnClicked);
+			returnButton.setSensitive(false);
 			box.add(returnButton);
+
 			auto returnAllButton = new Button("В_ернуть все");
 			returnAllButton.addOnClicked(&onInReturnAllClicked);
 			box.add(returnAllButton);
@@ -186,6 +190,9 @@ class Lab13Window : MainWindow
 			auto scrollwin = new ScrolledWindow();
 			detailedList = new DetailedBookList();
 			auto treeView = detailedList.createTreeView();
+			treeView.addOnCursorChanged(&onReturnListChanged);
+			inListView = treeView;
+
 			scrollwin.add(treeView);
 			box.packStart(scrollwin, true, true, 0);
 			box.add(level3());
@@ -345,7 +352,7 @@ class Lab13Window : MainWindow
 			setComments("Первая лабораторная работа по курсу 'Банки данных'");
 			setLicense(license);
 			setCopyright("©Гуща А.В. 2013");
-			//setWebsite("http://ddev.ratedo.com");
+			//setWebsite("http://foguan.net");
 			showAll();
 		}
 	}
@@ -437,6 +444,7 @@ class Lab13Window : MainWindow
 		}
 
 		returnCalendar.clearMarks();
+		detailedList.clear();
 		foreach(lib; libs)
 		{
 			Book book;
@@ -448,11 +456,25 @@ class Lab13Window : MainWindow
 				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при чтении книги!\n"~e.msg);
 				d.run();
 				d.destroy();
+				return;
+			}
+
+			Subject subj;
+			try
+			{
+				subj = db.selectOne!Subject(whereFieldGen!Subject("id", book.subjectid));
+			} catch(SelectException e)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при чтении темы книги!\n"~e.msg);
+				d.run();
+				d.destroy();
+				return;
 			}
 
 			DetailedBookModel md;
 			md.id = to!string(lib.id);
 			md.name = book.title;
+			md.subject = subj.subject;
 			md.pageCount = to!string(book.number);
 			md.bookOut = lib.bookout == 0 ? "Нет" : "Да";
 			md.date = lib.date;
@@ -468,14 +490,172 @@ class Lab13Window : MainWindow
 		}
 	}
 
+	void onReturnListChanged(TreeView view)
+	{
+		TreePath path;
+		TreeViewColumn col;
+		TreeIter iter = new TreeIter();
+		view.getCursor(path, col);
+		
+		if(path !is null)
+		{
+			detailedList.getIter(iter, path);
+			if(iter is null)
+			{
+				returnButton.setSensitive(false);
+				return;
+			}
+			
+			auto val = detailedList.getValue(iter, DetailedBookList.Column.Record);
+			if(val is null)
+			{
+				returnButton.setSensitive(false);
+				return;
+			}	
+			
+			DetailedBookModel* bookModel = cast(DetailedBookModel*)val.getPointer();
+			if(bookModel is null)
+			{
+				returnButton.setSensitive(false);
+				return;
+			}
+
+			if(bookModel.bookOut == "Да")
+			{
+				currInLibID = UUID(bookModel.id);
+				returnButton.setSensitive(true);
+			} else
+			{
+				returnButton.setSensitive(false);
+			}
+		} else
+		{
+			returnButton.setSensitive(false);
+		}
+	}
+
 	void onInReturnClicked(Button btn)
 	{
+		TreePath path;
+		TreeViewColumn col;
+		TreeIter iter = new TreeIter();
+		inListView.getCursor(path, col);
+		
+		if(path !is null)
+		{
+			detailedList.getIter(iter, path);
+			if(iter is null)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при выборке текущей строки!\n");
+				d.run();
+				d.destroy();
+				return;
+			}
+			
+			auto val = detailedList.getValue(iter, DetailedBookList.Column.Record);
+			if(val is null)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при выборке текущей строки!\n");
+				d.run();
+				d.destroy();
+				return;
+			}	
+			
+			DetailedBookModel* bookModel = cast(DetailedBookModel*)val.getPointer();
+			if(bookModel is null)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при выборке текущей строки!\n");
+				d.run();
+				d.destroy();
+				return;
+			}
 
+			assert(bookModel.bookOut == "Да");
+			try
+			{
+				Library lib;
+				lib.bookout = 0;
+				
+				db.update!Library(lib, ["bookout"], whereFieldGen!Library("id", currInLibID));
+
+				bookModel.bookOut = "Нет";
+				detailedList.rowChanged(path, iter);
+				returnButton.setSensitive(false);
+
+				auto date = Date.fromSimpleString(bookModel.date);
+				returnCalendar.selectMonth(date.month-1, date.year);
+				returnCalendar.unmarkDay(date.day);
+			} catch(Exception e)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при обновлении записи в базе!\n"~e.msg);
+				d.run();
+				d.destroy();
+				return;
+			}
+		} else
+		{
+			MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при выборке текущей строки!\n");
+			d.run();
+			d.destroy();
+		}
 	}
 
 	void onInReturnAllClicked(Button brn)
 	{
+		TreeIter iter = new TreeIter();
+		if(!detailedList.getIterFirst(iter))
+		{
+			return;
+		}
 
+		do
+		{
+			//TreePath path = detailedList.getPath(iter);
+			//if(path == null) return;
+
+			auto val = detailedList.getValue(iter, DetailedBookList.Column.Record);
+			if(val is null)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при выборке текущей строки!\n");
+				d.run();
+				d.destroy();
+				return;
+			}
+
+			DetailedBookModel* bookModel = cast(DetailedBookModel*)val.getPointer();
+			if(bookModel is null)
+			{
+				MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при выборке текущей строки!\n");
+				d.run();
+				d.destroy();
+				return;
+			}
+
+			if(bookModel.bookOut == "Да")
+			{
+				try
+				{
+					Library lib;
+					lib.bookout = 0;
+					
+					db.update!Library(lib, ["bookout"], whereFieldGen!Library("id", UUID(bookModel.id)));
+					
+					bookModel.bookOut = "Нет";
+					detailedList.rowChanged(detailedList.getPath(iter), iter);
+					returnButton.setSensitive(false);
+					
+					auto date = Date.fromSimpleString(bookModel.date);
+					returnCalendar.selectMonth(date.month-1, date.year);
+					returnCalendar.unmarkDay(date.day);
+				} catch(Exception e)
+				{
+					MessageDialog d = new MessageDialog(this, GtkDialogFlags.MODAL, MessageType.INFO, ButtonsType.OK, "Ошибка при обновлении записи в базе!\n"~e.msg);
+					d.run();
+					d.destroy();
+					return;
+				}
+			}
+		} while(detailedList.iterNext(iter));
 	}
 }
 
