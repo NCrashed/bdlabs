@@ -19,6 +19,10 @@ package template hasPrimaryKey(Aggregate)
 	static assert(isAggregateType!Aggregate, "hasPrivaryKey expects aggregate type!");
 
 	enum hasPrimaryKey = hasMember!(Aggregate, "getPrimaryKey");
+	static if(hasPrimaryKey)
+	{
+		static assert(hasMember!(Aggregate, getPrimaryKey()), "Cannot find member "~getPrimaryKey()~" for type "~Aggregate.tostring~"!");
+	}
 }
 
 Table!(T).WhereGenerator whereAllGen(T)()
