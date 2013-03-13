@@ -4,6 +4,8 @@ import std.array;
 import std.uuid;
 import std.traits;
 import std.conv;
+import std.string;
+
 import util.common;
 import orm.orm;
 import dpq2.all;
@@ -39,7 +41,7 @@ class TableFormat(Aggregate)
 		s.put(`CREATE TABLE public."`~name~`"`~"\n(\n");
 		foreach(i, type; fieldTypes)
 		{
-			s.put(`"`~fieldNames[i]~`" `~type2SQL!type);
+			s.put(genCreateField!type(fieldNames[i]));
 			static if(hasPrimaryKey!Aggregate)
 			{
 				if(Aggregate.getPrimaryKey() == fieldNames[i])
@@ -60,17 +62,7 @@ class TableFormat(Aggregate)
 		s.put(`INSERT INTO "`~name~`"  VALUES`~"\n\t(");
 		foreach(i, type; fieldTypes)
 		{
-			static if(isSomeString!type)
-			{
-				s.put(`'`~mixin("data."~fieldNames[i])~`'`);
-			} else static if(is(type == UUID))
-			{
-				s.put(`'`~to!string(mixin("data."~fieldNames[i]))~`'`);
-			} else 
-			{
-				s.put(to!string(mixin("data."~fieldNames[i])));
-			}
-
+			s.put(decorateInsertFieldValue!type(data, fieldNames[i]));
 			if(i != fieldTypes.length-1)
 				s.put(",");
 		}
@@ -93,15 +85,19 @@ class TableFormat(Aggregate)
 		{
 			if(isInArray(fields, fieldNames[i]))
 			{
-				s.put(fieldNames[i] ~ ` = ` ~ decorateValue(mixin("data."~fieldNames[i])));
+				s.put(genUpdateFieldValue!type(data, fieldNames[i]));
 				s.put(",");
 			}
 		}
 
-		string where = whereGenerator(this);
-		if(where.length > 0)
+		string where;
+		if(whereGenerator !is null)
 		{
-			where = ` WHERE ` ~ where;
+			where = whereGenerator(this);
+			if(where.length > 0)
+			{
+				where = ` WHERE ` ~ where;
+			}
 		}
 
 		return s.data[0..$-1] ~ where;
@@ -112,6 +108,9 @@ class TableFormat(Aggregate)
 		auto s = appender!string();
 		s.put(`SELECT `);
 		if(distinct) s.put(`DISTINCT `);
+
+		static assert(false, "YOU STOPPED HERE TO ADD ONE TO ONE RELATION!");
+
 		foreach(i, type; fieldTypes)
 		{
 			s.put(fieldNames[i]);
@@ -120,10 +119,14 @@ class TableFormat(Aggregate)
 		}
 		s.put(` FROM "`~name~`"`);
 
-		string where = whereGenerator(this);
-		if(where.length > 0)
+		string where;
+		if(whereGenerator !is null)
 		{
-			where = ` WHERE ` ~ where;
+			where = whereGenerator(this);
+			if(where.length > 0)
+			{
+				where = ` WHERE ` ~ where;
+			}
 		}
 
 		string scount;
@@ -224,7 +227,67 @@ class TableFormat(Aggregate)
       		}
 		}
 
+		static string decorateFieldValue(Aggregate data, string fieldName)
+		{
+			static if(isSomeString!type)
+			{
+				return `'`~mixin("data."~fieldName~`'`);
+			} else static if(is(type == UUID))
+			{
+				return `'`~to!string(mixin("data."~fieldName~`'`));
+			} else 
+			{
+				return to!string(mixin("data."~fieldName));
+			}
+		}
 
+		template isBaseAggregateType(T)
+		{
+			enum isBaseAggregateType = isAggregateType!T && !is(T == UUID);
+		}
+
+		static string genFieldName(T)(string fieldRawName)
+		{
+			fieldRawName = toLower(fieldRawName);
+			static if(isBaseAggregateType!T)
+			{
+				return fieldRawName~"_id";
+			} else
+			{
+				return fieldRawName;
+			}
+		}
+
+		static string genCreateField(T)(string fieldRawName)
+		{
+			static if(isBaseAggregateType!T)
+			{
+				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
+				return `"`~genFieldName!T(fieldRawName)~`" `~type2SQL!(getMemberType!(T, T.getPrimaryKey()))~
+					" REFERENCES "~TableFormat!(T).name~" ("~T.getPrimaryKey()~") ";
+			} else
+			{
+				return `"`~genFieldName!T(fieldRawName)~`" `~type2SQL!T;
+			}
+		}
+
+		string decorateInsertFieldValue(T)(Aggregate data, string fieldRawName)
+		{
+			static if(isBaseAggregateType!T)
+			{
+				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
+				return decorateFieldValue(data, fieldRawName~"."~T.getPrimaryKey());
+			} else return decorateFieldValue(data, genFieldName!T(fieldRawName));
+		}
+
+		string genUpdateFieldValue(T)(Aggregate data, string fieldRawName)
+		{
+			static if(isBaseAggregateType!T)
+			{
+				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
+				return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue(data, fieldRawName~"."~T.getPrimaryKey());
+			} else return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue(data, genFieldName!T(fieldRawName));
+		}
 	}
 }
 
@@ -249,8 +312,14 @@ version(unittest)
 		float d;
 		UUID e;
 	}
+
+	alias TableFormat!Test1 Test1Format;
 }
 unittest
 {
-	auto tf = new TableFormat!Test1();
+	auto tf = new Test1Format();
+
+	writeln(tf.createSQL());
+
+	assert(false);
 }

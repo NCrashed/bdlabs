@@ -21,7 +21,7 @@ package template hasPrimaryKey(Aggregate)
 	enum hasPrimaryKey = hasMember!(Aggregate, "getPrimaryKey");
 	static if(hasPrimaryKey)
 	{
-		static assert(hasMember!(Aggregate, getPrimaryKey()), "Cannot find member "~getPrimaryKey()~" for type "~Aggregate.tostring~"!");
+		static assert(hasMember!(Aggregate, Aggregate.getPrimaryKey()), "Cannot find member "~Aggregate.getPrimaryKey()~" for type "~Aggregate.tostring~"!");
 	}
 }
 

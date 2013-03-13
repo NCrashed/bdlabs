@@ -15,6 +15,7 @@ struct Test1
 	short b;
 	string c;
 	float d;
+	Test2 testOneToOne;
 
 	mixin PrimaryKey!"e";
 }
@@ -41,11 +42,11 @@ void main()
 	writeln(tf.insertSQL(Test1(15, 3, "bla", 42.23)));*/
 
 	auto data = new Test1[2];
-	data[0] = Test1(15, 3, "bla", 42.23, randomUUID());
-	data[1] = Test1(8, 23, "boo", 23.23, randomUUID());
+	data[0] = Test1(randomUUID(), 15, 3, "bla", 42.23);
+	data[1] = Test1(randomUUID(), 8, 23, "boo", 23.23);
 
 	db.insert(data);
-	db.update(Test1(42), ["a"], whereFieldGen!Test1("c", "boo"));
+	db.update(Test1(UUID(), 42), ["a"], whereFieldGen!Test1("c", "boo"));
 
 	auto one = db.selectOne!Test1(whereAllGen!Test1());
 	writeln(one);
