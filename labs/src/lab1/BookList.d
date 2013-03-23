@@ -15,6 +15,7 @@ struct BookModel
 	string name;
 	string subject;
 	string pageCount;
+	string bookCount;
 }
 
 alias CustomList!BookModel BookListBase;
@@ -52,6 +53,13 @@ class BookList : BookListBase
 		col.setTitle("Кол-во страниц");
 		view.appendColumn(col);
 
+		col = new TreeViewColumn();
+		renderer  = new CellRendererText();
+		col.packStart(renderer, true);
+		col.addAttribute(renderer, "text", Column.bookCount);
+		col.setTitle("Кол-во книг");
+		view.appendColumn(col);
+
 		return view;
 	}
 
@@ -64,6 +72,7 @@ class BookList : BookListBase
 			md.name = book.title;
 			md.subject = getSubject(db, book.subjectid).subject;
 			md.pageCount = to!string(book.number);
+			md.bookCount = to!string(book.count);
 			appendRecord(md);
 		}
 	}

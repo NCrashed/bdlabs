@@ -15,7 +15,7 @@ struct Test1
 	short b;
 	string c;
 	float d;
-	Test2 testOneToOne;
+	//Test2 testOneToOne;
 
 	mixin PrimaryKey!"e";
 }

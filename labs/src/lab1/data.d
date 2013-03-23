@@ -35,6 +35,7 @@ struct Book
 	string title;
 	UUID subjectid;
 	int number;
+	int count;
 
 	mixin PrimaryKey!"id";
 }
@@ -100,6 +101,7 @@ private void generateBook(ref Book book, Subject[] subja)
 
 	book.title = s;
 	book.number = uniform(10, 800);
+	book.count = uniform(1,5);
 }
 
 private void generateTestData(size_t libraryCount, size_t studentCount, size_t bookCount, 
@@ -178,9 +180,9 @@ public Subject getSubject(Lab13DB db, UUID id)
 	return db.selectOne!Subject(whereFieldGen!Subject("id", id));
 }
 
-public Library getLibraryOutByBookID(Lab13DB db, UUID bookID)
+public Library[] getLibraryOutByBookID(Lab13DB db, UUID bookID)
 {
-	return db.selectOne!Library(whereFieldsGen!Library(["bookid", "bookout"], bookID, 1));
+	return db.select!Library(0, whereFieldsGen!Library(["bookid", "bookout"], bookID, 1));
 }
 
 public Book[] getOutBooks(Lab13DB db)

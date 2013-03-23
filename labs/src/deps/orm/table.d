@@ -62,7 +62,7 @@ class TableFormat(Aggregate)
 		s.put(`INSERT INTO "`~name~`"  VALUES`~"\n\t(");
 		foreach(i, type; fieldTypes)
 		{
-			s.put(decorateInsertFieldValue!type(data, fieldNames[i]));
+			s.put(decorateInsertFieldValue!(type, fieldNames[i])(data));
 			if(i != fieldTypes.length-1)
 				s.put(",");
 		}
@@ -85,7 +85,7 @@ class TableFormat(Aggregate)
 		{
 			if(isInArray(fields, fieldNames[i]))
 			{
-				s.put(genUpdateFieldValue!type(data, fieldNames[i]));
+				s.put(genUpdateFieldValue!(type, fieldNames[i])(data));
 				s.put(",");
 			}
 		}
@@ -109,7 +109,7 @@ class TableFormat(Aggregate)
 		s.put(`SELECT `);
 		if(distinct) s.put(`DISTINCT `);
 
-		static assert(false, "YOU STOPPED HERE TO ADD ONE TO ONE RELATION!");
+		//static assert(false, "YOU STOPPED HERE TO ADD ONE TO ONE RELATION!");
 
 		foreach(i, type; fieldTypes)
 		{
@@ -227,14 +227,14 @@ class TableFormat(Aggregate)
       		}
 		}
 
-		static string decorateFieldValue(Aggregate data, string fieldName)
+		static string decorateFieldValue(T, string fieldName)(Aggregate data)
 		{
-			static if(isSomeString!type)
+			static if(isSomeString!T)
 			{
-				return `'`~mixin("data."~fieldName~`'`);
-			} else static if(is(type == UUID))
+				return `'`~mixin("data."~fieldName)~`'`;
+			} else static if(is(T == UUID))
 			{
-				return `'`~to!string(mixin("data."~fieldName~`'`));
+				return `'`~to!string(mixin("data."~fieldName))~`'`;
 			} else 
 			{
 				return to!string(mixin("data."~fieldName));
@@ -271,22 +271,22 @@ class TableFormat(Aggregate)
 			}
 		}
 
-		string decorateInsertFieldValue(T)(Aggregate data, string fieldRawName)
+		string decorateInsertFieldValue(T, string fieldRawName)(Aggregate data)
 		{
 			static if(isBaseAggregateType!T)
 			{
 				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
-				return decorateFieldValue(data, fieldRawName~"."~T.getPrimaryKey());
-			} else return decorateFieldValue(data, genFieldName!T(fieldRawName));
+				return decorateFieldValue!(T, fieldRawName~"."~T.getPrimaryKey())(data);
+			} else return decorateFieldValue!(T, genFieldName!T(fieldRawName))(data);
 		}
 
-		string genUpdateFieldValue(T)(Aggregate data, string fieldRawName)
+		string genUpdateFieldValue(T, string fieldRawName)(Aggregate data)
 		{
 			static if(isBaseAggregateType!T)
 			{
 				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
-				return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue(data, fieldRawName~"."~T.getPrimaryKey());
-			} else return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue(data, genFieldName!T(fieldRawName));
+				return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue!(T, fieldRawName~"."~T.getPrimaryKey())(data);
+			} else return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue!(T, genFieldName!T(fieldRawName))(data);
 		}
 	}
 }
@@ -319,7 +319,7 @@ unittest
 {
 	auto tf = new Test1Format();
 
-	writeln(tf.createSQL());
+	//writeln(tf.createSQL());
 
-	assert(false);
+	//assert(false);
 }

@@ -58,7 +58,7 @@ class Lab13Window : MainWindow
 		tabs.appendPage(initBookViewTab(), 		"Просмотр книг");
 		tabs.appendPage(initOutViewTab(), 		"Выдача книг");
 		tabs.appendPage(initInViewTab(), 		"Прием книг");
-		tabs.appendPage(initHistoryViewTab(), 	"История выдачи");
+		//tabs.appendPage(initHistoryViewTab(), 	"История выдачи");
 		box.packStart(tabs, 1, 1, 0);
 
 		add(box);
@@ -261,15 +261,26 @@ class Lab13Window : MainWindow
 			}
 
 			auto id = UUID(bookModel.id);
+			// getting book by id
+			auto book = db.selectOne!Book(whereFieldGen!Book("id", id));
+
 			try
 			{
-				auto lib = getLibraryOutByBookID(db, id);
+				auto libs = getLibraryOutByBookID(db, id);
 				// if not fail
-				bookAvailableLabel.setText("Книга выдана");
-				takeButton.setSensitive(false);
+				if(libs.length == book.count)
+				{
+					bookAvailableLabel.setText("Все книги выданы");
+					takeButton.setSensitive(false);
+				} else
+				{
+					bookAvailableLabel.setText(to!string(book.count-libs.length)~" книг готовы к выдаче");
+					currBookForOut = id;
+					takeButton.setSensitive(true);
+				}
 			} catch(Exception e)
 			{
-				bookAvailableLabel.setText("Книга готова к выдаче");
+				bookAvailableLabel.setText("Все книги готовы к выдаче");
 				currBookForOut = id;
 				takeButton.setSensitive(true);
 			}
@@ -333,8 +344,19 @@ class Lab13Window : MainWindow
 		lib.bookout = 1;
 
 		db.insert!Library(lib);
-		bookAvailableLabel.setText("Книга выдана");
-		takeButton.setSensitive(false);
+
+		auto book = db.selectOne!Book(whereFieldGen!Book("id", currBookForOut));
+		auto libs = getLibraryOutByBookID(db, currBookForOut);
+		auto diff = book.count-libs.length;
+		if(diff <= 0)
+		{
+			bookAvailableLabel.setText("Все книги выданы");
+			takeButton.setSensitive(false);
+		} else
+		{
+			bookAvailableLabel.setText(to!string(diff)~" книг готовы к выдаче");
+			takeButton.setSensitive(true);			
+		}
 	}
 
 	void onGenerate(MenuItem item)
