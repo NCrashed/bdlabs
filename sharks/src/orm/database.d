@@ -207,6 +207,39 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		dropTable(tf);
 	}
 
+	TableFormat!Aggregate prepareTable(Aggregate)()
+	{
+		auto tf = new TableFormat!Aggregate();
+		if(hasTable(tf.name))
+		{
+			if(!compareTableFormat(tf))
+			{
+				///TODO: Сделать перестраивание таблицы без потерь данных
+				throw new Exception("Detected table with same name ("~tf.name~") and different columns! Delete table or implement table rebuilder xD.");
+			}
+		} else
+		{
+			string query;
+
+			alias getTableDependencies!(TableFormat!Aggregate) Depends;
+			foreach(i, dep; Depends)
+			{
+				if(!hasTable!dep())
+				{
+					auto depTf = new TableFormat!dep();
+					query ~= depTf.createSQL~'\n';
+				}
+			}
+
+			query ~= tf.createSQL;
+
+			writeln(query);
+			synchronized(this)
+				conn.exec(query);
+		}
+		return tf;
+	}
+	
 	protected
 	{
 		void checkConnection()
@@ -243,24 +276,6 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 					}
 				}
 			}
-		}
-
-		TableFormat!Aggregate prepareTable(Aggregate)()
-		{
-			auto tf = new TableFormat!Aggregate();
-			if(hasTable(tf.name))
-			{
-				if(!compareTableFormat(tf))
-				{
-					///TODO: Сделать перестраивание таблицы без потерь данных
-					throw new Exception("Detected table with same name ("~tf.name~") and different columns! Delete table or implement table rebuilder xD.");
-				}
-			} else
-			{
-				synchronized(this)
-					conn.exec(tf.createSQL);
-			}
-			return tf;
 		}
 	}
 	private

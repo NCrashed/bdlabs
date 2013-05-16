@@ -31,10 +31,28 @@ import gui.MainWindow;
 import data.wrapper;
 import orm.orm;
 
+import std.datetime;
+import data.structure;
+
 void main(string[] args)
 {
 	Main.init(args);
 	SharksDB db = new DataBase!"sharks"("host=localhost port=5432 dbname=sharks user=postgres password=150561");
+
+	db.prepareTable!AttackCases();
+	db.prepareTable!InformationSources();
+	db.prepareTable!Places();
+	db.prepareTable!Reasons();
+	db.prepareTable!SharkSpieces();
+	db.prepareTable!Habitats();
+	db.prepareTable!Victims();
+	db.prepareTable!Property();
+
+	db.prepareTable!Reason2AttackCase();
+	db.prepareTable!Spiece2AttackCase();
+	db.prepareTable!Property2AttackCase();
+	db.prepareTable!Victim2AttackCase();
+	db.prepareTable!Habitat2Spiece();
 
 	new SharksMainWindow(db);
 	

@@ -24,9 +24,10 @@ import std.uuid;
 enum PrimaryKey;
 
 
-struct ForeignKey(ForeignTable)
-	if(isAggregateType!ForeignTable)
+struct ForeignKey(Table)
+	if(isAggregateType!Table)
 {
+	alias Table ForeignTable;
 	string foreignIdField;
 }
 

@@ -6,6 +6,8 @@ import std.traits;
 import std.conv;
 import std.string;
 import std.datetime;
+import std.typecons;
+import std.typetuple;
 
 import util.common;
 import orm.orm;
@@ -19,12 +21,33 @@ class TableFormatException(Type) : Exception
 	}
 }
 
+template getTableDependencies(tf) if(is(tf _ == TableFormat!T, T))
+{
+	template constructTuple(size_t i, ctuple...)
+	{
+		static if(i >= tf.fieldTypes.length)
+		{
+			alias ctuple constructTuple;
+		} else
+		{
+			static if(isForeignKey!(tf.AggregateType, tf.fieldNames[i]))
+			{
+				alias constructTuple!(i+1, TypeTuple!(getForeignTable!(tf.AggregateType, tf.fieldNames[i]), ctuple)) constructTuple;
+			} else
+				alias constructTuple!(i+1, ctuple) constructTuple;
+		}
+	}
+
+	alias constructTuple!(0, TypeTuple!()) getTableDependencies;
+}
+
 class TableFormat(Aggregate)
 {
 	static assert(isAggregateType!Aggregate, "Table can be created only from struct and class!");
 
 	alias FieldNameTuple!(Aggregate) fieldNames;
 	alias TypeTupleFrom!(Aggregate, fieldNames) fieldTypes;
+	alias Aggregate AggregateType;
 
 	this()
 	{
@@ -43,17 +66,23 @@ class TableFormat(Aggregate)
 		foreach(i, type; fieldTypes)
 		{
 			s.put(genCreateField!type(fieldNames[i]));
-			static if(hasPrimaryKey!Aggregate)
+
+			static if(isPrimaryKey!(Aggregate, fieldNames[i]))
 			{
-				if(Aggregate.getPrimaryKey() == fieldNames[i])
-					s.put(" PRIMARY KEY");
+				s.put(" PRIMARY KEY");
 			}
+			else static if(isForeignKey!(Aggregate, fieldNames[i]))
+			{
+				s.put(" REFERENCES public.\""~getForeignTable!(Aggregate, fieldNames[i]).stringof~"\"(\""~getForeignField!(Aggregate, fieldNames[i])~"\")");
+			}
+
 			if(i != fieldTypes.length-1)
 				s.put(",\n");
 			else
 				s.put("\n");
 		}
 		s.put(")\n WITH ( OIDS = FALSE );");
+
 		return s.data;
 	}
 
@@ -173,7 +202,13 @@ class TableFormat(Aggregate)
 		{
 			try
           	{
-          		mixin("ret."~fieldNames[i]~" = to!"~type.stringof~"(data[i].as!PGtext);");
+          		static if(is(type == Date))
+          		{
+          			mixin("ret."~fieldNames[i]~" = Date.fromISOExtString(data[i].as!PGtext);");
+          		} else
+          		{
+          			mixin("ret."~fieldNames[i]~" = to!"~type.stringof~"(data[i].as!PGtext);");
+          		}
           	} catch(Exception e)
           	{
 				throw new TableFormatException!Aggregate("Error to fill field '"~type.sizeof~" "~fieldNames[i]~"': "~e.msg);
@@ -238,7 +273,7 @@ class TableFormat(Aggregate)
 				return `'`~mixin("data."~fieldName)~`'`;
 			} else static if(is(T == Date))
 			{
-				return `DATE '`~mixin("data."~fieldName)~`'`;
+				return `DATE '`~mixin("data."~fieldName~".toISOExtString()")~`'`;
 			} else static if(is(T == UUID))
 			{
 				return `'`~to!string(mixin("data."~fieldName))~`'`;
@@ -248,52 +283,25 @@ class TableFormat(Aggregate)
 			}
 		}
 
-		template isBaseAggregateType(T)
-		{
-			enum isBaseAggregateType = isAggregateType!T && !is(T == UUID);
-		}
-
 		static string genFieldName(T)(string fieldRawName)
 		{
-			fieldRawName = toLower(fieldRawName);
-			static if(isBaseAggregateType!T)
-			{
-				return fieldRawName~"_id";
-			} else
-			{
-				return fieldRawName;
-			}
+			//fieldRawName = toLower(fieldRawName);
+			return fieldRawName;
 		}
 
 		static string genCreateField(T)(string fieldRawName)
 		{
-			static if(isBaseAggregateType!T)
-			{
-				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
-				return `"`~genFieldName!T(fieldRawName)~`" `~type2SQL!(getMemberType!(T, T.getPrimaryKey()))~
-					" REFERENCES "~TableFormat!(T).name~" ("~T.getPrimaryKey()~") ";
-			} else
-			{
-				return `"`~genFieldName!T(fieldRawName)~`" `~type2SQL!T;
-			}
+			return `"`~genFieldName!T(fieldRawName)~`" `~type2SQL!T;
 		}
 
 		string decorateInsertFieldValue(T, string fieldRawName)(Aggregate data)
 		{
-			static if(isBaseAggregateType!T)
-			{
-				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
-				return decorateFieldValue!(T, fieldRawName~"."~T.getPrimaryKey())(data);
-			} else return decorateFieldValue!(T, genFieldName!T(fieldRawName))(data);
+			return decorateFieldValue!(T, genFieldName!T(fieldRawName))(data);
 		}
 
 		string genUpdateFieldValue(T, string fieldRawName)(Aggregate data)
 		{
-			static if(isBaseAggregateType!T)
-			{
-				static assert(hasPrimaryKey!T, "Type "~T.stringof~" must specify primary key to use in relations!");
-				return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue!(T, fieldRawName~"."~T.getPrimaryKey())(data);
-			} else return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue!(T, genFieldName!T(fieldRawName))(data);
+			return genFieldName!T(fieldRawName) ~ ` = ` ~ decorateFieldValue!(T, genFieldName!T(fieldRawName))(data);
 		}
 	}
 }
@@ -301,12 +309,108 @@ class TableFormat(Aggregate)
 string type2SQL(Type)()
 {
 	static if(is(Type == int)) return "integer";
-	static if(is(Type == short)) return "smallint";
-	static if(is(Type == float)) return "real";
-	static if(is(Type == string)) return "text";
-	static if(is(Type == UUID)) return "uuid";
-	static if(is(Type == Date)) return "DATE";
-	static assert("Type "~Type.stringof~" not supported!");
+	else static if(is(Type == long)) return "bigint";
+	else static if(is(Type == short)) return "smallint";
+	else static if(is(Type == float)) return "real";
+	else static if(is(Type == string)) return "text";
+	else static if(is(Type == UUID)) return "uuid";
+	else static if(is(Type == Date)) return "DATE";
+	else static if(is(Type == bool)) return "boolean";
+	else static assert(false, "Type "~Type.stringof~" not supported!");
+}
+
+private template hasAttibute(alias check, tuple...)
+{
+	static if(tuple.length == 0)
+	{
+		enum hasAttibute = false;
+	} else
+	{
+		static if(check!(tuple[0..1]))
+		{
+			enum hasAttibute = true;
+		} else
+		{
+			enum hasAttibute = hasAttibute!(check, tuple[1..$]);
+		}
+	}
+}
+
+private template findAttibute(alias check, tuple...)
+{
+	static if(tuple.length == 0)
+	{
+		enum findAttibute = tuple();
+	} else
+	{
+		static if(check!(tuple[0]))
+		{
+			enum findAttibute = tuple[0];
+		} else
+		{
+			enum findAttibute = findAttibute!(check, tuple[1..$]);
+		}
+	}
+}
+
+template isPrimaryKey(Aggregate, string fieldname)
+{
+	template checkPrimaryKey(tuple...)
+	{
+		enum checkPrimaryKey = is(tuple[0] == PrimaryKey);
+	}
+	enum isPrimaryKey = hasAttibute!(checkPrimaryKey, __traits(getAttributes, mixin("Aggregate."~fieldname)));
+}
+
+private template checkForeignKey(tuple...)
+{
+	static if(__traits(compiles, tuple[0].ForeignTable))
+	{
+		enum checkForeignKey = true;
+	}
+	else
+	{
+		enum checkForeignKey = false;
+	}
+}
+
+template isForeignKey(Aggregate, string fieldname)
+{
+	enum isForeignKey = hasAttibute!(checkForeignKey, __traits(getAttributes, mixin("Aggregate."~fieldname)));
+}
+version(unittest)
+{
+	struct TestFK
+	{
+		@ForeignKey!TestFK2("id")
+		int fk2id;
+	}
+
+	struct TestFK2
+	{
+		@PrimaryKey
+		int id;
+	}
+}
+unittest
+{
+	static assert(isForeignKey!(TestFK, "fk2id"));
+}
+
+private template getForeignTable(Aggregate, string fieldname)
+{
+	alias findAttibute!(checkForeignKey, __traits(getAttributes, mixin("Aggregate."~fieldname))) ForeignTableAttr;	
+	
+	static assert(!is(ForeignTableAttr == void), "Canot find foreign attribute for "~Aggregate.stringof~"."~fieldname~"!");
+	alias ForeignTableAttr.ForeignTable getForeignTable;
+}
+
+private template getForeignField(Aggregate, string fieldname)
+{
+	alias findAttibute!(checkForeignKey, __traits(getAttributes, mixin("Aggregate."~fieldname))) ForeignTableAttr;	
+	
+	static assert(!is(ForeignTableAttr == void), "Canot find foreign attribute for "~Aggregate.stringof~"."~fieldname~"!");
+	enum getForeignField = ForeignTableAttr.foreignIdField;
 }
 
 version(unittest)
@@ -314,11 +418,21 @@ version(unittest)
 	import std.stdio;
 	struct Test1
 	{
+		@PrimaryKey
 		int a;
+
 		short b;
 		string c;
 		float d;
+
+		@ForeignKey!Test2("id")
 		UUID e;
+	}
+
+	struct Test2
+	{
+		@PrimaryKey
+		UUID id;
 	}
 
 	alias TableFormat!Test1 Test1Format;

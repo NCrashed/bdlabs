@@ -26,6 +26,7 @@ DEALINGS IN THE SOFTWARE.
 */
 module gui.MainWindow;
 
+import gtkc.gtktypes;
 import gtk.MainWindow;
 import gtk.Menu;
 import gtk.MenuBar;
@@ -93,8 +94,7 @@ class SharksMainWindow : MainWindow
 			setCopyright("©Гуща А.В. 2013");
 			
 			auto response = run();
-			if(response == gtk.RESPONSE_DELETE_EVENT ||
-				response == gtk.RESPONSE_CANCEL)
+			if(response == GtkResponseType.CLOSE)
 			{
 				hide();
 			}
