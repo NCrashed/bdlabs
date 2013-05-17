@@ -26,6 +26,8 @@ DEALINGS IN THE SOFTWARE.
 */
 module data.generator;
 
+import std.random;
+import std.datetime;
 import data.wrapper;
 import data.structure;
 
@@ -40,7 +42,208 @@ public
 			this.db = db;
 		}
 
+		void generateDataBase(size_t count)
+		{
+			db.dropTable!InformationSources();
+			db.dropTable!Reason2AttackCase();
+			db.dropTable!Spiece2AttackCase();
+			db.dropTable!Property2AttackCase();
+			db.dropTable!Victim2AttackCase();
+			db.dropTable!Habitat2Spiece();
+			db.dropTable!AttackCases();
+			db.dropTable!Places();
+			db.dropTable!Reasons();
+			db.dropTable!SharkSpieces();
+			db.dropTable!Habitats();
+			db.dropTable!Victims();
+			db.dropTable!Property();
 
+			generatePlaces();
+			generateReasons();
+			generateSharkSpices();
+			generateHabitats();
+			generateHabitat2Spiece();
+			generateVictims();
+			generateProperty();
+
+			generateAttackCases(count);
+			generateInformationSources(count);
+			generateReason2AttackCase(count);
+			generateVictim2AttackCase(count);
+			generateSpiece2AttackCase(count);
+			generateProperty2AttackCase(count);
+		}
+
+		private
+		{
+			void generatePlaces()
+			{
+				foreach(ref place; places)
+				{
+					db.insert!Places(place);
+				}
+			}	
+
+			void generateReasons()
+			{
+				foreach(ref reason; reasons)
+				{
+					db.insert!Reasons(reason);
+				}
+			}
+
+			void generateSharkSpices()
+			{
+				foreach(ref spicie; spicies)
+				{
+					db.insert!SharkSpieces(spicie);
+				}
+			}
+
+			void generateHabitats()
+			{
+				foreach(ref habitat; habitats)
+				{
+					db.insert!Habitats(habitat);
+				}
+			}
+
+			void generateVictims()
+			{
+				foreach(ref victim; victims)
+				{
+					db.insert!Victims(victim);
+				}
+			}
+
+			void generateProperty()
+			{
+				foreach(ref prop; property)
+				{
+					db.insert!Property(prop);
+				}
+			}
+
+			void generateHabitat2Spiece()
+			{
+				foreach(i, ref spicie; spicies)
+				{
+					foreach(j; 0..uniform(1,3))
+					{
+						db.insert!Habitat2Spiece(
+							Habitat2Spiece(
+								uniform(0, habitats.length),
+								i
+							));
+					}
+				}
+			}
+
+			void generateAttackCases(size_t count)
+			{
+				foreach(i; 0..count)
+				{
+					AttackCases acase;
+					acase.AttackCaseID = i;
+					acase.AttackDate = Date(uniform(1820,2014), uniform(1,13), uniform(1,29));
+					acase.DayTime = uniform(0, 86400);
+					acase.ViewDist = uniform(1, 21);
+
+					acase.CaseDescr = messages[uniform(0, messages.length)];
+					acase.PlaceID = uniform(0, places.length);
+
+					db.insert!AttackCases(acase);
+				}
+			}
+
+			void generateInformationSources(size_t count)
+			{
+				size_t counter = 0;
+				foreach(i; 0..count)
+				{
+					foreach(j; 0..uniform(1,3))
+					{
+						auto isource = sources[uniform(0,sources.length)];
+						isource.InformationSourceID = counter++;
+						isource.AttackCaseID = i;
+						isource.MessageCopy = messages[uniform(0, messages.length)];
+
+						db.insert!InformationSources(isource);
+					}
+				}
+			}	
+			
+			void generateReason2AttackCase(size_t count)
+			{
+				foreach(i; 0..count)
+				{
+					foreach(j; 0..uniform(1,4))
+					{
+						auto link = Reason2AttackCase(
+								uniform(0, reasons.length),
+								i
+							);
+
+						db.insert!Reason2AttackCase(link);
+					}
+				}
+			}
+
+			void generateSpiece2AttackCase(size_t count)
+			{
+				foreach(i; 0..count)
+				{
+					foreach(j; 0..uniform(1,2))
+					{
+						auto link = Spiece2AttackCase(
+								uniform(0, spicies.length),
+								i
+							);
+
+						db.insert!Spiece2AttackCase(link);
+					}
+				}
+			}
+
+			void generateProperty2AttackCase(size_t count)
+			{
+				foreach(i; 0..count)
+				{
+					if(uniform!"[]"(0.0,1.0) <= 0.1)
+					{
+						foreach(j; 0..uniform(1,2))
+						{
+							auto link = Property2AttackCase(
+									uniform(0, property.length),
+									i
+								);
+
+							db.insert!Property2AttackCase(link);
+						}
+					}
+				}
+			}
+
+			void generateVictim2AttackCase(size_t count)
+			{
+				foreach(i; 0..count)
+				{
+					size_t victimCount = 1;
+					if(uniform!"[]"(0.0,1.0) <= 0.3)
+						victimCount = uniform(2,4);
+
+					foreach(j; 0..victimCount)
+					{
+						auto link = Victim2AttackCase(
+								uniform(0, victims.length),
+								i
+							);
+
+						db.insert!Victim2AttackCase(link);
+					}
+				}
+			}			
+		}		
 	}
 }
 private
@@ -219,7 +422,7 @@ Sunday’s attack, the third this year, comes just over a fortnight after 22-yea
 		"Free diving, collecting sand dollars",
 		"Crossing river on a raft",
 		"Scuba diving",
-		"Skin diving. Grabbed shark's tail; shark turned & grabbed diver's ankle & began towing him to deep water",
+		"Skin diving. Grabbed sharks tail; shark turned & grabbed divers ankle & began towing him to deep water",
 		"Attempting to drive shark from area",
 		"yachtsman in a zodiac",
 		"Kitesurfing",
@@ -403,7 +606,7 @@ Sunday’s attack, the third this year, comes just over a fortnight after 22-yea
 		Reasons(
 			1,
 			"Catched shark",
-			"Incidents that occur outside of a shark's natural habitat, e.g., aquariums and research holding-pens, are considered provoked, as are all incidents involving captured sharks.",
+			"Incidents that occur outside of a sharks natural habitat, e.g., aquariums and research holding-pens, are considered provoked, as are all incidents involving captured sharks.",
 			true
 		),	
 		Reasons(
@@ -454,7 +657,7 @@ Sunday’s attack, the third this year, comes just over a fortnight after 22-yea
 		SharkSpieces(
 			2,
 			"Tiger shark",
-			"The tiger shark, Galeocerdo cuvier, is a species of requiem shark and the only member of the genus Galeocerdo. Commonly known as sea tiger, the tiger shark is a relatively large macropredator, capable of attaining a length of over 5 m (16 ft). It is found in many tropical and temperate waters, and it is especially common around central Pacific islands. Its name derives from the dark stripes down its body which resemble a tiger's pattern, which fade as the shark matures.",
+			"The tiger shark, Galeocerdo cuvier, is a species of requiem shark and the only member of the genus Galeocerdo. Commonly known as sea tiger, the tiger shark is a relatively large macropredator, capable of attaining a length of over 5 m (16 ft). It is found in many tropical and temperate waters, and it is especially common around central Pacific islands. Its name derives from the dark stripes down its body which resemble a tigers pattern, which fade as the shark matures.",
 			5,
 			"The tiger shark is an apex predator and has a reputation for eating anything. Young tiger sharks are found to prey largely on small fish as well as various small jellyfish, cephalopods and other mollusks. Around the time they attain 2.3 m (7.5 ft), or near sexual maturity, their prey selection expands considerably and much larger animals become regular prey. Numerous fish, crustaceans, sea birds, sea snakes, marine mammals (e.g. bottlenose dolphins, spotted dolphins, dugongs, seals and sea lions), and sea turtles (including the three largest species: the green, the leatherback turtle and the loggerhead turtles) are regularly eaten by adult tiger sharks. The tiger shark also eats other sharks (including adult sandbar sharks), as well as rays, and will even eat conspecifics.",
 			"photos/Tiger_shark.jpg",
@@ -535,5 +738,248 @@ Sunday’s attack, the third this year, comes just over a fortnight after 22-yea
 			17500,
 			"Partial damage"
 		),
-	]
+	];
+
+	Victims[] victims = [
+		Victims(
+			0,
+			"Jules Patterson",
+			Date(1823,5,23),
+			"Unknown",
+			"Shark bit him in half, carrying away the lower extremities",
+			"Fatal"
+		),
+		Victims(
+			1,
+			"James Kelley",
+			Date(1905,9,17),
+			"Fisher",
+			"2-inch lacerations",
+			"Survived"
+		),		
+		Victims(
+			2,
+			"Madelaine Dalton",
+			Date(1921,11,3),
+			"Fisher",
+			"Ankle bitten",
+			"Survived"
+		),	
+		Victims(
+			3,
+			"Mr. Maciotta",
+			Date(1938,12,8),
+			"Fisher",
+			"No injury to occupant; shark capsized boat",
+			"Survived"
+		),	
+		Victims(
+			4,
+			"Richard Parkinson",
+			Date(1968,7,12),
+			"Diver",
+			"Lacerations to left foot",
+			"Survived"
+		),		
+		Victims(
+			5,
+			"Kobus Koeberg",
+			Date(1988,8,6),
+			"Unknown",
+			"Lacerations to left calf and heel from hooked shark",
+			"Survived"
+		),	
+		Victims(
+			6,
+			"George Facey",
+			Date(1978,3,14),
+			"Fisher",
+			"FATAL",
+			"Fatal"
+		),	
+		Victims(
+			7,
+			"Adam Strange",
+			Date(1956,4,30),
+			"Tourist",
+			"FATAL",
+			"Fatal"
+		),	
+		Victims(
+			8,
+			"Zohar Kritzer",
+			Date(1981,9,2),
+			"Scuba diver",
+			"Lacerations to right arm & thigh",
+			"Survived"
+		),	
+		Victims(
+			9,
+			"Cole Taschman",
+			Date(1979,2,27),
+			"Surfer",
+			"Lacerations to right hand",
+			"Survived"
+		),	
+		Victims(
+			10,
+			"Liya Sibili",
+			Date(1965,4,5),
+			"Tourist",
+			"FATAL",
+			"Fatal"
+		),	
+		Victims(
+			11,
+			"Fernando Cardenas Garcia",
+			Date(1954,9,15),
+			"Tourist",
+			"FATAL",
+			"Fatal"
+		),
+		Victims(
+			12,
+			"Kai Rittgers",
+			Date(1984,7,6),
+			"Surfer",
+			"Minor lacerations to left foot & heel",
+			"Survived"
+		),
+		Victims(
+			13,
+			"Mark Riglos",
+			Date(1972,8,16),
+			"Diver",
+			"Right lower leg and foot bitten",
+			"Survived"
+		),
+		Victims(
+			14,
+			"Mariko Haugen",
+			Date(1947,8,16),
+			"Tourist",
+			"Puncture wounds to thigh, defense wounds to hand",
+			"Survived"
+		),
+		Victims(
+			15,
+			"Mrs. Torugbene-Ere Aboh",
+			Date(1974,10,23),
+			"Tourist",
+			"Laceration to right leg",
+			"Survived"
+		),
+		Victims(
+			16,
+			"Tiago José de Oliveira da Silva",
+			Date(1993,9,18),
+			"Tourist",
+			"FATAL",
+			"Fatal"
+		),
+		Victims(
+			17,
+			"David Lowe, Sr.",
+			Date(1967,5,14),
+			"Tourist",
+			"Lacerations to little finger of left hand",
+			"Survived"
+		),
+		Victims(
+			18,
+			"Fabien Bujon",
+			Date(1974,9,30),
+			"Tourist",
+			"Right hand and foot severed",
+			"Survived"
+		),
+		Victims(
+			19,
+			"Alexandre Rassica",
+			Date(1991,5,4),
+			"Surfer",
+			"FATAL",
+			"Fatal"
+		),
+		Victims(
+			20,
+			"John Campion",
+			Date(1969,11,12),
+			"Surfer",
+			"Lacerations to torso & arm",
+			"Survived"
+		),
+		Victims(
+			21,
+			"Steve Stotts",
+			Date(1973,1,2),
+			"Surfer",
+			"Left foot bitten",
+			"Survived"
+		),
+		Victims(
+			22,
+			"Jared Tennison",
+			Date(1993,2,7),
+			"Surfer",
+			"No injury, surfer knocked off board when shark struck surfboard",
+			"Survived"
+		),
+		Victims(
+			23,
+			"Nickolaus Bieber ",
+			Date(2006,7,9),
+			"Tourist",
+			"Thigh bitten",
+			"Survived"
+		),
+		Victims(
+			24,
+			"Patrick McInerney",
+			Date(2000,8,7),
+			"Tourist",
+			"Minor injury",
+			"Survived"
+		),
+		Victims(
+			25,
+			"Brooklyn Daniel",
+			Date(2006,12,13),
+			"Tourist",
+			"Numerous puncture wounds to leg",
+			"Survived"
+		),
+		Victims(
+			26,
+			"Jordon Garosalo",
+			Date(1996,8,2),
+			"Tourist",
+			"Laceration to right foot",
+			"Survived"
+		),
+		Victims(
+			27,
+			"Mike Higgins",
+			Date(1982,3,7),
+			"Surfer",
+			"Laceration to right foot",
+			"Survived"
+		),	
+		Victims(
+			28,
+			"Mark Ayre",
+			Date(1980,5,18),
+			"Surfer",
+			"No injury, ski bitten",
+			"Survived"
+		),	
+		Victims(
+			29,
+			"David Lilienfeld",
+			Date(1990,1,1),
+			"Tourist",
+			"FATAL",
+			"Fatal"
+		),	
+	];
 }

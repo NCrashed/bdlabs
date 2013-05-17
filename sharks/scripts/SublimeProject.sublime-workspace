@@ -4,6 +4,102 @@
 		"selected_items":
 		[
 			[
+				"SHALL",
+				"SHALLOW_WATER"
+			],
+			[
+				"SHAL",
+				"SHALLOW_WATER"
+			],
+			[
+				"Hab",
+				"HabitatID"
+			],
+			[
+				"Vi",
+				"VictimID"
+			],
+			[
+				"At",
+				"AttackCaseID"
+			],
+			[
+				"Pro",
+				"PropertyID"
+			],
+			[
+				"Spi",
+				"SpieceID"
+			],
+			[
+				"Rea",
+				"ReasonID"
+			],
+			[
+				"Res",
+				"ReasonID"
+			],
+			[
+				"Atta",
+				"AttackCaseID"
+			],
+			[
+				"Att",
+				"AttackCaseID"
+			],
+			[
+				"Table",
+				"TableFormat"
+			],
+			[
+				"Agg",
+				"AggregateType"
+			],
+			[
+				"get",
+				"getTableDependencies"
+			],
+			[
+				"For",
+				"ForeignKey"
+			],
+			[
+				"con",
+				"constructTuple"
+			],
+			[
+				"fie",
+				"fieldNames"
+			],
+			[
+				"che",
+				"checkForeignKey"
+			],
+			[
+				"fi",
+				"fieldname"
+			],
+			[
+				"Fo",
+				"ForeignTableAttr"
+			],
+			[
+				"ch",
+				"checkPrimaryKey"
+			],
+			[
+				"getFo",
+				"getForeignTable"
+			],
+			[
+				"find",
+				"findAttibute"
+			],
+			[
+				"Men",
+				"MenuItem"
+			],
+			[
 				"x",
 				"xsize"
 			],
@@ -14,10 +110,6 @@
 			[
 				"MAP_",
 				"MAP_BRICK_ID"
-			],
-			[
-				"get",
-				"getRGB"
 			],
 			[
 				"brickW",
@@ -400,10 +492,6 @@
 				"filterRulesRaw"
 			],
 			[
-				"fi",
-				"filterRules"
-			],
-			[
 				"final",
 				"finalRulesRaw"
 			],
@@ -426,99 +514,77 @@
 			[
 				"stat",
 				"state_t"
-			],
-			[
-				"ge",
-				"generateItemFoot"
-			],
-			[
-				"gener",
-				"generateItem"
-			],
-			[
-				"gn",
-				"generateItems"
-			],
-			[
-				"cha",
-				"char_t"
-			],
-			[
-				"v",
-				"validateRule"
-			],
-			[
-				"spl",
-				"splitter"
-			],
-			[
-				"va",
-				"validateRules"
-			],
-			[
-				"en",
-				"endStates"
-			],
-			[
-				"sta",
-				"state_t"
-			],
-			[
-				"NF",
-				"NFAInfo"
-			],
-			[
-				"NFA",
-				"NFAInfo"
-			],
-			[
-				"end",
-				"checkEndStates"
-			],
-			[
-				"ch",
-				"checkStartState"
-			],
-			[
-				"len",
-				"length"
-			],
-			[
-				"lin",
-				"linenum"
-			],
-			[
-				"onButt",
-				"onButtonPress"
-			],
-			[
-				"mou",
-				"mouseLPressed"
-			],
-			[
-				"mouseL",
-				"mouseLPressed"
-			],
-			[
-				"onMou",
-				"onMouseOut"
-			],
-			[
-				"TCO",
-				"TCOD_key_t"
-			],
-			[
-				"onFoc",
-				"onFocusEnterCallbacks"
-			],
-			[
-				"active",
-				"activePage"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/D/dev/d/db/sharks/src/data/generator.d",
+			"settings":
+			{
+				"buffer_size": 18400,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/sharks/src/data/structure.d",
+			"settings":
+			{
+				"buffer_size": 2022,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/sharks/src/main.d",
+			"settings":
+			{
+				"buffer_size": 2153,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/sharks/src/gui/MainWindow.d",
+			"settings":
+			{
+				"buffer_size": 4294,
+				"line_ending": "Windows",
+				"name": "module gui.MainWindow;"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/gtkD/src/gtk/Dialog.d",
+			"settings":
+			{
+				"buffer_size": 17818,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/gtkD/src/gtkc/gtktypes.d",
+			"settings":
+			{
+				"buffer_size": 176609,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/D/dmd2/src/phobos/std/traits.d",
+			"settings":
+			{
+				"buffer_size": 177383,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/sharks/src/data/wrapper.d",
+			"settings":
+			{
+				"buffer_size": 1455,
+				"line_ending": "Windows",
+				"name": "module data.wrapper;"
+			}
+		},
 		{
 			"file": "/D/dev/d/db/labs/src/lab1/main.d",
 			"settings":
@@ -528,10 +594,26 @@
 			}
 		},
 		{
-			"file": "/D/dev/d/db/sharks/src/main.d",
+			"file": "/D/dev/d/db/sharks/src/orm/orm.d",
 			"settings":
 			{
-				"buffer_size": 18060,
+				"buffer_size": 1876,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/sharks/src/orm/table.d",
+			"settings":
+			{
+				"buffer_size": 9559,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/dev/d/db/sharks/src/orm/database.d",
+			"settings":
+			{
+				"buffer_size": 5387,
 				"line_ending": "Windows"
 			}
 		}
@@ -588,6 +670,13 @@
 	},
 	"file_history":
 	[
+		"/D/dev/d/db/sharks/src/data/structure.d",
+		"/D/dev/d/db/sharks/src/data_old.d",
+		"/D/dev/d/db/sharks/src/orm/table.d",
+		"/D/dev/d/deject/test/testmodule.d",
+		"/D/dev/d/deject/deject/detail/binding.d",
+		"/D/dev/d/deject/deject/attributes.d",
+		"/D/dev/d/deject/test.sh",
 		"/D/dev/d/db/sharks/src/main.d",
 		"/D/dev/d/db/sharks/scripts/compile.d",
 		"/D/dev/d/foguan/bin/test.map",
@@ -708,18 +797,11 @@
 		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/buildcraft/api/blueprints/BptSlotInfo.java",
 		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/audio/AudioManagerClient.java",
 		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiGenerator.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiGeoGenerator.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiNuclearReactor.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiSolarGenerator.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiWaterGenerator.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiWindGenerator.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/machine/gui/GuiCanner.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/machine/gui/GuiCompressor.java",
-		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/machine/gui/GuiCropmatron.java"
+		"/D/dev/Minecraft/1.4.6/mcp/src/minecraft/ic2/core/block/generator/gui/GuiGeoGenerator.java"
 	],
 	"find":
 	{
-		"height": 57.0
+		"height": 46.0
 	},
 	"find_in_files":
 	{
@@ -753,6 +835,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"constructTuple",
+			"isBaseAggregateType",
+			"getMemberType",
+			"genCreateField",
+			"decorateInsertFieldValue",
+			"is(",
+			"is",
+			"GtkResponseType",
+			"onGenerate",
 			"kv6col",
 			"kv6",
 			"vx5sprite",
@@ -871,16 +962,7 @@
 			"noise1d",
 			"landMass",
 			"diry",
-			"dirx",
-			"TCOD_heightmap_get_minmax",
-			"NB_BIOMES",
-			"TCOD_heightmap_get_normal",
-			"TCOD_image_new",
-			"worldin",
-			"worldint",
-			"close",
-			"compile",
-			"readObjects"
+			"dirx"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -935,11 +1017,227 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "/D/dev/d/db/sharks/src/data/generator.d",
+					"settings":
+					{
+						"buffer_size": 18400,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18370,
+								18370
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 13949.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/dev/d/db/sharks/src/data/structure.d",
+					"settings":
+					{
+						"buffer_size": 2022,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1305,
+								1193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2970.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/dev/d/db/sharks/src/main.d",
+					"settings":
+					{
+						"buffer_size": 2153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1889,
+								1889
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 753.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/dev/d/db/sharks/src/gui/MainWindow.d",
+					"settings":
+					{
+						"buffer_size": 4294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1380,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "module gui.MainWindow;",
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/D/dev/d/db/gtkD/src/gtk/Dialog.d",
+					"settings":
+					{
+						"buffer_size": 17818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1784,
+								1805
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1718.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/dev/d/db/gtkD/src/gtkc/gtktypes.d",
+					"settings":
+					{
+						"buffer_size": 176609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								26742,
+								26727
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 29739.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/D/dmd2/src/phobos/std/traits.d",
+					"settings":
+					{
+						"buffer_size": 177383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77113,
+								77113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 67029.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/D/dev/d/db/sharks/src/data/wrapper.d",
+					"settings":
+					{
+						"buffer_size": 1455,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1444,
+								1452
+							]
+						],
+						"settings":
+						{
+							"auto_name": "module data.wrapper;",
+							"syntax": "Packages/D/D.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "/D/dev/d/db/labs/src/lab1/main.d",
 					"settings":
 					{
@@ -950,8 +1248,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								559,
+								559
 							]
 						],
 						"settings":
@@ -966,19 +1264,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/D/dev/d/db/sharks/src/main.d",
+					"buffer": 9,
+					"file": "/D/dev/d/db/sharks/src/orm/orm.d",
 					"settings":
 					{
-						"buffer_size": 18060,
+						"buffer_size": 1876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								426,
+								440
 							]
 						],
 						"settings":
@@ -987,7 +1285,61 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 168.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/D/dev/d/db/sharks/src/orm/table.d",
+					"settings":
+					{
+						"buffer_size": 9559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6787,
+								6787
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8278.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/D/dev/d/db/sharks/src/orm/database.d",
+					"settings":
+					{
+						"buffer_size": 5387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3576,
+								3576
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/D/D.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4533.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1001,7 +1353,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 44.0
 	},
 	"layout":
 	{

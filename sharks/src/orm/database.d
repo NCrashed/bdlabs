@@ -196,7 +196,7 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		if(!hasTable(tf.name)) return;
 
 		synchronized(this)
-			conn.exec(`DROP TABLE "`~tf.name~`"`);
+			conn.exec(`DROP TABLE "`~tf.name~`" CASCADE`);
 	}
 
 	void dropTable(Aggregate)()

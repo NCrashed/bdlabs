@@ -38,6 +38,9 @@ import gtk.Box;
 private import stdlib = core.stdc.stdlib : exit;
 
 import data.wrapper;
+import data.generator;
+
+enum GENERATION_DATA_BASE_SIZE = 100;
 
 class SharksMainWindow : MainWindow
 {
@@ -80,7 +83,8 @@ class SharksMainWindow : MainWindow
 	// Regenerates data base
 	void onGenerate(MenuItem item)
 	{
-
+		auto generator = Generator(db);
+		generator.generateDataBase(GENERATION_DATA_BASE_SIZE);
 	}
 
 	// Show about dialog

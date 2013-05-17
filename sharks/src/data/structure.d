@@ -146,6 +146,6 @@ struct Habitat2Spiece
 	@ForeignKey!Habitats("HabitatID")
 	int 	HabitatID;
 
-	@ForeignKey!AttackCases("AttackCaseID")
-	int 	AttackCaseID;
+	@ForeignKey!SharkSpieces("SpieceID")
+	int 	SpieceID;
 }
