@@ -88,9 +88,8 @@ private import gtkc.gtk;
 private import gtk.TextView;
 
 /**
- * Description
  * GtkSourceView is the main object of the GtkSourceView library. It provides
- * a text view which syntax highlighting, undo/redo and text marks. Use a
+ * a text view with syntax highlighting, undo/redo and text marks. Use a
  * GtkSourceBuffer to display text with a GtkSourceView.
  */
 public class SourceView : TextView
@@ -144,7 +143,7 @@ public class SourceView : TextView
 			throw new ConstructionException("null returned by gtk_text_view_get_buffer");
 		}
 		
-		return new SourceBuffer( cast(GtkSourceBuffer*)p );
+		return ObjectG.getDObject!(SourceBuffer)(cast(GtkSourceBuffer*) p);
 	}
 	
 	/**
@@ -510,7 +509,7 @@ public class SourceView : TextView
 	/**
 	 * Returns a GtkSourceSmartHomeEndType end value specifying
 	 * how the cursor will move when HOME and END keys are pressed.
-	 * Returns: a GtkSourceSmartHomeEndTypeend value.
+	 * Returns: a GtkSourceSmartHomeEndType value.
 	 */
 	public GtkSourceSmartHomeEndType getSmartHomeEnd()
 	{
@@ -742,5 +741,18 @@ public class SourceView : TextView
 		}
 		
 		return ObjectG.getDObject!(SourceGutter)(cast(GtkSourceGutter*) p);
+	}
+	
+	/**
+	 * Determines the visual column at iter taking into
+	 * consideration the indent width of view.
+	 * Params:
+	 * iter = a position in view.
+	 * Returns: the visual column at iter.
+	 */
+	public uint getVisualColumn(TextIter iter)
+	{
+		// guint gtk_source_view_get_visual_column (GtkSourceView *view,  const GtkTextIter *iter);
+		return gtk_source_view_get_visual_column(gtkSourceView, (iter is null) ? null : iter.getTextIterStruct());
 	}
 }

@@ -76,9 +76,9 @@ private import gtk.TreePath;
 
 
 /**
- * Description
  * GTK+ supports Drag-and-Drop in tree views with a high-level and a low-level
  * API.
+ *
  * The low-level API consists of the GTK+ DND API, augmented by some treeview
  * utility functions: gtk_tree_view_set_drag_dest_row(),
  * gtk_tree_view_get_drag_dest_row(), gtk_tree_view_get_dest_row_at_pos(),
@@ -86,6 +86,7 @@ private import gtk.TreePath;
  * gtk_tree_get_row_drag_data(). This API leaves a lot of flexibility, but
  * nothing is done automatically, and implementing advanced features like
  * hover-to-open-rows or autoscrolling on top of this API is a lot of work.
+ *
  * On the other hand, if you write to the high-level API, then all the
  * bookkeeping of rows is done for you, as well as things like hover-to-open
  * and auto-scroll, but your models have to implement the
@@ -124,7 +125,7 @@ public interface TreeDragSourceIF
 	 * Params:
 	 * path = row that was dragged
 	 * selectionData = a GtkSelectionData to fill with data
-	 * from the dragged row. [out]
+	 * from the dragged row
 	 * Returns: TRUE if data of the required type was provided
 	 */
 	public int dragDataGet(TreePath path, SelectionData selectionData);

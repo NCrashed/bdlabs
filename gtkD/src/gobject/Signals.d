@@ -74,7 +74,6 @@ private import glib.Quark;
 
 
 /**
- * Description
  * The basic concept of the signal system is that of the
  * emission of a signal. Signals are introduced
  * per-type and are identified through strings. Signals introduced
@@ -92,12 +91,19 @@ private import glib.Quark;
  * frequently happens at the end of an object class' creation), while user
  * provided handlers are frequently connected and disconnected to/from a certain
  * signal on certain object instances.
+ *
  * A signal emission consists of five stages, unless prematurely stopped:
+ *
  * 	1 - Invocation of the object method handler for G_SIGNAL_RUN_FIRST signals
+ *
  * 	2 - Invocation of normal user-provided signal handlers (after flag FALSE)
+ *
  * 	3 - Invocation of the object method handler for G_SIGNAL_RUN_LAST signals
+ *
  * 	4 - Invocation of user provided signal handlers, connected with an after flag of TRUE
+ *
  * 	5 - Invocation of the object method handler for G_SIGNAL_RUN_CLEANUP signals
+ *
  * The user-provided signal handlers are called in the order they were
  * connected in.
  * All handlers may prematurely stop a signal emission, and any number of
@@ -307,18 +313,7 @@ public class Signals
 	 * This is similar to g_signal_connect_data(), but uses a closure which
 	 * ensures that the gobject stays alive during the call to c_handler
 	 * by temporarily adding a reference count to gobject.
-	 * Note that there is a bug in GObject that makes this function
-	 * much less useful than it might seem otherwise. Once gobject is
-	 * disposed, the callback will no longer be called, but, the signal
-	 * handler is not currently disconnected. If the
-	 * instance is itself being freed at the same time than this doesn't
-	 * matter, since the signal will automatically be removed, but
-	 * if instance persists, then the signal handler will leak. You
-	 * should not remove the signal yourself because in a future versions of
-	 * GObject, the handler will automatically
-	 * be disconnected.
-	 * It's possible to work around this problem in a way that will
-	 * continue to work with future versions of GObject by checking
+	 * When the gobject is destroyed the signal handler will be automatically
 	 * Params:
 	 * detailedSignal = a string of the form "signal-name::detail".
 	 * cHandler = the GCallback to connect.

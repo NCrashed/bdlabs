@@ -84,7 +84,6 @@ private import pango.PgFontFamily;
 private import gobject.ObjectG;
 
 /**
- * Description
  * Pango supports a flexible architecture where a
  * particular rendering architecture can supply an
  * implementation of fonts. The PangoFont structure
@@ -228,5 +227,24 @@ public class PgFontMap : ObjectG
 	{
 		// const char * pango_font_map_get_shape_engine_type  (PangoFontMap *fontmap);
 		return Str.toString(pango_font_map_get_shape_engine_type(pangoFontMap));
+	}
+	
+	/**
+	 * Returns the current serial number of fontmap. The serial number is
+	 * initialized to an small number larger than zero when a new fontmap
+	 * is created and is increased whenever the fontmap is changed. It may
+	 * wrap, but will never have the value 0. Since it can wrap, never compare
+	 * it with "less than", always use "not equals".
+	 * The fontmap can only be changed using backend-specific API, like changing
+	 * fontmap resolution.
+	 * This can be used to automatically detect changes to a PangoFontMap, like
+	 * in PangoContext.
+	 * Since 1.32.4
+	 * Returns: The current serial number of fontmap.
+	 */
+	public uint getSerial()
+	{
+		// guint pango_font_map_get_serial (PangoFontMap *fontmap);
+		return pango_font_map_get_serial(pangoFontMap);
 	}
 }

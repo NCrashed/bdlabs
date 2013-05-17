@@ -71,10 +71,10 @@ public import gio.ActionIF;
 
 
 /**
- * Description
  * The GActionMap interface is implemented by GActionGroup
  * implementations that operate by containing a number of
  * named GAction instances, such as GSimpleActionGroup.
+ *
  * One useful application of this interface is to map the
  * names of actions from various action groups to unique,
  * prefixed names (e.g. by prepending "app." or "win.").
@@ -125,8 +125,8 @@ public template ActionMapT(TStruct)
 	 * $(DDOC_COMMENT example)
 	 * Since 2.32
 	 * Params:
-	 * entries = a pointer to the first item in an array of GActionEntry
-	 * structs
+	 * entries = a pointer to
+	 * the first item in an array of GActionEntry structs. [array length=n_entries][element-type GActionEntry]
 	 * nEntries = the length of entries, or -1 if entries is NULL-terminated
 	 * userData = the user data for signal connections
 	 */

@@ -75,11 +75,11 @@ private import gsv.SourceView;
 private import gobject.ObjectG;
 
 /**
- * Description
  * The GtkSourcePrintCompositor object is used to compose a GtkSourceBuffer
  * for printing. You can set various configuration options to customize the
  * printed output. GtkSourcePrintCompositor is designed to be used with the
  * high-level printing API of gtk+, i.e. GtkPrintOperation.
+ *
  * The margins specified in this object are the layout margins: they define the
  * blank space bordering the printed area of the pages. They must not be
  * confused with the "print margins", i.e. the parts of the page that the
@@ -595,8 +595,8 @@ public class SourcePrintCompositor : ObjectG
 	 * Sets strftime like header format strings, to be printed on the
 	 * left, center and right of the top of each page. The strings may
 	 * include strftime(3) codes which will be expanded at print time.
-	 * All strftime() codes are accepted, with the addition of N for the
-	 * page number and Q for the page count.
+	 * All strftime() codes are accepted, with the addition of #N for the
+	 * page number and #Q for the page count.
 	 * separator specifies if a solid line should be drawn to separate
 	 * the header from the document text.
 	 * If NULL is given for any of the three arguments, that particular
@@ -623,8 +623,8 @@ public class SourcePrintCompositor : ObjectG
 	 * Sets strftime like header format strings, to be printed on the
 	 * left, center and right of the bottom of each page. The strings may
 	 * include strftime(3) codes which will be expanded at print time.
-	 * All strftime() codes are accepted, with the addition of N for the
-	 * page number and Q for the page count.
+	 * All strftime() codes are accepted, with the addition of #N for the
+	 * page number and #Q for the page count.
 	 * separator specifies if a solid line should be drawn to separate
 	 * the footer from the document text.
 	 * If NULL is given for any of the three arguments, that particular

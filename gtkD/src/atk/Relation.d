@@ -72,7 +72,6 @@ private import glib.Str;
 private import gobject.ObjectG;
 
 /**
- * Description
  * An AtkRelation describes a relation between an object and one or more
  * other objects. The actual relations that an object has with other objects
  * are defined as an AtkRelationSet, which is a set of AtkRelations.
@@ -154,7 +153,8 @@ public class Relation : ObjectG
 	 * Create a new relation for the specified key and the specified list
 	 * of targets. See also atk_object_add_relationship().
 	 * Params:
-	 * targets = an array of pointers to AtkObjects
+	 * targets = an array of pointers to
+	 * AtkObjects. [array length=n_targets]
 	 * relationship = an AtkRelationType with which to create the new
 	 * AtkRelation
 	 * Throws: ConstructionException GTK+ fails to create the object.
@@ -189,7 +189,7 @@ public class Relation : ObjectG
 	
 	/**
 	 * Gets the target list of relation
-	 * Returns: the target list of relation. [transfer none]
+	 * Returns: the target list of relation. [transfer none][element-type Atk.Object]
 	 */
 	public PtrArray getTarget()
 	{

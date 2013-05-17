@@ -46,6 +46,7 @@
  * 	- g_weak_ref_
  * omit code:
  * omit signals:
+ * 	- notify
  * imports:
  * 	- gobject.ObjectG
  * 	- gobject.ParamSpec
@@ -100,25 +101,29 @@ version(Tango) {
 
 
 /**
- * Description
  * GObject is the fundamental type providing the common attributes and
  * methods for all object types in GTK+, Pango and other libraries
  * based on GObject. The GObject class provides methods for object
  * construction and destruction, property access methods, and signal
  * support. Signals are described in detail in Signals(3).
+ *
  * GInitiallyUnowned is derived from GObject. The only difference between
  * the two is that the initial reference of a GInitiallyUnowned is flagged
  * as a floating reference.
  * This means that it is not specifically claimed to be "owned" by
  * any code portion. The main motivation for providing floating references is
  * C convenience. In particular, it allows code to be written as:
+ *
  * $(DDOC_COMMENT example)
+ *
  * If container_add_child() will g_object_ref_sink() the
  * passed in child, no reference of the newly created child is leaked.
  * Without floating references, container_add_child()
  * can only g_object_ref() the new child, so to implement this code without
  * reference leaks, it would have to be written as:
+ *
  * $(DDOC_COMMENT example)
+ *
  * The floating reference can be converted into
  * an ordinary reference by calling g_object_ref_sink().
  * For already sunken objects (objects that don't have a floating reference
@@ -128,9 +133,11 @@ version(Tango) {
  * language bindings that provide automated reference and memory ownership
  * maintenance (such as smart pointers or garbage collection) should not
  * expose floating references in their API.
+ *
  * Some object implementations may need to save an objects floating state
  * across certain code portions (an example is GtkMenu), to achieve this,
  * the following sequence can be used:
+ *
  * $(DDOC_COMMENT example)
  */
 public class ObjectG
@@ -302,8 +309,6 @@ public class ObjectG
 		return this;
 	}
 	
-	/**
-	 */
 	int[string] connectedSignals;
 	
 	void delegate(ParamSpec, ObjectG)[] onNotifyListeners;
@@ -313,27 +318,41 @@ public class ObjectG
 	 * doesn't guarantee that the value of the property has actually
 	 * changed, it may also be emitted when the setter for the property
 	 * is called to reinstate the previous value.
+	 *
 	 * This signal is typically used to obtain change notification for a
-	 * single property, by specifying the property name as a detail in the
-	 * $(DDOC_COMMENT example)
+	 * single property.
+	 *
 	 * It is important to note that you must use
-	 * canonical parameter names as
-	 * detail strings for the notify signal.
-	 * See Also
-	 * GParamSpecObject, g_param_spec_object()
+	 * canonical parameter names for the property.
+	 *
+	 * Params:
+	 *     dlg          = The callback.
+	 *     property     = Set this if you only want to receive the signal for a specific property.
+	 *     connectFlags = The behavior of the signal's connection.
 	 */
-	void addOnNotify(void delegate(ParamSpec, ObjectG) dlg, ConnectFlags connectFlags=cast(ConnectFlags)0)
+	void addOnNotify(void delegate(ParamSpec, ObjectG) dlg, string property = "", ConnectFlags connectFlags=cast(ConnectFlags)0)
 	{
-		if ( !("notify" in connectedSignals) )
+		string signalName;
+		
+		if ( property == "" )
+		{
+			signalName = "notify";
+		}
+		else
+		{
+			signalName = "notify::"~ property;
+		}
+		
+		if ( !(signalName in connectedSignals) )
 		{
 			Signals.connectData(
 			getStruct(),
-			"notify",
+			signalName,
 			cast(GCallback)&callBackNotify,
 			cast(void*)this,
 			null,
 			connectFlags);
-			connectedSignals["notify"] = 1;
+			connectedSignals[signalName] = 1;
 		}
 		onNotifyListeners ~= dlg;
 	}
@@ -345,6 +364,8 @@ public class ObjectG
 		}
 	}
 	
+	/**
+	 */
 	
 	/**
 	 * Installs a new property. This is usually done in the class initializer.

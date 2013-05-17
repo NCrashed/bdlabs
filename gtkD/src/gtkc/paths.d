@@ -51,6 +51,7 @@ enum LIBRARY
 	GLGTK,
 	GDA,
 	GSV,
+	GSV1,
 	GSTREAMER,
 	GSTINTERFACES
 }
@@ -71,12 +72,13 @@ const string[LIBRARY.max+1] importLibs =
 	LIBRARY.GTK:           "libgtk-3-0.dll",
 	LIBRARY.PANGO:         "libpango-1.0-0.dll",
 	LIBRARY.PANGOCAIRO:    "libpangocairo-1.0-0.dll",
-	LIBRARY.GLGDK:         "libgdkglext-win32-3.0-0.dll",
-	LIBRARY.GLGTK:         "libgtkglext-win32-3.0-0.dll",
+	LIBRARY.GLGDK:         "libgdkglext-3.0-0.dll",
+	LIBRARY.GLGTK:         "libgtkglext-3.0-0.dll",
 	LIBRARY.GDA:           "libgda-4.0-4.dll",
 	LIBRARY.GSV:           "libgtksourceview-3.0-0.dll",
-	LIBRARY.GSTREAMER:     "libgstreamer-0.10.dll",
-	LIBRARY.GSTINTERFACES: "libgstinterfaces-0.10.dll"
+	LIBRARY.GSV1:          "libgtksourceview-3.0-1.dll",
+	LIBRARY.GSTREAMER:     "libgstreamer-1.0.dll",
+	LIBRARY.GSTINTERFACES: "libgstvideo-1.0.dll"
 	];
 }
 else version(darwin)
@@ -101,8 +103,9 @@ const string[LIBRARY.max+1] importLibs =
 	LIBRARY.GLGTK:         DIRECTORY~"libgtkglext-3.0.dylib",
 	LIBRARY.GDA:           DIRECTORY~"libgda-2.dylib",
 	LIBRARY.GSV:           DIRECTORY~"libgtksourceview-3.0.dylib",
-	LIBRARY.GSTREAMER:     DIRECTORY~"libgstreamer-0.10.dylib",
-	LIBRARY.GSTINTERFACES: DIRECTORY~"libgstinterfaces-0.10.dylib"
+	LIBRARY.GSV1:          DIRECTORY~"libgtksourceview-3.0.dylib",
+	LIBRARY.GSTREAMER:     DIRECTORY~"libgstreamer-1.0.dylib",
+	LIBRARY.GSTINTERFACES: DIRECTORY~"libgstvideo-1.0.dylib"
 	];
 }
 else
@@ -125,68 +128,8 @@ const string[LIBRARY.max+1] importLibs =
 	LIBRARY.GLGTK:         "libgtkglext-3.0.so.0",
 	LIBRARY.GDA:           "libgda-4.0.so.4",
 	LIBRARY.GSV:           "libgtksourceview-3.0.so.0",
-	LIBRARY.GSTREAMER:     "libgstreamer-0.10.so.0",
-	LIBRARY.GSTINTERFACES: "libgstinterfaces-0.10.so.0"
+	LIBRARY.GSV1:          "libgtksourceview-3.0.so.1",
+	LIBRARY.GSTREAMER:     "libgstreamer-1.0.so.0",
+	LIBRARY.GSTINTERFACES: "libgstvideo-1.0.so.0"
 	];
-}
-
-version(Windows)
-{
-	//version(Phobos)
-	version(Tango){} else
-	{
-		import std.windows.registry;
-		import std.stdio;
-	}
-
-	extern (Windows)
-	{
-		private uint GetEnvironmentVariableA(char*, char*, uint);
-	}
-
-	//Based on tango.sys.Environment.Environment.get
-	static string GetEnvironmentVariable(string variable)
-	{
-		char[] var = variable ~ "\0".dup;
-		uint size = GetEnvironmentVariableA(var.ptr, cast(char*)null, 0);
-	
-		if (size == 0) return "";
-
-		char[] buf = new char[size];
-		size = GetEnvironmentVariableA(var.ptr, buf.ptr, size);
-
-		if (size == 0) return "";
-
-		return cast(string)buf[0 .. size];
-	}
-
-	string libPath()
-	{
-		string libPath;
-
-		libPath = GetEnvironmentVariable("GTK_BASEPATH");
-
-		if ( libPath.length > 5 )
-		{
-			if ( libPath[$-5..$] == "\\bin\\" )
-				return libPath;
-			else if ( libPath[$-4..$] == "\\bin" )
-				return libPath ~ "\\";
-			else
-				return libPath ~ "\\bin\\";
-		}
-
-		// Returns the found location or an empty string
-		// to load the libraries from the path.
-		// see http://msdn2.microsoft.com/en-us/library/ms682586(VS.85).aspx
-		return libPath;
-	}
-}
-else
-{
-	// empty for Linux, Unix and Mac because default path is known by ld
-	string libPath()
-	{
-		return "";
-	}
 }

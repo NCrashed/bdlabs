@@ -76,7 +76,6 @@ private import pango.PgFontFamily;
 
 
 /**
- * Description
  * GtkFontChooser is an interface that can be implemented by widgets
  * displaying the list of fonts. In GTK+, the main objects
  * that implement this interface are GtkFontChooserWidget,
@@ -97,6 +96,10 @@ public interface FontChooserIF
 	
 	void delegate(string, FontChooserIF)[] onFontActivatedListeners();
 	/**
+	 * Emitted when a font is activated.
+	 * This usually happens when the user double clicks an item,
+	 * or an item is selected and the user presses one of the keys
+	 * Space, Shift+Space, Return or Enter.
 	 * See Also
 	 * GtkFontChooserDialog, GtkFontChooserWidget, GtkFontButton
 	 */

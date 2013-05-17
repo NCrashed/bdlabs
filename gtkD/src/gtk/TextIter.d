@@ -93,7 +93,6 @@ private import pango.PgLanguage;
 private import gobject.Boxed;
 
 /**
- * Description
  * You may wish to begin by reading the text widget
  * conceptual overview which gives an overview of all the objects and data
  * types related to the text widget and how they work together.
@@ -129,14 +128,6 @@ public class TextIter : Boxed
 	public this()
 	{
 		this(new GtkTextIter);
-	}
-	
-	~this ()
-	{
-		if (  Linker.isLoaded(LIBRARY.GTK) && gtkTextIter !is null )
-		{
-			gtk_text_iter_free(gtkTextIter);
-		}
 	}
 	
 	/**
@@ -285,6 +276,12 @@ public class TextIter : Boxed
 	}
 	
 	/**
+	 * Returns the Unicode character at this iterator. (Equivalent to
+	 * operator* on a C++ iterator.) If the element at this iterator is a
+	 * non-character element, such as an image embedded in the buffer, the
+	 * Unicode "unknown" character 0xFFFC is returned. If invoked on
+	 * the end iterator, zero is returned; zero is not a valid Unicode character.
+	 * So you can write a loop which ends when gtk_text_iter_get_char()
 	 * returns 0.
 	 * Returns: a Unicode character, or 0 if iter is not dereferenceable
 	 */

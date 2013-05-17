@@ -115,31 +115,43 @@ private import gtk.ScrollableIF;
 private import gtk.Container;
 
 /**
- * Description
  * Widget that displays any object that implements the GtkTreeModel interface.
+ *
  * Please refer to the tree widget conceptual
  * overview for an overview of all the objects and data types related
  * to the tree widget and how they work together.
+ *
  * Several different coordinate systems are exposed in the GtkTreeView API.
  * These are:
+ *
  * Coordinate systems in GtkTreeView API
+ *
  * Widget coordinates
+ *
  * Coordinates relative to the widget (usually widget->window).
+ *
  * Bin window coordinates
+ *
  * Coordinates relative to the window that GtkTreeView renders to.
+ *
  * Tree coordinates
+ *
  * Coordinates relative to the entire scrollable area of GtkTreeView. These
  * coordinates start at (0, 0) for row 0 of the tree.
+ *
  * Several functions are available for converting between the different
  * coordinate systems. The most common translations are between widget and bin
  * window coordinates and between bin window and tree coordinates. For the
  * former you can use gtk_tree_view_convert_widget_to_bin_window_coords()
  * (and vice versa), for the latter gtk_tree_view_convert_bin_window_to_tree_coords()
  * (and vice versa).
+ *
  * GtkTreeView as GtkBuildable
+ *
  * The GtkTreeView implementation of the GtkBuildable interface accepts
  * GtkTreeViewColumn objects as <child> elements and exposes the
  * internal GtkTreeSelection in UI definitions.
+ *
  * $(DDOC_COMMENT example)
  */
 public class TreeView : Container, ScrollableIF
@@ -378,10 +390,10 @@ public class TreeView : Container, ScrollableIF
 	void delegate(TreePath, TreeViewColumn, TreeView)[] onRowActivatedListeners;
 	/**
 	 * The "row-activated" signal is emitted when the method
-	 * gtk_tree_view_row_activated() is called or the user double clicks
-	 * a treeview row. It is also emitted when a non-editable row is
-	 * selected and one of the keys: Space, Shift+Space, Return or
-	 * Enter is pressed.
+	 * gtk_tree_view_row_activated() is called, when the user double
+	 * clicks a treeview row with the "activate-on-single-click"
+	 * property set to FALSE, or when the user single clicks a row when
+	 * the "activate-on-single-click" property set to TRUE. It is also
 	 * For selection handling refer to the tree
 	 * widget conceptual overview as well as GtkTreeSelection.
 	 */
@@ -942,6 +954,29 @@ public class TreeView : Container, ScrollableIF
 	{
 		// gboolean gtk_tree_view_get_rules_hint (GtkTreeView *tree_view);
 		return gtk_tree_view_get_rules_hint(gtkTreeView);
+	}
+	
+	/**
+	 * Cause the "row-activated" signal to be emitted
+	 * on a single click instead of a double click.
+	 * Params:
+	 * single = TRUE to emit row-activated on a single click
+	 * Since 3.8
+	 */
+	public void setActivateOnSingleClick(int single)
+	{
+		// void gtk_tree_view_set_activate_on_single_click  (GtkTreeView *tree_view,  gboolean single);
+		gtk_tree_view_set_activate_on_single_click(gtkTreeView, single);
+	}
+	
+	/**
+	 * Gets the setting set by gtk_tree_view_set_activate_on_single_click().
+	 * Returns: TRUE if row-activated will be emitted on a single click Since 3.8
+	 */
+	public int getActivateOnSingleClick()
+	{
+		// gboolean gtk_tree_view_get_activate_on_single_click  (GtkTreeView *tree_view);
+		return gtk_tree_view_get_activate_on_single_click(gtkTreeView);
 	}
 	
 	/**

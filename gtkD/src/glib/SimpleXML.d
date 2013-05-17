@@ -51,6 +51,7 @@
  * 	- gtkc.Loader
  * 	- gtkc.paths
  * structWrap:
+ * 	- GMarkupParseContext* -> SimpleXML
  * 	- GSList* -> ListSG
  * module aliases:
  * local aliases:
@@ -76,7 +77,6 @@ private import gtkc.paths;
 
 
 /**
- * Description
  * The "GMarkup" parser is intended to parse a simple markup format
  * that's a subset of XML. This is a small, efficient, easy-to-use
  * parser. It should not be used if you expect to interoperate with
@@ -86,21 +86,27 @@ private import gtkc.paths;
  * Full-scale XML parsers should be able to parse the subset used by
  * GMarkup, so you can easily migrate to full-scale XML at a later
  * time if the need arises.
+ *
  * GMarkup is not guaranteed to signal an error on all invalid XML;
  * the parser may accept documents that an XML parser would not.
  * However, XML documents which are not well-formed[6]
  * are not considered valid GMarkup documents.
+ *
  * Simplifications to XML include:
+ *
  * Only UTF-8 encoding is allowed
  * No user-defined entities
  * Processing instructions, comments and the doctype declaration
  * are "passed through" but are not interpreted in any way
  * No DTD or validation.
+ *
  * The markup format does support:
+ *
  * Elements
  * Attributes
  * 5 standard entities:
  *  amp; lt; gt; quot; apos;
+ *
  * Character references
  * Sections marked as CDATA
  */
@@ -398,5 +404,34 @@ public class SimpleXML
 	{
 		// gpointer g_markup_parse_context_pop (GMarkupParseContext *context);
 		return g_markup_parse_context_pop(gMarkupParseContext);
+	}
+	
+	/**
+	 * Increases the reference count of context.
+	 * Since 2.36
+	 * Returns: the same context
+	 */
+	public SimpleXML doref()
+	{
+		// GMarkupParseContext * g_markup_parse_context_ref (GMarkupParseContext *context);
+		auto p = g_markup_parse_context_ref(gMarkupParseContext);
+		
+		if(p is null)
+		{
+			return null;
+		}
+		
+		return new SimpleXML(cast(GMarkupParseContext*) p);
+	}
+	
+	/**
+	 * Decreases the reference count of context. When its reference count
+	 * drops to 0, it is freed.
+	 * Since 2.36
+	 */
+	public void unref()
+	{
+		// void g_markup_parse_context_unref (GMarkupParseContext *context);
+		g_markup_parse_context_unref(gMarkupParseContext);
 	}
 }

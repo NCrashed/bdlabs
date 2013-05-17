@@ -75,17 +75,18 @@ private import gio.Cancellable;
 
 
 /**
- * Description
  * GInitable is implemented by objects that can fail during
  * initialization. If an object implements this interface then
  * it must be initialized as the first thing after construction,
  * either via g_initable_init() or g_async_initable_init_async()
  * (the latter is only available if it also implements GAsyncInitable).
+ *
  * If the object is not initialized, or initialization returns with an
  * error, then all operations on the object except g_object_ref() and
  * g_object_unref() are considered to be invalid, and have undefined
  * behaviour. They will often fail with g_critical() or g_warning(), but
  * this must not be relied on.
+ *
  * Users of objects implementing this are not intended to use
  * the interface method directly, instead it will be used automatically
  * in various ways. For C applications you generally just call
@@ -93,6 +94,7 @@ private import gio.Cancellable;
  * This will call g_initable_init() under the cover, returning NULL and
  * setting a GError on failure (at which point the instance is
  * unreferenced).
+ *
  * For bindings in languages where the native constructor supports
  * exceptions the binding could check for objects implemention GInitable
  * during normal construction and automatically initialize them, throwing
@@ -150,7 +152,7 @@ public interface InitableIF
 	 * the value, and other property value pairs, and ended by NULL.
 	 * varArgs = The var args list generated from first_property_name.
 	 * cancellable = optional GCancellable object, NULL to ignore.
-	 * Returns: a newly allocated GObject, or NULL on error. [transfer full]
+	 * Returns: a newly allocated GObject, or NULL on error. [type GObject.Object][transfer full]
 	 * Throws: GException on failure.
 	 */
 	public static ObjectG newValist(GType objectType, string firstPropertyName, void* varArgs, Cancellable cancellable);
@@ -164,7 +166,7 @@ public interface InitableIF
 	 * objectType = a GType supporting GInitable.
 	 * parameters = the parameters to use to construct the object. [array length=n_parameters]
 	 * cancellable = optional GCancellable object, NULL to ignore.
-	 * Returns: a newly allocated GObject, or NULL on error. [transfer full]
+	 * Returns: a newly allocated GObject, or NULL on error. [type GObject.Object][transfer full]
 	 * Throws: GException on failure.
 	 */
 	public static void* newv(GType objectType, GParameter[] parameters, Cancellable cancellable);

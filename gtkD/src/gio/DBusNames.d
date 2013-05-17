@@ -71,16 +71,16 @@ private import gio.DBusConnection;
 
 
 /**
- * Description
  * Convenience API for owning bus names.
+ *
  * $(DDOC_COMMENT example)
  */
 public class DBusNames
 {
 	
 	/**
-	 * Description
 	 * Convenience API for watching bus names.
+	 *
 	 * $(DDOC_COMMENT example)
 	 */
 	
@@ -204,7 +204,7 @@ public class DBusNames
 	 * guaranteed that the next time one of the handlers is invoked, it
 	 * will be name_vanished_handler. The reverse is also true.
 	 * This behavior makes it very simple to write applications that wants
-	 * to take action when a certain name exists, see Example 9, “Simple application watching a name”. Basically, the application
+	 * to take action when a certain name exists, see Example 13, “Simple application watching a name”. Basically, the application
 	 * should create object proxies in name_appeared_handler and destroy
 	 * them again (if any) in name_vanished_handler.
 	 * Since 2.26

@@ -68,14 +68,18 @@ private import glib.ByteArray;
 
 
 /**
- * Description
  * GByteArray is a mutable array of bytes based on GArray, to provide arrays
  * of bytes which grow automatically as elements are added.
+ *
  * To create a new GByteArray use g_byte_array_new(). To add elements to a
  * GByteArray, use g_byte_array_append(), and g_byte_array_prepend().
+ *
  * To set the size of a GByteArray, use g_byte_array_set_size().
+ *
  * To free a GByteArray, use g_byte_array_free().
+ *
  * $(DDOC_COMMENT example)
+ *
  * See GBytes if you are interested in an immutable object representing a
  * sequence of bytes.
  */
@@ -114,7 +118,7 @@ public class Bytes
 	 * data is copied.
 	 * Since 2.32
 	 * Params:
-	 * data = the data to be used for the bytes. [array length=size]
+	 * data = the data to be used for the bytes. [transfer none][array length=size][element-type guint8]
 	 * size = the size of data
 	 * Throws: ConstructionException GTK+ fails to create the object.
 	 */
@@ -181,7 +185,7 @@ public class Bytes
 	 * Get the byte data in the GBytes. This data should not be modified.
 	 * This function will always return the same pointer for a given GBytes.
 	 * Since 2.32
-	 * Returns: a pointer to the byte data. [array length=size][type guint8]
+	 * Returns: a pointer to the byte data. [transfer none][array length=size][type guint8]
 	 */
 	public void[] getData()
 	{

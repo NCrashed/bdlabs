@@ -129,16 +129,17 @@ private import gdk.Window;
 
 
 /**
- * Description
  * The functions in this section are specific to the GDK X11 backend.
  * To use them, you need to include the <gdk/gdkx.h>
  * header and use the X11-specific pkg-config files to build your
  * application (either gdk-x11-3.0 or
  * gtk+-x11-3.0).
+ *
  * To make your code compile with other GDK backends, guard backend-specific
  * calls by an ifdef as follows. Since GDK may be built with multiple
  * backends, you should also check for the backend that is in use (e.g. by
  * using the GDK_IS_X11_DISPLAY() macro).
+ *
  * $(DDOC_COMMENT example)
  */
 public class X11
@@ -392,6 +393,22 @@ public class X11
 	{
 		// void gdk_x11_window_move_to_current_desktop  (GdkWindow *window);
 		gdk_x11_window_move_to_current_desktop((window is null) ? null : window.getWindowStruct());
+	}
+	
+	/**
+	 * This function modifies or removes an arbitrary X11 window
+	 * property of type UTF8_STRING. If the given window is
+	 * not a toplevel window, it is ignored.
+	 * Params:
+	 * window = a GdkWindow. [type GdkX11Window]
+	 * name = Property name, will be interned as an X atom
+	 * value = Property value, or NULL to delete. [allow-none]
+	 * Since 3.4
+	 */
+	public static void windowSetUtf8_Property(Window window, string name, string value)
+	{
+		// void gdk_x11_window_set_utf8_property (GdkWindow *window,  const gchar *name,  const gchar *value);
+		gdk_x11_window_set_utf8_property((window is null) ? null : window.getWindowStruct(), Str.toStringz(name), Str.toStringz(value));
 	}
 	
 	/**

@@ -82,12 +82,12 @@ private import gtk.Widget;
 private import gobject.ObjectG;
 
 /**
- * Description
  * The GtkCellRenderer is a base class of a set of objects used for
  * rendering a cell to a cairo_t. These objects are used primarily by
  * the GtkTreeView widget, though they aren't tied to them in any
  * specific way. It is worth noting that GtkCellRenderer is not a
  * GtkWidget and cannot be treated as such.
+ *
  * The primary use of a GtkCellRenderer is for drawing a certain graphical
  * elements on a cairo_t. Typically, one cell renderer is used to
  * draw many cells on the screen. To this extent, it isn't expected that a
@@ -95,11 +95,13 @@ private import gobject.ObjectG;
  * just prior to use using GObjects property system. Then, the
  * cell is measured using gtk_cell_renderer_get_size(). Finally, the cell
  * is rendered in the correct location using gtk_cell_renderer_render().
+ *
  * There are a number of rules that must be followed when writing a new
- * GtkCellRenderer. First and foremost, its important that a certain set
+ * GtkCellRenderer. First and foremost, it's important that a certain set
  * of properties will always yield a cell renderer of the same size,
  * barring a GtkStyle change. The GtkCellRenderer also has a number of
  * generic properties that are expected to be honored by all children.
+ *
  * Beyond merely rendering a cell, cell renderers can optionally
  * provide active user interface elements. A cell renderer can be
  * activatable like GtkCellRendererToggle,
@@ -109,6 +111,7 @@ private import gobject.ObjectG;
  * To make a cell renderer activatable or editable, you have to
  * implement the GtkCellRendererClass.activate or
  * GtkCellRendererClass.start_editing virtual functions, respectively.
+ *
  * Many properties of GtkCellRenderer and its subclasses have a
  * corresponding "set" property, e.g. "cell-background-set" corresponds
  * to "cell-background". These "set" properties reflect whether a property
@@ -220,6 +223,23 @@ public class CellRenderer : ObjectG
 		}
 	}
 	
+	
+	/**
+	 * Sets the type to be used for creating accessibles for cells rendered by
+	 * cell renderers of renderer_class. Note that multiple accessibles will
+	 * be created.
+	 * This function should only be called from class init functions of cell
+	 * renderers.
+	 * Params:
+	 * rendererClass = class to set the accessible type for
+	 * type = The object type that implements the accessible for widget_class.
+	 * The type must be a subtype of GtkRendererCellAccessible
+	 */
+	public static void classSetAccessibleType(GtkCellRendererClass* rendererClass, GType type)
+	{
+		// void gtk_cell_renderer_class_set_accessible_type  (GtkCellRendererClass *renderer_class,  GType type);
+		gtk_cell_renderer_class_set_accessible_type(rendererClass, type);
+	}
 	
 	/**
 	 * Gets the aligned area used by cell inside cell_area. Used for finding

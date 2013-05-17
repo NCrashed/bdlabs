@@ -120,23 +120,26 @@ private import gio.AsyncInitableIF;
 private import gobject.ObjectG;
 
 /**
- * Description
  * The GDBusConnection type is used for D-Bus connections to remote
  * peers such as a message buses. It is a low-level API that offers a
  * lot of flexibility. For instance, it lets you establish a connection
  * over any transport that can by represented as an GIOStream.
+ *
  * This class is rarely used directly in D-Bus clients. If you are writing
  * an D-Bus client, it is often easier to use the g_bus_own_name(),
  * g_bus_watch_name() or g_dbus_proxy_new_for_bus() APIs.
+ *
  * As an exception to the usual GLib rule that a particular object must not be
  * used by two threads at the same time, GDBusConnection's methods may be
  * called from any thread[1].
+ *
  * Most of the ways to obtain a GDBusConnection automatically initialize it
  * (i.e. connect to D-Bus): for instance, g_dbus_connection_new() and
  * g_bus_get(), and the synchronous versions of those methods, give you an
  * initialized connection. Language bindings for GIO should use
  * g_initable_new() or g_async_initable_new_async(), which also initialize the
  * connection.
+ *
  * If you construct an uninitialized GDBusConnection, such as via
  * g_object_new(), you must initialize it via g_initable_init() or
  * g_async_initable_init_async() before using its methods or properties.
@@ -145,9 +148,13 @@ private import gobject.ObjectG;
  * to undefined behaviour. In particular, if initialization fails with a
  * GError, the only valid thing you can do with that GDBusConnection is to
  * free it with g_object_unref().
+ *
  * $(DDOC_COMMENT example)
+ *
  * $(DDOC_COMMENT example)
+ *
  * $(DDOC_COMMENT example)
+ *
  * $(DDOC_COMMENT example)
  */
 public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
@@ -228,19 +235,19 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	}
 	
 	/**
-	 * Description
 	 * These functions support exporting a GActionGroup on D-Bus.
 	 * The D-Bus interface that is used is a private implementation
 	 * detail.
+	 *
 	 * To access an exported GActionGroup remotely, use
 	 * g_dbus_action_group_get() to obtain a GDBusActionGroup.
 	 */
 	
 	/**
-	 * Description
 	 * These functions support exporting a GMenuModel on D-Bus.
 	 * The D-Bus interface that is used is a private implementation
 	 * detail.
+	 *
 	 * To access an exported GMenuModel remotely, use
 	 * g_dbus_menu_model_get() to obtain a GDBusMenuModel.
 	 */
@@ -1161,7 +1168,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * If connection is closed then the operation will fail with
 	 * G_IO_ERROR_CLOSED. If message is not well-formed,
 	 * the operation fails with G_IO_ERROR_INVALID_ARGUMENT.
-	 * See Example 2, “D-Bus server example” and Example 4, “D-Bus UNIX File Descriptor example” for an example of how to use this
+	 * See Example 6, “D-Bus server example” and Example 8, “D-Bus UNIX File Descriptor example” for an example of how to use this
 	 * low-level API to send and receive UNIX file descriptors.
 	 * Note that message must be unlocked, unless flags contain the
 	 * G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL flag.
@@ -1208,7 +1215,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * See g_dbus_connection_send_message_with_reply_sync() for the synchronous version.
 	 * Note that message must be unlocked, unless flags contain the
 	 * G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL flag.
-	 * See Example 2, “D-Bus server example” and Example 4, “D-Bus UNIX File Descriptor example” for an example of how to use this
+	 * See Example 6, “D-Bus server example” and Example 8, “D-Bus UNIX File Descriptor example” for an example of how to use this
 	 * low-level API to send and receive UNIX file descriptors.
 	 * Since 2.26
 	 * Params:
@@ -1235,7 +1242,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * occurred. That is to say that the returned GDBusMessage object may
 	 * be of type G_DBUS_MESSAGE_TYPE_ERROR. Use
 	 * g_dbus_message_to_gerror() to transcode this to a GError.
-	 * See Example 2, “D-Bus server example” and Example 4, “D-Bus UNIX File Descriptor example” for an example of how to use this
+	 * See Example 6, “D-Bus server example” and Example 8, “D-Bus UNIX File Descriptor example” for an example of how to use this
 	 * low-level API to send and receive UNIX file descriptors.
 	 * Since 2.26
 	 * Params:
@@ -1283,7 +1290,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * occurred. That is to say that the returned GDBusMessage object may
 	 * be of type G_DBUS_MESSAGE_TYPE_ERROR. Use
 	 * g_dbus_message_to_gerror() to transcode this to a GError.
-	 * See Example 2, “D-Bus server example” and Example 4, “D-Bus UNIX File Descriptor example” for an example of how to use this
+	 * See Example 6, “D-Bus server example” and Example 8, “D-Bus UNIX File Descriptor example” for an example of how to use this
 	 * low-level API to send and receive UNIX file descriptors.
 	 * Note that message must be unlocked, unless flags contain the
 	 * G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL flag.
@@ -1395,7 +1402,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * incremented by 1 (unless allocated statically, e.g. if the
 	 * reference count is -1, see g_dbus_interface_info_ref()) for as long
 	 * as the object is exported. Also note that vtable will be copied.
-	 * See Example 2, “D-Bus server example” for an example of how to use this method.
+	 * See Example 6, “D-Bus server example” for an example of how to use this method.
 	 * Since 2.26
 	 * Params:
 	 * objectPath = The object path to register at.
@@ -1460,7 +1467,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * or other bindings.
 	 * Note that vtable will be copied so you cannot change it after
 	 * registration.
-	 * See Example 3, “D-Bus subtree example” for an example of how to use this method.
+	 * See Example 7, “D-Bus subtree example” for an example of how to use this method.
 	 * Since 2.26
 	 * Params:
 	 * objectPath = The object path to register the subtree at.
@@ -1559,7 +1566,7 @@ public class DBusConnection : ObjectG, InitableIF, AsyncInitableIF
 	 * Exports menu on connection at object_path.
 	 * The implemented D-Bus API should be considered private.
 	 * It is subject to change in the future.
-	 * An object path can only have one action group exported on it. If this
+	 * An object path can only have one menu model exported on it. If this
 	 * constraint is violated, the export will fail and 0 will be
 	 * returned (with error set accordingly).
 	 * You can unexport the menu model using

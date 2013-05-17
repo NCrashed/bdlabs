@@ -96,20 +96,22 @@ private import gio.InitableIF;
 private import gobject.ObjectG;
 
 /**
- * Description
  * A GSocket is a low-level networking primitive. It is a more or less
  * direct mapping of the BSD socket API in a portable GObject based API.
  * It supports both the UNIX socket implementations and winsock2 on Windows.
+ *
  * GSocket is the platform independent base upon which the higher level
  * network primitives are based. Applications are not typically meant to
  * use it directly, but rather through classes like GSocketClient,
  * GSocketService and GSocketConnection. However there may be cases where
  * direct use of GSocket is useful.
+ *
  * GSocket implements the GInitable interface, so if it is manually constructed
  * by e.g. g_object_new() you must call g_initable_init() and check the
  * results before using the object. This is done automatically in
  * g_socket_new() and g_socket_new_from_fd(), so these functions can return
  * NULL.
+ *
  * Sockets operate in two general modes, blocking or non-blocking. When
  * in blocking mode all operations block until the requested operation
  * is finished or there is an error. In non-blocking mode all calls that
@@ -119,18 +121,22 @@ private import gobject.ObjectG;
  * attach it to a GMainContext to get callbacks when I/O is possible.
  * Note that all sockets are always set to non blocking mode in the system, and
  * blocking mode is emulated in GSocket.
+ *
  * When working in non-blocking mode applications should always be able to
  * handle getting a G_IO_ERROR_WOULD_BLOCK error even when some other
  * function said that I/O was possible. This can easily happen in case
  * of a race condition in the application, but it can also happen for other
  * reasons. For instance, on Windows a socket is always seen as writable
  * until a write returns G_IO_ERROR_WOULD_BLOCK.
+ *
  * GSockets can be either connection oriented or datagram based.
  * For connection oriented types you must first establish a connection by
  * either connecting to an address or accepting a connection from another
  * address. For connectionless socket types the target/source address is
  * specified or received in each I/O operation.
+ *
  * All socket file descriptors are set to be close-on-exec.
+ *
  * Note that creating a GSocket causes the signal SIGPIPE to be
  * ignored for the remainder of the program. If you are writing a
  * command-line utility that uses GSocket, you may need to take into
@@ -423,8 +429,8 @@ public class Socket : ObjectG, InitableIF
 	 * On error -1 is returned and error is set accordingly.
 	 * Since 2.22
 	 * Params:
-	 * buffer = a buffer to read data into (which should be at least size
-	 * bytes long).
+	 * buffer = a buffer to
+	 * read data into (which should be at least size bytes long). [array length=size][element-type guint8]
 	 * size = the number of bytes you want to read from the socket
 	 * cancellable = a GCancellable or NULL. [allow-none]
 	 * Returns: Number of bytes read, or 0 if the connection was closed by the peer, or -1 on error
@@ -577,8 +583,8 @@ public class Socket : ObjectG, InitableIF
 	 * the blocking argument rather than by socket's properties.
 	 * Since 2.26
 	 * Params:
-	 * buffer = a buffer to read data into (which should be at least size
-	 * bytes long).
+	 * buffer = a buffer to
+	 * read data into (which should be at least size bytes long). [array length=size][element-type guint8]
 	 * size = the number of bytes you want to read from the socket
 	 * blocking = whether to do blocking or non-blocking I/O
 	 * cancellable = a GCancellable or NULL. [allow-none]
@@ -1181,6 +1187,75 @@ public class Socket : ObjectG, InitableIF
 	{
 		// void g_socket_set_broadcast (GSocket *socket,  gboolean broadcast);
 		g_socket_set_broadcast(gSocket, broadcast);
+	}
+	
+	/**
+	 * Gets the value of an integer-valued option on socket, as with
+	 * getsockopt(). (If you need to fetch a
+	 * non-integer-valued option, you will need to call
+	 * getsockopt() directly.)
+	 * The <gio/gnetworking.h>
+	 * header pulls in system headers that will define most of the
+	 * standard/portable socket options. For unusual socket protocols or
+	 * platform-dependent options, you may need to include additional
+	 * headers.
+	 * Note that even for socket options that are a single byte in size,
+	 * value is still a pointer to a gint variable, not a guchar;
+	 * g_socket_get_option() will handle the conversion internally.
+	 * Since 2.36
+	 * Params:
+	 * level = the "API level" of the option (eg, SOL_SOCKET)
+	 * optname = the "name" of the option (eg, SO_BROADCAST)
+	 * value = return location for the option value. [out]
+	 * Returns: success or failure. On failure, error will be set, and the system error value (errno or WSAGetLastError()) will still be set to the result of the getsockopt() call.
+	 * Throws: GException on failure.
+	 */
+	public int getOption(int level, int optname, out int value)
+	{
+		// gboolean g_socket_get_option (GSocket *socket,  gint level,  gint optname,  gint *value,  GError **error);
+		GError* err = null;
+		
+		auto p = g_socket_get_option(gSocket, level, optname, &value, &err);
+		
+		if (err !is null)
+		{
+			throw new GException( new ErrorG(err) );
+		}
+		
+		return p;
+	}
+	
+	/**
+	 * Sets the value of an integer-valued option on socket, as with
+	 * setsockopt(). (If you need to set a
+	 * non-integer-valued option, you will need to call
+	 * setsockopt() directly.)
+	 * The <gio/gnetworking.h>
+	 * header pulls in system headers that will define most of the
+	 * standard/portable socket options. For unusual socket protocols or
+	 * platform-dependent options, you may need to include additional
+	 * headers.
+	 * Since 2.36
+	 * Params:
+	 * level = the "API level" of the option (eg, SOL_SOCKET)
+	 * optname = the "name" of the option (eg, SO_BROADCAST)
+	 * value = the value to set the option to
+	 * Returns: success or failure. On failure, error will be set, and the system error value (errno or WSAGetLastError()) will still be set to the result of the setsockopt() call.
+	 * Throws: GException on failure.
+	 */
+	public int setOption(int level, int optname, int value)
+	{
+		// gboolean g_socket_set_option (GSocket *socket,  gint level,  gint optname,  gint value,  GError **error);
+		GError* err = null;
+		
+		auto p = g_socket_set_option(gSocket, level, optname, value, &err);
+		
+		if (err !is null)
+		{
+			throw new GException( new ErrorG(err) );
+		}
+		
+		return p;
 	}
 	
 	/**

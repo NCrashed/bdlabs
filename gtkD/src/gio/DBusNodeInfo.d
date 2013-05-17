@@ -76,10 +76,10 @@ private import gio.DBusInterfaceInfo;
 
 
 /**
- * Description
  * Various data structures and convenience routines to parse and
  * generate D-Bus introspection XML. Introspection information is
  * used when registering objects with g_dbus_connection_register_object().
+ *
  * The format of D-Bus introspection XML is specified in the
  * D-Bus specification.
  */
@@ -147,7 +147,7 @@ public class DBusNodeInfo
 	
 	/**
 	 * Looks up information about an interface.
-	 * This cost of this function is O(n) in number of interfaces.
+	 * The cost of this function is O(n) in number of interfaces.
 	 * Since 2.26
 	 * Params:
 	 * name = A D-Bus interface name.

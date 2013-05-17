@@ -76,11 +76,11 @@ private import gtkc.paths;
 
 
 /**
- * Description
  * GLib provides a generic API for computing checksums (or "digests")
  * for a sequence of arbitrary bytes, using various hashing algorithms
  * like MD5, SHA-1 and SHA-256. Checksums are commonly used in various
  * environments and specifications.
+ *
  * GLib supports incremental checksums using the GChecksum data
  * structure, by calling g_checksum_update() as long as there's data
  * available and then using g_checksum_get_string() or
@@ -89,6 +89,7 @@ private import gtkc.paths;
  * compute the checksum for binary blobs and NUL-terminated strings in
  * one go, use the convenience functions g_compute_checksum_for_data()
  * and g_compute_checksum_for_string(), respectively.
+ *
  * Support for checksums has been added in GLib 2.16
  */
 public class Checksum
@@ -236,7 +237,7 @@ public class Checksum
 	 * not have been called on checksum.
 	 * Since 2.16
 	 * Params:
-	 * data = buffer used to compute the checksum
+	 * data = buffer used to compute the checksum. [array length=length][element-type guint8]
 	 */
 	public void update(char[] data)
 	{
@@ -266,7 +267,7 @@ public class Checksum
 	 * Since 2.16
 	 * Params:
 	 * checksumType = a GChecksumType
-	 * data = binary blob to compute the digest of
+	 * data = binary blob to compute the digest of. [array length=length][element-type guint8]
 	 * Returns: the digest of the binary data as a string in hexadecimal. The returned string should be freed with g_free() when done using it.
 	 */
 	public static string computeForData(GChecksumType checksumType, char[] data)

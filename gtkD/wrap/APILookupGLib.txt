@@ -50,6 +50,7 @@ public alias float gfloat;
 public alias double gdouble;
 public alias size_t gsize;
 public alias ptrdiff_t gssize;
+public alias size_t guintptr;
 public alias long goffset;
 public alias void* va_list;
 public alias dchar unichar;
@@ -57,6 +58,7 @@ public alias wchar unichar2;
 public alias uint time_t;
 public alias uint XID;
 public alias uint uid_t;
+public alias int pid_t;
 
 
 version(Tango)
@@ -112,11 +114,14 @@ version (Windows)
 		//Phobos defines this function in std.c.stdio
 		extern (C) FILE*  fdopen(int, char*);
 	}
-	version(D_Version2) version(Win64)
+	version(D_Version2)
 	{
 		private import core.stdc.stdio;
 
-		extern (C) FILE*  fdopen(int, char*);
+		static if( !is(typeof(fdopen(0, null))) )
+		{
+			extern (C) FILE*  fdopen(int, char*);
+		}
 	}
 }
 addTypedefs: end
@@ -2360,6 +2365,7 @@ import: glib.ListSG
 import: gtkc.Loader
 import: gtkc.paths
 structWrap: GSList* ListSG
+structWrap: GMarkupParseContext* SimpleXML
 
 out: g_markup_parse_context_get_position line_number
 out: g_markup_parse_context_get_position char_number
@@ -2482,7 +2488,7 @@ code: start
   	/** */ 
 	void* data()
 	{
-		return getListGStruct().data;
+		return gList.data;
 	}
 
   	/**
@@ -2491,7 +2497,12 @@ code: start
 	 */ 
 	ListG next()
 	{
-		return new ListG(getListGStruct().next);
+		if ( gList.next is null )
+		{
+			return null;
+		}
+
+		return new ListG(gList.next);
 	}
 
 	/**
@@ -2500,7 +2511,12 @@ code: start
 	 */ 
 	ListG previous()
 	{
-		return new ListG(getListGStruct().prev);
+		if ( gList.prev is null )
+		{
+			return null;
+		}
+
+		return new ListG(gList.prev);
 	}
 code: end
 outFile: ListG
@@ -2515,7 +2531,7 @@ code: start
   	/** */ 
 	void* data()
 	{
-		return getListSGStruct().data;
+		return gSList.data;
 	}
 
   	/**
@@ -2524,7 +2540,12 @@ code: start
 	 */ 
 	ListSG next()
 	{
-		return new ListSG(getListSGStruct().next);
+		if ( gSList.next is null )
+		{
+			return null;
+		}
+
+		return new ListSG(gSList.next);
 	}
 code: end
 outFile: ListSG
@@ -2811,8 +2832,10 @@ noprefix: g_variant_builder_
 import: glib.Str
 import: glib.ErrorG
 import: glib.GException
+import: glib.Bytes
 import: glib.StringG
 import: glib.VariantType
+structWrap: GBytes* Bytes
 structWrap: GString* StringG
 structWrap: GVariant* Variant
 structWrap: GVariantType* VariantType

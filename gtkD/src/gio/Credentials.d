@@ -72,24 +72,29 @@ private import glib.GException;
 private import gobject.ObjectG;
 
 /**
- * Description
  * The GCredentials type is a reference-counted wrapper for native
  * credentials. This information is typically used for identifying,
  * authenticating and authorizing other processes.
+ *
  * Some operating systems supports looking up the credentials of the
  * remote peer of a communication endpoint - see e.g.
  * g_socket_get_credentials().
+ *
  * Some operating systems supports securely sending and receiving
  * credentials over a Unix Domain Socket, see
  * GUnixCredentialsMessage, g_unix_connection_send_credentials() and
  * g_unix_connection_receive_credentials() for details.
+ *
  * On Linux, the native credential type is a struct ucred
+ *
  * see the
  * unix(7)
  * man page for details. This corresponds to
  * G_CREDENTIALS_TYPE_LINUX_UCRED.
+ *
  * On FreeBSD, the native credential type is a struct cmsgcred.
  * This corresponds to G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED.
+ *
  * On OpenBSD, the native credential type is a struct sockpeercred.
  * This corresponds to G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED.
  */
@@ -262,6 +267,31 @@ public class Credentials : ObjectG
 		GError* err = null;
 		
 		auto p = g_credentials_set_unix_user(gCredentials, uid, &err);
+		
+		if (err !is null)
+		{
+			throw new GException( new ErrorG(err) );
+		}
+		
+		return p;
+	}
+	
+	/**
+	 * Tries to get the UNIX process identifier from credentials. This
+	 * method is only available on UNIX platforms.
+	 * This operation can fail if GCredentials is not supported on the
+	 * OS or if the native credentials type does not contain information
+	 * about the UNIX process ID.
+	 * Since 2.36
+	 * Returns: The UNIX process ID, or -1 if error is set.
+	 * Throws: GException on failure.
+	 */
+	public pid_t getUnixPid()
+	{
+		// pid_t g_credentials_get_unix_pid (GCredentials *credentials,  GError **error);
+		GError* err = null;
+		
+		auto p = g_credentials_get_unix_pid(gCredentials, &err);
 		
 		if (err !is null)
 		{

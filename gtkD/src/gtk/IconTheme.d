@@ -50,15 +50,19 @@
  * 	- glib.ListG
  * 	- gio.IconIF
  * 	- gdk.Pixbuf
+ * 	- gdk.RGBA
  * 	- gdk.Screen
  * 	- gtk.IconInfo
+ * 	- gtk.StyleContext
  * structWrap:
  * 	- GIcon* -> IconIF
  * 	- GList* -> ListG
  * 	- GdkPixbuf* -> Pixbuf
+ * 	- GdkRGBA* -> RGBA
  * 	- GdkScreen* -> Screen
  * 	- GtkIconInfo* -> IconInfo
  * 	- GtkIconTheme* -> IconTheme
+ * 	- GtkStyleContext* -> StyleContext
  * module aliases:
  * local aliases:
  * overrides:
@@ -81,15 +85,16 @@ private import glib.GException;
 private import glib.ListG;
 private import gio.IconIF;
 private import gdk.Pixbuf;
+private import gdk.RGBA;
 private import gdk.Screen;
 private import gtk.IconInfo;
+private import gtk.StyleContext;
 
 
 
 private import gobject.ObjectG;
 
 /**
- * Description
  * GtkIconTheme provides a facility for looking up icons by name
  * and size. The main reason for using a name rather than simply
  * providing a filename is to allow different icons to be used
@@ -100,22 +105,27 @@ private import gobject.ObjectG;
  * named hicolor where applications should install
  * their icons, but more additional application themes can be
  * installed as operating system vendors and users choose.
+ *
  * Named icons are similar to the Themeable Stock Images(3)
  * facility, and the distinction between the two may be a bit confusing.
  * A few things to keep in mind:
+ *
  * Stock images usually are used in conjunction with
  * Stock Items(3), such as GTK_STOCK_OK or
  * GTK_STOCK_OPEN. Named icons are easier to set up and therefore
  * are more useful for new icons that an application wants to
  * add, such as application icons or window icons.
+ *
  * Stock images can only be loaded at the symbolic sizes defined
  * by the GtkIconSize enumeration, or by custom sizes defined
  * by gtk_icon_size_register(), while named icons are more flexible
  * and any pixel size can be specified.
+ *
  * Because stock images are closely tied to stock items, and thus
  * to actions in the user interface, stock images may come in
  * multiple variants for different widget states or writing
  * directions.
+ *
  * A good rule of thumb is that if there is a stock image for what
  * you want to use, use it, otherwise use a named icon. It turns
  * out that internally stock images are generally defined in
@@ -123,15 +133,17 @@ private import gobject.ObjectG;
  * more than one case is icons that depend on writing direction;
  * GTK_STOCK_GO_FORWARD uses the two themed icons
  * "gtk-stock-go-forward-ltr" and "gtk-stock-go-forward-rtl".)
+ *
  * In many cases, named themes are used indirectly, via GtkImage
  * or stock items, rather than directly, but looking up icons
  * directly is also simple. The GtkIconTheme object acts
  * as a database of all the icons in the current theme. You
- * can create new GtkIconTheme objects, but its much more
+ * can create new GtkIconTheme objects, but it's much more
  * efficient to use the standard icon theme for the GdkScreen
  * so that the icon information is shared with other people
  * looking up icons. In the case where the default screen is
  * being used, looking up an icon can be as simple as:
+ *
  * $(DDOC_COMMENT example)
  */
 public class IconTheme : ObjectG
@@ -396,7 +408,7 @@ public class IconTheme : ObjectG
 	 * iconName = the name of the icon to lookup
 	 * size = desired icon size
 	 * flags = flags modifying the behavior of the icon lookup
-	 * Returns: a GtkIconInfo structure containing information about the icon, or NULL if the icon wasn't found. Free with gtk_icon_info_free()
+	 * Returns: a GtkIconInfo object containing information about the icon, or NULL if the icon wasn't found. [transfer full]
 	 */
 	public IconInfo lookupIcon(string iconName, int size, GtkIconLookupFlags flags)
 	{
@@ -426,7 +438,7 @@ public class IconTheme : ObjectG
 	 * icon names to lookup. [array zero-terminated=1]
 	 * size = desired icon size
 	 * flags = flags modifying the behavior of the icon lookup
-	 * Returns: a GtkIconInfo structure containing information about the icon, or NULL if the icon wasn't found. Free with gtk_icon_info_free()
+	 * Returns: a GtkIconInfo object containing information about the icon, or NULL if the icon wasn't found. [transfer full]
 	 */
 	public IconInfo chooseIcon(string[] iconNames, int size, GtkIconLookupFlags flags)
 	{
@@ -451,7 +463,7 @@ public class IconTheme : ObjectG
 	 * icon = the GIcon to look up
 	 * size = desired icon size
 	 * flags = flags modifying the behavior of the icon lookup
-	 * Returns: a GtkIconInfo structure containing information about the icon, or NULL if the icon wasn't found. Free with gtk_icon_info_free()
+	 * Returns: a GtkIconInfo structure containing information about the icon, or NULL if the icon wasn't found. Unref with g_object_unref(). [transfer full]
 	 */
 	public IconInfo lookupByGicon(IconIF icon, int size, GtkIconLookupFlags flags)
 	{

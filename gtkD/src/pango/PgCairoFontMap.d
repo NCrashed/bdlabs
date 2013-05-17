@@ -73,7 +73,6 @@ private import pango.PgContext;
 private import pango.PgFontMap;
 
 /**
- * Description
  * The Cairo library is a
  * vector graphics library with a powerful rendering model. It has such
  * features as anti-aliased primitives, alpha-compositing, and
@@ -81,6 +80,7 @@ private import pango.PgFontMap;
  * rendering to images, to PDF files, and to the screen on X and on other
  * windowing systems. The functions in this section allow using Pango
  * to render to Cairo surfaces.
+ *
  * Using Pango with Cairo is straightforward. A PangoContext created
  * with pango_cairo_font_map_create_context() can be used on any
  * Cairo context (cairo_t), but needs to be updated to match the
@@ -89,6 +89,7 @@ private import pango.PgFontMap;
  * pango_cairo_create_layout() and pango_cairo_update_layout() handle
  * the common case where the program doesn't need to manipulate the
  * properties of the PangoContext.
+ *
  * When you get the metrics of a layout or of a piece of a layout using
  * functions such as pango_layout_get_extents(), the reported metrics
  * are in user-space coordinates. If a piece of text is 10 units long,
@@ -99,7 +100,9 @@ private import pango.PgFontMap;
  * of the current transformation matrix. Note that the basic metrics
  * functions in Pango report results in integer Pango units. To get
  * to the floating point units used in Cairo divide by PANGO_SCALE.
+ *
  * $(DDOC_COMMENT example)
+ *
  * Figure 2. Output of Example 1, “Using Pango with Cairo”
  */
 public class PgCairoFontMap : PgFontMap
@@ -149,8 +152,11 @@ public class PgCairoFontMap : PgFontMap
 	 * pango_cairo_font_map_set_default(). This can be used to
 	 * change the Cairo font backend that the default fontmap
 	 * uses for example.
+	 * Note that since Pango 1.32.6, the default fontmap is per-thread.
+	 * Each thread gets its own default fontmap. In this way,
+	 * PangoCairo can be used safely from multiple threads.
 	 * Since 1.10
-	 * Returns: the default Cairo fontmap for Pango. This object is owned by Pango and must not be freed. [transfer none]
+	 * Returns: the default PangoCairo fontmap for the current thread. This object is owned by Pango and must not be freed. [transfer none]
 	 */
 	public static PgFontMap getDefault()
 	{
@@ -170,6 +176,11 @@ public class PgCairoFontMap : PgFontMap
 	 * This can be used to change the Cairo font backend that the
 	 * default fontmap uses for example. The old default font map
 	 * is unreffed and the new font map referenced.
+	 * Note that since Pango 1.32.6, the default fontmap is per-thread.
+	 * This function only changes the default fontmap for
+	 * the current thread. Default fontmaps of exisiting threads
+	 * are not changed. Default fontmaps of any new threads will
+	 * still be created using pango_cairo_font_map_new().
 	 * A value of NULL for fontmap will cause the current default
 	 * font map to be released and a new default font
 	 * map to be created on demand, using pango_cairo_font_map_new().

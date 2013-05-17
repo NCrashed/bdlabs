@@ -97,12 +97,13 @@ version(Tango) {
 private import gobject.ObjectG;
 
 /**
- * Description
  * GtkStyleProperties provides the storage for style information
  * that is used by GtkStyleContext and other GtkStyleProvider
  * implementations.
+ *
  * Before style properties can be stored in GtkStyleProperties, they
  * must be registered with gtk_style_properties_register_property().
+ *
  * Unless you are writing a GtkStyleProvider implementation, you
  * are unlikely to use this API directly, as gtk_style_context_get()
  * and its variants are the preferred way to access styling information
@@ -184,6 +185,8 @@ public class StyleProperties : ObjectG
 	}
 	
 	/**
+	 * Warning
+	 * gtk_style_properties_lookup_color has been deprecated since version 3.8 and should not be used in newly-written code. GtkSymbolicColor is deprecated.
 	 * Returns the symbolic color that is mapped
 	 * to name.
 	 * Params:
@@ -204,6 +207,9 @@ public class StyleProperties : ObjectG
 	}
 	
 	/**
+	 * Warning
+	 * gtk_style_properties_lookup_property has been deprecated since version 3.8 and should not be used in newly-written code. This code could only look up custom properties and
+	 *  those are deprecated.
 	 * Returns TRUE if a property has been registered, if pspec or
 	 * parse_func are not NULL, the GParamSpec and parsing function
 	 * will be respectively returned.
@@ -225,6 +231,8 @@ public class StyleProperties : ObjectG
 	}
 	
 	/**
+	 * Warning
+	 * gtk_style_properties_map_color has been deprecated since version 3.8 and should not be used in newly-written code. GtkSymbolicColor is deprecated.
 	 * Maps color so it can be referenced by name. See
 	 * gtk_style_properties_lookup_color()
 	 * Params:
@@ -271,6 +279,8 @@ public class StyleProperties : ObjectG
 	}
 	
 	/**
+	 * Warning
+	 * gtk_style_properties_register_property has been deprecated since version 3.8 and should not be used in newly-written code. Code should use the default properties provided by CSS.
 	 * Registers a property so it can be used in the CSS file format.
 	 * This function is the low-level equivalent of
 	 * gtk_theming_engine_register_property(), if you are implementing

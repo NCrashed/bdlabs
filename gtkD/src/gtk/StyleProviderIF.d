@@ -78,7 +78,6 @@ private import gtk.WidgetPath;
 
 
 /**
- * Description
  * GtkStyleProvider is an interface used to provide style information to a GtkStyleContext.
  * See gtk_style_context_add_provider() and gtk_style_context_add_provider_for_screen().
  */
@@ -96,6 +95,8 @@ public interface StyleProviderIF
 	 */
 	
 	/**
+	 * Warning
+	 * gtk_style_provider_get_icon_factory has been deprecated since version 3.8 and should not be used in newly-written code. Will always return NULL for all GTK-provided style providers.
 	 * Returns the GtkIconFactory defined to be in use for path, or NULL if none
 	 * is defined.
 	 * Params:
@@ -105,6 +106,9 @@ public interface StyleProviderIF
 	public IconFactory getIconFactory(WidgetPath path);
 	
 	/**
+	 * Warning
+	 * gtk_style_provider_get_style has been deprecated since version 3.8 and should not be used in newly-written code. Will always return NULL for all GTK-provided style providers
+	 *  as the interface cannot correctly work the way CSS is specified.
 	 * Returns the style settings affecting a widget defined by path, or NULL if
 	 * provider doesn't contemplate styling path.
 	 * Params:

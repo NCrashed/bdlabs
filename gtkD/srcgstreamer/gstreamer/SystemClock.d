@@ -43,11 +43,9 @@
  * omit code:
  * omit signals:
  * imports:
- * 	- glib.Str
  * 	- gstreamer.Clock
  * structWrap:
  * 	- GstClock* -> Clock
- * 	- GstSystemClock* -> SystemClock
  * module aliases:
  * local aliases:
  * overrides:
@@ -62,7 +60,6 @@ private import glib.ConstructionException;
 private import gobject.ObjectG;
 
 
-private import glib.Str;
 private import gstreamer.Clock;
 
 
@@ -70,14 +67,16 @@ private import gstreamer.Clock;
 private import gstreamer.Clock;
 
 /**
- * Description
  * The GStreamer core provides a GstSystemClock based on the system time.
  * Asynchronous callbacks are scheduled from an internal thread.
+ *
  * Clock implementors are encouraged to subclass this systemclock as it
  * implements the async notification.
+ *
  * Subclasses can however override all of the important methods for sync and
  * async notifications to implement their own callback methods or blocking
  * wait operations.
+ *
  * Last reviewed on 2006-03-08 (0.10.4)
  */
 public class SystemClock : Clock
@@ -121,11 +120,11 @@ public class SystemClock : Clock
 	 * Get a handle to the default system clock. The refcount of the
 	 * clock will be increased so you need to unref the clock after
 	 * usage.
-	 * Returns: the default clock. MT safe.
+	 * Returns: the default clock. MT safe. [transfer full]
 	 */
 	public static Clock obtain()
 	{
-		// GstClock* gst_system_clock_obtain (void);
+		// GstClock * gst_system_clock_obtain (void);
 		auto p = gst_system_clock_obtain();
 		
 		if(p is null)

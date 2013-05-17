@@ -68,36 +68,43 @@ private import glib.MainContext;
 
 
 /**
- * Description
  * The main event loop manages all the available sources of events for
  * GLib and GTK+ applications. These events can come from any number of
  * different types of sources such as file descriptors (plain files,
  * pipes or sockets) and timeouts. New types of event sources can also
  * be added using g_source_attach().
+ *
  * To allow multiple independent sets of sources to be handled in
  * different threads, each source is associated with a GMainContext.
  * A GMainContext can only be running in a single thread, but
  * sources can be added to it and removed from it from other threads.
+ *
  * Each event source is assigned a priority. The default priority,
  * G_PRIORITY_DEFAULT, is 0. Values less than 0 denote higher priorities.
  * Values greater than 0 denote lower priorities. Events from high priority
  * sources are always processed before events from lower priority sources.
+ *
  * Idle functions can also be added, and assigned a priority. These will
  * be run whenever no events with a higher priority are ready to be processed.
+ *
  * The GMainLoop data type represents a main event loop. A GMainLoop is
  * created with g_main_loop_new(). After adding the initial event sources,
  * g_main_loop_run() is called. This continuously checks for new events from
  * each of the event sources and dispatches them. Finally, the processing of
  * an event from one of the sources leads to a call to g_main_loop_quit() to
  * exit the main loop, and g_main_loop_run() returns.
+ *
  * It is possible to create new instances of GMainLoop recursively.
  * This is often used in GTK+ applications when showing modal dialog
  * boxes. Note that event sources are associated with a particular
  * GMainContext, and will be checked and dispatched for all main
  * loops associated with that GMainContext.
+ *
  * GTK+ contains wrappers of some of these functions, e.g. gtk_main(),
  * gtk_main_quit() and gtk_events_pending().
+ *
  * Creating new source types
+ *
  * One of the unusual features of the GMainLoop functionality
  * is that new types of event source can be created and used in
  * addition to the builtin type of event source. A new event source
@@ -109,14 +116,18 @@ private import glib.MainContext;
  * call g_source_new() passing in the size of the derived structure and
  * a table of functions. These GSourceFuncs determine the behavior of
  * the new source type.
+ *
  * New source types basically interact with the main context
  * in two ways. Their prepare function in GSourceFuncs can set a timeout
  * to determine the maximum amount of time that the main loop will sleep
  * before checking the source again. In addition, or as well, the source
  * can add file descriptors to the set that the main context checks using
  * g_source_add_poll().
+ *
  * <hr>
+ *
  * Customizing the main loop iteration
+ *
  * Single iterations of a GMainContext can be run with
  * g_main_context_iteration(). In some cases, more detailed control
  * of exactly how the details of the main loop work is desired, for
@@ -125,9 +136,12 @@ private import glib.MainContext;
  * g_main_context_iteration() directly. These functions are
  * g_main_context_prepare(), g_main_context_query(),
  * g_main_context_check() and g_main_context_dispatch().
+ *
  * The operation of these functions can best be seen in terms
  * of a state diagram, as shown in Figure 1, “States of a Main Context”.
+ *
  * Figure 1. States of a Main Context
+ *
  * On Unix, the GLib mainloop is incompatible with fork(). Any program
  * using the mainloop must either exec() or exit() from the child
  * without returning to the mainloop.
@@ -444,11 +458,122 @@ public class Source
 	}
 	
 	/**
+	 * Sets a GSource to be dispatched when the given monotonic time is
+	 * reached (or passed). If the monotonic time is in the past (as it
+	 * always will be if ready_time is 0) then the source will be
+	 * dispatched immediately.
+	 * If ready_time is -1 then the source is never woken up on the basis
+	 * of the passage of time.
+	 * Dispatching the source does not reset the ready time. You should do
+	 * so yourself, from the source dispatch function.
+	 * Note that if you have a pair of sources where the ready time of one
+	 * suggests that it will be delivered first but the priority for the
+	 * other suggests that it would be delivered first, and the ready time
+	 * for both sources is reached during the same main context iteration
+	 * then the order of dispatch is undefined.
+	 * Since 2.36
+	 * Params:
+	 * readyTime = the monotonic time at which the source will be ready,
+	 * 0 for "immediately", -1 for "never"
+	 */
+	public void setReadyTime(long readyTime)
+	{
+		// void g_source_set_ready_time (GSource *source,  gint64 ready_time);
+		g_source_set_ready_time(gSource, readyTime);
+	}
+	
+	/**
+	 * Gets the "ready time" of source, as set by
+	 * g_source_set_ready_time().
+	 * Any time before the current monotonic time (including 0) is an
+	 * indication that the source will fire immediately.
+	 * Returns: the monotonic ready time, -1 for "never"
+	 */
+	public long getReadyTime()
+	{
+		// gint64 g_source_get_ready_time (GSource *source);
+		return g_source_get_ready_time(gSource);
+	}
+	
+	/**
+	 * Monitors fd for the IO events in events.
+	 * The tag returned by this function can be used to remove or modify the
+	 * monitoring of the fd using g_source_remove_unix_fd() or
+	 * g_source_modify_unix_fd().
+	 * It is not necessary to remove the fd before destroying the source; it
+	 * will be cleaned up automatically.
+	 * As the name suggests, this function is not available on Windows.
+	 * Since 2.36
+	 * Params:
+	 * fd = the fd to monitor
+	 * events = an event mask
+	 * Returns: an opaque tag
+	 */
+	public void* addUnixFd(int fd, GIOCondition events)
+	{
+		// gpointer g_source_add_unix_fd (GSource *source,  gint fd,  GIOCondition events);
+		return g_source_add_unix_fd(gSource, fd, events);
+	}
+	
+	/**
+	 * Reverses the effect of a previous call to g_source_add_unix_fd().
+	 * You only need to call this if you want to remove an fd from being
+	 * watched while keeping the same source around. In the normal case you
+	 * will just want to destroy the source.
+	 * As the name suggests, this function is not available on Windows.
+	 * Since 2.36
+	 * Params:
+	 * tag = the tag from g_source_add_unix_fd()
+	 */
+	public void removeUnixFd(void* tag)
+	{
+		// void g_source_remove_unix_fd (GSource *source,  gpointer tag);
+		g_source_remove_unix_fd(gSource, tag);
+	}
+	
+	/**
+	 * Updates the event mask to watch for the fd identified by tag.
+	 * tag is the tag returned from g_source_add_unix_fd().
+	 * If you want to remove a fd, don't set its event mask to zero.
+	 * Instead, call g_source_remove_unix_fd().
+	 * As the name suggests, this function is not available on Windows.
+	 * Since 2.36
+	 * Params:
+	 * tag = the tag from g_source_add_unix_fd()
+	 * newEvents = the new event mask to watch
+	 */
+	public void modifyUnixFd(void* tag, GIOCondition newEvents)
+	{
+		// void g_source_modify_unix_fd (GSource *source,  gpointer tag,  GIOCondition new_events);
+		g_source_modify_unix_fd(gSource, tag, newEvents);
+	}
+	
+	/**
+	 * Queries the events reported for the fd corresponding to tag on
+	 * source during the last poll.
+	 * The return value of this function is only defined when the function
+	 * is called from the check or dispatch functions for source.
+	 * As the name suggests, this function is not available on Windows.
+	 * Since 2.36
+	 * Params:
+	 * tag = the tag from g_source_add_unix_fd()
+	 * Returns: the conditions reported on the fd
+	 */
+	public GIOCondition queryUnixFd(void* tag)
+	{
+		// GIOCondition g_source_query_unix_fd (GSource *source,  gpointer tag);
+		return g_source_query_unix_fd(gSource, tag);
+	}
+	
+	/**
 	 * Adds a file descriptor to the set of file descriptors polled for
 	 * this source. This is usually combined with g_source_new() to add an
 	 * event source. The event source's check function will typically test
 	 * the revents field in the GPollFD struct and return TRUE if events need
 	 * to be processed.
+	 * Using this API forces the linear scanning of event sources on each
+	 * main loop iteration. Newly-written event sources should try to use
+	 * g_source_add_unix_fd() instead of this API.
 	 * Params:
 	 * fd = a GPollFD structure holding information about a file
 	 * descriptor to watch.

@@ -77,12 +77,13 @@ private import gio.Cancellable;
 private import gobject.ObjectG;
 
 /**
- * Description
  * GInputStream has functions to read from a stream (g_input_stream_read()),
  * to close a stream (g_input_stream_close()) and to skip some content
  * (g_input_stream_skip()).
+ *
  * To copy the content of an input stream to an output stream without
  * manually handling the reads and writes, use g_output_stream_splice().
+ *
  * All of these functions have async variants too.
  */
 public class InputStream : ObjectG
@@ -138,7 +139,8 @@ public class InputStream : ObjectG
 	 * partial result will be returned, without an error.
 	 * On error -1 is returned and error is set accordingly.
 	 * Params:
-	 * buffer = a buffer to read data into (which should be at least count bytes long).
+	 * buffer = a buffer to
+	 * read data into (which should be at least count bytes long). [array length=count][element-type guint8]
 	 * count = the number of bytes that will be read from the stream
 	 * cancellable = optional GCancellable object, NULL to ignore. [allow-none]
 	 * Returns: Number of bytes read, or -1 on error, or 0 on end of file.
@@ -171,7 +173,8 @@ public class InputStream : ObjectG
 	 * is set to indicate the error status, bytes_read is updated to contain
 	 * the number of bytes read into buffer before the error occurred.
 	 * Params:
-	 * buffer = a buffer to read data into (which should be at least count bytes long).
+	 * buffer = a buffer to
+	 * read data into (which should be at least count bytes long). [array length=count][element-type guint8]
 	 * count = the number of bytes that will be read from the stream
 	 * bytesRead = location to store the number of bytes that was read from the stream. [out]
 	 * cancellable = optional GCancellable object, NULL to ignore. [allow-none]
@@ -285,7 +288,8 @@ public class InputStream : ObjectG
 	 * asynchronicity, so they are optional for inheriting classes. However, if you
 	 * override one you must override all.
 	 * Params:
-	 * buffer = a buffer to read data into (which should be at least count bytes long).
+	 * buffer = a buffer to
+	 * read data into (which should be at least count bytes long). [array length=count][element-type guint8]
 	 * count = the number of bytes that will be read from the stream
 	 * ioPriority = the I/O priority
 	 * of the request.

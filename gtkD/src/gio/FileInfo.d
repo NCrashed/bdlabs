@@ -45,11 +45,13 @@
  * omit signals:
  * imports:
  * 	- glib.Str
+ * 	- glib.DateTime
  * 	- gobject.ObjectG
  * 	- gio.Icon
  * 	- gio.IconIF
  * 	- gio.FileAttributeMatcher
  * structWrap:
+ * 	- GDateTime* -> DateTime
  * 	- GFileAttributeMatcher* -> FileAttributeMatcher
  * 	- GFileInfo* -> FileInfo
  * 	- GIcon* -> IconIF
@@ -69,6 +71,7 @@ private import gobject.ObjectG;
 
 
 private import glib.Str;
+private import glib.DateTime;
 private import gobject.ObjectG;
 private import gio.Icon;
 private import gio.IconIF;
@@ -79,24 +82,28 @@ private import gio.FileAttributeMatcher;
 private import gobject.ObjectG;
 
 /**
- * Description
  * Functionality for manipulating basic metadata for files. GFileInfo
  * implements methods for getting information that all files should
  * contain, and allows for manipulation of extended attributes.
+ *
  * See GFileAttribute for more
  * information on how GIO handles file attributes.
+ *
  * To obtain a GFileInfo for a GFile, use g_file_query_info() (or its
  * async variant). To obtain a GFileInfo for a file input or output
  * stream, use g_file_input_stream_query_info() or
  * g_file_output_stream_query_info() (or their async variants).
+ *
  * To change the actual attributes of a file, you should then set the
  * attribute in the GFileInfo and call g_file_set_attributes_from_info()
  * or g_file_set_attributes_async() on a GFile.
+ *
  * However, not all attributes can be changed in the file. For instance,
  * the actual size of a file cannot be changed via g_file_info_set_size().
  * You may call g_file_query_settable_attributes() and
  * g_file_query_writable_namespaces() to discover the settable attributes
  * of a particular file at runtime.
+ *
  * GFileAttributeMatcher allows for searching through a GFileInfo for
  * attributes.
  */
@@ -739,6 +746,26 @@ public class FileInfo : ObjectG
 	{
 		// gint32 g_file_info_get_sort_order (GFileInfo *info);
 		return g_file_info_get_sort_order(gFileInfo);
+	}
+	
+	/**
+	 * Returns the GDateTime representing the deletion date of the file, as
+	 * available in G_FILE_ATTRIBUTE_TRASH_DELETION_DATE. If the
+	 * G_FILE_ATTRIBUTE_TRASH_DELETION_DATE attribute is unset, NULL is returned.
+	 * Since 2.36
+	 * Returns: a GDateTime, or NULL.
+	 */
+	public DateTime getDeletionDate()
+	{
+		// GDateTime * g_file_info_get_deletion_date (GFileInfo *info);
+		auto p = g_file_info_get_deletion_date(gFileInfo);
+		
+		if(p is null)
+		{
+			return null;
+		}
+		
+		return ObjectG.getDObject!(DateTime)(cast(GDateTime*) p);
 	}
 	
 	/**

@@ -44,9 +44,11 @@
  * omit code:
  * omit signals:
  * imports:
+ * 	- glib.Bytes
  * 	- gio.SeekableT
  * 	- gio.SeekableIF
  * structWrap:
+ * 	- GBytes* -> Bytes
  * module aliases:
  * local aliases:
  * overrides:
@@ -61,6 +63,7 @@ private import glib.ConstructionException;
 private import gobject.ObjectG;
 
 
+private import glib.Bytes;
 private import gio.SeekableT;
 private import gio.SeekableIF;
 
@@ -69,9 +72,9 @@ private import gio.SeekableIF;
 private import gio.InputStream;
 
 /**
- * Description
  * GMemoryInputStream is a class for using arbitrary
  * memory chunks as input for GIO streaming input operations.
+ *
  * As of GLib 2.34, GMemoryInputStream implements
  * GPollableInputStream.
  */
@@ -150,6 +153,24 @@ public class MemoryInputStream : InputStream, SeekableIF
 	}
 	
 	/**
+	 * Creates a new GMemoryInputStream with data from the given bytes.
+	 * Since 2.34
+	 * Params:
+	 * bytes = a GBytes
+	 * Throws: ConstructionException GTK+ fails to create the object.
+	 */
+	public this (Bytes bytes)
+	{
+		// GInputStream * g_memory_input_stream_new_from_bytes  (GBytes *bytes);
+		auto p = g_memory_input_stream_new_from_bytes((bytes is null) ? null : bytes.getBytesStruct());
+		if(p is null)
+		{
+			throw new ConstructionException("null returned by g_memory_input_stream_new_from_bytes((bytes is null) ? null : bytes.getBytesStruct())");
+		}
+		this(cast(GMemoryInputStream*) p);
+	}
+	
+	/**
 	 * Appends data to data that can be read from the input stream
 	 * Params:
 	 * data = input data. [array length=len][element-type guint8][transfer full]
@@ -160,5 +181,17 @@ public class MemoryInputStream : InputStream, SeekableIF
 	{
 		// void g_memory_input_stream_add_data (GMemoryInputStream *stream,  const void *data,  gssize len,  GDestroyNotify destroy);
 		g_memory_input_stream_add_data(gMemoryInputStream, data, len, destroy);
+	}
+	
+	/**
+	 * Appends bytes to data that can be read from the input stream.
+	 * Since 2.34
+	 * Params:
+	 * bytes = input data
+	 */
+	public void addBytes(Bytes bytes)
+	{
+		// void g_memory_input_stream_add_bytes (GMemoryInputStream *stream,  GBytes *bytes);
+		g_memory_input_stream_add_bytes(gMemoryInputStream, (bytes is null) ? null : bytes.getBytesStruct());
 	}
 }

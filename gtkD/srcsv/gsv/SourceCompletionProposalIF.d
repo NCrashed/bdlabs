@@ -71,7 +71,6 @@ private import gdk.Pixbuf;
 
 
 /**
- * Description
  * The proposal interface represents a completion item in the completion window.
  * It provides information on how to display the completion item and what action
  * should be taken when the completion item is activated.
@@ -99,7 +98,7 @@ public interface SourceCompletionProposalIF
 	/**
 	 * Gets the label of proposal. The label is shown in the list of proposals as
 	 * plain text. If you need any markup (such as bold or italic text), you have
-	 * to implement gtk_source_completion_proposal_get_markup. The returned string
+	 * to implement gtk_source_completion_proposal_get_markup(). The returned string
 	 * must be freed with g_free().
 	 * Returns: a new string containing the label of proposal.
 	 */
@@ -108,7 +107,7 @@ public interface SourceCompletionProposalIF
 	/**
 	 * Gets the label of proposal with markup. The label is shown in the list of
 	 * proposals and may contain markup. This will be used instead of
-	 * gtk_source_completion_proposal_get_label if implemented. The returned string
+	 * gtk_source_completion_proposal_get_label() if implemented. The returned string
 	 * must be freed with g_free().
 	 * Returns: a new string containing the label of proposal with markup.
 	 */
@@ -148,16 +147,16 @@ public interface SourceCompletionProposalIF
 	
 	/**
 	 * Get the hash value of proposal. This is used to (together with
-	 * gtk_source_completion_proposal_equal) to match proposals in the completion
-	 * model. By default, it uses a direct hash (g_direct_hash).
+	 * gtk_source_completion_proposal_equal()) to match proposals in the completion
+	 * model. By default, it uses a direct hash (g_direct_hash()).
 	 * Returns: The hash value of proposal.
 	 */
 	public uint hash();
 	
 	/**
 	 * Get whether two proposal objects are the same. This is used to (together
-	 * with gtk_source_completion_proposal_hash) to match proposals in the
-	 * completion model. By default, it uses direct equality (g_direct_equal).
+	 * with gtk_source_completion_proposal_hash()) to match proposals in the
+	 * completion model. By default, it uses direct equality (g_direct_equal()).
 	 * Params:
 	 * other = a GtkSourceCompletionProposal.
 	 * Returns: TRUE if proposal and object are the same proposal Signal Details The "changed" signal void user_function (GtkSourceCompletionProposal *proposal, gpointer user_data) : Action Emitted when the proposal has changed. The completion popup will react to this by updating the shown information.

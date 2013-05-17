@@ -71,6 +71,8 @@ public import gtkc.gio;
 public import glib.ConstructionException;
 public import gobject.ObjectG;
 
+public import gobject.Signals;
+public  import gtkc.gdktypes;
 
 public import glib.Str;
 public import glib.ErrorG;
@@ -85,9 +87,9 @@ public import gio.IconIF;
 
 
 /**
- * Description
  * GAppInfo and GAppLaunchContext are used for describing and launching
  * applications installed on the system.
+ *
  * As of GLib 2.20, URIs will always be converted to POSIX paths
  * (using g_file_get_path()) when using g_app_info_launch() even if
  * the application requested an URI and not a POSIX path. For example
@@ -102,6 +104,7 @@ public import gio.IconIF;
  * mailto:, of course cannot be mapped to a POSIX
  * path (in gvfs there's no FUSE mount for it); such URIs will be
  * passed unmodified to the application.
+ *
  * Specifically for gvfs 2.26 and later, the POSIX URI will be mapped
  * back to the GIO URI in the GFile constructors (since gvfs
  * implements the GVfs extension point). As such, if the application
@@ -110,17 +113,22 @@ public import gio.IconIF;
  * that the URI passed to e.g. g_file_new_for_commandline_arg() is
  * equal to the result of g_file_get_uri(). The following snippet
  * illustrates this:
+ *
  * GFile *f;
  * char *uri;
+ *
  * file = g_file_new_for_commandline_arg (uri_from_commandline);
+ *
  * uri = g_file_get_uri (file);
  * strcmp (uri, uri_from_commandline) == 0; // FALSE
  * g_free (uri);
+ *
  * if (g_file_has_uri_scheme (file, "cdda"))
  *  {
 	 *  // do something special with uri
  *  }
  * g_object_unref (file);
+ *
  * This code will work when both cdda://sr0/Track
  * 1.wav and /home/user/.gvfs/cdda on sr0/Track
  * 1.wav is passed to the application. It should be noted
@@ -143,6 +151,68 @@ public template AppInfoT(TStruct)
 	
 	/**
 	 */
+	int[string] connectedSignals;
+	
+	void delegate(string, AppInfoIF)[] _onLaunchFailedListeners;
+	void delegate(string, AppInfoIF)[] onLaunchFailedListeners()
+	{
+		return  _onLaunchFailedListeners;
+	}
+	/**
+	 */
+	void addOnLaunchFailed(void delegate(string, AppInfoIF) dlg, ConnectFlags connectFlags=cast(ConnectFlags)0)
+	{
+		if ( !("launch-failed" in connectedSignals) )
+		{
+			Signals.connectData(
+			getStruct(),
+			"launch-failed",
+			cast(GCallback)&callBackLaunchFailed,
+			cast(void*)cast(AppInfoIF)this,
+			null,
+			connectFlags);
+			connectedSignals["launch-failed"] = 1;
+		}
+		_onLaunchFailedListeners ~= dlg;
+	}
+	extern(C) static void callBackLaunchFailed(GAppLaunchContext* gapplaunchcontextStruct, gchar* arg1, AppInfoIF _appInfoIF)
+	{
+		foreach ( void delegate(string, AppInfoIF) dlg ; _appInfoIF.onLaunchFailedListeners )
+		{
+			dlg(Str.toString(arg1), _appInfoIF);
+		}
+	}
+	
+	void delegate(AppInfoIF, GVariant*, AppInfoIF)[] _onLaunchedListeners;
+	void delegate(AppInfoIF, GVariant*, AppInfoIF)[] onLaunchedListeners()
+	{
+		return  _onLaunchedListeners;
+	}
+	/**
+	 */
+	void addOnLaunched(void delegate(AppInfoIF, GVariant*, AppInfoIF) dlg, ConnectFlags connectFlags=cast(ConnectFlags)0)
+	{
+		if ( !("launched" in connectedSignals) )
+		{
+			Signals.connectData(
+			getStruct(),
+			"launched",
+			cast(GCallback)&callBackLaunched,
+			cast(void*)cast(AppInfoIF)this,
+			null,
+			connectFlags);
+			connectedSignals["launched"] = 1;
+		}
+		_onLaunchedListeners ~= dlg;
+	}
+	extern(C) static void callBackLaunched(GAppLaunchContext* gapplaunchcontextStruct, GAppInfo* arg1, GVariant* arg2, AppInfoIF _appInfoIF)
+	{
+		foreach ( void delegate(AppInfoIF, GVariant*, AppInfoIF) dlg ; _appInfoIF.onLaunchedListeners )
+		{
+			dlg(ObjectG.getDObject!(AppInfo)(arg1), arg2, _appInfoIF);
+		}
+	}
+	
 	
 	/**
 	 * Creates a new GAppInfo from the given information.

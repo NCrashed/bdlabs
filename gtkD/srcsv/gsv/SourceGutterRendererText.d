@@ -23,7 +23,7 @@
 
 /*
  * Conversion parameters:
- * inFile  = gtksourceview-3.0-GtkSourceGutterRendererText.html
+ * inFile  = GtkSourceGutterRendererText.html
  * outPack = gsv
  * outFile = SourceGutterRendererText
  * strct   = GtkSourceGutterRendererText
@@ -66,7 +66,6 @@ private import glib.Str;
 private import gsv.SourceGutterRenderer;
 
 /**
- * Description
  */
 public class SourceGutterRendererText : SourceGutterRenderer
 {

@@ -72,7 +72,6 @@ private import glib.OptionGroup;
 
 
 /**
- * Description
  * GStreamer is a framework for constructing graphs of various filters
  * (termed elements here) that will handle streaming media. Any discreet
  * (packetizable) media type is supported, with provisions for automatically
@@ -80,25 +79,32 @@ private import glib.OptionGroup;
  * a powerful negotiation framework. Plugins are heavily used to provide for
  * all elements, allowing one to construct plugins outside of the GST
  * library, even released binary-only if license require (please don't).
- * GStreamer borrows heavily from both the OGI media pipeline and
- * Microsoft's DirectShow, hopefully taking the best of both and leaving the
- * cruft behind. Its interface is slowly getting stable.
+ * GStreamer covers a wide range of use cases including: playback, recording,
+ * editing, serving streams, voice over ip and video calls.
+ *
  * The GStreamer library should be initialized with
  * gst_init() before it can be used. You should pass pointers to the main argc
  * and argv variables so that GStreamer can process its own command line
  * options, as shown in the following example.
+ *
  * $(DDOC_COMMENT example)
+ *
  * It's allowed to pass two NULL pointers to gst_init() in case you don't want
  * to pass the command line args to GStreamer.
+ *
  * You can also use GOption to initialize your own parameters as shown in
  * the next code fragment:
+ *
  * $(DDOC_COMMENT example)
+ *
  * Use gst_version() to query the library version at runtime or use the
  * GST_VERSION_* macros to find the version at compile time. Optionally
  * gst_version_string() returns a printable string.
+ *
  * The gst_deinit() call is used to clean up all internal resources used
  * by GStreamer. It is mostly used in unit tests
  * to check for leaks.
+ *
  * Last reviewed on 2006-08-11 (0.10.10)
  */
 public class GStreamer
@@ -110,9 +116,12 @@ public class GStreamer
 	/**
 	 * Initializes the GStreamer library, setting up internal path lists,
 	 * registering built-in elements, and loading standard plugins.
-	 * This function should be called before calling any other GLib functions. If
-	 * this is not an option, your program must initialise the GLib thread system
-	 * using g_thread_init() before any other GLib functions are called.
+	 * Unless the plugin registry is disabled at compile time, the registry will be
+	 * loaded. By default this will also check if the registry cache needs to be
+	 * updated and rescan all plugins if needed. See gst_update_registry() for
+	 * details and section
+	 * Running GStreamer Applications
+	 * for how to disable automatic registry updates.
 	 * Note
 	 * This function will terminate your program if it was unable to initialize
 	 * GStreamer for some reason. If you want your program to fall back,
@@ -122,7 +131,7 @@ public class GStreamer
 	 * particular, unknown command line options cause this function to
 	 * abort program execution.
 	 * Params:
-	 * argv = pointer to application's argv
+	 * argv = pointer to application's argv. [inout][array length=argc][allow-none]
 	 */
 	public static void init(ref string[] argv)
 	{
@@ -145,11 +154,8 @@ public class GStreamer
 	 * This function will return FALSE if GStreamer could not be initialized
 	 * for some reason. If you want your program to fail fatally,
 	 * use gst_init() instead.
-	 * This function should be called before calling any other GLib functions. If
-	 * this is not an option, your program must initialise the GLib thread system
-	 * using g_thread_init() before any other GLib functions are called.
 	 * Params:
-	 * argv = pointer to application's argv
+	 * argv = pointer to application's argv. [inout][array length=argc][allow-none]
 	 * Returns: TRUE if GStreamer could be initialized.
 	 * Throws: GException on failure.
 	 */
@@ -185,11 +191,11 @@ public class GStreamer
 	 * If you use this function, you should make sure you initialise the GLib
 	 * threading system as one of the very first things in your program
 	 * (see the example at the beginning of this section).
-	 * Returns: a pointer to GStreamer's option group.
+	 * Returns: a pointer to GStreamer's option group. [transfer full]
 	 */
 	public static OptionGroup initGetOptionGroup()
 	{
-		// GOptionGroup* gst_init_get_option_group (void);
+		// GOptionGroup * gst_init_get_option_group (void);
 		auto p = gst_init_get_option_group();
 		
 		if(p is null)
@@ -198,6 +204,17 @@ public class GStreamer
 		}
 		
 		return ObjectG.getDObject!(OptionGroup)(cast(GOptionGroup*) p);
+	}
+	
+	/**
+	 * Use this function to check if GStreamer has been initialized with gst_init()
+	 * or gst_init_check().
+	 * Returns: TRUE if initialization has been done, FALSE otherwise.
+	 */
+	public static int isInitialized()
+	{
+		// gboolean gst_is_initialized (void);
+		return gst_is_initialized();
 	}
 	
 	/**
@@ -217,10 +234,10 @@ public class GStreamer
 	/**
 	 * Gets the version number of the GStreamer library.
 	 * Params:
-	 * major = pointer to a guint to store the major version number
-	 * minor = pointer to a guint to store the minor version number
-	 * micro = pointer to a guint to store the micro version number
-	 * nano = pointer to a guint to store the nano version number
+	 * major = pointer to a guint to store the major version number. [out]
+	 * minor = pointer to a guint to store the minor version number. [out]
+	 * micro = pointer to a guint to store the micro version number. [out]
+	 * nano = pointer to a guint to store the nano version number. [out]
 	 */
 	public static void versio(ref uint major, ref uint minor, ref uint micro, ref uint nano)
 	{
@@ -231,11 +248,11 @@ public class GStreamer
 	/**
 	 * This function returns a string that is useful for describing this version
 	 * of GStreamer to the outside world: user agent strings, logging, ...
-	 * Returns: a newly allocated string describing this version of GStreamer.
+	 * Returns: a newly allocated string describing this version of GStreamer. [transfer full]
 	 */
 	public static string versionString()
 	{
-		// gchar* gst_version_string (void);
+		// gchar * gst_version_string (void);
 		return Str.toString(gst_version_string());
 	}
 	
@@ -246,7 +263,7 @@ public class GStreamer
 	 * Applications might want to disable this behaviour with the
 	 * gst_segtrap_set_enabled() function. This is typically done if the application
 	 * wants to install its own handler without GStreamer interfering.
-	 * Returns: TRUE if GStreamer is allowed to install a custom SIGSEGV handler. Since 0.10.10
+	 * Returns: TRUE if GStreamer is allowed to install a custom SIGSEGV handler.
 	 */
 	public static int segtrapIsEnabled()
 	{
@@ -259,7 +276,6 @@ public class GStreamer
 	 * the GStreamer core. See gst_segtrap_is_enabled() for more information.
 	 * Params:
 	 * enabled = whether a custom SIGSEGV handler should be installed.
-	 * Since 0.10.10
 	 */
 	public static void segtrapSetEnabled(int enabled)
 	{
@@ -268,11 +284,12 @@ public class GStreamer
 	}
 	
 	/**
-	 * By default GStreamer will perform a fork() when scanning and rebuilding the
-	 * registry file.
+	 * By default GStreamer will perform scanning and rebuilding of the
+	 * registry file using a helper child process.
 	 * Applications might want to disable this behaviour with the
-	 * gst_registry_fork_set_enabled() function.
-	 * Returns: TRUE if GStreamer will use fork() when rebuilding the registry. On platforms without fork(), this function will always return FALSE. Since 0.10.10
+	 * gst_registry_fork_set_enabled() function, in which case new plugins
+	 * are scanned (and loaded) into the application process.
+	 * Returns: TRUE if GStreamer will use the child helper process when rebuilding the registry.
 	 */
 	public static int registryForkIsEnabled()
 	{
@@ -281,13 +298,11 @@ public class GStreamer
 	}
 	
 	/**
-	 * Applications might want to disable/enable the usage of fork() when rebuilding
-	 * the registry. See gst_registry_fork_is_enabled() for more information.
-	 * On platforms without fork(), this function will have no effect on the return
-	 * value of gst_registry_fork_is_enabled().
+	 * Applications might want to disable/enable spawning of a child helper process
+	 * when rebuilding the registry. See gst_registry_fork_is_enabled() for more
+	 * information.
 	 * Params:
-	 * enabled = whether rebuilding the registry may fork
-	 * Since 0.10.10
+	 * enabled = whether rebuilding the registry can use a temporary child helper process.
 	 */
 	public static void registryForkSetEnabled(int enabled)
 	{
@@ -309,7 +324,7 @@ public class GStreamer
 	 * any elements or access the GStreamer registry while the update is in
 	 * progress.
 	 * Note that this function may block for a significant amount of time.
-	 * Returns: TRUE if the registry has been updated successfully (does not imply that there were changes), otherwise FALSE. Since 0.10.12
+	 * Returns: TRUE if the registry has been updated successfully (does not imply that there were changes), otherwise FALSE.
 	 */
 	public static int updateRegistry()
 	{

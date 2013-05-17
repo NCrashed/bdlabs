@@ -67,13 +67,13 @@ private import glib.SequenceIter;
 
 
 /**
- * Description
  * The GSequence data structure has the API of a list, but is
  * implemented internally with a balanced binary tree. This means that
  * it is possible to maintain a sorted list of n elements in time O(n
  * log n). The data contained in each element can be either integer
  * values, by using of the Type Conversion Macros,
  * or simply pointers to any type of data.
+ *
  * A GSequence is accessed through iterators,
  * represented by a GSequenceIter. An iterator represents a position
  * between two elements of the sequence. For example, the
@@ -82,15 +82,18 @@ private import glib.SequenceIter;
  * end iterator represents the gap immediately
  * after the last element. In an empty sequence, the begin and end
  * iterators are the same.
+ *
  * Some methods on GSequence operate on ranges of items. For example
  * g_sequence_foreach_range() will call a user-specified function on
  * each element with the given range. The range is delimited by the
  * gaps represented by the passed-in iterators, so if you pass in the
  * begin and end iterators, the range in question is the entire
  * sequence.
+ *
  * The function g_sequence_get() is used with an iterator to access the
  * element immediately following the gap that the iterator represents.
  * The iterator is said to point to that element.
+ *
  * Iterators are stable across most operations on a GSequence. For
  * example an iterator pointing to some element of a sequence will
  * continue to point to that element even after the sequence is sorted.
@@ -628,7 +631,7 @@ public class Sequence
 	 * data = data to lookup
 	 * cmpFunc = the function used to compare items in the sequence
 	 * cmpData = user data passed to cmp_func.
-	 * Returns: an GSequenceIter pointing to the position of the first item found equal to data according to cmp_func and cmp_data.
+	 * Returns: an GSequenceIter pointing to the position of the first item found equal to data according to cmp_func and cmp_data, or NULL if no such item exists.
 	 */
 	public SequenceIter lookup(void* data, GCompareDataFunc cmpFunc, void* cmpData)
 	{
@@ -661,7 +664,7 @@ public class Sequence
 	 * data = data to lookup
 	 * iterCmp = the function used to compare iterators in the sequence
 	 * cmpData = user data passed to iter_cmp
-	 * Returns: an GSequenceIter pointing to the position of the first item found equal to data according to cmp_func and cmp_data.
+	 * Returns: an GSequenceIter pointing to the position of the first item found equal to data according to cmp_func and cmp_data, or NULL if no such item exists.
 	 */
 	public SequenceIter lookupIter(void* data, GSequenceIterCompareFunc iterCmp, void* cmpData)
 	{

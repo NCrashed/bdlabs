@@ -117,7 +117,11 @@ public struct Linker
 	 */
 	public static void loadLibrary(string library)
 	{
-		void* handle = pLoadLibrary(libPath ~ library);
+		void* handle = pLoadLibrary(library);
+
+		//TODO: A more general way to try more than one version.
+		if ( handle is null && library == importLibs[LIBRARY.GSV] )
+			handle = pLoadLibrary(importLibs[LIBRARY.GSV1]);
 
 		if ( handle is null )
 			throw new Exception("Library load failed: " ~ library);

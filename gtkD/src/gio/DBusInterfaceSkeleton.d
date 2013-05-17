@@ -90,7 +90,6 @@ private import gio.DBusInterfaceIF;
 private import gobject.ObjectG;
 
 /**
- * Description
  * Abstract base class for D-Bus interfaces on the service side.
  */
 public class DBusInterfaceSkeleton : ObjectG, DBusInterfaceIF
@@ -332,7 +331,7 @@ public class DBusInterfaceSkeleton : ObjectG, DBusInterfaceIF
 	}
 	
 	/**
-	 * Checks if interface_ is export on connection.
+	 * Checks if interface_ is exported on connection.
 	 * Since 2.32
 	 * Params:
 	 * connection = A GDBusConnection.

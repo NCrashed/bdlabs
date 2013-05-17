@@ -91,7 +91,6 @@ private import glib.ListSG;
 private import gobject.ObjectG;
 
 /**
- * Description
  * While complete access to the layout capabilities of Pango is provided
  * using the detailed interfaces for itemization and shaping, using
  * that functionality directly involves writing a fairly large amount
@@ -212,6 +211,25 @@ public class PgLayout : ObjectG
 	{
 		// void pango_layout_context_changed (PangoLayout *layout);
 		pango_layout_context_changed(pangoLayout);
+	}
+	
+	/**
+	 * Returns the current serial number of layout. The serial number is
+	 * initialized to an small number larger than zero when a new layout
+	 * is created and is increased whenever the layout is changed using any
+	 * of the setter functions, or the PangoContext it uses has changed.
+	 * The serial may wrap, but will never have the value 0. Since it
+	 * can wrap, never compare it with "less than", always use "not equals".
+	 * This can be used to automatically detect changes to a PangoLayout, and
+	 * is useful for example to decide whether a layout needs redrawing.
+	 * To force the serial to be increased, use pango_layout_context_changed().
+	 * Since 1.32.4
+	 * Returns: The current serial number of layout.
+	 */
+	public uint getSerial()
+	{
+		// guint pango_layout_get_serial (PangoLayout *layout);
+		return pango_layout_get_serial(pangoLayout);
 	}
 	
 	/**

@@ -1045,14 +1045,22 @@ public class GtkDClass
 			{
 				switch ( signalName )
 				{
-					case  "button-press-event": text ~= "addEvents(EventMask.BUTTON_PRESS_MASK);"; break;
-					case  "button-release-event":
-						text ~= "addEvents(EventMask.BUTTON_PRESS_MASK);";
-						text ~= "addEvents(EventMask.BUTTON_RELEASE_MASK);";
-						break;
-					case  "motion-notify-event": text ~= "addEvents(EventMask.POINTER_MOTION_MASK);"; break;
-					default:
-						break;
+					case  "button-press-event":      text ~= "addEvents(EventMask.BUTTON_PRESS_MASK);";      break;
+					case  "button-release-event":    text ~= "addEvents(EventMask.BUTTON_RELEASE_MASK);";    break;
+					case  "enter-notify-event":      text ~= "addEvents(EventMask.ENTER_NOTIFY_MASK);";      break;
+					case  "focus-in-event":          text ~= "addEvents(EventMask.FOCUS_CHANGE_MASK);";      break;
+					case  "focus-out-event":         text ~= "addEvents(EventMask.FOCUS_CHANGE_MASK);";      break;
+					case  "key-press-event":         text ~= "addEvents(EventMask.KEY_PRESS_MASK);";         break;
+					case  "key-release-event":       text ~= "addEvents(EventMask.KEY_RELEASE_MASK);";       break;
+					case  "leave-notify-event":      text ~= "addEvents(EventMask.LEAVE_NOTIFY_MASK);";      break;
+					case  "motion-notify-event":     text ~= "addEvents(EventMask.POINTER_MOTION_MASK);";    break;
+					case  "property-notify-event":   text ~= "addEvents(EventMask.PROPERTY_CHANGE_MASK);";   break;
+					case  "proximity-in-event":      text ~= "addEvents(EventMask.PROXIMITY_IN_MASK);";      break;
+					case  "proximity-out-event":     text ~= "addEvents(EventMask.PROXIMITY_OUT_MASK);";     break;
+					case  "scroll-event":            text ~= "addEvents(EventMask.SCROLL_MASK);";            break;
+					case  "visibility-notify-event": text ~= "addEvents(EventMask.VISIBILITY_NOTIFY_MASK);"; break;
+
+					default: break;
 				}
 			}
 
@@ -1480,7 +1488,7 @@ public class GtkDClass
 		}
 
 		//TODO: add an option for this to the APILookup files
-		if ( enumName == "GstEventType" || enumName == "GstEventTypeFlags" )
+		if ( enumName == "GstEventType" || enumName == "GstEventTypeFlags" || enumName == "GstQueryType" )
 			return;
 
 		if ( startsWith(enumName, "Gtk")
@@ -1778,7 +1786,7 @@ public class GtkDClass
 			if ( std.string.indexOf(elem, "unsigned long") == 0)
 				elem = "ulong"~ elem[13..$];  //TODO: posibly use fixtype
 
-			if ( std.string.indexOf(structDef[i], ":") >= 0 && (std.string.indexOf(structDef[i], ":") <  std.string.indexOf(structDef[i], "/+*") ||  std.string.indexOf(structDef[i], "/+*") == -1) )
+			if ( std.string.indexOf(structDef[i], ":") >= 0 && (std.string.indexOf(structDef[i], ":") <  std.string.indexOf(structDef[i], "/+*") ||  std.string.indexOf(structDef[i], "/+*") == -1) && !startsWith(elem, "*") )
 			//Bit fields.
 			{
 				if ( !bitField )
@@ -1796,7 +1804,7 @@ public class GtkDClass
 				{
 					collectedStructs ~= "//" ~ elem;
 				}
-
+				
 				auto b = split(elem, ":")[1];
 				b = b[0 .. b.indexOf(";")].strip;
 				bits += to!int(b);
@@ -1822,7 +1830,12 @@ public class GtkDClass
 					collectedStructs ~= "static if (int.sizeof == ptrdiff_t.sizeof)";
 					collectedStructs ~= "{";
 				}
-				if ( std.string.indexOf(elem, "#ifndef") == 0 )
+				if ( std.string.indexOf(elem, "#ifdef G_ENABLE_DEBUG") == 0 )
+				{
+					collectedStructs ~= "debug";
+					collectedStructs ~= "{";
+				}
+				else if ( std.string.indexOf(elem, "#ifndef") == 0 )
 				{
 					collectedStructs ~= "version("~ elem[8..$] ~")";
 					collectedStructs ~= "{";
@@ -1838,9 +1851,16 @@ public class GtkDClass
 					collectedStructs ~= "}";
 				}
 			}
-			else if ( std.string.indexOf(elem, "(") > 0 && !startsWith(elem, "* ") && !startsWith(elem, "/+*") )
+			else if ( std.string.indexOf(elem, "(") > -1 && !startsWith(elem, "* ") && !startsWith(elem, "/+*") )
 			//Function Pointers.
 			{
+				if ( startsWith(elem, "(") )
+				{
+					//Return type on separate line.
+					structDef[i] = collectedStructs[$-1] ~" "~ elem;
+					collectedStructs.length = collectedStructs.length -1;
+				}
+			
 				string funct;
 				for ( ; i < structDef.length; i++ )
 				{
@@ -2500,15 +2520,29 @@ public class GtkDClass
 		string[] desc;
 		desc ~= "";
 		desc ~= tabs ~ "/**";
-		string[] block = getBlock ("Description", "Details");
-		foreach ( string line; block )
+		string[] block = getBlock ("Description", "Details", false);
+		//TODO: check if leaveing one blank line in stripHtml doesn't mess things up.
+		foreach ( int i, string line; block )
 		{
-			if( startsWith(line, "--") && endsWith(line, "--") )
+			if ( i == 0 )
+				continue;
+		
+			if ( startsWith(line, "--") && endsWith(line, "--") )
 				line = std.array.replace(line, "-", "_");
+
+			if ( desc.length == 2 && line.strip().length == 0 )
+				continue;
+				
+			if ( desc.length > 1 && desc[$-1].strip() == "*" && line.strip().length == 0 )
+				continue;
 
 			desc ~= " * " ~ line;
 		}
-		desc ~= tabs ~ " */";
+		
+		if ( desc[$-1].strip() == "*" )
+			desc[$-1] = tabs ~ " */";
+		else
+			desc ~= tabs ~ " */";
 
 		return desc;
 
@@ -2521,7 +2555,7 @@ public class GtkDClass
 	 *    	endLine = 		The end marker line
 	 * Returns: The block os lines
 	 */
-	private string[] getBlock(string startLine, string endLine)
+	private string[] getBlock(string startLine, string endLine, bool stripEmptyLine = true)
 	{
 		currLine = 0;
 
@@ -2536,7 +2570,7 @@ public class GtkDClass
 			++currLine;
 		}
 
-		return getUntil(endLine);
+		return getUntil(endLine, stripEmptyLine);
 	}
 
 	private int moveToBlockStart(string startLine, string[] inLines)
@@ -2555,7 +2589,7 @@ public class GtkDClass
 	 *    	endLine = 	the marker line
 	 * Returns:
 	 */
-	private string[] getUntil(string endLine)
+	private string[] getUntil(string endLine, bool stripEmptyLine = true)
 	{
 		bool end = false;
 
@@ -2570,7 +2604,7 @@ public class GtkDClass
 			}
 			else
 			{
-				if ( std.string.strip(inLines[currLine]).length > 0 )
+				if ( std.string.strip(inLines[currLine]).length > 0 || !stripEmptyLine )
 				{
 					block ~= inLines[currLine];
 				}
@@ -2819,6 +2853,10 @@ public class GtkDClass
 		{
 			converted = gToken;
 		}
+		else if ( gToken == "pid_t" )
+		{
+			converted = gToken;
+		}
 		else if ( startsWith(gToken,"f_") && (endsWith(gToken,"_out") || endsWith(gToken,"_in") || endsWith(gToken,"_inout") ) )
 		{
 			converted = gToken;
@@ -2895,6 +2933,11 @@ public class GtkDClass
 	public static void fixType(ref string type, ref int p, ref string text)
 	{
 		if ( type == "const" || type == "struct" )
+		{
+			GtkDClass.skipBlank(p, text);
+			type = untilBlank(p, text);
+		}
+		if ( type == "volatile" )
 		{
 			GtkDClass.skipBlank(p, text);
 			type = untilBlank(p, text);

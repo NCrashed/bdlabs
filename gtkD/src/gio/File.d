@@ -118,23 +118,30 @@ private import gio.MountOperation;
 private import gobject.ObjectG;
 
 /**
- * Description
  * GFile is a high level abstraction for manipulating files on a
  * virtual file system. GFiles are lightweight, immutable objects
  * that do no I/O upon creation. It is necessary to understand that
  * GFile objects do not represent files, merely an identifier for a
  * file. All file content I/O is implemented as streaming operations
  * (see GInputStream and GOutputStream).
+ *
  * To construct a GFile, you can use:
+ *
  * g_file_new_for_path() if you have a path.
+ *
  * g_file_new_for_uri() if you have a URI.
+ *
  * g_file_new_for_commandline_arg() for a command line argument.
+ *
  * g_file_new_tmp() to create a temporary file from a template.
+ *
  * g_file_parse_name() from a UTF-8 string gotten from g_file_get_parse_name().
+ *
  * One way to think of a GFile is as an abstraction of a pathname. For
  * normal files the system pathname is what is stored internally, but as
  * GFiles are extensible it could also be something else that corresponds
  * to a pathname in a userspace implementation of a filesystem.
+ *
  * GFiles make up hierarchies of directories and files that correspond to
  * the files on a filesystem. You can move through the file system with
  * GFile using g_file_get_parent() to get an identifier for the parent
@@ -143,6 +150,7 @@ private import gobject.ObjectG;
  * GFiles. There can be multiple hierarchies, so you may not end up at
  * the same root if you repeatedly call g_file_get_parent() on two different
  * files.
+ *
  * All GFiles have a basename (get with g_file_get_basename()). These names
  * are byte strings that are used to identify the file on the filesystem
  * (relative to its parent directory) and there is no guarantees that they
@@ -154,6 +162,7 @@ private import gobject.ObjectG;
  * But always store the real basename or the GFile to use to actually
  * access the file, because there is no way to go from a display name to
  * the actual name.
+ *
  * Using GFile as an identifier has the same weaknesses as using a path
  * in that there may be multiple aliases for the same file. For instance,
  * hard or soft links may cause two different GFiles to refer to the same
@@ -164,18 +173,24 @@ private import gobject.ObjectG;
  * canonicalization of pathnames passed in, so that trivial differences in
  * the path string used at creation (duplicated slashes, slash at end of
  * path, "." or ".." path segments, etc) does not create different GFiles.
+ *
  * Many GFile operations have both synchronous and asynchronous versions
  * to suit your application. Asynchronous versions of synchronous functions
  * simply have _async() appended to their function names. The asynchronous
  * I/O functions call a GAsyncReadyCallback which is then used to finalize
  * the operation, producing a GAsyncResult which is then passed to the
  * function's matching _finish() operation.
+ *
  * Some GFile operations do not have synchronous analogs, as they may
  * take a very long time to finish, and blocking may leave an application
  * unusable. Notable cases include:
+ *
  * g_file_mount_mountable() to mount a mountable file.
+ *
  * g_file_unmount_mountable_with_operation() to unmount a mountable file.
+ *
  * g_file_eject_mountable_with_operation() to eject a mountable file.
+ *
  * One notable feature of GFiles are entity tags, or "etags" for
  * short. Entity tags are somewhat like a more abstract version of the
  * traditional mtime, and can be used to quickly determine if the file has
@@ -237,6 +252,32 @@ public class File : ObjectG
 		if(p is null)
 		{
 			throw new ConstructionException("null returned by g_file_new_for_commandline_arg(Str.toStringz(arg))");
+		}
+		this(cast(GFile*) p);
+	}
+	
+	/**
+	 * Creates a GFile with the given argument from the command line.
+	 * This function is similar to g_file_new_for_commandline_arg() except
+	 * that it allows for passing the current working directory as an
+	 * argument instead of using the current working directory of the
+	 * process.
+	 * This is useful if the commandline argument was given in a context
+	 * other than the invocation of the current process.
+	 * See also g_application_command_line_create_file_for_arg().
+	 * Since 2.36
+	 * Params:
+	 * arg = a command line string
+	 * cwd = the current working directory of the commandline
+	 * Throws: ConstructionException GTK+ fails to create the object.
+	 */
+	public this (string arg, string cwd)
+	{
+		// GFile * g_file_new_for_commandline_arg_and_cwd  (const gchar *arg,  const gchar *cwd);
+		auto p = g_file_new_for_commandline_arg_and_cwd(Str.toStringz(arg), Str.toStringz(cwd));
+		if(p is null)
+		{
+			throw new ConstructionException("null returned by g_file_new_for_commandline_arg_and_cwd(Str.toStringz(arg), Str.toStringz(cwd))");
 		}
 		this(cast(GFile*) p);
 	}
@@ -1405,7 +1446,7 @@ public class File : ObjectG
 	 * operation was cancelled, the error G_IO_ERROR_CANCELLED will be
 	 * returned.
 	 * If the file does not exist, the G_IO_ERROR_NOT_FOUND error will
-	 * be returned. If the file is not a directory, the G_FILE_ERROR_NOTDIR
+	 * be returned. If the file is not a directory, the G_IO_ERROR_NOT_DIRECTORY
 	 * error will be returned. Other errors are possible too.
 	 * Params:
 	 * attributes = an attribute query string
@@ -2059,7 +2100,7 @@ public class File : ObjectG
 	 * flags = GFileQueryInfoFlags
 	 * cancellable = optional GCancellable object,
 	 * NULL to ignore. [allow-none]
-	 * Returns: TRUE if there was any error, FALSE otherwise.
+	 * Returns: FALSE if there was any error, TRUE otherwise.
 	 * Throws: GException on failure.
 	 */
 	public int setAttributesFromInfo(FileInfo info, GFileQueryInfoFlags flags, Cancellable cancellable)
@@ -2761,6 +2802,11 @@ public class File : ObjectG
 	 * If cancellable is not NULL, then the operation can be cancelled by
 	 * triggering the cancellable object from another thread. If the operation
 	 * was cancelled, the error G_IO_ERROR_CANCELLED will be returned.
+	 * It does not make sense for flags to contain
+	 * G_FILE_MONITOR_WATCH_HARD_LINKS, since hard links can not be made to
+	 * directories. It is not possible to monitor all the files in a
+	 * directory for changes made via hard links; if you want to do this then
+	 * you must register individual watches with g_file_monitor().
 	 * Virtual: monitor_dir
 	 * Params:
 	 * flags = a set of GFileMonitorFlags
@@ -2796,6 +2842,13 @@ public class File : ObjectG
 	 * If cancellable is not NULL, then the operation can be cancelled by
 	 * triggering the cancellable object from another thread. If the operation
 	 * was cancelled, the error G_IO_ERROR_CANCELLED will be returned.
+	 * If flags contains G_FILE_MONITOR_WATCH_HARD_LINKS then the monitor
+	 * will also attempt to report changes made to the file via another
+	 * filename (ie, a hard link). Without this flag, you can only rely on
+	 * changes made through the filename contained in file to be
+	 * reported. Using this flag may result in an increase in resource
+	 * usage, and may not have any effect depending on the GFileMonitor
+	 * backend and/or filesystem type.
 	 * Params:
 	 * flags = a set of GFileMonitorFlags
 	 * cancellable = optional GCancellable object,

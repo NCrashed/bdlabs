@@ -106,7 +106,6 @@ private import pango.PgGlyphString;
 private import gobject.ObjectG;
 
 /**
- * Description
  * The Pango rendering pipeline takes a string of
  * Unicode characters and converts it into glyphs.
  * The functions described in this section accomplish
@@ -164,10 +163,10 @@ public class PgContext : ObjectG
 	}
 	
 	/**
-	 * Description
 	 * Pango supports bidirectional text (like Arabic and Hebrew) automatically.
 	 * Some applications however, need some help to correctly handle bidirectional
 	 * text.
+	 *
 	 * The PangoDirection type can be used with pango_context_set_base_dir() to
 	 * instruct Pango about direction of text, though in most cases Pango detects
 	 * that correctly and automatically. The rest of the facilities in this section
@@ -279,6 +278,40 @@ public class PgContext : ObjectG
 			throw new ConstructionException("null returned by pango_context_new()");
 		}
 		this(cast(PangoContext*) p);
+	}
+	
+	/**
+	 * Forces a change in the context, which will cause any PangoLayout
+	 * using this context to re-layout.
+	 * This function is only useful when implementing a new backend
+	 * for Pango, something applications won't do. Backends should
+	 * call this function if they have attached extra data to the context
+	 * and such data is changed.
+	 * Since 1.32.4
+	 */
+	public void changed()
+	{
+		// void pango_context_changed (PangoContext *context);
+		pango_context_changed(pangoContext);
+	}
+	
+	/**
+	 * Returns the current serial number of context. The serial number is
+	 * initialized to an small number larger than zero when a new context
+	 * is created and is increased whenever the context is changed using any
+	 * of the setter functions, or the PangoFontMap it uses to find fonts has
+	 * changed. The serial may wrap, but will never have the value 0. Since it
+	 * can wrap, never compare it with "less than", always use "not equals".
+	 * This can be used to automatically detect changes to a PangoContext, and
+	 * is only useful when implementing objects that need update when their
+	 * PangoContext changes, like PangoLayout.
+	 * Since 1.32.4
+	 * Returns: The current serial number of context.
+	 */
+	public uint getSerial()
+	{
+		// guint pango_context_get_serial (PangoContext *context);
+		return pango_context_get_serial(pangoContext);
 	}
 	
 	/**

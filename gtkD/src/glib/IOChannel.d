@@ -81,24 +81,27 @@ private import gtkc.Loader;
 
 
 /**
- * Description
  * The GIOChannel data type aims to provide a portable method for
  * using file descriptors, pipes, and sockets, and integrating them
  * into the main event
  * loop. Currently full support is available on UNIX platforms,
  * support for Windows is only partially complete.
+ *
  * To create a new GIOChannel on UNIX systems use
  * g_io_channel_unix_new(). This works for plain file descriptors,
  * pipes and sockets. Alternatively, a channel can be created for a
  * file in a system independent manner using g_io_channel_new_file().
+ *
  * Once a GIOChannel has been created, it can be used in a generic
  * manner with the functions g_io_channel_read_chars(),
  * g_io_channel_write_chars(), g_io_channel_seek_position(), and
  * g_io_channel_shutdown().
+ *
  * To add a GIOChannel to the main event loop use
  * g_io_add_watch() or g_io_add_watch_full(). Here you specify which
  * events you are interested in on the GIOChannel, and provide a
  * function to be called whenever these events occur.
+ *
  * GIOChannel instances are created with an initial reference count of
  * 1. g_io_channel_ref() and g_io_channel_unref() can be used to
  * increment or decrement the reference count respectively. When the
@@ -106,6 +109,7 @@ private import gtkc.Loader;
  * isn't closed automatically, unless it was created using
  * g_io_channel_new_file().) Using g_io_add_watch() or
  * g_io_add_watch_full() increments a channel's reference count.
+ *
  * The new functions g_io_channel_read_chars(),
  * g_io_channel_read_line(), g_io_channel_read_line_string(),
  * g_io_channel_read_to_end(), g_io_channel_write_chars(),
@@ -368,13 +372,45 @@ public class IOChannel
 	}
 	
 	/**
+	 * Open a file filename as a GIOChannel using mode mode. This
+	 * channel will be closed when the last reference to it is dropped,
+	 * so there is no need to call g_io_channel_close() (though doing
+	 * so will not cause problems, as long as no attempt is made to
+	 * access the channel after it is closed).
+	 * Params:
+	 * filename = A string containing the name of a file
+	 * mode = One of "r", "w", "a", "r+", "w+", "a+". These have
+	 * the same meaning as in fopen()
+	 * Throws: GException on failure.
+	 * Throws: ConstructionException GTK+ fails to create the object.
+	 */
+	public this (string filename, string mode)
+	{
+		// GIOChannel * g_io_channel_new_file (const gchar *filename,  const gchar *mode,  GError **error);
+		GError* err = null;
+		
+		auto p = g_io_channel_new_file(Str.toStringz(filename), Str.toStringz(mode), &err);
+		
+		if (err !is null)
+		{
+			throw new GException( new ErrorG(err) );
+		}
+		
+		if(p is null)
+		{
+			throw new ConstructionException("null returned by g_io_channel_new_file(Str.toStringz(filename), Str.toStringz(mode), &err)");
+		}
+		this(cast(GIOChannel*) p);
+	}
+	
+	/**
 	 * Replacement for g_io_channel_read() with the new API.
 	 * Params:
-	 * buf = a buffer to read data into
+	 * buf = a buffer to read data into. [out caller-allocates][array length=count][element-type guint8]
 	 * bytesRead = The number of bytes read. This may be
 	 * zero even on success if count < 6 and the channel's encoding
 	 * is non-NULL. This indicates that the next UTF-8 character is
-	 * too wide for the buffer. [allow-none]
+	 * too wide for the buffer. [allow-none][out]
 	 * Returns: the status of the operation.
 	 * Throws: GException on failure.
 	 */
@@ -448,12 +484,12 @@ public class IOChannel
 	 * may only be made on a channel from which data has been read in the
 	 * cases described in the documentation for g_io_channel_set_encoding().
 	 * Params:
-	 * buf = a buffer to write data from
+	 * buf = a buffer to write data from. [array][element-type guint8]
 	 * bytesWritten = The number of bytes written. This can be nonzero
 	 * even if the return value is not G_IO_STATUS_NORMAL.
 	 * If the return value is G_IO_STATUS_NORMAL and the
 	 * channel is blocking, this will always be equal
-	 * to count if count >= 0.
+	 * to count if count >= 0. [out]
 	 * Returns: the status of the operation.
 	 * Throws: GException on failure.
 	 */
@@ -755,10 +791,10 @@ public class IOChannel
 	 * This sets the string that GIOChannel uses to determine
 	 * where in the file a line break occurs.
 	 * Params:
-	 * lineTerm = The line termination string. Use NULL for autodetect.
-	 * Autodetection breaks on "\n", "\r\n", "\r", "\0", and
-	 * the Unicode paragraph separator. Autodetection should
-	 * not be used for anything other than file-based channels.
+	 * lineTerm = The line termination string. Use NULL for
+	 * autodetect. Autodetection breaks on "\n", "\r\n", "\r", "\0",
+	 * and the Unicode paragraph separator. Autodetection should not be
+	 * used for anything other than file-based channels. [allow-none]
 	 */
 	public void setLineTerm(string lineTerm)
 	{
@@ -821,7 +857,7 @@ public class IOChannel
 	 * The encoding NULL is safe to use with binary data.
 	 * The encoding can only be set if one of the following conditions
 	 * Params:
-	 * encoding = the encoding type
+	 * encoding = the encoding type. [allow-none]
 	 * Returns: G_IO_STATUS_NORMAL if the encoding was successfully set.
 	 * Throws: GException on failure.
 	 */

@@ -91,10 +91,10 @@ private import gio.TlsInteraction;
 private import gobject.ObjectG;
 
 /**
- * Description
  * GTlsDatabase is used to lookup certificates and other information
  * from a certificate or key store. It is an abstract base class which
  * TLS library specific subtypes override.
+ *
  * Most common client applications will not directly interact with
  * GTlsDatabase. It is used internally by GTlsConnection.
  */
@@ -372,7 +372,7 @@ public class TlsDatabase : ObjectG
 	 * Since 2.30
 	 * Params:
 	 * result = a GAsyncResult.
-	 * Returns: a newly allocated list of GTlsCertificate objects. Use g_object_unref() on each certificate, and g_list_free() on the release the list. [transfer full]
+	 * Returns: a newly allocated list of GTlsCertificate objects. Use g_object_unref() on each certificate, and g_list_free() on the release the list. [transfer full][element-type GTlsCertificate]
 	 * Throws: GException on failure.
 	 */
 	public ListG lookupCertificatesIssuedByFinish(AsyncResultIF result)

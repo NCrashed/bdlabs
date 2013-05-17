@@ -98,15 +98,16 @@ version(Tango) {
 private import gobject.ObjectG;
 
 /**
- * Description
  * GtkThemingEngine is the object used for rendering themed content
  * in GTK+ widgets. Even though GTK+ has a default implementation,
  * it can be overridden in CSS files by enforcing a GtkThemingEngine
  * object to be loaded as a module.
+ *
  * In order to implement a theming engine, a GtkThemingEngine subclass
  * must be created, alongside the CSS file that will reference it, the
  * theming engine would be created as an .so library, and installed in
  * $(gtk-modules-dir)/theming-engines/.
+ *
  * GtkThemingEngines have limited access to the object they are
  * rendering, the GtkThemingEngine API has read-only accessors to the
  * style information contained in the rendered object's GtkStyleContext.
@@ -149,6 +150,10 @@ public class ThemingEngine : ObjectG
 	 */
 	
 	/**
+	 * Warning
+	 * gtk_theming_engine_get_direction has been deprecated since version 3.8 and should not be used in newly-written code. Use gtk_theming_engine_get_state() and
+	 *  check for GTK_STATE_FLAG_DIR_LTR and
+	 *  GTK_STATE_FLAG_DIR_RTL instead.
 	 * Returns the widget direction used for rendering.
 	 * Returns: the widget direction Since 3.0
 	 */
@@ -349,6 +354,8 @@ public class ThemingEngine : ObjectG
 	}
 	
 	/**
+	 * Warning
+	 * gtk_theming_engine_get_font has been deprecated since version 3.8 and should not be used in newly-written code. Use gtk_theming_engine_get()
 	 * Returns the font description for a given state.
 	 * Params:
 	 * state = state to retrieve the font for
@@ -450,6 +457,8 @@ public class ThemingEngine : ObjectG
 	}
 	
 	/**
+	 * Warning
+	 * gtk_theming_engine_register_property has been deprecated since version 3.8 and should not be used in newly-written code. Code should use the default properties provided by CSS.
 	 * Registers a property so it can be used in the CSS file format,
 	 * on the CSS file the property will look like
 	 * "-${name_space}-${property_name}". being

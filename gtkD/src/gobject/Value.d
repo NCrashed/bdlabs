@@ -80,7 +80,6 @@ private import glib.VariantType;
 
 
 /**
- * Description
  * The GValue structure is basically a variable container that consists
  * of a type identifier and a specific value of that type.
  * The type identifier within a GValue structure always determines the
@@ -92,8 +91,10 @@ private import glib.VariantType;
  * by the GTypeValueTable associated with the type ID stored in the GValue.
  * Other GValue operations (such as converting values between types) are
  * provided by this interface.
+ *
  * The code in the example program below demonstrates GValue's
  * features.
+ *
  * $(DDOC_COMMENT example)
  */
 public class Value
@@ -204,7 +205,6 @@ public class Value
 	
 	
 	/**
-	 * Description
 	 * GValue provides an abstract container structure which can be
 	 * copied, transformed and compared while holding a value of any
 	 * (derived) type, which is registered as a GType with a
@@ -212,6 +212,7 @@ public class Value
 	 * specifications for most value types can be created as GParamSpec
 	 * derived instances, to implement e.g. GObject properties which
 	 * operate on GValue containers.
+	 *
 	 * Parameter names need to start with a letter (a-z or A-Z). Subsequent
 	 * characters can be letters, numbers or a '-'.
 	 * All other characters are replaced by a '-' during construction.
@@ -355,7 +356,7 @@ public class Value
 	 * blurb = description of the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecBoolean(string name, string nick, string blurb, int defaultValue, GParamFlags flags)
 	{
@@ -401,7 +402,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecChar(string name, string nick, string blurb, byte minimum, byte maximum, byte defaultValue, GParamFlags flags)
 	{
@@ -476,7 +477,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecUchar(string name, string nick, string blurb, ubyte minimum, ubyte maximum, ubyte defaultValue, GParamFlags flags)
 	{
@@ -523,7 +524,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecInt(string name, string nick, string blurb, int minimum, int maximum, int defaultValue, GParamFlags flags)
 	{
@@ -570,7 +571,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecUint(string name, string nick, string blurb, uint minimum, uint maximum, uint defaultValue, GParamFlags flags)
 	{
@@ -617,7 +618,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecLong(string name, string nick, string blurb, glong minimum, glong maximum, glong defaultValue, GParamFlags flags)
 	{
@@ -665,7 +666,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecUlong(string name, string nick, string blurb, gulong minimum, gulong maximum, gulong defaultValue, GParamFlags flags)
 	{
@@ -712,7 +713,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecInt64(string name, string nick, string blurb, long minimum, long maximum, long defaultValue, GParamFlags flags)
 	{
@@ -760,7 +761,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecUint64(string name, string nick, string blurb, ulong minimum, ulong maximum, ulong defaultValue, GParamFlags flags)
 	{
@@ -807,7 +808,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecFloat(string name, string nick, string blurb, float minimum, float maximum, float defaultValue, GParamFlags flags)
 	{
@@ -855,7 +856,7 @@ public class Value
 	 * maximum = maximum value for the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecDouble(string name, string nick, string blurb, double minimum, double maximum, double defaultValue, GParamFlags flags)
 	{
@@ -902,7 +903,7 @@ public class Value
 	 * enumType = a GType derived from G_TYPE_ENUM
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecEnum(string name, string nick, string blurb, GType enumType, int defaultValue, GParamFlags flags)
 	{
@@ -949,7 +950,7 @@ public class Value
 	 * flagsType = a GType derived from G_TYPE_FLAGS
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecFlags(string name, string nick, string blurb, GType flagsType, uint defaultValue, GParamFlags flags)
 	{
@@ -994,7 +995,7 @@ public class Value
 	 * blurb = description of the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecString(string name, string nick, string blurb, string defaultValue, GParamFlags flags)
 	{
@@ -1088,7 +1089,7 @@ public class Value
 	 * blurb = description of the property specified
 	 * paramType = a GType derived from G_TYPE_PARAM
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecParam(string name, string nick, string blurb, GType paramType, GParamFlags flags)
 	{
@@ -1186,7 +1187,7 @@ public class Value
 	 * blurb = description of the property specified
 	 * boxedType = G_TYPE_BOXED derived type of this property
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecBoxed(string name, string nick, string blurb, GType boxedType, GParamFlags flags)
 	{
@@ -1283,7 +1284,7 @@ public class Value
 	 * nick = nick name for the property specified
 	 * blurb = description of the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecPointer(string name, string nick, string blurb, GParamFlags flags)
 	{
@@ -1329,7 +1330,7 @@ public class Value
 	 * blurb = description of the property specified
 	 * objectType = G_TYPE_OBJECT derived type of this property
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecObject(string name, string nick, string blurb, GType objectType, GParamFlags flags)
 	{
@@ -1426,7 +1427,7 @@ public class Value
 	 * blurb = description of the property specified
 	 * defaultValue = default value for the property specified
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecUnichar(string name, string nick, string blurb, gunichar defaultValue, GParamFlags flags)
 	{
@@ -1504,7 +1505,7 @@ public class Value
 	 * isAType = a GType whose subtypes are allowed as values
 	 * of the property (use G_TYPE_NONE for any type)
 	 * flags = flags for the property specified
-	 * Returns: a newly created parameter specification
+	 * Returns: a newly created parameter specification. [transfer full]
 	 */
 	public static ParamSpec gParamSpecGtype(string name, string nick, string blurb, GType isAType, GParamFlags flags)
 	{
@@ -1553,10 +1554,10 @@ public class Value
 	 * nick = nick name for the property specified
 	 * blurb = description of the property specified
 	 * type = a GVariantType
-	 * defaultValue = a GVariant of type type to use as the
-	 * default value, or NULL. [allow-none]
+	 * defaultValue = a GVariant of type type to
+	 * use as the default value, or NULL. [allow-none][transfer full]
 	 * flags = flags for the property specified
-	 * Returns: the newly created GParamSpec
+	 * Returns: the newly created GParamSpec. [transfer full]
 	 */
 	public static ParamSpec gParamSpecVariant(string name, string nick, string blurb, VariantType type, Variant defaultValue, GParamFlags flags)
 	{
