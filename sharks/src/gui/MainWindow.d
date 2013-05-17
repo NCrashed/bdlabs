@@ -32,13 +32,19 @@ import gtk.Menu;
 import gtk.MenuBar;
 import gtk.MenuItem;
 import gtk.AboutDialog;
-
+import gtk.Notebook;
 import gtk.Box;
 
 private import stdlib = core.stdc.stdlib : exit;
 
 import data.wrapper;
 import data.generator;
+
+import gui.ViewBaseTab;
+import gui.EditBaseTab;
+import gui.AddBaseTab;
+import gui.QueryBaseTab;
+import gui.ReportBaseTab;
 
 enum GENERATION_DATA_BASE_SIZE = 100;
 
@@ -58,6 +64,7 @@ class SharksMainWindow : MainWindow
 		// Core structure
 		auto box = new Box(GtkOrientation.VERTICAL, 5);
 		box.packStart(initMenu(), 0, 0, 0);
+		box.packStart(initTabs(), 1, 1, 0);
 
 		add(box);
 		showAll();
@@ -75,6 +82,17 @@ class SharksMainWindow : MainWindow
 		fileMenu.append(aboutItem);
 		fileMenu.append(exitItem);
 		return menuBar;
+	}
+
+	Notebook initTabs()
+	{
+		auto tabs = new Notebook();
+		tabs.appendPage(new ViewBaseTab(db),   "Просмотр базы");
+		tabs.appendPage(new EditBaseTab(db),   "Редактирование");
+		tabs.appendPage(new AddBaseTab(db) ,   "Добавление");
+		tabs.appendPage(new QueryBaseTab(db),  "Запросы");
+		tabs.appendPage(new ReportBaseTab(db), "Отчеты");
+		return tabs;
 	}
 
 	//========================================================
@@ -96,12 +114,8 @@ class SharksMainWindow : MainWindow
 			setComments("Курсовая работа по курсу 'Банки данных'");
 			setLicense(license);
 			setCopyright("©Гуща А.В. 2013");
-			
-			auto response = run();
-			if(response == GtkResponseType.CLOSE)
-			{
-				hide();
-			}
+			addOnResponse((sig, dlg){dlg.hide();});
+			showAll();
 		}
 	}
 }
