@@ -132,8 +132,8 @@ public
 					{
 						db.insert!Habitat2Spiece(
 							Habitat2Spiece(
-								uniform(0, habitats.length),
-								i
+								uniform(0, cast(uint)habitats.length),
+								cast(uint)i
 							));
 					}
 				}
@@ -144,13 +144,13 @@ public
 				foreach(i; 0..count)
 				{
 					AttackCases acase;
-					acase.AttackCaseID = i;
+					acase.AttackCaseID = cast(uint)i;
 					acase.AttackDate = Date(uniform(1820,2014), uniform(1,13), uniform(1,29));
 					acase.DayTime = uniform(0, 86400);
 					acase.ViewDist = uniform(1, 21);
 
 					acase.CaseDescr = messages[uniform(0, messages.length)];
-					acase.PlaceID = uniform(0, places.length);
+					acase.PlaceID = uniform(0, cast(uint)places.length);
 
 					db.insert!AttackCases(acase);
 				}
@@ -158,14 +158,14 @@ public
 
 			void generateInformationSources(size_t count)
 			{
-				size_t counter = 0;
+				uint counter = 0;
 				foreach(i; 0..count)
 				{
 					foreach(j; 0..uniform(1,3))
 					{
 						auto isource = sources[uniform(0,sources.length)];
 						isource.InformationSourceID = counter++;
-						isource.AttackCaseID = i;
+						isource.AttackCaseID = cast(uint)i;
 						isource.MessageCopy = messages[uniform(0, messages.length)];
 
 						db.insert!InformationSources(isource);
@@ -180,8 +180,8 @@ public
 					foreach(j; 0..uniform(1,4))
 					{
 						auto link = Reason2AttackCase(
-								uniform(0, reasons.length),
-								i
+								uniform(0, cast(uint)reasons.length),
+								cast(uint)i
 							);
 
 						db.insert!Reason2AttackCase(link);
@@ -196,8 +196,8 @@ public
 					foreach(j; 0..uniform(1,2))
 					{
 						auto link = Spiece2AttackCase(
-								uniform(0, spicies.length),
-								i
+								uniform(0, cast(uint)spicies.length),
+								cast(uint)i
 							);
 
 						db.insert!Spiece2AttackCase(link);
@@ -214,8 +214,8 @@ public
 						foreach(j; 0..uniform(1,2))
 						{
 							auto link = Property2AttackCase(
-									uniform(0, property.length),
-									i
+									uniform(0, cast(uint)property.length),
+									cast(uint)i
 								);
 
 							db.insert!Property2AttackCase(link);
@@ -235,8 +235,8 @@ public
 					foreach(j; 0..victimCount)
 					{
 						auto link = Victim2AttackCase(
-								uniform(0, victims.length),
-								i
+								uniform(0, cast(uint)victims.length),
+								cast(uint)i
 							);
 
 						db.insert!Victim2AttackCase(link);

@@ -26,7 +26,58 @@ DEALINGS IN THE SOFTWARE.
 */
 module data.wrapper;
 
+import std.typetuple;
+import std.typecons;
 import orm.orm;
+import data.structure;
 
 alias DataBase!"sharks" SharksDB;
 
+alias TypeTuple!(
+	AttackCases, 
+	InformationSources,
+	Places,
+	Reasons,
+	SharkSpieces,
+	Habitats,
+	Victims,
+	Property,
+	//Reason2AttackCase,
+	//Spiece2AttackCase,
+	//Property2AttackCase,
+	//Victim2AttackCase,
+	//Habitat2Spiece,
+	) SharksDBTables;
+
+
+enum SharksDBTableNames = tuple(
+	"Случаи нападения",
+	"Источники информации",
+	"Места нападения",
+	"Причины нападения",
+	"Виды акул",
+	"Ареалы",
+	"Жертвы",
+	"Пострадавшее имущество",
+	//"Связь Причина-Атака",
+	//"Связь Вид-Атака",
+	//"Связь Имущество-Атака",
+	//"Связь Жертва-Атака",
+	//"Связь Ареал-Вид акулы"
+	);
+
+enum SharksDBTablesColumnNames = tuple(
+	tuple("ID", "Дата", "Время", "Описание", "Видимость", "ID места"),
+	tuple("ID", "ID атаки", "Имя", "Адрес", "Сообщение", "Официальность"),
+	tuple("ID", "Название", "Страна", "Описание", "Тип места"),
+	tuple("ID", "Название", "Поведение", "Спровоцировано"),
+	tuple("ID", "Название", "Описание", "Размер", "Рацион", "Фото", "Опасность"),
+	tuple("ID", "Название", "Площадь", "Урбанизация"),
+	tuple("ID", "ФИО", "Дата рождения", "Деятельность", "Описание повреждений", "Судьба"),
+	tuple("ID", "Тип", "Ущерб,$", "Описание"),
+	//tuple("ID причины", "ID атаки"),
+	//tuple("ID вида", "ID атаки"),
+	//tuple("ID имущества", "ID атаки"),
+	//tuple("ID жертвы", "ID атаки"),
+	//tuple("ID ареала", "ID вида")
+	);

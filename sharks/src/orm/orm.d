@@ -31,26 +31,6 @@ struct ForeignKey(Table)
 	string foreignIdField;
 }
 
-/*mixin template PrimaryKey(string field)
-{
-	static string getPrimaryKey()
-	{
-		return field;
-	}
-}
-
-mixin template ForeignKey(string field, string )
-package template hasPrimaryKey(Aggregate)
-{
-	static assert(isAggregateType!Aggregate, "hasPrivaryKey expects aggregate type!");
-
-	enum hasPrimaryKey = hasMember!(Aggregate, "getPrimaryKey");
-	static if(hasPrimaryKey)
-	{
-		static assert(hasMember!(Aggregate, Aggregate.getPrimaryKey()), "Cannot find member "~Aggregate.getPrimaryKey()~" for type "~Aggregate.tostring~"!");
-	}
-}*/
-
 Table!(T).WhereGenerator whereAllGen(T)()
 {
 	return (TableFormat!T tf){return "";};

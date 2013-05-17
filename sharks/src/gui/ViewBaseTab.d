@@ -26,8 +26,17 @@ DEALINGS IN THE SOFTWARE.
 */
 module gui.ViewBaseTab;
 
-import data.wrapper;
+import std.typecons;
+
 import gtk.Box;
+import gtk.Notebook;
+
+import gui.TableView;
+
+import data.structure;
+import data.wrapper;
+
+import orm.orm;
 
 class ViewBaseTab : Box
 {
@@ -37,5 +46,22 @@ class ViewBaseTab : Box
 	{
 		super(GtkOrientation.VERTICAL, 5);
 		this.db = db;
+
+		packStart(initTablesTabs(), 1, 1, 0);
+	}
+
+	protected
+	{
+		Notebook initTablesTabs()
+		{
+			auto tabs = new Notebook();
+			foreach(i, type; SharksDBTables)
+			{
+				auto view = new TableView!type();
+				tabs.appendPage(view.createTreeView!(SharksDBTablesColumnNames[i])(), SharksDBTableNames[i]);
+				view.updateAllData((){return db.select!type(0, whereAllGen!type());});
+			}
+			return tabs;
+		}
 	}
 }

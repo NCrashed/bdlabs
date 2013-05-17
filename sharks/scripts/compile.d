@@ -46,6 +46,7 @@ int main(string[] args)
 
         addSource("../src");
         
+        //addCustomFlags("-m64");
         //addCustomFlags("-D -Dd../docs ../docs/candydoc/candy.ddoc ../docs/candydoc/modules.ddoc");
 
         checkProgram("dmd", "Cannot find dmd to compile project! You can get it from http://dlang.org/download.html");

@@ -143,7 +143,7 @@ class TableFormat(Aggregate)
 
 		foreach(i, type; fieldTypes)
 		{
-			s.put(fieldNames[i]);
+			s.put(`"`~fieldNames[i]~`"`);
 			if(i != fieldTypes.length-1)
 				s.put(`, `);
 		}
@@ -205,6 +205,9 @@ class TableFormat(Aggregate)
           		static if(is(type == Date))
           		{
           			mixin("ret."~fieldNames[i]~" = Date.fromISOExtString(data[i].as!PGtext);");
+          		} else static if(is(type == bool))
+          		{
+          			mixin("ret."~fieldNames[i]~" = data[i].as!PGtext == \"t\";");
           		} else
           		{
           			mixin("ret."~fieldNames[i]~" = to!"~type.stringof~"(data[i].as!PGtext);");

@@ -35,6 +35,7 @@ import gtk.CellRendererText;
 import gui.CustomList;
 import util.common;
 
+
 private template GenStringFields(rnames...)
 {
 	enum names = rnames[0];
