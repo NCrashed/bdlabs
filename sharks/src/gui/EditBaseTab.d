@@ -26,16 +26,157 @@ DEALINGS IN THE SOFTWARE.
 */
 module gui.EditBaseTab;
 
-import data.wrapper;
 import gtk.Box;
+import gtk.Notebook;
+import gtk.ScrolledWindow;
+import gtk.Label;
+import gtk.Alignment;
+import gtk.Entry;
+import gtk.Button;
+import gtk.TreeModel;
+import gtk.TreePath;
+import gtk.TreeViewColumn;
+import gtk.TreeIter;
+import gtk.TreeView;
+
+import gui.TableView;
+
+import data.structure;
+import data.wrapper;
+
+import orm.orm;
 
 class EditBaseTab : Box
 {
+	struct EditFormInfo
+	{
+		uint selectedRow;
+		TreeModel list;
+		Entry[string] entries;
+		Button submitBtn;
+		Button delBtn;
+
+		void cleanupEntries()
+		{
+			foreach(entry; entries)
+				entry.setText("");
+		}
+	}
+	EditFormInfo[string] editForms;
+
 	SharksDB db;
 
 	this(SharksDB db)
 	{
 		super(GtkOrientation.VERTICAL, 5);
 		this.db = db;
+
+		packStart(initTablesTabs(), 1, 1, 0);
+	}
+
+	protected
+	{
+		Notebook initTablesTabs()
+		{
+			auto tabs = new Notebook();
+			foreach(i, type; SharksDBTables)
+			{
+				auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+				auto scrollwin = new ScrolledWindow();
+				auto view = new TableView!type();
+				auto treeview = view.createTreeView!(SharksDBTablesColumnNames[i])();
+
+				scrollwin.add(treeview);
+				box.packStart(scrollwin, true, true, 0);
+				box.packEnd(createEditForm!(SharksDBTableNames[i], SharksDBTablesColumnNames[i])(view), false, false, 0);
+				
+				tabs.appendPage(box, SharksDBTableNames[i]);
+
+				treeview.addOnCursorChanged(
+						formOnSelectDelegate!(type, SharksDBTableNames[i], SharksDBTablesColumnNames[i])()
+					);
+				view.updateAllData((){return db.select!type(0, whereAllGen!type());});
+			}
+			return tabs;
+		}
+
+		Box createEditForm(TableNameAndColNames...)(TreeModel list)
+		{
+			auto box = new Box(GtkOrientation.VERTICAL, 5);
+			EditFormInfo info;
+			foreach(i, name; TableNameAndColNames[1])
+			{
+				auto inbox = new Box(GtkOrientation.HORIZONTAL, 5);
+				inbox.packStart(new Label(name), false, false, false);
+				auto entry = new Entry("");
+				inbox.packEnd(Alignment.east(entry), false, false, false);
+
+				box.packStart(inbox, false, false, false);
+				info.entries[name] = entry;
+			}
+
+			auto btnBox = new Box(GtkOrientation.HORIZONTAL, 5);
+			auto submitBtn = new Button("Сохранить");
+			auto delBtn = new Button("Удалить");
+			info.submitBtn = submitBtn;
+			info.delBtn = delBtn;
+			btnBox.packStart(submitBtn, false, false, false);
+			btnBox.packStart(delBtn, false, false, false);
+
+			box.add(btnBox);
+			info.list = list;
+			editForms[TableNameAndColNames[0]] = info;
+			return box;
+		}
+
+		void delegate(TreeView) formOnSelectDelegate(Table, string tableName, TableColNames...)()
+		{
+			return &(onTableRowSelect!(Table, tableName, TableColNames));
+		}
+
+		void onTableRowSelect(Table, string tableName, TableColNames...)(TreeView view)
+		{
+			TreePath path;
+			TreeViewColumn col;
+			TreeIter iter = new TreeIter();
+			view.getCursor(path, col);
+
+			auto form = editForms[tableName];
+			if(path !is null)
+			{
+				form.list.getIter(iter, path);
+				if(iter is null)
+				{
+					writeln("iter is null");
+					form.cleanupEntries();
+					return;
+				}
+
+				auto val = form.list.getValue(iter, TableView!(Table).Column.Record);
+				if(val is null)
+				{
+					writeln("iter is null");
+					form.cleanupEntries();
+					return;
+				}
+
+				auto model = cast(TableView!(Table).RowRecord)val.getPointer();
+				if(model is null)
+				{
+					writeln("model is null");
+					form.cleanupEntries();
+					return;
+				}
+
+				foreach(i, name; TableColNames[0])
+				{
+					form.entries[name].setText(model.getValue!i());
+				}
+
+			} else
+			{
+				form.cleanupEntries();
+			}
+		}
 	}
 }

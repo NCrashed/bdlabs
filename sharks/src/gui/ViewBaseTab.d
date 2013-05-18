@@ -30,6 +30,7 @@ import std.typecons;
 
 import gtk.Box;
 import gtk.Notebook;
+import gtk.ScrolledWindow;
 
 import gui.TableView;
 
@@ -57,8 +58,10 @@ class ViewBaseTab : Box
 			auto tabs = new Notebook();
 			foreach(i, type; SharksDBTables)
 			{
+				auto scrollwin = new ScrolledWindow();
 				auto view = new TableView!type();
-				tabs.appendPage(view.createTreeView!(SharksDBTablesColumnNames[i])(), SharksDBTableNames[i]);
+				scrollwin.add(view.createTreeView!(SharksDBTablesColumnNames[i])());
+				tabs.appendPage(scrollwin, SharksDBTableNames[i]);
 				view.updateAllData((){return db.select!type(0, whereAllGen!type());});
 			}
 			return tabs;

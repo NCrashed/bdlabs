@@ -74,6 +74,14 @@ private template StructWrapper(Aggregate)
 			}
 				
 		}
+
+		/**
+		*	To acces Aggregate fields without knowing actual field name.
+		*/
+		string getValue(size_t i)()
+		{
+			return mixin(fieldNames[i]);
+		}
 	}	
 }
 

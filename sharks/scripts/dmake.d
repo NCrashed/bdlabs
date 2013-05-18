@@ -530,7 +530,7 @@ private int compileTarget(ref CompilationTarget target)
                 }
 
                 if(debugMode)
-                        comm ~= "-unittest -debug -gc -profile ";
+                        comm ~= "-unittest -debug -profile ";
                 else
                         comm ~= "-release -inline -O ";
 

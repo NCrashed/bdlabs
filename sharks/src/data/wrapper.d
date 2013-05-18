@@ -42,11 +42,11 @@ alias TypeTuple!(
 	Habitats,
 	Victims,
 	Property,
-	//Reason2AttackCase,
-	//Spiece2AttackCase,
-	//Property2AttackCase,
-	//Victim2AttackCase,
-	//Habitat2Spiece,
+	Reason2AttackCase,
+	Spiece2AttackCase,
+	Property2AttackCase,
+	Victim2AttackCase,
+	Habitat2Spiece,
 	) SharksDBTables;
 
 
@@ -59,11 +59,11 @@ enum SharksDBTableNames = tuple(
 	"Ареалы",
 	"Жертвы",
 	"Пострадавшее имущество",
-	//"Связь Причина-Атака",
-	//"Связь Вид-Атака",
-	//"Связь Имущество-Атака",
-	//"Связь Жертва-Атака",
-	//"Связь Ареал-Вид акулы"
+	"Связь Причина-Атака",
+	"Связь Вид-Атака",
+	"Связь Имущество-Атака",
+	"Связь Жертва-Атака",
+	"Связь Ареал-Вид акулы"
 	);
 
 enum SharksDBTablesColumnNames = tuple(
@@ -75,9 +75,9 @@ enum SharksDBTablesColumnNames = tuple(
 	tuple("ID", "Название", "Площадь", "Урбанизация"),
 	tuple("ID", "ФИО", "Дата рождения", "Деятельность", "Описание повреждений", "Судьба"),
 	tuple("ID", "Тип", "Ущерб,$", "Описание"),
-	//tuple("ID причины", "ID атаки"),
-	//tuple("ID вида", "ID атаки"),
-	//tuple("ID имущества", "ID атаки"),
-	//tuple("ID жертвы", "ID атаки"),
-	//tuple("ID ареала", "ID вида")
+	tuple("ID причины", "ID атаки"),
+	tuple("ID вида", "ID атаки"),
+	tuple("ID имущества", "ID атаки"),
+	tuple("ID жертвы", "ID атаки"),
+	tuple("ID ареала", "ID вида")
 	);
