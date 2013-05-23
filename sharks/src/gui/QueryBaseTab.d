@@ -26,8 +26,22 @@ DEALINGS IN THE SOFTWARE.
 */
 module gui.QueryBaseTab;
 
-import data.wrapper;
+import std.typecons;
+import std.datetime;
+
 import gtk.Box;
+import gtk.Notebook;
+import gtk.Entry;
+import gtk.Label;
+import gtk.ScrolledWindow;
+import gtk.Button;
+
+import gui.TableView;
+
+import orm.orm;
+import data.query;
+import data.wrapper;
+
 
 class QueryBaseTab : Box
 {
@@ -37,5 +51,191 @@ class QueryBaseTab : Box
 	{
 		super(GtkOrientation.VERTICAL, 5);
 		this.db = db;
+
+		packStart(initTablesTabs(), true, true, false);
+	}
+
+	protected
+	{
+		Notebook initTablesTabs()
+		{
+			auto tabs = new Notebook();
+
+			tabs.appendPage(createVictimCountPage(), "Мониторинг количества жертв за период");
+			tabs.appendPage(createDamageCountPage(), "Мониторинг причиненного ущерба за период");
+			tabs.appendPage(createVictimByCountryPage(), "Мониторинг жертв в определенном регионе");
+			tabs.appendPage(createVictimsBySpiecePage(), "Летальные исходы по виду акулы");
+			tabs.appendPage(createProvokeCountPage(), "Соотношение спровоцированных нападений за период");
+
+			return tabs;
+		}
+
+		Entry periodVictimStart, periodVictimEnd;
+		TableView!(MonitorVictimCount.Data) periodVictimView;
+
+		Box	createVictimCountPage()
+		{
+			auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+
+			auto scrollwin = new ScrolledWindow();
+			periodVictimView = new TableView!(MonitorVictimCount.Data)();
+			scrollwin.add(periodVictimView.createTreeView!(tuple("Дата", "ФИО", "Род деятельности", "Судьба"))());
+
+			auto sbox1 = new Box(GtkOrientation.VERTICAL, 5);
+			sbox1.packStart(new Label("Начало периода"), false, false, false);
+			periodVictimStart = new Entry("1800-01-01");
+			sbox1.packStart(periodVictimStart, false, false, false);
+			sbox1.packStart(new Label("Конец периода"), false, false, false);
+			periodVictimEnd = new Entry((cast(Date)Clock.currTime()).toISOExtString());
+			sbox1.packStart(periodVictimEnd, false, false, false);
+			sbox1.packStart(new Button("Запрос", &queryVictimCount), false, false, false);
+
+			box.packStart(sbox1, false, false, false);
+			box.packStart(scrollwin, true, true, false);
+			return box;
+		}
+
+		void queryVictimCount(Button btn)
+		{
+			auto query = new MonitorVictimCount(
+				Date.fromISOExtString(periodVictimStart.getText()),
+				Date.fromISOExtString(periodVictimEnd.getText())
+				);
+
+			periodVictimView.clear();
+			periodVictimView.updateAllData(db.applyQuery(query));
+		}
+
+		Entry periodDamageStart, periodDamageEnd;
+		TableView!(MonitorDamageCount.Data) periodDamageView;
+
+		Box createDamageCountPage()
+		{
+			auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+
+			auto scrollwin = new ScrolledWindow();
+			periodDamageView = new TableView!(MonitorDamageCount.Data)();
+			scrollwin.add(periodDamageView.createTreeView!(tuple("Дата", "Тип имущества", "Ущерб", "Описание"))());
+
+			auto sbox1 = new Box(GtkOrientation.VERTICAL, 5);
+			sbox1.packStart(new Label("Начало периода"), false, false, false);
+			periodDamageStart = new Entry("1800-01-01");
+			sbox1.packStart(periodDamageStart, false, false, false);
+			sbox1.packStart(new Label("Конец периода"), false, false, false);
+			periodDamageEnd = new Entry((cast(Date)Clock.currTime()).toISOExtString());
+			sbox1.packStart(periodDamageEnd, false, false, false);
+			sbox1.packStart(new Button("Запрос", &queryDamageCount), false, false, false);
+
+			box.packStart(sbox1, false, false, false);
+			box.packStart(scrollwin, true, true, false);
+			return box;			
+		}
+
+		void queryDamageCount(Button btn)
+		{
+			auto query = new MonitorDamageCount(
+				Date.fromISOExtString(periodDamageStart.getText()),
+				Date.fromISOExtString(periodDamageEnd.getText())
+				);
+
+			periodDamageView.clear();
+			periodDamageView.updateAllData(db.applyQuery(query));
+		}		
+
+		Entry regionName;
+		TableView!(MonitorVictimByCountry.Data) regionVictimsView;
+
+		Box createVictimByCountryPage()
+		{
+			auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+
+			auto scrollwin = new ScrolledWindow();
+			regionVictimsView = new TableView!(MonitorVictimByCountry.Data)();
+			scrollwin.add(regionVictimsView.createTreeView!(tuple("Дата", "Место", "ФИО", "Род деятельности", "Судьба"))());
+
+			auto sbox1 = new Box(GtkOrientation.VERTICAL, 5);
+			sbox1.packStart(new Label("Название страны"), false, false, false);
+			regionName = new Entry("AUSTRALIA");
+			sbox1.packStart(regionName, false, false, false);
+			sbox1.packStart(new Button("Запрос", &queryVictimByCountry), false, false, false);
+
+			box.packStart(sbox1, false, false, false);
+			box.packStart(scrollwin, true, true, false);
+			return box;			
+		}
+
+		void queryVictimByCountry(Button btn)
+		{
+			auto query = new MonitorVictimByCountry(regionName.getText());
+
+			regionVictimsView.clear();
+			regionVictimsView.updateAllData(db.applyQuery(query));
+		}
+
+		Entry spieceName;
+		TableView!(FatalVictimsBySpiece.Data) fatalVictimsBySpieceView;
+
+		Box createVictimsBySpiecePage()
+		{
+			auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+
+			auto scrollwin = new ScrolledWindow();
+			fatalVictimsBySpieceView = new TableView!(FatalVictimsBySpiece.Data)();
+			scrollwin.add(fatalVictimsBySpieceView.createTreeView!(tuple("Дата", "Страна", "Место", "ФИО", "Род деятельности"))());
+
+			auto sbox1 = new Box(GtkOrientation.VERTICAL, 5);
+			sbox1.packStart(new Label("Название вида"), false, false, false);
+			spieceName = new Entry("Great white shark");
+			sbox1.packStart(spieceName, false, false, false);
+			sbox1.packStart(new Button("Запрос", &queryVictimsBySpiece), false, false, false);
+
+			box.packStart(sbox1, false, false, false);
+			box.packStart(scrollwin, true, true, false);
+			return box;			
+		}
+
+		void queryVictimsBySpiece(Button btn)
+		{
+			auto query = new FatalVictimsBySpiece(spieceName.getText());
+
+			fatalVictimsBySpieceView.clear();
+			fatalVictimsBySpieceView.updateAllData(db.applyQuery(query));
+		}
+
+		Entry periodProvokeStart, periodProvokeEnd;
+		TableView!(ProvokedRelationByPeriod.Data) periodProvokeView;
+
+		Box	createProvokeCountPage()
+		{
+			auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+
+			auto scrollwin = new ScrolledWindow();
+			periodProvokeView = new TableView!(ProvokedRelationByPeriod.Data)();
+			scrollwin.add(periodProvokeView.createTreeView!(tuple("Спровоцированные", "Не спровоцированные"))());
+
+			auto sbox1 = new Box(GtkOrientation.VERTICAL, 5);
+			sbox1.packStart(new Label("Начало периода"), false, false, false);
+			periodProvokeStart = new Entry("1800-01-01");
+			sbox1.packStart(periodProvokeStart, false, false, false);
+			sbox1.packStart(new Label("Конец периода"), false, false, false);
+			periodProvokeEnd = new Entry((cast(Date)Clock.currTime()).toISOExtString());
+			sbox1.packStart(periodProvokeEnd, false, false, false);
+			sbox1.packStart(new Button("Запрос", &queryProvokeCount), false, false, false);
+
+			box.packStart(sbox1, false, false, false);
+			box.packStart(scrollwin, true, true, false);
+			return box;
+		}
+
+		void queryProvokeCount(Button btn)
+		{
+			auto query = new ProvokedRelationByPeriod(
+				Date.fromISOExtString(periodProvokeStart.getText()),
+				Date.fromISOExtString(periodProvokeEnd.getText())
+				);
+
+			periodProvokeView.clear();
+			periodProvokeView.updateAllData(db.applyQuery(query));
+		}
 	}
 }

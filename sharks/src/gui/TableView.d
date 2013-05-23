@@ -130,4 +130,12 @@ class TableView(Aggregate): CustomList!(StructWrapper!(Aggregate).RowRecord)
 			appendRecord(new RowRecord(record));
 		}
 	}
+
+	void updateAllData(Aggregate[] data)
+	{
+		foreach(ref record; data)
+		{
+			appendRecord(new RowRecord(record));
+		}		
+	}
 }

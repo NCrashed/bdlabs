@@ -240,6 +240,31 @@ class DataBase(string name, string timeoutDurUnits = "seconds", long timeoutLeng
 		return tf;
 	}
 	
+	QueryT.Data[] applyQuery(QueryT)(QueryT query)
+		if(hasMember!(QueryT, "opCall") &&
+		   is(QueryT.Data) &&
+		   isAggregateType!(QueryT.Data)
+		   )
+	{
+		checkConnection();
+		auto tf = new TableFormat!(QueryT.Data)();
+
+		Answer s;
+		synchronized(this)
+			s = conn.exec(query());
+
+		if(s.rowCount() > 0)
+		{
+			auto ret = new QueryT.Data[s.rowCount()];
+			foreach(i; 0..s.rowCount())
+			{
+				ret[i] = tf.extractData(s[i]);
+			}
+			return ret;
+		}
+		return [];		
+	}
+
 	protected
 	{
 		void checkConnection()

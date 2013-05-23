@@ -25,3 +25,194 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 */
 module data.query;
+
+import std.datetime;
+import dpq2.all;
+import orm.orm;
+
+class MonitorVictimCount
+{
+	Date firstBound;
+	Date secondBound;
+
+	struct Data
+	{
+		Date 		AttackDate;
+		string 		VictimName;
+		string 		Career;
+		string 		Destiny;
+	}
+
+	this(Date firstBound, Date secondBound)
+	{
+		this.firstBound = firstBound;
+		this.secondBound = secondBound;
+	}
+
+	string opCall()
+	{
+		return 
+`SELECT "AttackDate", "VictimName", "Career", "Destiny" 
+	FROM 
+		"AttackCases",
+		"Victims",
+		"Victim2AttackCase"
+	WHERE
+		"AttackDate" >= DATE '`~firstBound.toISOExtString()~`' AND "AttackDate" < DATE '`~secondBound.toISOExtString()~`' AND
+		"Victim2AttackCase"."AttackCaseID" = "AttackCases"."AttackCaseID" AND
+		"Victim2AttackCase"."VictimID" = "Victims"."VictimID"
+		;`;
+	}
+}
+
+class MonitorDamageCount
+{
+	Date firstBound;
+	Date secondBound;
+
+	struct Data
+	{
+		Date 		AttackDate;
+		string 		PropertyType;
+		long 		Damage;
+		string 		DamageDescr;
+	}
+
+	this(Date firstBound, Date secondBound)
+	{
+		this.firstBound = firstBound;
+		this.secondBound = secondBound;
+	}
+
+	string opCall()
+	{
+		return 
+`SELECT "AttackDate", "PropertyType", "Damage", "DamageDescr" 
+	FROM 
+		"AttackCases",
+		"Property",
+		"Property2AttackCase"
+	WHERE
+		"AttackDate" >= DATE '`~firstBound.toISOExtString()~`' AND "AttackDate" < DATE '`~secondBound.toISOExtString()~`' AND
+		"Property2AttackCase"."AttackCaseID" = "AttackCases"."AttackCaseID" AND
+		"Property2AttackCase"."PropertyID" = "Property"."PropertyID"
+		;`;
+	}
+}
+
+class MonitorVictimByCountry
+{
+	string countryName;
+
+	struct Data
+	{
+		Date 		AttackDate;
+		string 		PlaceDescr;
+		string 		VictimName;
+		string 		Career;
+		string 		Destiny;
+	}
+
+	this(string countryName)
+	{
+		this.countryName = countryName;
+	}
+
+	string opCall()
+	{
+		return 
+`SELECT "AttackDate", "PlaceDescr", "VictimName", "Career", "Destiny" 
+	FROM 
+		"AttackCases",
+		"Victims",
+		"Victim2AttackCase",
+		"Places"
+	WHERE
+		"Places"."Country" = '`~countryName~`' AND
+		"AttackCases"."PlaceID" = "Places"."PlaceID" AND 
+		"Victim2AttackCase"."AttackCaseID" = "AttackCases"."AttackCaseID" AND
+		"Victim2AttackCase"."VictimID" = "Victims"."VictimID"
+		;`;
+	}
+}
+
+class FatalVictimsBySpiece
+{
+	string spieceName;
+
+	struct Data
+	{
+		Date 		AttackDate;
+		string 		Country;
+		string 		PlaceDescr;
+		string 		VictimName;
+		string 		Career;
+	}
+
+	this(string spieceName)
+	{
+		this.spieceName = spieceName;
+	}
+
+	string opCall()
+	{
+		return 
+`SELECT "AttackDate", "Country", "PlaceDescr", "VictimName", "Career"
+	FROM 
+		"AttackCases",
+		"Victims",
+		"Victim2AttackCase",
+		"SharkSpieces",
+		"Spiece2AttackCase",
+		"Places"
+	WHERE
+		"SharkSpieces"."SpieceName" = '`~spieceName~`' AND
+		"AttackCases"."PlaceID" = "Places"."PlaceID" AND 
+		"Spiece2AttackCase"."AttackCaseID" = "AttackCases"."AttackCaseID" AND
+		"Spiece2AttackCase"."SpieceID" = "SharkSpieces"."SpieceID" AND 
+		"Places"."PlaceID" = "AttackCases"."PlaceID" AND
+		"Victim2AttackCase"."AttackCaseID" = "AttackCases"."AttackCaseID" AND
+		"Victims"."Destiny" = 'Fatal'		
+		;`;
+	}
+}
+
+class ProvokedRelationByPeriod
+{
+	Date firstBound;
+	Date secondBound;
+
+	struct Data
+	{
+		int	provoked;
+		int	notProvoked;
+	}
+
+	this(Date firstBound, Date secondBound)
+	{
+		this.firstBound = firstBound;
+		this.secondBound = secondBound;
+	}
+
+	string opCall()
+	{
+		return 
+`SELECT count(a), count(b) FROM
+	(
+		SELECT count("AttackCases"."AttackCaseID") FROM "AttackCases", "Reasons", "Reason2AttackCase"
+		WHERE
+			"AttackCases"."AttackDate" >= DATE '`~firstBound.toISOExtString()~`' AND "AttackCases"."AttackDate" < DATE '`~secondBound.toISOExtString()~`' AND 
+			"AttackCases"."AttackCaseID" = "Reason2AttackCase"."AttackCaseID" AND
+			"Reasons"."ReasonID" = "Reason2AttackCase"."ReasonID" AND
+			"Reasons"."IsProvoked" = FALSE
+	) AS a,
+	(
+		SELECT count("AttackCases"."AttackCaseID") FROM "AttackCases", "Reasons", "Reason2AttackCase"
+		WHERE 
+			"AttackCases"."AttackDate" >= DATE '`~firstBound.toISOExtString()~`' AND "AttackCases"."AttackDate" < DATE '`~secondBound.toISOExtString()~`' AND
+			"AttackCases"."AttackCaseID" = "Reason2AttackCase"."AttackCaseID" AND
+			"Reasons"."ReasonID" = "Reason2AttackCase"."ReasonID" AND
+			"Reasons"."IsProvoked" = TRUE
+	) AS b;`;
+	}
+}
