@@ -95,7 +95,14 @@ class EditBaseTab : Box
 				treeview.addOnCursorChanged(
 						formOnSelectDelegate!(type, SharksDBTableNames[i], SharksDBTablesColumnNames[i])()
 					);
-				view.updateAllData((){return db.select!type(0, whereAllGen!type());});
+
+				try
+				{
+					view.updateAllData((){return db.select!type(0, whereAllGen!type());});
+				} catch(Exception e)
+				{
+					writeln("Failed to seletc data from ", type.stringof);
+				}
 			}
 			return tabs;
 		}

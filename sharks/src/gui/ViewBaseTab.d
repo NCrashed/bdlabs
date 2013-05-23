@@ -26,6 +26,7 @@ DEALINGS IN THE SOFTWARE.
 */
 module gui.ViewBaseTab;
 
+import std.stdio;
 import std.typecons;
 
 import gtk.Box;
@@ -62,7 +63,15 @@ class ViewBaseTab : Box
 				auto view = new TableView!type();
 				scrollwin.add(view.createTreeView!(SharksDBTablesColumnNames[i])());
 				tabs.appendPage(scrollwin, SharksDBTableNames[i]);
-				view.updateAllData((){return db.select!type(0, whereAllGen!type());});
+
+				try
+				{
+					view.updateAllData((){return db.select!type(0, whereAllGen!type());});
+				} catch(Exception e)
+				{
+					writeln("Failed to seletc data from ", type.stringof);
+				}
+				
 			}
 			return tabs;
 		}
