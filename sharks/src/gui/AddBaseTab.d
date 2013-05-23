@@ -26,16 +26,81 @@ DEALINGS IN THE SOFTWARE.
 */
 module gui.AddBaseTab;
 
-import data.wrapper;
 import gtk.Box;
+import gtk.Notebook;
+import gtk.Label;
+import gtk.Alignment;
+import gtk.Entry;
+import gtk.Button;
+import gtk.TreeModel;
+import gtk.TreePath;
+import gtk.TreeViewColumn;
+import gtk.TreeIter;
+
+import gui.TableView;
+
+import data.structure;
+import data.wrapper;
+
+import orm.orm;
 
 class AddBaseTab : Box
 {
+	struct AddFormInfo
+	{
+		Entry[string] entries;
+		Button submitBtn;
+	}
+	AddFormInfo[string] addForms;
+
 	SharksDB db;
 
 	this(SharksDB db)
 	{
 		super(GtkOrientation.VERTICAL, 5);
 		this.db = db;
+
+		packStart(initTablesTabs(), true, true, false);
+	}
+
+	protected
+	{
+		Notebook initTablesTabs()
+		{
+			auto tabs = new Notebook();
+			foreach(i, type; SharksDBTables)
+			{
+				tabs.appendPage(createAddForm!(SharksDBTableNames[i], SharksDBTablesColumnNames[i]), SharksDBTableNames[i]);
+			}
+			return tabs;
+		}
+
+		Box createAddForm(TableNameAndColNames...)()
+		{
+			auto box = new Box(GtkOrientation.HORIZONTAL, 5);
+			auto labelBox = new Box(GtkOrientation.VERTICAL, 8);
+			auto entryBox = new Box(GtkOrientation.VERTICAL, 5);
+			box.packStart(labelBox, false, false, false);
+			box.packStart(entryBox, true, true, false);
+
+			AddFormInfo info;
+			foreach(i, name; TableNameAndColNames[1])
+			{
+				labelBox.packStart(new Label(name), false, false, false);
+
+				auto entry = new Entry("");
+				entryBox.packStart(entry, false, false, false);
+				info.entries[name] = entry;
+			}
+
+			auto btnBox = new Box(GtkOrientation.HORIZONTAL, 5);
+			auto submitBtn = new Button("Добавить");
+			info.submitBtn = submitBtn;
+			btnBox.packStart(submitBtn, true, true, false);
+
+			labelBox.add(btnBox);
+			addForms[TableNameAndColNames[0]] = info;
+			return box;			
+		}
 	}
 }
